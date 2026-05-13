@@ -1,0 +1,154 @@
+\chapter*{Annexes}
+\addcontentsline{toc}{chapter}{Annexes}
+\vspace{-1.2cm}
+
+\section*{Macroplanning du projet}
+Le projet s’étale sur une période de 22 mois et se décline en plusieurs phases successives visant à concevoir et implémenter un système d’optimisation pour la planification des stands avion. À ce jour, le projet est dans sa phase de \textbf{cadrage}, qui vise à affiner les objectifs, analyser les besoins et poser les fondations techniques.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{assets/Annexe/macroplanning.png}
+	\caption{Macroplanning global du projet}
+	\label{fig:macrolplannning}
+\end{figure}
+
+
+
+\section*{Plan de l’aéroport CMN}
+Le plan ci-dessous illustre la disposition des zones de stationnement à l’aéroport Mohammed V (CMN). Il a été utilisé comme base pour la modélisation des contraintes spatiales dans l’algorithme d’affectation.
+
+\begin{figure}[H]
+	\centering
+	\rotatebox{90}{% rotation de 90° vers la gauche
+		\includegraphics[width=0.9\textheight]{assets/Annexe/plan.png}
+	}
+	\caption{Plan des zones de stationnement à l’aéroport Mohammed V (CMN)}
+	\label{fig:plan}
+\end{figure}
+
+
+
+
+\section*{Contraintes d’incompatibilité entre stands}
+Certains stands ne peuvent pas être utilisés simultanément, notamment ceux du type \texttt{J (Julia)}, qui imposent des restrictions sur les stands adjacents afin de garantir la sécurité et d’éviter les conflits opérationnels.
+
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1}
+	\caption{Exemples de relations d'incompatibilité entre les stands}
+	\begin{tabular}{|p{4cm}|p{6cm}|}
+		\hline
+		\textbf{Stand principal} & \textbf{Stands incompatibles} \\
+		\hline
+		J01 & C01, C02 \\
+		J02 & C03, C04 \\
+		J03 & C05, C06 \\
+		J04 & C07, C08 \\
+		J05 & B01, B02 \\
+		J06 & B03, B04 \\
+		J07 & B05, B06 \\
+		J08 & B07, B08 \\
+		J09 & B09, B10 \\
+		J15 & C24, C25 \\
+		\hline
+	\end{tabular}
+	\label{tab:incompatibilites_stands}
+\end{table}
+
+
+\noindent\textit{Remarque :} Lorsqu’un stand \texttt{J} est occupé, les stands listés comme incompatibles doivent être laissés vacants pour éviter toute interférence.
+
+
+\section*{Exemple d'affectation de vols}
+L’algorithme d’affectation génère un fichier JSON, où chaque vol est associé à un stand selon les contraintes et critères définis. Voici un extrait représentatif :
+
+\begin{lstlisting}[language=json, 
+	caption={Extrait du fichier JSON d’affectation}, 
+	label={lst:json-result}, 
+	basicstyle=\ttfamily\small, 
+	breaklines=true,
+	frame=single
+	]
+	"assignments": [{
+		"VID": "290850832",
+		"FLC": "Transavia France",
+		"REG": "FHTVS",
+		"DES": "RAK",
+		"ORG": "ORY",
+		"Aircraft_Type": "Boeing 737-800 (High Gross Weight)",
+		"DAY_ARR": "2024-11-01",
+		"DAY_DEP": "2024-11-01",
+		"AIRCRAFT_SIZE": "Medium",
+		"STAND": "C07",
+		"Stand_Type": "Contact",
+		"Max_Aircraft_Size": "Medium",
+		"HEURE_VOL_ARR": "08:04",
+		"HEURE_VOL_DEP": "08:49",
+		"PXU_DEP": "189",
+		"PXU_ARR": "189",
+		"TERMINAL": "T1",
+		"Vol_Type": "I"
+	}]
+
+\end{lstlisting}
+
+\noindent Une visualisation de l’occupation des stands sur trois jours est également générée sous forme de diagramme de Gantt.
+
+
+\section*{Chronologie d’Affectation des Vols aux Stands – Jour 19}
+
+Le diagramme ci-dessous présente le diagramme de Gantt correspondant aux résultats de l’affectation des vols aux stands pour le jour 19, obtenus à l’aide de l’approche hybride combinant une heuristique gloutonne avec un algorithme génétique. Cette représentation visuelle illustre la répartition temporelle de l’occupation des stands et met en évidence l’efficacité de la méthode proposée pour gérer l’allocation des ressources sous contraintes opérationnelles.
+
+
+\vspace{-1em}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.1\linewidth]{assets/Annexe/affectation.png}
+	\caption{Diagrammes de gantt des stands}
+	\label{fig:ganttStand}
+\end{figure}
+
+\section*{Signification des attributs utilisés}
+Le tableau ci-dessous décrit les principaux attributs utilisés dans le jeu de données de vols.
+
+\begin{table}[H]
+	\scriptsize
+	\renewcommand{\arraystretch}{1.3}
+	\caption{Description des attributs du fichier d’affectation des vols}
+	\begin{tabularx}{\textwidth}{@{} p{3cm} p{2.5cm} X p{3.3cm} @{}}
+		\toprule
+		\textbf{Catégorie} & \textbf{Attribut} & \textbf{Description} & \textbf{Exemple / Type} \\
+		\midrule
+		\multirow{2}{*}{Identification du vol} 
+		& \texttt{VID} & Identifiant unique du vol & 290850832 \\
+		& \texttt{FLC} & Nom de la compagnie aérienne & Transavia France \\
+		
+		\midrule
+		\multirow{4}{*}{Informations temporelles} 
+		& \texttt{DAY\_ARR / DEP} & Dates d’arrivée et de départ & 2024-11-01 \\
+		& \texttt{HEURE\_VOL\_ARR / DEP} & Horaires du vol & 08:04, 08:49 \\
+		& \texttt{VOL\_TYPE} & Type de vol (I/D) & I : International \\
+		
+		\midrule
+		\multirow{3}{*}{Informations avion} 
+		& \texttt{REG} & Immatriculation de l’avion & FHTVS \\
+		& \texttt{AIRCRAFT\_TYPE} & Modèle commercial & Boeing 737-800 \\
+		& \texttt{AIRCRAFT\_SIZE} & Taille de l’aéronef & Medium \\
+		
+		\midrule
+		\multirow{4}{*}{Informations aéroportuaires} 
+		& \texttt{ORG / DES} & Aéroports origine/destination & ORY / RAK \\
+		& \texttt{STAND} & Stand attribué & C07 \\
+		& \texttt{STAND\_TYPE} & Type de stand & Contact \\
+		& \texttt{TERMINAL} & Terminal assigné & T1 \\
+		
+		\midrule
+		\multirow{2}{*}{Passagers} 
+		& \texttt{PXU\_ARR / DEP} & Nb de passagers à l’arrivée / départ & 189 \\
+		& \texttt{MAX\_AIRCRAFT\_SIZE} & Taille max. supportée par le stand & Medium \\
+		\bottomrule
+	\end{tabularx}
+	\label{tab:attributs_vols_complet}
+\end{table}
+
+

@@ -1,0 +1,11 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\xpg@aux {}{french}
+\xpg@aux {}{french}
+\contentsline {chapter}{Dédicace}{i}{chapter*.1}%
+\contentsline {chapter}{Remerciements}{ii}{chapter*.2}%
+\contentsline {chapter}{Résumé}{iii}{chapter*.3}%
+\contentsline {chapter}{Abstract}{iv}{chapter*.4}%
+\contentsline {chapter}{Liste des figures}{vi}{chapter*.5}%
+\contentsline {chapter}{Liste des tableaux}{vii}{chapter*.6}%
+\contentsline {chapter}{Abréviations}{1}{chapter*.8}%
+\contentsline {chapter}{Introduction Générale}{2}{chapter*.9}%

@@ -1,0 +1,43 @@
+\chapter*{Introduction Générale}
+\addcontentsline{toc}{chapter}{Introduction Générale}
+
+Les projets de développement logiciel génèrent quotidiennement des milliers de tickets, d’incidents et de demandes d’évolution. L’une des tâches les plus critiques dans ce contexte est \textbf{l’analyse des risques et la priorisation des actions correctives}, c’est-à-dire l’identification précoce des anomalies susceptibles d’impacter les délais, la qualité des livrables ou la satisfaction des parties prenantes. Cette opération repose sur une exploitation fine des données issues des outils de gestion de projet comme \textbf{Jira Data Center} — et doit répondre à des exigences rigoureuses en matière de rapidité, de précision et de proactivité.
+
+\vspace{0.5em}
+
+Avec l’augmentation de la complexité et du volume des projets, les données deviennent massives et difficilement exploitables manuellement. Les événements aléatoires (retards imprévus, changements de périmètre, défaillances techniques, turnover dans les équipes) rendent la détection des risques encore plus périlleuse. Une mauvaise gestion peut entraîner des retards en cascade, une surcharge des équipes, une érosion de la confiance des clients, voire l’échec du projet.
+
+\vspace{0.5em}
+
+Pour faire face à ces défis, l’introduction de solutions intelligentes et adaptatives devient incontournable, notamment à travers l’intégration d’\textbf{agents IA conversationnels} capables d’extraire, d’analyser et de recommander des actions en temps réel à partir des données Jira.
+
+\vspace{0.5em}
+
+Dans ce contexte, le présent mémoire s’inscrit dans le cadre d’un \textit{Projet de Fin d’Études} effectué au sein de l’entreprise \textbf{NTT DATA}, dans le cadre du master \textit{\textbf{Systèmes Distribués et Intelligence Artificielle (SDIA)}} de \textbf{l’ENSET Mohammedia}. Le projet s’est intéressé à la conception et au développement d’un \textbf{agent IA d’analyse des risques et de recommandations d’actions}, en s’appuyant sur les données issues de \textbf{Jira Data Center} (projets, tickets, historiques, commentaires). La solution intègre un raisonnement agentique (LangGraph) utilisant un modèle \texttt{Mistral} via Ollama, une API \texttt{FastAPI}, une base de données \texttt{PostgreSQL} pour la gestion utilisateur (RBAC, JWT), un cache \texttt{Redis}, et un tableau de bord \texttt{React}. L’industrialisation repose sur un pipeline \texttt{Jenkins} avec déploiement dans l’environnement de l’entreprise.
+
+\vspace{0.5em}
+
+Le travail a démarré par la formulation précise de la problématique, suivie de la définition du cahier des charges fonctionnel et technique. Plusieurs diagrammes UML ont été élaborés pour modéliser les exigences métiers. Nous avons ensuite proposé et implémenté une architecture modulaire fondée sur des technologies telles que \texttt{Python}, \texttt{FastAPI}, \texttt{PostgreSQL}, \texttt{Redis}, \texttt{React}, \texttt{Docker} et \texttt{Jenkins}, permettant l’intégration du moteur d’analyse, du tableau de bord de métriques et de l’agent IA.
+
+\vspace{0.5em}
+
+Ce mémoire retrace les différentes étapes du projet, depuis la contextualisation et l’analyse des besoins, en passant par la modélisation fonctionnelle, la conception technique, le traitement des données issues de Jira, la mise en œuvre du pipeline agentique (LangGraph), jusqu’au déploiement final de la solution au sein de NTT DATA.
+
+\vspace{1em}
+
+Le rapport est structuré en cinq chapitres :
+
+\begin{itemize}
+	 \renewcommand{\labelitemi}{—}
+	\item \textbf{Chapitre 1 : Contexte de projet.} Ce chapitre introduit le contexte général du projet. Il présente l’entreprise d’accueil NTT DATA, les enjeux de la gestion de risques dans les projets pilotés par Jira, la problématique du projet, ses objectifs globaux et spécifiques, ainsi que la méthodologie Scrum adoptée.
+	
+	\item \textbf{Chapitre 2 : Conception fonctionnelle et technique.} Ce deuxième chapitre détaille les besoins des utilisateurs (RBAC, visualisation, alerte), l’analyse de l’existant, les choix technologiques, l’architecture globale de l’application full‑stack et l’architecture détaillée du module d’intelligence artificielle (agent conversationnel, outils LangGraph, cache Redis).
+	
+	\item \textbf{Chapitre 3 : Description et traitement des données.} Cette partie traite de l’extraction, du nettoyage et de la structuration des données issues de l’API Jira Data Center. Elle présente les champs normalisés, les métriques calculées (WIP ratio, stale ratio, overdue rate, coefficient de Gini), ainsi que les analyses exploratoires réalisées.
+	
+	\item \textbf{Chapitre 4 : Modélisation mathématique et algorithmique.} Il aborde la formulation du problème d’analyse des risques, les algorithmes de classification, le calcul des signaux agrégés, l’évaluation par règles métier, et l’intégration du raisonnement agentique via LangGraph (pensée, outils, génération finale).
+	
+	\item \textbf{Chapitre 5 : Implémentation et déploiement.} Finalement, ce chapitre décrit l’implémentation du backend FastAPI, de l’interface React, de l’orchestration Redis, ainsi que la conteneurisation Docker et le pipeline Jenkins. Les tests fonctionnels et de performance, les résultats obtenus en matière de pertinence des risques et d’actions recommandées sont également présentés.
+\end{itemize}
+
+Ce mémoire vise ainsi à démontrer comment l’intelligence artificielle agentique, appliquée aux données de gestion de projet issues de Jira, peut transformer l’analyse des risques et la prise de décision en un processus automatisé, rapide, transparent et résilient.

@@ -1,0 +1,273 @@
+\chapter{Contexte de projet}
+\vspace{-1.5em}
+\chaptertoc
+\vspace{-2.5em}
+\section{Introduction}
+
+Ce chapitre présente le cadre général du projet. Il débute par une brève description de l’entreprise d’accueil, \textbf{NTT DATA}. Ensuite, il expose la problématique liée à l’analyse des risques dans les projets pilotés par Jira, ainsi que les objectifs visés. Enfin, il introduit la méthodologie et la planification adoptées.
+
+\section{Organisme d’accueil}
+
+Cette section présente en détail l’organisme d’accueil du projet, en abordant successivement
+son historique, ses domaines d’expertise, son organisation interne.
+
+
+\subsection{Présentation de l’organisme d’accueil}
+
+\textbf{NTT DATA} est une multinationale japonaise spécialisée dans les services informatiques, le conseil technologique et l’intégration de systèmes. Filiale du géant des télécommunications \textbf{Nippon Telegraph and Telephone (NTT)}, l’entreprise opère à l’échelle mondiale pour accompagner la transformation numérique des organisations.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.25\linewidth]{assets/Nttdata_log.png}
+	\caption{Logo officiel de NTT DATA}
+	\label{fig:logo_ntt}
+\end{figure}
+
+Au Maroc, NTT DATA accompagne ses clients à travers une gamme complète de services informatiques, articulée autour de quatre axes clés :
+\begin{itemize}
+	\renewcommand{\labelitemi}{—}
+    \item \textbf{Applications d'entreprise} : Développement, gestion et maintenance des applications métier.
+    \item \textbf{Externalisation et processus métier} : Externalisation des processus métier (BPO) et services de recrutement spécialisé.
+    \item \textbf{Performance et veille} : Analyse et gestion de la performance, veille économique.
+    \item \textbf{Infrastructure et cloud} : Services d'infrastructure, services cloud et gestion des environnements technologiques.
+\end{itemize}
+
+\subsection{Fiche signalétique de l’entreprise}
+Ce tableau présente les informations permettant d’identifier l’entreprise NTT DATA.
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{0.9}
+	\caption{Fiche signalétique de NTT DATA Maroc}
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Information} & \textbf{Détails} \\
+		\hline
+		Nom & NTT DATA Maroc \\
+		\hline
+		Date de création & 2016 \\
+		\hline
+		Adresse & 5 Boulevard Abdellatif Benkadour, 7ème étage, Casablanca, Maroc \\
+		\hline
+		Téléphone & +212 5 31 06 29 90 \\
+		\hline
+		Forme juridique & Société à responsabilité limitée (SARL) \\
+		\hline
+		Directeur général & Frédéric Sabbah \\
+		\hline
+		Site Web & \href{https://www.nttdata.com}{www.nttdata.com} \\
+		\hline
+		Activité & Conseil en systèmes, logiciels informatiques et services numériques \\
+		\hline
+	\end{tabular}
+	\label{tab:fiche_ntt}
+\end{table}
+
+\subsection{Service et activité de l’entreprise}
+NTT DATA Maroc propose des services couvrant :
+\begin{itemize}
+	\renewcommand{\labelitemi}{—}
+	\item Développement et gestion d’applications d’entreprise
+	\item Externalisation des processus métier (BPO)
+	\item Veille économique, analyse et gestion de la performance
+	\item Services d’infrastructure et cloud
+	\item Recrutement et conseil en transformation digitale
+\end{itemize}
+
+\subsubsection{Domaines d’expertise et secteurs d’activité}
+
+La figure suivante \ref{fig:domaines_ntt} présente les principaux domaines d’expertise de NTT DATA Maroc.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{assets/organigramme_ntt.png}
+	\caption{Domaines d’expertise et secteurs d’activité de NTT DATA Maroc}
+	\label{fig:domaines_ntt}
+\end{figure}
+
+Comme l’illustre la figure \ref{fig:domaines_ntt}, NTT DATA Maroc structure son offre en trois pôles techniques principaux :
+
+\begin{enumerate}
+	\item \textbf{Cloud \& Infrastructure} : Services d’infrastructure cloud, gestion d’environnements hybrides et migration d’applications.
+	\item \textbf{Data \& IA} : Analyse et gestion de la performance, veille économique, intelligence artificielle et big data.
+	\item \textbf{Delivery \& Sales} : Développement et gestion d’applications d’entreprise, externalisation des processus métier (BPO), recrutement et conseil en transformation digitale.
+\end{enumerate}
+
+\subsubsection{Présence internationale}
+La figure \ref{fig:map_ntt} illustre la présence géographique de NTT DATA à travers le monde.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{assets/presence_international.jpeg}
+	\caption{Présence internationale de NTT DATA}
+	\label{fig:map_ntt}
+\end{figure}
+
+NTT DATA dispose d’une présence stratégique sur plusieurs continents, avec des bureaux clés notamment :
+\begin{itemize}
+	\item \textbf{Tokyo (siège mondial)} : Plus de 150 000 collaborateurs dans le monde
+	\item \textbf{Casablanca} : Siège social pour l’Afrique, moteur de la transformation digitale au Maroc
+	\item \textbf{Paris} : Centre européen majeur
+	\item \textbf{Washington} : Hub stratégique pour l’Amérique du Nord
+	\item \textbf{Dubaï} : Base pour les opérations au Moyen‑Orient
+\end{itemize}
+
+\subsection{Structure organisationnelle de l’entreprise}
+
+La Figure \ref{fig:secteurs-nttdata} illustre la structure organisationnelle de la filiale marocaine de NTT DATA. Bien que l'entreprise fasse partie d'un groupe mondial, elle dispose d'une organisation locale agile pour répondre aux enjeux du marché marocain et à ses objectifs de création de 1000 emplois d'ici 2025.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{assets/secteurs-nttdata.png}
+    \caption{Organigramme simplifié des principaux pôles de NTT DATA Maroc}
+    \label{fig:secteurs-nttdata}
+\end{figure}
+
+L'organigramme de NTT DATA Maroc s'articule autour des entités et pôles suivants :
+
+\begin{enumerate}
+    \item \textbf{Direction Générale}: Basée à Casablanca, elle est dirigée par le Country Manager, Frédéric Sabbah. Cette équipe définit la vision stratégique et pilote la croissance de l'entreprise au Maroc, en étroite collaboration avec la direction pour la région Moyen-Orient et Afrique.
+
+    \item \textbf{Pôles Techniques et d'Expertise}: Ils constituent le cœur opérationnel de l'entreprise et sont structurés pour délivrer des solutions complètes à ses clients. On y retrouve notamment:
+        \begin{itemize}
+            \item Un pôle \textbf{Cloud, Infrastructure et Sécurité}.
+            \item Un pôle \textbf{Data \& Intelligence Artificielle (IA)}.
+            \item Un pôle dédié aux \textbf{Applications d'entreprise}, avec une expertise particulière sur les solutions SAP.
+            \item Un pôle \textbf{Business Process Services (BPS)} pour l'externalisation de processus métier.
+        \end{itemize}
+
+    \item \textbf{Équipe Commerciale (Sales) et Marketing}: Chargée du développement du portefeuille clients, de la prospection commerciale et de la gestion des offres de services sur le marché marocain.
+
+    \item \textbf{Équipe des Opérations et du Recrutement}: Essentielle à la stratégie de croissance de l'entreprise, cette équipe gère la livraison des services (notamment pour le pôle BPS) et assure l'acquisition des talents pour atteindre l'objectif ambitieux de création d'emplois.
+
+    \item \textbf{Équipe Administrative et des Ressources Humaines (RH)}: Sous la supervision de la direction, cette équipe gère l'ensemble des aspects financiers, comptables, juridiques et administratifs, ainsi que la gestion du personnel.
+\end{enumerate}
+
+
+\subsection{Contexte interne : utilisation de Jira Data Center}
+La gestion de projets logiciels chez NTT DATA génère des volumes croissants de données opérationnelles, principalement via l’outil Jira. Chaque projet peut comporter des centaines, voire des milliers de tickets (tâches, bugs, évolutions), dont l’analyse manuelle pour la détection des risques, des goulots d’étranglement et des retards est devenue trop lente, peu fiable et inadaptée aux exigences de réactivité des équipes. Les chefs de projet et les équipes techniques consacrent un temps considérable à la supervision détaillée de chaque ticket, sans pouvoir bénéficier d’une vision synthétique et prédictive en temps réel.
+
+Face à ce constat, une initiative de modernisation du pilotage de projet a été lancée. L’objectif est de concevoir une plateforme complète, articulée autour d’un \textbf{agent IA conversationnel} comme cœur intelligent, capable d’interagir avec les données Jira de manière autonome et continue. Cette plateforme intègre plusieurs composantes clés :
+
+\begin{itemize}
+    \item Un moteur d’analyse IA qui extrait, normalise et interprète les données Jira pour détecter automatiquement les risques (retards, dépendances critiques, sous-charge ou surcharge d’affectation) et proposer des actions correctives.
+    \item Un tableau de bord de monitoring qui offre une vue d’ensemble synthétique, permettant aux responsables de suivre l’état de santé des projets sans avoir à examiner chaque ticket manuellement.
+    \item Des simulations Monte Carlo pour prédire la date de fin probable des projets, en prenant en compte l’incertitude des durées et des aléas de développement.
+    \item Un explorateur Jira qui structure et visualise les données issues de Jira sous une forme claire et ergonomique.
+    \item Un système de contrôle d’accès (RBAC) garantissant que chaque utilisateur (chef de projet, développeur, manager) ne voit que les informations correspondant à son périmètre.
+\end{itemize}
+
+Cette plateforme répond à un besoin urgent d’accélération de l’analyse : là où une équipe humaine mettrait plusieurs heures ou jours à détecter un risque émergent, l’agent IA opère 24h/24 et 7j/7, fournissant des alertes quasi immédiates. Elle permet également de surmonter les goulots d’étranglement liés à la supervision manuelle détaillée, en libérant du temps pour les tâches à forte valeur ajoutée. Enfin, la capacité prédictive (Monte Carlo) offre une aide à la décision proactive, transformant la gestion de projet réactive en une gestion anticipative et stratégique.
+
+Ainsi, le projet consiste à développer et intégrer l’ensemble de ces briques pour fournir à NTT DATA un outil innovant, permanent et fiable de pilotage de projet par l’IA.
+
+\section{Présentation du projet}
+Nous allons à présent détailler le projet sur lequel nous avons travaillé, en commençant par
+son contexte, ses enjeux et les objectifs visés.
+\subsection{Contexte du projet}
+
+La gestion de projets logiciels chez NTT DATA est en pleine mutation, confrontée à des besoins croissants en matière de réactivité, de fiabilité et d’anticipation des risques. Chaque projet génère des centaines, voire des milliers de tickets Jira (tâches, bugs, évolutions), dont l’analyse manuelle devient trop lente, fastidieuse et inadaptée aux exigences opérationnelles. Dans ce contexte, une initiative de modernisation du pilotage de projet a été lancée pour optimiser la détection des risques et des goulots d’étranglement, en particulier pour les équipes de NTT DATA Maroc.
+
+Cette plateforme innovante se fonde sur le développement d’un \textbf{agent IA conversationnel} capable d’extraire, de normaliser et d’analyser en continu les données issues de Jira. L’objectif global est de fournir aux chefs de projet et aux équipes techniques une vision synthétique et prédictive, avec des alertes automatiques sur les retards, les dépendances critiques et les anomalies d’affectation, ainsi que des recommandations d’actions correctives.
+
+Cette modernisation vise également à répondre à des besoins urgents d’accélération de l’analyse : là où une équipe humaine mettrait plusieurs heures ou jours à détecter un risque émergent, l’agent IA opère 24h/24 et 7j/7, délivrant des informations quasi immédiates. Elle permet de dépasser les limites de la supervision manuelle détaillée, trop lourde à l’échelle de nombreux tickets, et de libérer du temps pour les tâches à forte valeur ajoutée. En raison d’un souci d’implémentation progressive, le projet a été décliné en différentes briques fonctionnelles : tableau de bord de monitoring, simulation Monte Carlo pour la prédiction des dates de fin de projet, explorateur Jira structuré, et système de contrôle d’accès par rôles (RBAC). La première étape concerne notamment l’intégration de l’agent IA conversationnel comme cœur intelligent de la plateforme, pour une détection proactive des risques et des actions recommandées.
+
+\subsection{Problématique du projet}
+
+La gestion des projets logiciels chez NTT DATA, à travers l’outil Jira, constitue un défi opérationnel majeur, notamment lorsque les volumes de données deviennent massifs et que les équipes doivent superviser des centaines de tickets simultanément.
+
+Actuellement, les pratiques d’analyse et de pilotage se heurtent à :
+\begin{itemize}
+	\renewcommand{\labelitemi}{—}
+	\item un volume de données massif (tickets, commentaires, historiques) rendant l’exploitation manuelle fastidieuse.
+	\item une hétérogénéité des champs Jira selon les projets, empêchant toute normalisation automatique des informations.
+	\item une absence totale de détection automatique des anomalies (tickets bloqués, délais dépassés, dépendances critiques).
+	\item une réactivité limitée des équipes de pilotage, contraintes à une supervision séquentielle et chronophage.
+\end{itemize}
+Cela conduit à des risques non identifiés à temps, des retards qui se propagent en cascade, et une sous-utilisation des capacités prédictives pourtant nécessaires à une gestion proactive. L’absence d’un mécanisme d’intelligence artificielle capable d’extraire, normaliser et analyser en continu les données Jira limite fortement la capacité des équipes à anticiper les problèmes et à proposer des actions correctives rapidement.
+
+La problématique est donc de concevoir une plateforme intelligente, articulée autour d’un agent IA conversationnel, capable d’analyser en temps réel les données Jira, de détecter automatiquement les risques et les goulots d’étranglement, et de générer des recommandations actionnables, tout en offrant une vision prédictive (Monte Carlo) et un tableau de bord de monitoring adapté aux besoins des chefs de projet et des équipes techniques.
+\subsection{Objectifs du projet}
+
+\subsubsection{Objectifs généraux du projet}
+
+Ce projet vise à moderniser le pilotage des projets logiciels chez NTT DATA à travers la mise en place d’une plateforme full‑stack intelligente, articulée autour d’un agent IA conversationnel, d’un tableau de bord de monitoring, de simulations prédictives et d’un système de contrôle d’accès sécurisé. L’objectif principal est de renforcer la performance et la réactivité des équipes de gestion de projet en leur fournissant des outils d’analyse automatique des risques, de détection des goulots d’étranglement et d’aide à la décision.
+
+La démarche s’articule autour de plusieurs axes stratégiques :
+
+\begin{itemize}
+	\renewcommand{\labelitemi}{—}
+	\item Développer un agent IA (LangGraph + Mistral) pour l’extraction, la normalisation et l’analyse en continu des données Jira, avec génération automatique de risques et de recommandations.
+	\item Concevoir un tableau de bord de métriques et de visualisations (React) offrant aux chefs de projet une vue synthétique et en temps réel de la santé des projets.
+	\item Mettre en place une authentification sécurisée par rôles (RBAC, JWT, PostgreSQL) pour garantir la confidentialité et la granularité des accès selon les profils utilisateurs.
+	\item Intégrer un cache Redis pour optimiser les performances d’accès aux données fréquemment sollicitées.
+	\item Industrialiser la solution via Docker (conteneurisation) et Jenkins (intégration et déploiement continus).
+\end{itemize}
+
+\subsubsection{Objectifs spécifiques de la plateforme IA}
+
+Dans cette première phase, l’objectif est de développer une solution dédiée à l’analyse automatique des risques projet à partir des tickets Jira. 
+
+La solution devra :
+
+\begin{itemize}
+	\renewcommand{\labelitemi}{—}
+	\item Extraire et normaliser les tickets Jira via l’API REST, en gérant l’hétérogénéité des champs entre les projets.
+	\item Calculer des signaux de santé projet (WIP ratio, stale ratio, overdue rate, coefficient de Gini) à partir des données historiques et en temps réel.
+	\item Implémenter un moteur de règles combiné à un LLM (Mistral hébergé à Tétouan, accessible via API) pour générer des risques, des actions correctives et des recommandations contextuelles.
+	\item Fournir une interface React avec visualisations de métriques et un explorateur Jira structuré.
+	\item Assurer la sécurité des échanges (JWT) et la gestion fine des rôles utilisateurs.
+	\item Conteneuriser l’application avec Docker et orchestrer le déploiement via Jenkins.
+\end{itemize}
+
+L’approche proposée repose sur l’utilisation d’algorithmes d’intelligence artificielle et d’un agent conversationnel capable d’opérer 24h/24 et 7j/7, permettant non seulement de réduire les délais de détection des anomalies, mais aussi d’anticiper les retards et de maximiser la réactivité des équipes de pilotage.
+
+Ce travail constitue une première brique essentielle, posant les bases techniques et méthodologiques sur lesquelles s’appuieront les prochaines phases du projet, visant à étendre l’analyse prédictive (simulations Monte Carlo) et l’optimisation à d’autres dimensions de la gestion de projet (budget, ressources humaines, qualité logicielle).
+
+\subsection{Conduite du projet}
+
+Cette section présente la méthodologie et la planification du projet, en décrivant les approches et étapes clés pour sa réussite.
+
+\subsubsection{Méthodologie de travail}
+
+La méthodologie adoptée est Scrum, une approche agile itérative qui facilite le suivi du projet, encourage l’adaptabilité, la collaboration et l’amélioration continue à travers des sprints courts.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{assets/scrum_method.png}
+	\caption{Méthode Scrum}
+	\label{fig:scrum_ntt}
+\end{figure}
+
+\paragraph{Les rôles Scrum dans notre projet}
+
+Les trois rôles principaux dans notre projet sont les suivants :
+
+\begin{itemize}
+	\renewcommand{\labelitemi}{—}
+	\item \textbf{Product Owner} : Le top management de NTT DATA Maroc (direction générale), responsable de la vision stratégique, du backlog prioritaire et de la validation des livrables.
+	\item \textbf{Scrum Master} : Anis Khairi et Mohammed Amine Elmeknassi, supervisent le processus Scrum, organisent les réunions quotidiennes, répartissent les tâches et identifient les blocages.
+	\item \textbf{Équipe Intelligence Artificielle} : composée de moi-même, Nour Derraz et Image Chaoui, responsable de la conception de l’agent IA, du développement de la plateforme full‑stack, de l’analyse des données Jira et de la documentation technique.
+\end{itemize}
+
+\paragraph{Cérémonies Scrum}
+
+Chaque jour, de 9h à 9h45, nous tenons un \textbf{Daily Stand-up} à distance (visioconférence) avec Mohammed Amine Elmeknassi. Cette réunion sert à faire le point sur l’avancement, identifier les blocages et coordonner les actions. La majorité du travail s’effectue à distance, avec une présence physique au bureau de NTT DATA Casablanca une fois par semaine pour les réunions de synthèse.
+
+Chaque semaine, nous produisons une présentation (PPT) listant l’ensemble des réalisations accomplies. Mohammed Amine Elmeknassi transmet ce compte rendu à Anis Khairi, puis ils le remontent au top management de NTT DATA Maroc afin de suivre l’avancement global du projet.
+
+Avant chaque sprint, la \textbf{Sprint Planning Meeting} permet de sélectionner les éléments prioritaires du Product Backlog à développer. La \textbf{Sprint Review} présente les fonctionnalités développées aux parties prenantes, notamment le top management de NTT DATA Maroc et les responsables techniques.
+
+\subsubsection{Planification du projet}
+
+Bien que Scrum repose sur une gestion itérative des priorités, un diagramme de Gantt a été utilisé pour visualiser les grandes étapes du projet (développement de l’agent IA, intégration de l’API Jira, mise en place du tableau de bord, simulation Monte Carlo, RBAC, déploiement Docker/Jenkins), leur enchaînement et leurs dépendances.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{assets/diagramme_gantt.png}
+	\caption{Diagram of Gant}
+	\label{fig:gant_ntt}
+\end{figure}
+
+
+\subsection{Conclusion}
+
+Pour conclure ce premier chapitre, nous avons présenté NTT DATA Maroc en soulignant son contexte historique, son activité et sa structure organisationnelle. Nous avons également exposé la problématique du projet – la lenteur et le manque de fiabilité de l’analyse manuelle des tickets Jira – ainsi que les objectifs généraux et spécifiques de la plateforme à agent IA. Enfin, nous avons abordé la méthodologie Scrum adoptée, les rôles de l’équipe, les cérémonies quotidiennes et hebdomadaires, ainsi que la planification globale. Dans le prochain chapitre, nous aborderons l’analyse des besoins, la conception fonctionnelle ainsi que l’architecture technique du projet.
