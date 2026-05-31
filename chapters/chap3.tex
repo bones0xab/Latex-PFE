@@ -1,0 +1,189 @@
+\chapter{Description des données}
+\label{ch:description_donnees}
+
+\section{Introduction}
+Ce chapitre est consacré à la description approfondie du cycle de vie des données au sein de notre plateforme d’analyse de risques basée sur l’intelligence artificielle. La performance des algorithmes de détection de risques, de l’agent conversationnel (LangGraph + Mistral) et des simulations prédictives (Monte Carlo) dépend directement de la qualité, de la structure et de la fraîcheur des données extraites de l’écosystème Jira de NTT DATA Maroc. Nous détaillons d’abord les sources et les méthodes d’extraction des données, puis leur structure interne. Ensuite, nous présentons les analyses et visualisations clés qui alimentent le tableau de bord React. Enfin, nous décrivons le pipeline de normalisation et de préparation qui transforme les flux JSON bruts en signaux standardisés prêts à être consommés par les moteurs d’IA et de simulation.
+
+\section{Source des données}
+La source primaire et unique de notre plateforme est l’API REST de Jira (version 2), qui expose l’intégralité des données opérationnelles des projets logiciels suivis par NTT DATA Maroc. L’extraction est conçue pour être résiliente, asynchrone et respectueuse des limites de débit imposées par Jira.
+
+\subsection{Authentification et endpoints utilisés}
+L’accès à l’API est sécurisé par des sessions HTTP basées sur des jetons d’authentification (Basic Auth ou token personnel). Les principaux endpoints exploités sont :
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{assets/sourceD_authentification.png}
+\caption{Schema d'authentification}
+\label{fig:authentification}
+\end{figure}    
+
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \texttt{/rest/api/2/search} : récupération des tickets (issues) avec champs personnalisables et pagination.
+    \item \texttt{/rest/api/2/project} : obtention de la liste des projets et de leurs métadonnées.
+    \item \texttt{/rest/api/2/project/\{projectKey\}/components} : extraction des composants logiciels.
+    \item \texttt{/rest/api/2/issue/\{issueKey\}/comment} : chargement des commentaires pour l’analyse sémantique.
+    \item \texttt{/rest/api/2/issue/\{issueKey\}/changelog} : historique des transitions de statuts et d’assignations.
+    \item \texttt{/rest/api/2/issue/\{issueKey\}} : récupération complète d’un ticket spécifique (tous les champs, y compris les champs personnalisés, pièces jointes, liens).
+    \item \texttt{/rest/api/2/issue/\{issueKey\}/transitions} : obtention des transitions de workflow possibles pour un ticket (utile pour simuler des changements d’état).
+    \item \texttt{/rest/api/2/issue/\{issueKey\}/watchers} : liste des watchers d’un ticket (peut être pertinent pour l’analyse de communication).
+\end{itemize}
+
+\subsection{Requêtes JQL (Jira Query Language)}
+
+Le \textbf{Jira Query Language (JQL)} est un langage de requête structuré propre à Jira Data Center, conçu pour interroger la base de données des tickets, projets, commentaires et historiques. Il permet de filtrer, trier et extraire uniquement les informations pertinentes selon des critères métiers précis (projet, dates, statuts, priorités, etc.). L’utilisation de JQL est essentielle pour limiter la charge sur l’API et ne conserver que les données nécessaires aux calculs de métriques et à l’entraînement de l’agent IA.
+
+\paragraph{Bénéfices de l’utilisation de JQL dans notre plateforme}
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Réduction du volume de données transférées (seules les issues répondant aux critères temporels sont extraites).
+    \item Amélioration des performances : les requêtes paginées sont exécutées plus rapidement grâce à des index optimisés par Jira.
+    \item Flexibilité : adaptation dynamique des requêtes selon le contexte (analyse temps réel vs historique Monte Carlo).
+    \item Respect des quotas de l’API (rate limiting) en limitant le nombre de tickets chargés.
+\end{itemize}
+
+\paragraph{Architecture de l’intégration des requêtes JQL dans l’application}
+
+Figure \ref{fig:architecture_jql} illustre l’architecture d’intégration des requêtes JQL dans le backend FastAPI.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{assets/diagrams/arch_jql.jpg}
+\caption{Architecture d’intégration des requêtes JQL dans le backend FastAPI}
+\label{fig:architecture_jql}
+\end{figure} 
+
+La construction et l’exécution des requêtes JQL sont orchestrées par le backend FastAPI. Deux mécanismes de déclenchement sont mis en œuvre :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Tâche de fond} : toutes les 30 minutes, une routine asynchrone exécute une série de requêtes JQL prédéfinies (ex. historique des 365 derniers jours) pour maintenir le cache Redis à jour.
+    \item \textbf{Requête à la demande} : lorsqu’un utilisateur rafraîchit le tableau de bord, le backend construit dynamiquement la requête JQL correspondant au projet sélectionné et aux filtres actifs (ex. “created >= -30d” pour les tickets récents).
+\end{itemize}
+Les requêtes sont paramétrées pour éviter les injections et garantissent la pagination automatique via \texttt{startAt} et \texttt{maxResults}. Les exemples suivants illustrent les deux cas d’usage principaux.
+
+\paragraph{Exemples de requêtes utilisées}
+Pour l’analyse temps réel des projets actifs :
+\begin{verbatim}
+project = "HPCMOROCCO" AND created >= -30d ORDER BY updated DESC
+\end{verbatim}
+Pour l’historique nécessaire aux simulations de Monte Carlo (vélocité) :
+\begin{verbatim}
+project = "HPCMOROCCO" AND statusCategory = Done AND resolved >= -365d
+\end{verbatim}
+
+Ces requêtes sont exécutées soit périodiquement par la tâche de fond, soit à la demande lors du rafraîchissement de l’interface.
+\subsection{Gestion des limites de taux et optimisation}
+L’API Jira impose des quotas stricts (ex. 100 requêtes par minute). Notre module \texttt{Fetch.py} implémente les mécanismes suivants :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Détection des en‑têtes \texttt{X-RateLimit-Remaining} et \texttt{Retry-After}.
+    \item Backoff exponentiel avec temporisation progressive en cas de réponse HTTP 429 (trop de requêtes) ou 503 (service indisponible).
+    \item Parallélisation contrôlée par \texttt{ThreadPoolExecutor} pour les lots de tickets (batch de 200), sans dépasser les limites.
+    \item Mise en cache des résultats dans Redis avec une durée de vie (TTL) configurable (15 minutes pour les données volatiles, 24 heures pour l’historique Monte Carlo).
+\end{itemize}
+
+\section{Description des données}
+Les données brutes retournées par Jira sont au format JSON, riches mais hétérogènes. Après analyse, nous retenons uniquement les champs nécessaires aux calculs de métriques et à l’inférence IA.
+
+\subsection{Champs des tickets (issues)}
+Chaque ticket est représenté par un objet contenant :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Identité} : clé (ex. \texttt{HPCMOROCCO-123}), URL, résumé (\texttt{summary}), description (\texttt{description}).
+    \item \textbf{Statut et typologie} : statut courant (\texttt{status}), type de ticket (\texttt{issuetype} : Bug, Tâche, Story, Épopée), priorité (\texttt{priority}).
+    \item \textbf{Dates} : création (\texttt{created}), dernière mise à jour (\texttt{updated}), échéance (\texttt{duedate}), résolution (\texttt{resolutiondate}).
+    \item \textbf{Assignation} : assigné (\texttt{assignee}) avec son nom et son identifiant, rapporteur (\texttt{reporter}).
+    \item \textbf{Estimations} : estimation initiale (\texttt{timeoriginalestimate}), temps restant (\texttt{timeestimate}), temps passé (\texttt{timespent}).
+    \item \textbf{Composants et versions} : liste des composants logiciels, versions d’affectation et de correction.
+\end{itemize}
+
+\subsection{Commentaires et historique}
+L’analyse sémantique (risques cachés, blocages implicites) nécessite l’accès aux commentaires et aux changements d’état. Nous récupérons pour chaque ticket :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Commentaires} : auteur, date, contenu textuel.
+    \item \textbf{Changelog} : chaque transition (\texttt{status}, \texttt{assignee}, \texttt{resolution}) avec ancienne valeur, nouvelle valeur et date de changement.
+\end{itemize}
+Ces données sont conservées sous forme de listes associées au ticket et servent à calculer le temps passé dans chaque statut (cycle time) et à extraire des schémas de blocage récurrents.
+
+\subsection{Métadonnées de projet}
+Les informations générales sur les projets (clé, nom, catégorie, lead, type) sont stockées séparément pour enrichir les analyses contextuelles.
+
+\subsection{Volumétrie et pagination}
+Un projet actif de taille moyenne chez NTT DATA peut contenir plusieurs milliers de tickets. Pour éviter les limites de pagination (50 ou 100 résultats par appel), nous utilisons la pagination basée sur le champ \texttt{startAt} et une taille de page de 100. Les appels sont parallélisés pour accélérer l’extraction de l’historique complet (ex. 365 jours) en moins de 30 secondes.
+
+\section{Analyse et Visualisation des Données}
+Notre plateforme ne se limite pas à un affichage brut ; elle transforme les données Jira en indicateurs d’aide à la décision (KPI), en alertes de risque et en prévisions. Les visualisations sont intégrées au tableau de bord React à l’aide de bibliothèques comme Recharts ou Plotly.
+
+\subsection{Analyse des tickets}
+\label{subsec:analyse_tickets}
+L’analyse des tickets permet d’identifier la répartition de la charge et l’état d’avancement général. Les indicateurs suivants sont calculés en temps réel :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Distribution par statut} : histogramme des tickets dans chaque statut (\texttt{À faire}, \texttt{En cours}, \texttt{En revue}, \texttt{Fermé}) – permet de détecter visuellement les goulots d’étranglement.
+    \item \textbf{Ratio des travaux en cours (WIP)} : \( \text{WIP} = \frac{\text{Nb tickets dans statuts actifs (hors Fermé)}}{\text{Total tickets non fermés}} \). Un seuil > 0.6 déclenche une alerte de saturation.
+    \item \textbf{Âge moyen des tickets actifs} : moyenne des jours depuis la création pour les tickets non résolus.
+    \item \textbf{Tickets bloqués ou “stale”} : tout ticket sans mise à jour depuis plus de 5 jours est marqué \textit{stale}. Le \textit{stale ratio} = \( \frac{\text{Nb tickets stale}}{\text{WIP}} \) donne une mesure de l’inertie.
+\end{itemize}
+Ces métriques sont affichées sous forme de cartes de valeur et de graphiques à barres dans le tableau de bord.
+
+\subsection{Analyse des métriques de santé projet}
+\label{subsec:analyse_metriques}
+Nous avons défini quatre métriques avancées qui synthétisent la santé d’un projet :
+\begin{enumerate}
+    \item \textbf{Overdue rate} : pourcentage de tickets dont la date d’échéance (\texttt{duedate}) est dépassée sans résolution.
+    \item \textbf{Coefficient de Gini (concentration de charge)} : calculé sur la répartition des tickets actifs par assigné. Un coefficient élevé (> 0.4) signifie qu’un seul développeur porte trop de tickets – risque de point de blocage unique.
+    \item \textbf{Tendance de vélocité} : évolution hebdomadaire du nombre de tickets résolus, extraite de l’historique des \texttt{resolutiondate}.
+    \item \textbf{Satisfaction de délai (SLI)} : \( \frac{\text{Nb tickets résolus avant leur due date}}{\text{Total résolus}} \times 100 \). Un indicateur composite de performance.
+\end{enumerate}
+Ces métriques sont représentées sous forme de jauges, de courbes temporelles et de diagrammes en violon dans le tableau de bord.
+
+\subsection{Analyse prédictive par Monte Carlo}
+\label{subsec:analyse_montecarlo}
+La simulation Monte Carlo est utilisée pour prévoir la date de fin du projet en fonction du backlog restant et de la vélocité historique. Le processus est le suivant :
+\begin{enumerate}
+    \item Extraction des tickets résolus sur les 365 derniers jours.
+    \item Calcul de la vélocité hebdomadaire (nombre de tickets clôturés par semaine). On obtient une distribution empirique.
+    \item Comptage du nombre de tickets actuellement ouverts (non résolus).
+    \item Simulation de 10 000 scénarios : chaque semaine, on tire aléatoirement une vélocité dans la distribution historique, on soustrait le backlog jusqu’à ce qu’il soit nul.
+    \item On extrait les percentiles (p50, p75, p85, p95) des dates de fin obtenues.
+\end{enumerate}
+L’interface affiche une courbe de probabilité cumulée et un intervalle de confiance (ex. “90% de chances que le projet soit terminé avant le 15 décembre”).
+
+\section{Préparation des données}
+Avant toute analyse, les données brutes issues de Jira subissent un pipeline de normalisation et de transformation. Ce pipeline est implémenté dans les modules \texttt{Fetch.py}, \texttt{Normalisation.py} et \texttt{metrics.py}.
+
+\subsection{Normalisation structurelle}
+Le JSON hétérogène retourné par l’API est passé dans des modèles Pydantic stricts (ex. \texttt{NormalizedIssueModel}) qui :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Valident les types et la présence des champs obligatoires.
+    \item Réorganisent l’information en quatre blocs : \texttt{identity}, \texttt{temporality}, \texttt{semantics}, \texttt{actors}.
+    \item Convertissent les chaînes ISO en objets \texttt{datetime} (fuseau UTC) pour faciliter les calculs temporels.
+\end{itemize}
+La normalisation élimine les variations inutiles (ex. champs \texttt{fields} imbriqués) et produit un objet Python homogène.
+
+\subsection{Standardisation sémantique}
+Les statuts Jira étant libres et personnalisables par chaque projet, nous appliquons une fonction de mappage (\texttt{jira\_canonical\_status}) qui traduit les noms bruts (ex. “En Cours”, “In Progress”, “Open”) vers quatre catégories canoniques :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \texttt{todo} : tout statut initial ou ouvert non commencé.
+    \item \texttt{in\_progress} : travail engagé.
+    \item \texttt{done} : statuts de résolution (Fermé, Résolu, Livré).
+    \item \texttt{unknown} : statut non reconnu (pour debug).
+\end{itemize}
+Cette standardisation permet de calculer le WIP ratio indépendamment des conventions de nommage.
+
+\subsection{Ingénierie des caractéristiques pour Monte Carlo}
+La simulation nécessite une distribution de vélocité hebdomadaire. À partir de l’historique des tickets résolus, nous construisons un vecteur de comptages par semaine (modèle “sac de billes”). Ce format est beaucoup plus efficace pour les tirages aléatoires vectorisés via NumPy que l’itération sur chaque ticket.
+
+\subsection{Stockage et mise en cache}
+Pour éviter des appels répétitifs à l’API et garantir la réactivité :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Les tickets normalisés sont stockés dans Redis avec une clé du type \texttt{project:HPCMOROCCO:issues} et un TTL de 15 minutes.
+    \item Les résultats de la simulation Monte Carlo sont conservés pendant 24 heures (car l’historique varie peu à court terme).
+    \item En cas d’indisponibilité de Redis, le système bascule sur des fichiers JSON locaux (cache de secours) pour ne pas interrompre le service.
+\end{itemize}
+
+\section{Conclusion}
+Ce chapitre a exposé l’intégralité du cycle de vie des données au sein de notre plateforme : extraction depuis l’API REST de Jira, normalisation rigoureuse via des modèles Pydantic, calcul de métriques de santé projet, simulation prédictive par Monte Carlo, et visualisation dans un tableau de bord React. La mise en cache intelligente (Redis) et les mécanismes de résilience garantissent des performances élevées tout en respectant les quotas de l’API. Ces données préparées et enrichies servent directement de combustible à l’agent IA conversationnel (LangGraph + Mistral) et aux algorithmes de détection de risques, dont l’implémentation est détaillée dans le chapitre suivant.

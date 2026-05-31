@@ -4,7 +4,7 @@
 
 \onehalfspacing
 
-%\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{fontspec} % pour les polices Unicode
 \usepackage[T1]{fontenc}  % Ajout recommandé pour le français
 \usepackage[french]{babel}
@@ -57,7 +57,7 @@
 \usepackage{cite}
 \usepackage{listings, minted}
 \usepackage[acronym]{glossaries}
-\usepackage[Bjornstrup]{fncychap}
+\usepackage[Sonny]{fncychap}   % or remove entirely
 \usepackage{booktabs}
 %\usepackage{bbm}
 \usepackage{dsfont}  % à la place de bbm
@@ -86,8 +86,8 @@
 \setmainlanguage{french}
 \setotherlanguage{arabic}
 \definecolor{headerblue}{RGB}{70,130,180}
-\newfontfamily
-\quranfont[Script=Arabic]{Amiri Quran}
+% \newfontfamily
+% \quranfont[Script=Arabic]{Amiri Quran}
 \usepackage{listings}
 \lstdefinelanguage{json}{
 	basicstyle=\ttfamily\small,
@@ -187,19 +187,19 @@
 	
 	\include{chapters/chap1}
 	\include{chapters/chap2}
-	% %\include{chapters/chap3}
+	\include{chapters/chap3}
+	\include{chapters/chap4}
 	% \include{chapters/merge}
-	% \include{chapters/chap4}
 	% \include{chapters/chap5}
 	% \include{chapters/chap6}
-	% %\include{chapters/revue}
+	\include{chapters/revue}
 	
+
+	\include{Intro_pages/Conclusion}
+	\renewcommand{\bibname}{Références}
+	\bibliography{references}
+	\include{Intro_pages/annexe}
 	
-	% \include{Intro_pages/Conclusion}
-	% \renewcommand{\bibname}{Références}
-	% \bibliography{references}
-	% \include{Intro_pages/annexe}
-	
+\renewcommand\refname{Références} % Pour les articles ou rapports avec le titre "References"
+\bibliography{reference}
 \end{document}
-%\renewcommand\refname{Références} % Pour les articles ou rapports avec le titre "References"
-%\bibliography{reference}

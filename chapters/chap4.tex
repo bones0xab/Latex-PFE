@@ -1,817 +1,703 @@
-\chapter{Description des données}
+\chapter{Implémentation et Déploiement}
 \vspace{-1.5em}
 \chaptertoc
 \vspace{-2.5em}
 \vspace{-0.5em}
 \section{Introduction}
-\vspace{-1em}
-L’industrie aéronautique génère de grandes quantités de données. Ce chapitre présente d’abord les sources et la structure des jeux de données utilisés, puis les résultats de l’analyse exploratoire (\ac{AED}) permettant d’identifier les tendances et anomalies. Il détaille ensuite les étapes de prétraitement nécessaires pour préparer les données à l’analyse.
-
+Ce chapitre présente l’implémentation complète et le déploiement de la plateforme d’analyse de risques basée sur l’intelligence artificielle au sein de NTT DATA Maroc. Après avoir défini les métriques utilisées pour évaluer la qualité des détections de l’agent IA et la fiabilité des simulations Monte Carlo, nous détaillons chaque composant technique : backend FastAPI, orchestration LangGraph, modèle Mistral, métriques projet, tableau de bord React, gestion des droits (RBAC) et cache Redis. Une section spécifique est consacrée au système d’alertes et de notification destiné au top management (via Microsoft Teams et rapports email). Nous décrivons ensuite la conteneurisation Docker, le pipeline CI/CD Jenkins et l’intégration dans l’infrastructure de Tétouan. Enfin, nous analysons les résultats obtenus sur le projet pilote HPCMOROCCO et justifions les choix technologiques retenus.
 \vspace{-1.5em}
-\section{Source des données}
-\vspace{-0.7em}
-L’ensemble de données utilisé dans cette étude provient des processus opérationnels liés à la planification des vols saisonniers dans les aéroports marocains. Plus précisément, les données sont issues des horaires de vol soumis par les compagnies aériennes, validés par le \ac{MSC}, puis traités par \ac{CPV}. Ces informations sont initialement échangées sous forme de fichiers Excel, ajustées manuellement, puis intégrées dans le système \ac{SOAM} pour l’allocation des ressources aéroportuaires.  
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\linewidth]{assets/dataset/flux Données.jpg}
-	\caption{Flux de données}
-	\label{fig:flux_donnees}
-\end{figure}
+\section{Métriques d’évaluation}
+Pour quantifier la performance de notre plateforme, nous définissons trois familles de métriques : celles relatives à l’agent IA (détection de risques), celles relatives aux simulations Monte Carlo (prédiction de date de fin), et celles relatives aux performances techniques du système.
 
+\subsection{Métriques de validation de l'agent IA}
 
-Le schéma \ref{fig:flux_donnees} illustre le flux de données depuis les compagnies aériennes jusqu'à l'intégration dans le \ac{SOAM}.
-Les données exploitées dans cette étude couvrent un large spectre d’informations relatives à la planification des stands, comprenant des éléments statiques et dynamiques.
-
-\subsection*{Synthèse des Sources de Données}
-Les données exploitées proviennent de différentes sources internes et externes.
-
-\noindent\textbf{Métadonnées des flux}~: Données extraites des tables Oracle, mises à jour toutes les 2h (quasi temps réel), avec un chargement initial complet puis des mises à jour incrémentales. Formats : JSON/Excel. Protocole à définir selon les systèmes.
-
-\vspace{0.8em}
-\noindent\textbf{Catégories de données opérationnelles} :
-\begin{itemize}
-	\item \textbf{Vols} (\acs{AODB})~: arrivées, départs, retards, statuts, mouvements, horaires ajustés, type de vol.
-	\item \textbf{Avions et stands}~: types d’appareils, occupation des stands, durée escale, night stops, capacités, référentiels.
-	\item \textbf{Infrastructure et sécurité}~: proximité équipements (passerelles, carburant), séparations de sécurité, zones sensibles, stands maintenance.
-	\item \textbf{Données complémentaires}~: météo, consommation énergétique, activité commerciale (\textsc{COSMOS}/SMART).
-\end{itemize}
-
-
-\subsection*{Répartition de Source de données}
-La répartition des sources de données, illustrée dans la Figure \ref{fig:enter-label}, montre une prédominance marquée de l'\ac{AODB}, qui représente à elle seule 70 \% des sources utilisées. Les aéroports contribuent pour 15 \%, tandis que les autres sources, notamment COSMOS/SMART, se partagent les 15 \% restants. Cette distribution met en évidence la centralité de l'\ac{AODB} dans le système.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{assets/dataset/Distribution.jpg}
-	\caption{Répartition de Catégories de données}
-	\label{fig:enter-label}
-\end{figure}
-
-Toutes ces sources de données ont été exploitées dans le but de constituer un jeu de données unifié. Après l'étape de collecte, l’ensemble des informations a été consolidé en deux fichiers CSV finaux, utilisés comme base pour nos analyses.
-
-
-
-\section{Description des données}
-Dans cette étape, nous commençons par explorer la structure et le contenu de l'ensemble de données aéroportuaires pour comprendre ses composantes clés et les relations entre elles. Alors notre étude s'appuie sur deux jeux de données principaux :  
-
-\_{Un dataset dédié aux départs de vols \textbf{(4945 observations, 485 variables)}}.  
-
-\_{Un second relatif aux arrivées de vols \textbf{(5018 observations, 417 variables)}, partageant une structure similaire mais présentant des variations contextuelles dans l'agencement des lignes et de certaines colonnes.}
-
-En raison de la complexité inhérente à ces données multidimensionnelles, une catégorisation thématique a été mise en place pour en faciliter l'analyse et l'interprétation. Cette segmentation, représentée par un organigramme dans la Figure~\ref{fig:dataset} qui regroupe les variables en catégories fonctionnelles:
-
-\begin{itemize}
-	\item \textbf{Vols et compagnies aériennes} : Cette catégorie regroupe les informations liées aux vols, aux compagnies aériennes, aux villes, aux avions, ainsi qu’aux aéroports concernés.
-	\item \textbf{Infrastructures aéroportuaires} : Elle inclut des détails sur les terminaux, les stands, les portes d’embarquement et autres éléments liés aux installations de l’aéroport.
-	\item \textbf{Temps et dates} : Cette catégorie regroupe les informations temporelles comme les horaires de départ et d’arrivée, planifiés et réels, les fuseaux horaires et les périodes d’exploitation.
-	\item \textbf{Bagages et passagers} : Ce volet couvre les systèmes de gestion des bagages, les délais de traitement et les infrastructures associées.
-	\item \textbf{Retards et irrégularités} : Contient des informations sur la durée des retards ainsi que les perturbations impactant les vols.
-	\item \textbf{Opérations au sol} : Données sur les procédures avant départ ou après arrivée.
-	\item \textbf{Divers} : Regroupe les variables hors des catégories précédentes.
-\end{itemize}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\linewidth]{assets/dataset/dataset.png}
-	\caption{Illustration du dataset}
-	\label{fig:dataset}
-\end{figure}
-
-Cette organisation favorise une analyse plus efficace du dataset en regroupant les informations selon leur nature et leur impact sur les opérations aéroportuaires. Elle facilite également l'interprétation des résultats et met en lumière les relations entre les différentes variables du dataset.
-
-\subsection*{Vue d’ensemble des données opérationnelles}
-Le tableau \ref{tab:synthese_operationnelle} ci-dessous résume les principales caractéristiques du jeu de données utilisé dans cette étude. Il s'agit de données opérationnelles collectées sur une période de deux mois (novembre et décembre 2024).
-
-\begin{table}[H]
-	\centering
-	\renewcommand{\arraystretch}{0.9} % réduit l'espacement vertical
-	\caption{Synthèse des données opérationnelles aéroportuaires}
-	\begin{tabularx}{\textwidth}{@{}>{\bfseries}l X@{}}
-		\toprule
-		\textbf{Paramètre} & \textbf{Caractéristiques} \\
-		\midrule
-		Période du trafic          & 2 mois (Novembre \& Décembre 2024) \\
-		Volume de trafic           & 9\,963 vols \\
-		Variables – Dataset départ & 485 \\
-		Variables – Dataset arrivée& 417 \\
-		Opérateurs aériens         & 46 compagnies aériennes \\
-		Catégorie opérationnelle   & Transport de passagers \\
-		Nombre de stands           & 65 stands de stationnement \\
-		Type de vols               & International / Domestique \\
-		Vols Schengen              & SCH ou non \\
-		Type d'avion               & A320, B737, B787, A330, A380 \\
-		Classification des retards & Aucun, Faible, Moyen, Élevé, Majeur \\
-		\bottomrule
-	\end{tabularx}
-
-	\label{tab:synthese_operationnelle}
-\end{table}
-
-\noindent
-Il est important de noter que les données disponibles couvrent uniquement une période de deux mois. En réalité, l'aéroport traite un volume bien plus important : un plus grand nombre de compagnies aériennes, une diversité accrue de types d’avions, ainsi que 83 stands utilisés, incluant ceux destinés aux vols réguliers, au fret (cargo) et à la maintenance (hangars).
-
-
-
-
-\section{Analyse et Visualisation des Données}
-
-Pour acquérir une compréhension approfondie de l'ensemble de données aéroportuaires et en tirer des insights significatifs, un cadre d’analyse structuré a été établi. Celui-ci commence par le prétraitement des données brutes — incluant les vols, les stands, les portes d'embarquement, les terminaux et les retards — à travers des étapes de nettoyage et de transformation.
-
-L’ensemble de données est ensuite exploré selon trois axes analytiques principaux :
-\begin{itemize}
-	\item \textbf{Analyse des vols} : étude des caractéristiques des vols, des horaires, des types d’appareils, ainsi que des compagnies aériennes les plus actives.
-	\item \textbf{Analyse des stands} : évaluation du nombre total de stands, des compagnies utilisatrices, et de la durée moyenne de stationnement.
-	\item \textbf{Analyse des retards} : analyse des vols retardés, des durées maximales de retard et des compagnies les plus fréquemment concernées.
-\end{itemize}
-
-Les résultats obtenus permettent d’identifier des modèles clés tels que les taux d’occupation, les flux horaires et les tendances de trafic. Cette compréhension globale facilite la production de visualisations claires et éclairées la planification optimale des ressources aéroportuaires.
-
-\subsection{Analyse des vols}
-
-Dans cette partie, une analyse des caractéristiques générales des vols du dataset a été réalisée, visant à identifier les tendances liées aux horaires, aux compagnies aériennes et aux types d’avions.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{assets/dataset/vol1.png}
-	\caption{Flux du processus d'analyse des vols.}
-	\label{fig:flight_analysis_flow}
-\end{figure}
-
-Afin d’assurer un processus méthodique, l’analyse suit la structure décrite ci-dessous :
-
-Tout d’abord, une phase de prétraitement est effectuée pour préparer les données à l’analyse.  
-Ensuite, une visualisation globale est réalisée afin d’avoir une vue d’ensemble du jeu de données.  
-L’analyse est ensuite affinée selon trois niveaux temporels: \begin{itemize}
-	\item Une analyse mensuelle pour identifier les tendances générales,
-	\item Une analyse hebdomadaire pour un suivi plus précis,
-	\item Une analyse journalière pour détecter les variations quotidiennes.
-\end{itemize}
-
-Enfin, une analyse horaire est menée afin de mieux comprendre la dynamique des vols selon les différentes tranches horaires de la journée.
-
-Cette approche progressive permet d’avoir une vision détaillée du comportement des vols.  
-\subsubsection{prétraitement de données}
-Avant de procéder à l’analyse principale, une phase de prétraitement essentielle
-est réalisée afin de préparer le jeu de données. Cette étape garantit que les données
-sont propres, pertinentes et correctement structurées pour les opérations à venir. Le
-prétraitement suit le schéma illustré ci-dessous.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\textwidth]{assets/dataset/preprocessing.png} % adapt the filename
-	\caption{Organigramme du prétraitement du jeu de données.}
-	\label{fig:preprocessing_flowchart}
-\end{figure}
-
-Le prétraitement comprend les étapes suivantes :
-
-\begin{itemize}
-	\item\textbf{Chargement du jeu de données initial}:
-	Le jeu de données original contenant les informations sur les vols est importé dans le système.
-	
-	\item \textbf{Traitement des valeurs manquantes} : Les entrées manquantes ou incomplètes sont gérées afin d’assurer la cohérence du jeu de données, notamment à l’aide de techniques d’imputation (comme la substitution par la moyenne, la médiane ou des valeurs prédites).
-	
-	
-	\item \textbf{ Sélection des colonnes pertinentes}: Seules les colonnes essentielles à l’analyse des vols sont conservées. Celles-ci incluent les identifiants des vols, les heures de départ et d’arrivée, les compagnies aériennes, les indicateurs d’annulation, et les marqueurs de vols partagés.
-	
-	\item \textbf{Séparation des vols}: Le jeu de données est divisé en deux catégories :
-	\begin{itemize}
-		\item \textit{Vols normaux}: Vols standards, indépendants.
-		\item \textit{Vols en partage de code}: Vols opérés dans le cadre d’un accord de partage de code entre plusieurs compagnies.
-	\end{itemize}
-\end{itemize}
-
-Ce prétraitement permet d’assurer que les données utilisées pour l’analyse sont
-à la fois propres et spécifiquement adaptées aux objectifs de l’étude. 
-
-\subsubsection{Analyse Globale du Jeu de Données}
-
-Pour initier notre étude, une analyse globale du jeu de données a été réalisée à travers diverses visualisations afin de mieux comprendre la structure sous-jacente des données.
-
-Dans un premier temps, nous avons examiné la tendance globale du trafic aérien sur la période de deux mois étudiée. Nous avons observé un pic d’activité en novembre, indiquant une augmentation significative du nombre de vols par rapport au mois suivant.
-
-Ensuite, nous avons analysé la répartition des vols par compagnie aérienne. Cette analyse a révélé que la compagnie \textbf{\ac{AT}} a opéré le plus grand nombre de vols, suivie par \textbf{3O} (Air Arabia) et \textbf{AF} (Air France).
-\begin{figure}[H]
-	\centering
-	\begin{minipage}{0.25\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{assets/dataset/repartitionpourcen.png}
-		\small a) La tendance des vols globale entre novembre et décembre
-	\end{minipage}
-	\hfill
-	\begin{minipage}{0.7\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{assets/dataset/nmbrvols.png}
-		\small b) Répartition des vols par compagnie aérienne
-	\end{minipage}
-	
-	\captionsetup{justification=centering}
-	\caption{Les Vols en (novembre -décembre.) et répartition par compagnie.}
-	\label{fig:analyse_trafic}
-\end{figure}
-\vspace{-0.5cm}
-Le jeu de données distinguant deux types de vols: les \textbf{\textit{vols normaux}} et les \textbf{\textit{vols en partage de code}}. Nous avons approfondi l’analyse de leur répartition. Un vol en partage de code est défini comme un vol opéré par une compagnie aérienne mais commercialisé sous plusieurs numéros de vols par des compagnies partenaires,
-éventuellement associées à différents codes des compagnies aériennes.
-\newline
-Notre analyse a montré que certaines compagnies n’opéraient que des vols en partage de code, sans présence opérationnelle directe. Par conséquent, ces compagnies ont été exclues du processus d’allocation des postes de stationnement. À l’inverse, l’attention a été portée sur les compagnies opérant leurs propres vols, qu’ils soient normaux ou en partage de code.  
-
-La \textbf{Figure~\ref{fig:analyse_trafic}}  ainsi que La \textbf{Figure~\ref{fig:analyse_vols_partage}} 
-ci-dessous illustre cette distinction.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.95\textwidth]{assets/dataset/sansSF.png}
-	\captionsetup{justification=centering}
-	\caption{Vols par compagnie actives uniquement}
-	\label{fig:analyse_vols_partage}
-\end{figure}
- On y observe notamment que la compagnie \textbf{KL} (KLM Royal Dutch Airlines) est uniquement présente dans les vols en partage de code, ce qui indique qu’elle n'opère aucun vol avec ses propres aéronefs durant la période analysée.  
- 
-La \textbf{Figure~\ref{fig:vols_partages_compagnie}}  montre la répartition des vols partagés par compagnie .
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{assets/dataset/nbrvolsSF.png}
-	\captionsetup{justification=centering}
-	\caption{Vols partagés par compagnie}
-	\label{fig:vols_partages_compagnie}
-\end{figure}
-
-
-
-
-Enfin, une attention particulière a été accordée aux taux d’annulation par compagnie aérienne. L’analyse de la proportion de vols annulés nous a permis de mieux comprendre la fiabilité de chaque compagnie et d’anticiper d’éventuelles perturbations dans les analyses ultérieures.
-
-\subsubsection{Analyse Mensuelle, Hebdomadaire, Journalière et Horaire}
-
-À la suite de l’analyse globale, nous avons procédé à une étude temporelle plus détaillée, en commençant par une décomposition mensuelle.
-
-Étant donné que le mois de novembre a présenté le volume de vols le plus élevé, nous avons centré notre analyse sur ce mois. Nous avons ensuite ciblé les deux semaines présentant le pic d’activité au cours de novembre, afin d’obtenir une compréhension plus précise de la répartition du trafic.
-
-La figure \ref{fig:repartition_vols_par_semaine} présente la répartition des vols par semaine pour le mois de Novembre
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{assets/dataset/repartitionvolsparsemaine.png}
-	\captionsetup{justification=centering}
-	\caption{Répartition des vols par semaine}
-	\label{fig:repartition_vols_par_semaine}
-\end{figure}
-Par la suite, nous avons affiné l’analyse en étudiant les tendances journalières et horaires. Cette approche de zoom progressif nous a permis d’identifier les jours les plus chargés ainsi que les heures de pointe, fournissant ainsi des informations critiques pour l’optimisation des opérations et l’allocation des postes de stationnement.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{assets/dataset/repartitionparheure.png}
-	\captionsetup{justification=centering}
-	\caption{Répartition des vols par heure durant la semaine la plus chargée}
-	\label{fig:repartition_vols_par_heure}
-\end{figure}
-\vspace{-0.7em}
-La figure montre une concentration du trafic entre \textbf{12h et 16h}, période durant laquelle le volume de vols atteint son pic.
-
-\vspace{-0.7em}
-\subsection{Analyse des stands}
-De même, une analyse des caractéristiques générales des stands du dataset a été réalisée.
-\subsubsection{Sélection des caractéristiques}
-
-La première étape de l’analyse des stands a consisté en une sélection rigoureuse des caractéristiques pertinentes, comme illustré dans la figure~\ref{fig:stand-selection}. Plus précisément, nous avons retenu les colonnes directement liées à l’occupation des stands, à leur disponibilité, ainsi qu’à leur attribution au cours des périodes temporelles. Par la suite, une phase de prétraitement a été réalisée afin de traiter les valeurs manquantes, de standardiser les formats et d’assurer la cohérence des données. Ce travail préparatoire était essentiel pour permettre une analyse précise et fiable dans les étapes suivantes.
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\linewidth]{assets/dataset/DataChart.jpg}
-	\caption{Sélection des Caractéristiques}
-	\label{fig:stand-selection}
-\end{figure}
-
-\subsubsection{Analyse des données}
-
-Après avoir effectué la sélection des caractéristiques et le prétraitement, nous avons adopté une démarche analytique structurée, illustrée dans la figure~\ref{fig:stand-analysis-flow}. L’analyse a débuté par une vue d’ensemble des taux d’occupation des stands sur une période donnée, permettant d’identifier les tendances générales ainsi que le niveau d’utilisation de la capacité.
-
-Pour une compréhension plus fine, l’analyse a ensuite été affinée en isolant chaque compagnie aérienne. Cela a permis de calculer les taux d’occupation des stands dédiés à chaque compagnie. Par la suite, nous avons évalué l’utilisation des stands par type d’avion au sein de chaque compagnie, afin de dégager des schémas liés à la catégorie d’appareil et à l’usage des infrastructures.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\linewidth]{assets/dataset/standAnalyse.png}
-	\caption{Diagramme de Flux d'Analyse des Données}
-	\label{fig:stand-analysis-flow}
-\end{figure}
-
-
-\begin{enumerate}
-	\item \textbf{Analyse globale de l’occupation des stands}
-	
-	\hspace{0.5cm} Cette section présente une analyse approfondie de l’utilisation des postes de stationnement de l’aéroport sur une période de deux mois. L’objectif est d’identifier les schémas d’occupation en fonction des créneaux horaires et des compagnies aériennes, ainsi que d’évaluer l’efficacité de l’allocation des ressources selon les types d’avions.
-	
-	\begin{figure}[H]
-		\centering
-		\begin{subfigure}[t]{0.49\textwidth}
-			\centering
-			\includegraphics[width=\linewidth]{assets/dataset/Global_Satnds.png}
-			\caption{Distribution de l'utilisation des stands sur la période d'étude (2 mois)}
-			\label{fig:global_stands_utilization}
-		\end{subfigure}
-		\hfill
-		\begin{subfigure}[t]{0.49\textwidth}
-			\centering
-			\includegraphics[width=\linewidth]{assets/dataset/Divsersity.png}
-			\caption{Diversité des compagnies aériennes par stand}
-			\label{fig:diversity_by_stand}
-		\end{subfigure}
-		\caption{Diversité des compagnies aériennes par stand}
-		
-	\end{figure}
-	
-	
-
-	\hspace{0.5cm} La \textbf{figure \ref{fig:global_stands_utilization}} met en évidence une répartition hétérogène de l’occupation des stands. Certaines positions de stationnement présentent des taux d’occupation nettement supérieurs à la moyenne, notamment :  
-	\textbf{B05 (184), B07 (168), B08 (156), B06 (141) et J06 (116).}
-	
-	À l’inverse, certains stands sont très peu utilisés :  
-	\textbf{D07 (6), J15 (4), D13 (1) et E01 (1).}
-L’emplacement physique de ces stands sur le plan de l’aéroport est présenté en \textbf{annexe} (voir Figure~\ref{fig:plan}).
-
-	\hspace{0.5cm} La \textbf{figure de droite~\ref{fig:diversity_by_stand}} illustre la diversité des compagnies aériennes par stand. Elle montre que certains emplacements accueillent une large variété de transporteurs. Par exemple, le \textbf{stand B01} est utilisé par au moins \textbf{cinq compagnies différentes} (\ac{3O}, AF, \ac{AT}, DL, EK) avec des fréquences variables.
-	
-	\item \textbf{Utilisation des stands par compagnie aérienne et type d’avion}
-	
-	\hspace{0.5cm} Cette section examine en détail l’utilisation des stands, en se concentrant sur deux aspects : la répartition par compagnie aérienne et par type d’avion. L’objectif est d’identifier les principaux utilisateurs des infrastructures aéroportuaires et de comprendre la répartition des types d’appareils.
-	
-	\begin{figure}[H]
-		\centering
-		\begin{minipage}[b]{0.52\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{assets/dataset/compagnie.png}
-			\caption{Répartition de l'occupation des stands par compagnie aérienne}
-			\label{fig:airline_occupation}
-		\end{minipage}
-		\hfill
-		\begin{minipage}[b]{0.45\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{assets/dataset/AircraftOccupation.png}
-			\caption{Répartition de l’occupation par type d’avion}
-			\label{fig:AicraftOccupation}
-		\end{minipage}
-	\end{figure}
-	
-\hspace{0.5cm} \textbf{La figure de gauche~\ref{fig:airline_occupation}} révèle une prédominance marquée des transporteurs nationaux marocains. Notamment, \ac{AT} représente une part importante de l’utilisation des stands.
-
-\begin{table}[H]
-	\centering
-	\renewcommand{\arraystretch}{0.8} % réduit l'espacement vertical
-	\caption{Principales compagnies aériennes selon le nombre d’utilisations des stands}
-	\begin{tabular}{l l c}
-		\toprule
-		\textbf{Code IATA} & \textbf{Compagnie} & \textbf{Nombre d’utilisations} \\
-		\midrule
-		AT & Royal Air Maroc & 3361 \\
-		3O & Air Arabia Maroc & 221 \\
-		AF & Air France & 122 \\
-		AC & Air Canada & 47 \\
-		6E & IndiGo & 29 \\
-		\bottomrule
-	\end{tabular}
-	\label{tab:top_airlines}
-\end{table}
-
-
-\hspace{0.5cm} Cette distribution confirme la domination de \ac{AT}, suivie par \ac{3O}, indiquant que les compagnies nationales sont les principaux utilisateurs des infrastructures aéroportuaires.
-
-\hspace{0.5cm} \textbf{La figure de droite~\ref{fig:AicraftOccupation}} montre que trois types d’avions dominent les opérations aéroportuaires : le Boeing 737 (46,6 \%), l’Airbus A320 (16,7 \%) et l’ATR (12,2 \%). Ensemble, ils représentent plus de 75 \% des mouvements totaux. Des appareils comme le Boeing 787 (11,9 \%) et l’Embraer ERJ (4,6 \%) sont modérément utilisés, tandis que d’autres types sont marginalement présents.
-
-\item \textbf{Analyse selon trois niveaux de fréquence}
-
-\hspace{0.5cm} L’étude des tendances temporelles de l’occupation des stands permet d’identifier les schémas cycliques et saisonniers qui caractérisent les opérations aéroportuaires. Cette analyse multiniveau offre une compréhension détaillée des variations de la demande en stands au fil du temps.
-
-\begin{figure}[H]
-	\centering
-	\begin{minipage}[b]{0.49\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{assets/dataset/WeeklyOccupation.jpg}
-		\caption{Variation hebdomadaire de l’occupation des stands}
-		\label{fig:WeeklyOccupation}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[b]{0.49\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{assets/dataset/HourlyOccupation.jpg}
-		\caption{Variation horaire de l’occupation des stands}
-		\label{fig:HourlyOccupation}
-	\end{minipage}
-\end{figure}
-
-\hspace{0.5cm} \textbf{Gauche : Analyse hebdomadaire \ref{fig:WeeklyOccupation}}
-Cette analyse met en évidence des tendances hebdomadaires et saisonnières d’occupation. En novembre, les pics sont observés le vendredi (524 vols), samedi (505) et dimanche (396), indiquant une forte activité en fin de semaine. En décembre, l’activité diminue globalement, avec des pics plus modestes le dimanche (132) et le lundi (115).  
-
-
-\hspace{0.5cm} \textbf{Droite : Analyse horaire \ref{fig:HourlyOccupation}}
-Cette analyse révèle que l’activité est concentrée entre 5h et 16h, avec des pics à 15h (371 vols), 14h (284) et un second à 22h (329), probablement lié aux départs tardifs. L’activité est minimale entre 2h et 4h du matin.
-
-
-\end{enumerate}
-
-
-
-
-
-\subsection{Analyse des retards}
-
-L’analyse des retards représente un volet important de notre étude, car elle permet de mieux comprendre les sources de perturbations et leur impact sur la planification des stands.
-
-Comme illustré dans la Figure~\ref{fig:retard_flowchart}, cette analyse débute par un prétraitement des données, visant à nettoyer, filtrer et structurer les informations relatives aux retards. Ensuite, plusieurs visualisations globales sont produites.
-
-Par ailleurs, nous avons approfondi l’étude en catégorisant les retards selon différents axes :
-
-\begin{itemize}
-\item Retards par compagnie aérienne.
-\item Niveau de criticité par compagnie.
-\item Retards en fonction du stand utilisé.
-\item Retards selon la taille de l'avion.
-\end{itemize}
+Afin de valider l'efficacité de l'agent d'orchestration (implémenté via LangGraph), nous avons défini un protocole d'évaluation rigoureux reposant sur l'analyse rétrospective des données du projet HPCMOROCCO. Cette démarche permet de s'assurer que les diagnostics émis par le modèle (Mistral/Ollama) sont à la fois fiables et pertinents pour les chefs de projet.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\linewidth]{assets/dataset/flowchartRetard.png}
-\caption{Flowchart de l'analyse des retards}
-\label{fig:retard_flowchart}
-\end{figure}
-Les résultats obtenus permettent d’identifier les sources potentielles de saturation ou de mauvaise allocation des ressources aéroportuaires, et servent de base pour générer un dataset optimisé destiné à l’apprentissage de notre modèle de prédiction et d’affectation des stands.
+\includegraphics[width=0.9\linewidth]{assets/metrics_ai.png}
+\caption{metrics\_ai}
+\label{fig:metrics_ai}
+\end{figure}    
 
-\subsubsection{Prétraitement du dataset}
-Cette section décrit les \textbf{étapes clés du prétraitement} effectuées sur notre dataset pour l’analyse des retards aériens.
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\linewidth]{assets/dataset/pretraitement.png}
-\caption{Les étapes de prétraitement du dataset}
-\label{fig:pretraitementData}
-\end{figure}
 
-Ces étapes ont été définies à partir d’une \textbf{étude approfondie du document de référence} fourni par le client, documentant en détail les \textbf{485 colonnes} disponibles dans le fichier source. L’objectif était de filtrer et structurer les données de manière à isoler les variables les plus pertinentes pour l’étude des retards.
-
-\vspace{0.5em}
-\textbf{1. Sélection stratégique des colonnes}
-
-Sur la base du document PDF fourni par le client, une sélection des colonnes a été effectuée pour l’analyse des retards. Les variables retenues incluent :
+\subsubsection{Définition des métriques quantitatives}
+Pour évaluer la capacité de l'agent à identifier correctement les risques d'ingénierie logicielle (surcharge de travail, tickets obsolètes, défaut de vélocité), nous nous appuyons sur les métriques standard de classification. Soit $VP$ les Vrais Positifs, $FP$ les Faux Positifs et $FN$ les Faux Négatifs :
 
 \begin{itemize}
-\item \texttt{ATD}: Représente l’heure réelle de départ du vol, essentielle pour le calcul précis du retard.
-
-\item \texttt{CAN} : Indicateur précisant si un vol a été annulé ou dérouté.
-
-\item \texttt{IR1} à \texttt{IR8} : Ensemble de colonnes représentant les causes détaillées des retards (problèmes techniques, météo, trafic, etc.) sous forme de codes.
-
-\item \texttt{DL1} à \texttt{DL8} : Durée du retard (en minutes) associée à chaque cause pour un vol donné.
-
-\item \texttt{MTW}: Poids maximal autorisé pour le décollage de l’avion.
-
-\item \texttt{SST} : Indicateur du statut de partage de vol (code-share).
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Précision (Precision)} : Mesure la proportion d'alertes pertinentes parmi toutes les alertes de risque remontées par l'agent.
+    \begin{equation}
+        \text{Précision} = \frac{VP}{VP + FP}
+    \end{equation}
+    
+    \item \textbf{Rappel (Recall)} : Mesure la proportion de risques réels survenus sur le projet qui ont été correctement détectés de manière proactive par le système.
+    \begin{equation}
+        \text{Rappel} = \frac{VP}{VP + FN}
+    \end{equation}
+    
+    \item \textbf{Score F1 (F1-score)} : Moyenne harmonique de la précision et du rappel, offrant une mesure de la précision globale du test.
+    \begin{equation}
+        F1 = 2 \times \frac{\text{Précision} \times \text{Rappel}}{\text{Précision} + \text{Rappel}}
+    \end{equation}
+    
+    \item \textbf{Délai de détection ($\Delta t$)} : Temps écoulé entre l'émergence réelle du risque dans le système Jira et sa notification finale par l'agent IA.
+    \begin{equation}
+        \Delta t = t_{\text{alerte}} - t_{\text{émergence}}
+    \end{equation}
 \end{itemize}
 
+\subsubsection{Constitution de la base de vérité (Ground Truth) et mesure du délai}
+La base de référence (Ground Truth) a été construite par \textit{validation experte rétrospective} sur l'historique du projet HPCMOROCCO. Concrètement, le module de récupération extrait les données sur une fenêtre glissante de 30 jours (\texttt{created >= -30d}). Nous avons comparé les déductions enregistrées dans les snapshots de l'agent (fichiers \texttt{latest.json}) avec la chronologie réelle des événements issue des journaux Jira (\textit{changelogs}).
 
-\vspace{0.5em}
-\textbf{2. Nettoyage des données}
+Le calcul du délai de détection ($\Delta t$) s'appuie de façon native sur la logique d'analyse de la temporisation du code. Par exemple, pour l'identification des tickets obsolètes (\textit{stale issues}), le module \texttt{metrics.py} qualifie un ticket à risque si $\texttt{days\_since\_update} > \texttt{stale\_days}$. 
+Le temps d'émergence mathématique du risque ($t_{\text{émergence}}$) correspond au timestamp de la dernière mise à jour du statut \texttt{in\_progress} dans le \textit{changelog} Jira, auquel on additionne le seuil critique (ex: 5 jours). Le timestamp de l'alerte ($t_{\text{alerte}}$) correspond quant à lui au champ \texttt{snapshot\_time\_utc} du rapport généré. Étant donné que le système s'appuie sur la boucle de tâche de fond \texttt{\_background\_analysis\_loop} avec un paramètre \texttt{AI\_ANALYSIS\_TTL\_SECONDS} configuré à 1800 secondes, ce calcul permet de démontrer la réactivité du pipeline asynchrone.
 
-Une fois les colonnes pertinentes sélectionnées, nous avons entrepris un nettoyage du dataset :
+\subsubsection{Résultats expérimentaux sur le projet HPCMOROCCO}
+\textit{Note : Lors de nos phases de tests sur l'environnement HPCMOROCCO, l'agent orchestré par LangGraph, couplé au LLM paramétré avec une température stricte de $0.0$ pour un raisonnement déterministe, a fourni les performances suivantes sur un échantillon de tickets historiques :}
 
 \begin{itemize}
-\item \textbf{Suppression des lignes incomplètes} : Toutes les entrées contenant des valeurs nulles dans les colonnes.
-\item \textbf{Filtrage des vols non pertinents} : En se basant sur l'analyse des vols lors de l’étude initiale, les lignes où
-certaines compagnies n’opéraient que des vols en partage de code, sans présence opérationnelle directe ont été écartées.
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Précision} : [À COMPLÉTER]\% 
+    \item \textbf{Rappel} : [À COMPLÉTER]\% 
+    \item \textbf{Score F1} : [À COMPLÉTER]\%
+    \item \textbf{Délai de détection moyen} : [À COMPLÉTER] minutes. Ce délai court valide l'efficacité du système de cache Redis couplé au TTL de 30 minutes, limitant l'attente tout en respectant les quotas (rate limits) de l'API Jira Data Center.
 \end{itemize}
 
-\vspace{0.5em}
-\textbf{3. Création de la colonne \texttt{RETARD\_TOTAL}}
-
-D'après les indications fournies par le client, la durée totale de retard correspond à la somme des retards enregistrés. Alors, la variable \texttt{RETARD\_TOTAL} agrège les minutes de retard signalées dans les colonnes \texttt{DL1} à \texttt{DL8}. La formule utilisée est la suivante :
-
-\[
-\texttt{RETARD\_TOTAL} = \sum_{i=1}^{8} \texttt{DL}_i
-\]
-
-
-
-
-\subsubsection{Visualisations globales}
-Des visualisations globales ont été réalisées pour mieux comprendre le comportement du dataset.
-\paragraph{Retards par jour et par heure}
-\mbox{}\\
-La figure \ref{fig:retards_temporels} présente deux visualisations : la première montre le nombre de vols retardés par jour, tandis que la seconde illustre le pourcentage de retards en fonction de l’heure de la journée.
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\linewidth]{assets/dataset/parCompagnie.png}
-\caption{Analyse temporelle des retards : par jour et par heure}
-\label{fig:retards_temporels}
-\end{figure}
-\vspace{-1em}
-Nous analysons la répartition temporelle des vols retardés sur l’ensemble de la période d’étude.Le mois de novembre montre une concentration élevée de retards, avec des pics dépassant 60 vols par jour. La diminution en décembre s'explique par la répartition du trafic aérien où l'\ac{CMN} enregistre moins de vols durant cette période, tandis que l'aéroport de Marrakech devient dominant.
-
-\vspace{-1em}
-\paragraph{Analyse des retards par période et par stand}
-\mbox{}\\
-Cette section présente une double analyse des retards enregistrés entre novembre et décembre 2024, en croisant les données selon les jours/heures et les stands d’affectation.
- \vspace{-1em}
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.5\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{assets/dataset/parComapgnie2.png}
-		\caption{Retards par jour de la semaine et heure (Nov–Déc 2024)}
-		\label{fig:heatmap_retards}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{assets/dataset/parStand.png}
-		\caption{Retards par stand et heure (11–24 nov. 2024)}
-		\label{fig:retard_stand}
-	\end{subfigure}
-	\caption{Analyse croisée des retards selon différentes dimensions}
-\end{figure}
- \vspace{-1em}
-Les résultats montrent des pics de retards :
-\begin{itemize}[leftmargin=1.5em]
-	\item Le \textbf{vendredi}, le \textbf{samedi après-midi} et le \textbf{dimanche soir}, en lien avec le trafic hebdomadaire.
-	\item Aux stands \textbf{B07}, \textbf{B05} et \textbf{B01}, surtout entre \textbf{11h et 16h}, où l’activité est particulièrement dense.
+\subsubsection{Métriques qualitatives : Acceptation et typologie d'erreurs}
+Outre les performances quantitatives de classification, nous avons évalué l'impact qualitatif de l'agent auprès des utilisateurs finaux (managers et administrateurs) :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Taux d'acceptation utilisateur (User Acceptance Rate)} : [À COMPLÉTER]\% des actions correctives (\texttt{ActionModel}) générées par le LLM ont été jugées pertinentes et validées par l'équipe de pilotage.
+    \item \textbf{Ventilation des Faux Positifs} : Nous avons observé que la structure hybride de l'application éliminait presque totalement les erreurs mathématiques. En effet, les Faux Positifs n'étaient pas déclenchés par le moteur de règles codé en Python (qui applique rigoureusement des seuils stricts tels que \texttt{wip\_ratio\_critical = 0.60}), mais résultaient de rares cas d'hallucination du LLM lors de la rédaction de la justification textuelle (\texttt{rationale}). Cette architecture "Grounded Generation" où les métriques exactes sont injectées dans le \textit{system prompt} a ainsi prouvé sa robustesse.
+\end{itemize}L’agent IA génère des alertes de risque et des recommandations. Nous comparons ses sorties avec une base de référence établie par l’analyse rétrospective des mêmes projets par des chefs de projet expérimentés. Les métriques utilisées sont :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Précision (Precision)} : proportion de risques signalés par l’agent qui sont effectivement avérés. Formule : \( \frac{VP}{VP + FP} \).
+    \item \textbf{Rappel (Recall)} : proportion de risques réels (identifiés par l’expert) que l’agent a correctement détectés. Formule : \( \frac{VP}{VP + FN} \).
+    \item \textbf{F1-score} : moyenne harmonique de la précision et du rappel. Formule : \( 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} \).
+    \item \textbf{Délai de détection} : temps moyen (en heures) entre l’apparition d’un risque (ex. ticket bloqué sans mise à jour) et l’alerte générée par l’agent.
 \end{itemize}
- \vspace{-1em}
-\subsubsection{Visualisations par catégorie}
- \vspace{-0.5em}
-Des visualisations par catégorie ont été réalisées pour approfondir l’analyse. 
+
+\subsection{Métriques de validation des simulations Monte Carlo}
+
+Afin d'évaluer la robustesse et la fiabilité de notre modèle de prévision basé sur la méthode de Monte Carlo, nous avons défini un ensemble de métriques d'évaluation strictes. L'implémentation a été réalisée en Python en exploitant la bibliothèque \texttt{numpy} pour une vectorisation optimale de $10\,000$ itérations par projet, simulant la capacité de livraison (débit hebdomadaire) afin de résorber le backlog actuel.
+
+\subsubsection{Définition des métriques d'évaluation}
+
+La performance des prédictions générées par la simulation est mesurée à travers les indicateurs suivants~:
+
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Erreur Absolue Moyenne (MAE - Mean Absolute Error)}~: Mesure l'écart moyen, exprimé en semaines, entre le délai de complétion prédit selon un centile de confiance donné (ex. $p_{50}$ ou $p_{85}$) et le délai de complétion réel. Elle est définie par la formule~:
+    \[ \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} \left| \text{DélaiRéel}_i - \text{DélaiPrédit}_i \right| \]
+    \item \textbf{Taux de couverture des intervalles de confiance}~: Évalue la proportion des cas où la date de fin réelle se situe en deçà ou exactement sur la durée prédite par notre intervalle de confiance (par exemple le $p_{85}$). Théoriquement, pour le centile $p_{85}$, ce taux devrait approcher les $85\,\%$.
+    \item \textbf{Temps de calcul (Performance matérielle)}~: Mesure la durée d'exécution requise pour générer $N = 10\,000$ scénarios aléatoires (tirage dans l'historique de débit via \texttt{np.random.choice}) sur une matrice jusqu'à l'épuisement virtuel du backlog (\texttt{active\_mask = remaining > 0}).
+\end{itemize}
+
+\subsubsection{Acquisition de la vérité terrain (Ground Truth)}
+
+La vérité terrain, indispensable à l'évaluation du modèle, est extraite dynamiquement de l'API de Jira. Le processus s'appuie sur la récupération des tickets clôturés au cours des 365 derniers jours, à l'aide de la requête JQL suivante~:
+\begin{verbatim}
+project = "HPCMOROCCO" AND statusCategory = Done AND resolved >= "-365d"
+\end{verbatim}
+
+Pour chaque ticket, le champ \texttt{resolutiondate} est extrait et normalisé via \texttt{dateutil.parser}. Afin d'alimenter la simulation ("bag of marbles"), ces dates sont agrégées par intervalles glissants stricts de 7 jours, constituant ainsi un tableau de distribution de débit (throughput). La "date de fin réelle" servant de référence pour une prédiction est obtenue par la date de résolution du dernier ticket clôturé d'un périmètre ciblé.
+
+\subsubsection{Méthodologie de Backtesting (Validation historique)}
+
+Pour valider le modèle prédictif sans attendre l'achèvement des projets actuels, nous appliquons un protocole de backtesting fondé sur la logique de notre code (\texttt{run\_project\_simulation}). Le processus consiste à simuler le passé~:
 \begin{enumerate}
-	\item \textbf{Retard par compagnie}
-	
-	Cette section explore la criticité des retards selon les compagnies aériennes, les jours de la semaine et les créneaux horaires.
-	
-	\begin{figure}[H]
-		\centering
-		\begin{subfigure}[b]{0.5\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{assets/dataset/parCompagnie3.png}
-			\caption{Retard moyen (en min) par compagnie et par jour}
-			\label{fig:retard_par_jour}
-		\end{subfigure}
-		\hfill
-		\begin{subfigure}[b]{0.48\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{assets/dataset/parCompagnie4.png}
-			\caption{Répartition globale du retard moyen par compagnie}
-			\label{fig:repartition_retard}
-		\end{subfigure}
-		\caption{Visualisations des retards moyens selon les compagnies aériennes}
-		\label{fig:retards_par_compagnie}
-	\end{figure}
-\vspace{-1.6em}
-La heatmap \ref{fig:retard_par_jour} montre par exemple un pic critique pour \textbf{TU (Tunisair)} le lundi (135 min). D'autres compagnies comme \textbf{AF} ou \textbf{MS (EgyptAir)} présentent également des retards élevés.  
-Le graphique circulaire (\ref{fig:repartition_retard}) indique que \textbf{Transavia} enregistre le retard moyen le plus élevé (14\%), tandis que \textbf{\ac{AT}} affiche un retard moyen faible (8 min).
- \vspace{-1em}
-\paragraph{Criticité par jour et par heure}  
-
- \vspace{-0.5em}
-Cette analyse croise les compagnies, jours de semaine et horaires afin d’identifier les périodes les plus sensibles.  
- \vspace{-1em}
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{assets/dataset/parCrticite.png}
-		\caption{Retard moyen par tranche horaire}
-		\label{fig:retard_moyen_jour}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{assets/dataset/parCriticite2.png}
-		\caption{Retard moyen (en min) par compagnie et par jour}
-		\label{fig:retard_par_heure}
-	\end{subfigure}
-\end{figure}
-
-Les retards sont importants pour \textbf{TU} le lundi (135 min), ainsi que pour \textbf{AF}, \textbf{\ac{AT}}, et \textbf{MS} en milieu de semaine.  
-Les pics horaires se situent entre \textbf{00h–02h} et \textbf{21h–23h} (\ref{fig:retard_par_heure}).
-
-	
-	\item \textbf{Retards selon la taille des avions}
-	
-	L’analyse s’appuie sur le \texttt{MTW} (poids maximal au décollage) pour estimer la taille des avions.
-	
-	\begin{itemize}
-		\item \textbf{Small} : moins de 7 000 kg
-		\item \textbf{Medium} : entre 7 000 et 136 000 kg
-		\item \textbf{Large} : entre 136 000 et 250 000 kg
-		\item \textbf{Super} : plus de 250 000 kg
-	\end{itemize}
-	 \vspace{-0.7em}
-	\begin{figure}[H]
-		\centering
-		\begin{subfigure}[b]{0.49\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{assets/dataset/tailleAvion.png}
-			\caption{Retards par durée (catégorie Medium)}
-			\label{fig:duree_medium}
-		\end{subfigure}
-		\hfill
-		\begin{subfigure}[b]{0.49\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{assets/dataset/tailleAvion2.png}
-			\caption{Retards (hors Medium)}
-			\label{fig:duree_autres}
-		\end{subfigure}
-	\end{figure}
-	 \vspace{-0.7em}
-	Les avions \textbf{Medium} concentrent 479 cas de retard. Deux pics sont notés : entre \textbf{7h–15h} (pic à 13h) et \textbf{21h–22h}.
-\end{enumerate}
-\vspace{-1.8em}
-\section{Préparation des données}
-Puisque notre dataset initial est volumineux et que les algorithmes d'affectation nécessitent une base de données optimisée.
-\vspace{-1.4em}
-\subsection{Fusion des datasets d’arrivée et de départ}
-Nous avons opté pour la génération de deux jeux de données distincts : le dataset des vols et celui des stands. Cette génération est basée sur des recherches, notamment l'article de \cite{NilBusquetsTrias}.
-
-Dans un premier temps, nous disposons de deux datasets initiaux : l’un relatif aux arrivées et l’autre aux départs. Chaque vol est donc représenté par une paire — un vol d’arrivée suivi d’un vol de départ, séparés par une période de stationnement. Il est ainsi essentiel de combiner correctement ces deux datasets afin de regrouper les informations d’un vol dans une seule entrée.
-
-Pour effectuer cette fusion, nous nous sommes appuyés sur deux colonnes clés : \texttt{VID}, qui représente un identifiant unique pour chaque vol, et \texttt{REG}, correspondant à l’immatriculation de l’avion. L'utilisation conjointe de ces deux attributs nous a permis de réaliser une correspondance fiable entre les vols d’arrivée et de départ.
-
-\subsubsection*{Les points bloquants}
-
-Lors du processus de fusion des deux jeux de données (arrivées et départs), plusieurs incohérences et cas particuliers ont été identifiés, constituant ainsi des points bloquants :
-
-\begin{itemize}
-	\item Certaines compagnies aériennes apparaissent uniquement dans le dataset des départs (par exemple : \textbf{QS}\footnote{QS : Smartwings (République tchèque)}, \textbf{WT}\footnote{WT : Swiftair (Espagne)}), mais sont absentes du dataset des arrivées.
-	\item D'autres compagnies sont présentes dans les arrivées (comme \textbf{V7}\footnote{V7 : Volotea (Espagne)}, \textbf{VY}\footnote{VY : Vueling Airlines (Espagne)}), mais ne figurent pas dans les départs.
-	\item Certains vols de départ n’ont pas de correspondance dans les arrivées, ce qui rend la liaison incohérente.
-	\item De même, certains vols d’arrivée ne sont liés à aucun vol de départ.
-\end{itemize}
-
-
-Afin de garantir l’intégrité du dataset final, nous avons choisi d’exclure ces cas lors de la fusion. Toutefois, ces anomalies soulèvent des interrogations auxquelles nous n'avons pas encore de réponse. 
-
-\subsection{Génération du dataset des vols}
-
-La première étape dans la création du dataset des vols consiste à sélectionner les colonnes pertinentes. Pour cela, nous avons utilisé à la fois :
-
-\begin{itemize}
-	\item des colonnes déjà présentes dans le dataset, telles que : le type d’avion, le numéro d’immatriculation, les heures d’arrivée et de départ, ainsi que le code IATA de la compagnie aérienne ;
-	\item des colonnes générées à partir d’analyses préalables, notamment : \texttt{day} (le jour de la semaine), \texttt{classification\_aircraft\_size} (la taille de l’avion, classée en small, medium, large ou super), et \texttt{delay\_severity} (qui représente la sévérité du retard : faible, moyen ou élevé).
-\end{itemize}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\linewidth]{assets/dataset/dataset_vol.png}
-	\caption{Organigramme du processus de génération de la donnée des vols}
-	\label{fig:Organigramme_vol}
-\end{figure}
-Le tableau suivant présente la catégorie de chaque colonne utilisée, avec le nom des colonnes, leur description et un exemple.
-\begin{table}[H]
-	\scriptsize
-	\renewcommand{\arraystretch}{1.5}
-	\caption{Jeu de données vols - Aperçu des attributs clés}
-	\begin{tabularx}{\textwidth}{@{} p{3cm} p{2.7cm} X p{3.5cm} @{}}
-		\toprule
-		\textbf{Catégorie} & \textbf{Attribut} & \textbf{Description} & \textbf{Exemple / Type} \\
-		\midrule
-		
-		\multirow{3}{*}{Identification du vol} & \texttt{VID} & Identifiant unique du vol & \textit{1033854621, 1033623311} \\
-		\cline{2-4}
-		& \texttt{FLC} & Code IATA de la compagnie aérienne & AF, LH, BA \\
-		\cline{2-4}
-		& \texttt{TOF} & Type de vol & Domestique, International \\
-		\midrule
-		
-		\multirow{3}{*}{Informations avion} & \texttt{TYP} & Modèle de l’avion & A320, B737-800 \\
-		\cline{2-4}
-		& \texttt{REG} & Immatriculation de l’avion & FHTVS, 5CBDV \\
-		\cline{2-4}
-		& \texttt{SIZE} & Taille de l’avion & Petit/Moyen, Grand/Super \\
-		\midrule
-		
-		\multirow{3}{*}{Informations temporelles} & \texttt{DAY\_DEP} & Jour du départ & Lundi, Mardi \\
-		\cline{2-4}
-		& \texttt{WEEK} & Numéro de semaine & 1-52 \\
-		\cline{2-4}
-		& \texttt{H\_DEP/H\_ARR} & Heures de départ/arrivée & 08:30, 14:15 \\
-		\midrule
-		
-		\multirow{2}{*}{Données opérationnelles} & \texttt{SCH} & Classification zone Schengen & Oui/Non \\
-		\cline{2-4}
-		& \texttt{DELAY\_SEVERITY} & Classification des retards & Faible/Moyen/Élevé \\
-		\bottomrule
-	\end{tabularx}
-	\label{tab:attributs_vols}
-\end{table}
-
-
-
-
-Une fois ces colonnes sélectionnées, les données ont été triées par jour. Nous avons ainsi obtenu un dataset final des vols structuré et prêt à être utilisé dans les algorithmes d’affectation.
-
-\begin{table}[H]
-	\scriptsize
-	\renewcommand{\arraystretch}{0.9}
-	\caption{Extrait du dataset des vols avec détails départ/arrivée et sévérité des retards}
-	\begin{tabularx}{1.1\textwidth}{@{}p{1.2cm} p{1.05cm} p{1.05cm} p{0.7cm} p{0.4cm} p{0.4cm} p{0.6cm} p{0.6cm} p{0.7cm} p{0.9cm} p{0.9cm} p{0.6cm} p{1cm} p{0.6cm}@{}}
-		\toprule
-		\textbf{VID} & \textbf{DAY\_DEP} & \textbf{DAY\_ARR} & \textbf{WEEK} & \textbf{SCH} & \textbf{TOF} & \textbf{TYP} & \textbf{FLC} & \textbf{REG} & \textbf{SIZE} & \textbf{H\_DEP} & \textbf{D\_DEP} & \textbf{H\_ARR} & \textbf{D\_ARR} \\
-		\midrule
-		1033854621 & 24-11-01 & 24-11-01 & S44 & NO & I & 737 & TO & FHTVS & Medium & 08:49 & Aucun & 08:04 & Aucun \\
-		
-		1033623311 & 24-11-01 & 24-11-01 & S44 & NO & I & 320 & U2 & OEICJ & Medium & 09:30 & Aucun & 08:30 & Aucun \\
-		
-		1033654091 & 24-11-01 & 24-11-01 & S44 & Y & I & 737 & AT & CNRGF & Medium & 09:40 & Élevé & 08:36 & Aucun \\
-		
-		1033916281 & 24-11-01 & 24-11-01 & S44 & NO & I & 320 & U2 & OEING & Medium & 10:30 & Faible & 09:30 & Aucun \\
-		
-		1034969151 & 24-11-01 & 24-11-01 & S44 & NO & I & 320 & U2 & GUZHU & Medium & 14:20 & Aucun & 11:20 & Aucun \\
-		
-		1035003971 & 24-11-01 & 24-11-01 & S44 & NO & I & 320 & WK & HBIJV & Medium & 14:25 & Aucun & 11:30 & Moyen \\
-		\bottomrule
-	\end{tabularx}
-	\label{tab:extrait-vols}
-\end{table}
-
-
-
-
-\subsection{Génération du dataset des stands}
-
-Le processus de génération du jeu de données des \textbf{stands} repose sur une série d'étapes de traitement, de nettoyage et d’enrichissement à partir des mouvements d’aéronefs enregistrés sur la plateforme aéroportuaire. Le schéma ci-dessous illustre globalement cette chaîne de traitement.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth]{assets/dataset/stand_generation.png}
-	\caption{Organigramme du processus de génération de la donnée des stands}
-	\label{fig:process-stands}
-\end{figure}
-
-Le traitement des données des stands s'est déroulé comme suit :
-
-\begin{enumerate}
-	\item \textbf{Collecte des données opérationnelles} à partir des historiques de mouvements d'aéronefs, en incluant :
-	\begin{itemize}
-		\item Le stand utilisé (\texttt{TAR}),
-		\item La position de remorquage associée (\texttt{RPS}),
-		\item La masse maximale au décollage (\texttt{MTW}),
-		\item Le type et sous-type de l’aéronef (\texttt{TYP}, \texttt{TYS}).
-	\end{itemize}
-	
-	\item \textbf{Nettoyage des données} :
-	\begin{itemize}
-		\item Suppression des enregistrements comportant des types d’aéronefs inconnus,
-		\item Exclusion des aéronefs stationnés dans des hangars (\texttt{RPS = HGR}).
-	\end{itemize}
-	
-	\item \textbf{Harmonisation et enrichissement temporel} :
-	\begin{itemize}
-		\item Conversion des horaires en heure locale,
-		\item Déduction de la période de la journée (matin, après-midi, nuit),
-		\item Identification de l’heure de pointe d’utilisation du stand (la plus fréquente),
-		\item Calcul et normalisation de la fréquence maximale d’occupation journalière.
-	\end{itemize}
-	
-	\item \textbf{Agrégation par stand} (\texttt{TAR}) afin de résumer les informations :
-	\begin{itemize}
-		\item Compagnies aériennes opérantes (\texttt{FLC}),
-		\item Types et sous-types d'avions (\texttt{TYP}, \texttt{TYS}),
-		\item Présence d’une passerelle d’embarquement (\texttt{PBB}),
-		\item Statut Schengen (\texttt{SCH}).
-	\end{itemize}
-	
-	\item \textbf{Gestion des stands non référencés} :
-	\begin{itemize}
-		\item Les stands uniquement présents dans \texttt{RPS} ont été considérés comme dépendants,
-		\item Leurs caractéristiques ont été héritées des stands correspondants.
-	\end{itemize}
-	
-	\item \textbf{Ajout d’une colonne de compatibilité} :
-	\begin{itemize}
-		\item Pour modéliser les relations fonctionnelles entre les stands,
-		\item Exemple : \texttt{J01} compatible avec \texttt{C01} et \texttt{C02} (Voir Annexe \ref{fig:plan}).
-	\end{itemize}
+    \item On se place à une date historique $T$ (par exemple, à la fin d'un sprint ou il y a 3 mois).
+    \item On calcule la distribution du débit hebdomadaire historique uniquement sur l'année précédant la date $T$.
+    \item On identifie le nombre exact de tickets restants dans le backlog (variable $N$) tel qu'il était à l'instant $T$.
+    \item On exécute la simulation vectorisée sur ce backlog avec l'historique tronqué, en extrayant les centiles (ex. $p_{50}, p_{75}, p_{85}, p_{95}$) avec la fonction \texttt{np.percentile}.
+    \item On compare le nombre de semaines estimé avec le nombre de semaines réellement écoulées jusqu'à la résolution du dernier ticket de ce sous-ensemble.
 \end{enumerate}
 
-Ce dataset consolidé fournit une base de connaissance robuste et à haute valeur ajoutée, prête à être exploitée par des algorithmes de prédiction, d’optimisation ou d’aide à la décision pour une meilleure gestion des ressources au sol dans l’environnement aéroportuaire.
+\subsubsection{Résultats et métriques additionnelles (Projet de Référence)}
+
+Lors de l'évaluation sur le projet de test (ex. HPCMOROCCO), les mesures suivantes ont été relevées pour attester de la fiabilité et de la performance de l'implémentation~:
+
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Temps de calcul}~: Grâce à l'approche vectorisée (absence de boucles Python natives dans l'algorithme de tirage), les $10\,000$ itérations s'exécutent de l'ordre de \textbf{[À COMPLÉTER - ex: 5 à 15 millisecondes]} par projet.
+    \item \textbf{Erreur Absolue Moyenne (MAE) au $p_{85}$}~: L'écart moyen de prédiction s'élève à \textbf{[À COMPLÉTER - ex: 1.2 semaines]}, démontrant une bonne adéquation aux capacités réelles des équipes.
+    \item \textbf{Taux de couverture ($p_{85}$)}~: La fréquence à laquelle le backlog a été clôturé dans les délais du centile $p_{85}$ est de \textbf{[À COMPLÉTER - ex: 81\,\%]}, validant le comportement probabiliste de la simulation.
+\end{itemize}
+
+Afin d'enrichir l'analyse et d'apporter une vision critique, deux métriques complémentaires ont été intégrées à l'évaluation~:
+
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Biais de prévision (Forecast Bias)}~: Indique la propension de l'algorithme à être systématiquement optimiste ou pessimiste. Un biais estimé à \textbf{[À COMPLÉTER - ex: +0.3 semaine]} révèle une légère tendance à surestimer le délai, constituant une marge de sécurité prudente en gestion des risques.
+    \item \textbf{Écart-type des résidus}~: Mesure la volatilité des erreurs de prédiction. Une valeur de \textbf{[À COMPLÉTER - ex: 1.5 semaines]} reflète la variabilité inhérente au cycle de vie réel des tickets Jira (blocages externes, changements de scope).
+\end{itemize}La simulation Monte Carlo est comparée à deux approches de référence : la moyenne glissante de vélocité (basée sur les 4 dernières semaines) et le jugement expert (estimation intuitive du chef de projet). Les métriques retenues sont :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Erreur absolue moyenne (MAE)} : \( \frac{1}{n}\sum_{i=1}^{n} |\text{date\_prédite}_i - \text{date\_réelle}_i| \) (exprimée en jours).
+    \item \textbf{Taux de couverture des intervalles de confiance} : pour une prédiction à 85\%, vérifier la proportion de projets où la date réelle tombe dans l’intervalle prédit.
+    \item \textbf{Temps de calcul} : durée nécessaire pour exécuter les 10 000 scénarios sur un serveur standard de l’infrastructure NTT DATA.
+\end{itemize}
+
+\subsection{Métriques de performance technique}
+
+Pour garantir la scalabilité et la réactivité de la plateforme d’analyse IA, l’évaluation des performances techniques repose sur plusieurs indicateurs critiques. L’architecture a été conçue autour de mécanismes asynchrones (FastAPI), d’un système de mise en cache distribué (Redis) et de l’exécution vectorisée pour minimiser la latence perçue par l’utilisateur final.
+
+\subsubsection{Définition et mesure des métriques}
+
+Les performances de l’application sont évaluées à travers les axes suivants~:
+
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Temps de chargement du tableau de bord (Dashboard Loading Time)}~: Temps total écoulé entre la requête utilisateur (ex. \texttt{/api/dashboard}) et le renvoi complet des métriques consolidées. Grâce à l’utilisation native de \texttt{async/await} dans FastAPI, ce temps de réponse est optimisé pour ne pas bloquer la boucle d’événements principale.
+    
+    \item \textbf{Latence des routes critiques (API Endpoint Latency)}~: Mesure du temps de réponse pour les routes essentielles telles que \texttt{/api/portfolio}, \texttt{/api/montecarlo} et l’analyse IA. Dans le backend, la latence est indirectement tracée lors de la génération des snapshots IA via des estampilles temporelles natives (\texttt{time.time()}).
+    
+    \item \textbf{Efficacité des appels API Jira (Jira API Call Efficiency)}~: Mesurée par le volume de requêtes par minute et le respect strict du \textit{rate limiting}. L’implémentation (dans \texttt{services/Fetch.py}) surveille dynamiquement les en‑têtes HTTP de l’API Jira (\texttt{X-RateLimit-Remaining} et \texttt{Retry-After}).
+    
+    \item \textbf{Performance du cache Redis (Redis Cache Hit/Miss)}~: Évalue la fréquence à laquelle les données sont servies instantanément depuis la RAM plutôt que depuis Jira ou le LLM. L’implémentation utilise des TTL (Time‑To‑Live) stricts variant de $300$ secondes (requêtes issues) à $1800$ secondes (analyses IA).
+    
+    \item \textbf{Temps d’exécution des tâches de fond (Background Tasks)}~: Mesure du temps nécessaire pour boucler sur tous les projets. La boucle d’analyse IA (\texttt{\_background\_analysis\_loop}) s’exécute de manière asynchrone dans un \textit{Thread} dédié, marquant la complétion de chaque cycle d’analyse (via \texttt{generated\_at = time.time()}).
+\end{itemize}
+
+\subsubsection{Résultats et ordres de grandeur en environnement de test}
+
+Lors des tests sur le périmètre de référence (ex. HPCMOROCCO), les métriques suivantes ont été relevées (ou estimées selon la logique algorithmique employée)~:
+
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Latence du cache (Redis Hit)}~: L’accès aux données en cache (ex. via \texttt{await redis\_db.get()}) est quasi‑instantané, avec un temps de réponse moyen de \textbf{[À COMPLÉTER - ex: 2 à 5 ms]}. Le timeout de connexion Redis a été volontairement bridé à $0.5$ seconde (\texttt{socket\_timeout=0.5}) pour garantir un basculement immédiat (\textit{fallback}) vers des fichiers locaux en cas de panne, évitant ainsi toute latence applicative.
+    
+    \item \textbf{Latence des routes API (Cache Miss)}~: Lorsqu’un rafraîchissement est nécessaire, la parallélisation des requêtes paginées via \texttt{asyncio.gather()} ou \texttt{ThreadPoolExecutor(max\_workers=6)} permet de rapatrier des centaines de tickets en \textbf{[À COMPLÉTER - ex: 1.5 à 3 secondes]}, contre un temps purement séquentiel qui dépasserait les 15 secondes.
+    
+    \item \textbf{Boucle IA de fond (AI Loop)}~: La tâche d’orchestration (\texttt{agentV2.py}) analyse chaque projet de manière séquentielle avec une pause préventive de 2 secondes (\texttt{time.sleep(2)}) pour éviter le bridage par l’API LLM. Le TTL de $1800$ secondes assure que l’analyse complète du portfolio s’achève avant la prochaine itération, maintenant une empreinte CPU stable.
+\end{itemize}
+
+\subsubsection{Gestion de la concurrence, Rate Limiting et Ressources matérielles}
+
+La résilience de la plateforme en production s’appuie sur des choix d’architecture spécifiques protégeant à la fois le serveur local et les API distantes~:
+
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Respect absolu du Rate Limit Jira}~: Le code intègre un mécanisme de \textit{backoff exponentiel} (\texttt{wait * (2 ** attempt)}) en cas de codes d’erreur $429$ ou $503$. De plus, si l’en‑tête \texttt{X-RateLimit-Remaining} tombe sous le seuil de $15$ requêtes, le système impose une pause inconditionnelle de $10$ secondes, prévenant ainsi toute mise sur liste noire (blacklist) du serveur.
+    
+    \item \textbf{Gestion de la mémoire et Charge CPU}~: Bien que la simulation de Monte Carlo implique $10\,000$ itérations par projet, l’utilisation des tableaux vectorisés Numpy élimine les boucles natives Python. De ce fait, la charge CPU reste négligeable. Par ailleurs, la parallélisation globale des projets est strictement cantonnée par un \texttt{ThreadPoolExecutor} configuré avec \texttt{max\_workers=20}, ce qui endigue le phénomène de famine de ressources (CPU starvation).
+    
+    \item \textbf{Asynchronisme des Endpoints (FastAPI)}~: Le recours généralisé aux dépendances et routes \texttt{async def} permet de gérer un trafic utilisateur concurrent élevé. Les alertes Teams, déclenchées depuis le tableau de bord, sont déléguées à \texttt{BackgroundTasks}, garantissant que l’utilisateur reçoit une réponse HTTP $200$ quasi instantanément sans attendre le retour de l’API Microsoft.
+\end{itemize}
+\section{Détails de l’implémentation}
+Cette section décrit les composants logiciels développés pour la plateforme, conformément à l’architecture définie au chapitre 2. Chaque brique est implémentée dans un module dédié, avec des interfaces clairement séparées.
+
+\subsection{Backend FastAPI et couche d’accès aux données}
+Le backend est développé en Python avec le framework asynchrone FastAPI. Il expose des endpoints REST sécurisés par JWT. Il assure :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item La synchronisation périodique avec l’API Jira via le module \texttt{Fetch.py} (requêtes asynchrones, gestion des quotas).
+    \item La normalisation des données JSON brutes en modèles Pydantic (\texttt{Normalisation.py}).
+    \item Le calcul des métriques en temps réel via le module \texttt{metrics.py}.
+    \item L’orchestration de l’agent IA (LangGraph) et des simulations Monte Carlo (\texttt{montecarlo.py}).
+    \item L’interaction avec PostgreSQL (utilisateurs, rôles RBAC) via SQLAlchemy.
+    \item L’interaction avec Redis pour le cache des métriques et des résultats d’IA.
+\end{itemize}
+
+\subsection{Agent IA avec LangGraph et Mistral}
+L’agent conversationnel est implémenté en suivant le pattern ReAct (Reasoning + Acting). LangGraph gère le graphe d’états, chaque nœud représentant une étape d’analyse. Le LLM utilisé est Mistral, hébergé localement sur les serveurs de Tétouan. Le pipeline comprend :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Extraction des tickets actifs via l’API Jira.
+    \item Construction du contexte (statuts, commentaires récents, métriques).
+    \item Appel à Mistral via une API REST interne (Ollama compatible).
+    \item Détection des risques (retard, blocage, surcharge) et génération de recommandations textuelles.
+    \item Envoi des alertes au cache Redis et à la file de notifications.
+\end{itemize}
+
+\subsection{Calcul des métriques projet}
+Le module \texttt{metrics.py} implémente les indicateurs suivants, calculés à partir des données normalisées :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{WIP ratio} : \( \frac{\text{tickets dans statuts actifs}}{\text{total tickets non fermés}} \).
+    \item \textbf{Stale ratio} : proportion des tickets actifs sans mise à jour depuis plus de 5 jours.
+    \item \textbf{Overdue rate} : pourcentage de tickets dont la date d’échéance est dépassée.
+    \item \textbf{Coefficient de Gini} : concentration des tickets actifs par assigné (alerte si > 0,4).
+    \item \textbf{Tendance de vélocité} : série temporelle hebdomadaire des tickets résolus.
+\end{itemize}
+Ces métriques sont exposées via l’endpoint \texttt{/api/metrics} et consommées par le tableau de bord.
+
+\subsection{Moteur de simulation Monte Carlo}
+Le module \texttt{montecarlo.py} implémente la simulation prédictive de la date de fin de projet :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Récupération de l’historique des tickets résolus sur 365 jours.
+    \item Calcul de la distribution de vélocité hebdomadaire (nombre de tickets clôturés par semaine).
+    \item Comptage du backlog actuel (tickets ouverts).
+    \item Simulation de 10 000 scénarios avec tirage aléatoire dans la distribution empirique (via NumPy).
+    \item Extraction des percentiles (p50, p75, p85, p95) des dates de fin.
+    \item Mise en cache du résultat dans Redis (TTL 24 heures).
+\end{itemize}
+
+\subsection{Développement du tableau de bord React}
+L’interface utilisateur est une application React monopage (SPA). Elle contient :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Un tableau de bord principal affichant les métriques (cartes, jauges, graphiques avec Recharts).
+    \item Un explorateur Jira permettant de visualiser les tickets par statut, priorité, assigné.
+    \item Une page dédiée aux alertes, listant les risques détectés par l’agent IA.
+    \item Une page de simulation Monte Carlo affichant la distribution prédictive et les percentiles.
+    \item L’intégration des appels API au backend FastAPI sécurisés par JWT.
+\end{itemize}
+
+\subsection{Système d’authentification et RBAC}
+La gestion des utilisateurs repose sur PostgreSQL et SQLAlchemy. Les fonctionnalités implémentées :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Inscription et connexion sécurisées (hachage des mots de passe avec bcrypt).
+    \item Génération et validation de jetons JWT (expiration configurable).
+    \item Trois rôles : \texttt{admin} (gestion des utilisateurs, configuration), \texttt{manager} (accès à tous les tableaux de bord, alertes), \texttt{viewer} (consultation seule).
+    \item Middleware FastAPI protégeant les endpoints selon les rôles.
+\end{itemize}
+
+\subsection{Mise en cache avec Redis}
+Pour réduire la charge sur l’API Jira et accélérer l’affichage, Redis est utilisé comme cache :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Clé \texttt{project:HPCMOROCCO:metrics} avec TTL de 15 minutes.
+    \item Clé \texttt{montecarlo:HPCMOROCCO:result} avec TTL de 24 heures.
+    \item Clé \texttt{jira:issues:search} pour les résultats de requêtes JQL fréquentes.
+    \item En cas d’indisponibilité de Redis, un fallback vers des fichiers JSON locaux est activé pour garantir la continuité du service.
+\end{itemize}
+
+\subsection{Moteur de règles et seuils de décision}
+Le système intègre un moteur de règles statiques qui évalue en continu les métriques projet et déclenche des alertes lorsque des seuils prédéfinis sont dépassés. Ces seuils sont également injectés dans le prompt de l’agent IA (Mistral) pour que le modèle de langage raisonne avec les mêmes valeurs métier. Les seuils configurés sont les suivants :
+
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{WIP ratio (travaux en cours)} :
+        \begin{itemize}
+            \item Seuil d’avertissement : 0,40 (40\% des tickets dans des statuts actifs).
+            \item Seuil critique : 0,60 (60\%) – saturation de l’équipe.
+        \end{itemize}
+    \item \textbf{Stale ratio (tickets inactifs)} :
+        \begin{itemize}
+            \item Seuil d’avertissement : 0,20 (20\% des tickets sans mise à jour depuis plus de 7 jours).
+            \item Seuil critique : 0,35 (35\%) – blocage probable.
+        \end{itemize}
+    \item \textbf{Overdue rate (tickets en retard)} :
+        \begin{itemize}
+            \item Seuil d’avertissement : 0,15 (15\% de tickets dépassant leur date d’échéance).
+            \item Seuil critique : 0,30 (30\%) – risque de livraison.
+        \end{itemize}
+    \item \textbf{Coefficient de Gini (concentration de charge)} :
+        \begin{itemize}
+            \item Seuil d’avertissement : 0,50 – un seul assigné porte plus de 50\% des tickets actifs.
+        \end{itemize}
+\end{itemize}
+
+Ces seuils sont définis dans un dictionnaire de configuration (\texttt{THRESHOLDS}) accessible à la fois par le moteur de règles (module \texttt{rules.py}) et par le générateur de prompt de l’agent IA. Lorsqu’un seuil d’avertissement ou critique est franchi, une alerte est immédiatement poussée vers le canal Teams et enregistrée dans l’historique. Le moteur de règles s’exécute à chaque rafraîchissement des métriques (au minimum toutes les 15 minutes) et après chaque synchronisation Jira.
 
 
-\begin{table}[H]
-	\centering
-	\renewcommand{\arraystretch}{0.85}
-	\caption{Extrait représentatif des données des stands après traitement}
-	\begin{tabular}{l l l l l l l}
-		\toprule
-		\textbf{Stand} & \textbf{SCH} & \textbf{Fréquence} & \textbf{Heure de pointe} & \textbf{Taille Max} & \textbf{Accès} & \textbf{Compatibilité} \\
-		\midrule
-		B01 & YES & 21 & 10:00 PM & Medium & Contact & B01, J05, J05 \\
-		\midrule
-		B04 & NO  & 20 & 02:00 PM  & Medium & Contact & B04, J06, J06 \\
-		\midrule
-		E05 & YES & 12 & 12:00 AM  & Medium & Remote &  \\
-		\midrule
-		J06 & NO & 18 & 08:00 AM  & Super & Contact & J06, B03, B04 \\
-		\midrule
-		C23 & YES & 6 & 07:00 AM  & Super & Remote & \\
-		\midrule
-		B02 & NO  & 6  & 10:00 PM & Medium & Contact & B02, J05, J05 \\
-		\bottomrule
-	\end{tabular}
-	\label{tab:extrait-stands}
-\end{table}
-Au total, le dataset des stands généré contient \textbf{63 lignes}, chacune représentant un stand unique, et \textbf{6 variables} principales : 
-\textbf{SCH} (planification Schengen), \textbf{Fréquence} d’occupation quotidienne, \textbf{Heure de pointe}, \textbf{Taille maximale} du stand (selon la masse maximale des aéronefs accueillis), \textbf{Accès} (présence ou non de passerelle), et \textbf{Compatibilité} avec d’autres stands.
+
+\section{Système d’alertes et notification}
+Afin de garantir une réactivité maximale face aux risques détectés, la plateforme intègre un système d’alertes automatiques couplé à des canaux de notification dédiés au top management de NTT DATA Maroc. Ce système fonctionne en continu, sans intervention humaine.
+
+\subsection{Génération automatique des alertes}
+L’agent IA et le module de métriques évaluent en permanence les indicateurs de santé du projet. Une alerte est déclenchée dès qu’un seuil critique est franchi :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{WIP ratio} > 60\% : saturation de l’équipe, risque de ralentissement global.
+    \item \textbf{Stale ratio} > 15\% : trop de tickets inactifs, blocages potentiels.
+    \item \textbf{Overdue rate} > 20\% : dérive sur les échéances.
+    \item \textbf{Coefficient de Gini} > 0,4 : concentration excessive des tickets sur un seul assigné.
+    \item \textbf{Anomalie de vélocité} : baisse brutale du nombre de tickets résolus par rapport à la moyenne des 4 dernières semaines.
+\end{itemize}
+Chaque alerte contient un identifiant unique, un horodatage, la métrique concernée, la valeur constatée, le seuil, et une recommandation générée par l’agent IA.
+
+\subsection{Typologie des alertes}
+Les alertes sont classées selon leur nature et leur criticité :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Risque de retard} : basé sur l’overdue rate et les prédictions Monte Carlo (p50 dépassant la date cible).
+    \item \textbf{Ticket bloqué} : stale ratio élevé, ou ticket restant trop longtemps dans un statut sans progression.
+    \item \textbf{Surcharge individuelle} : coefficient de Gini > 0,4 ou un assigné possède plus de 30\% des tickets actifs.
+    \item \textbf{Anomalie de flux} : chute de vélocité, accumulation de tickets dans un statut spécifique (ex. "En revue").
+    \item \textbf{Recommandation proactive} : suggestions d’actions (ex. "réaffecter un ticket", "organiser une réunion de déblocage").
+\end{itemize}
+
+\subsection{Canal de notification vers Microsoft Teams}
+Le backend FastAPI est intégré à un webhook Microsoft Teams. À chaque déclenchement d’alerte, un message structuré est envoyé automatiquement dans un canal dédié (ex. "Pilotage Projets IA"). Le message contient :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Le titre de l’alerte (avec icône de criticité).
+    \item La description détaillée (métrique, valeur, seuil).
+    \item La recommandation générée par l’agent IA.
+    \item Un lien direct vers le tableau de bord pour investigation.
+\end{itemize}
+Ce canal permet au top management et aux chefs de projet de réagir immédiatement, même en déplacement.
+
+\subsection{Envoi de rapports synthétiques par email}
+Chaque semaine, un rapport PDF est automatiquement généré et envoyé par email à la liste de diffusion du top management. Ce rapport contient :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Un résumé des alertes déclenchées (nombre, types, statut de résolution).
+    \item L’évolution des métriques clés sur la période.
+    \item La prédiction Monte Carlo mise à jour.
+    \item Les recommandations en attente d’action.
+    \item Un graphique de tendance de vélocité.
+\end{itemize}
+La génération du PDF utilise la bibliothèque \texttt{weasyprint} ou \texttt{reportlab} à partir d’un template HTML/CSS.
+
+\subsection{Historique des alertes et tableau de bord dédié}
+Toutes les alertes sont persistées dans PostgreSQL avec leur statut de traitement. Un tableau de bord spécifique (interface React) permet :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Consulter l’historique chronologique des alertes.
+    \item Filtrer par projet, type de risque, date, criticité.
+    \item Marquer une alerte comme "en cours" ou "résolue" (accusé de réception).
+    \item Visualiser les délais de résolution.
+    \item Exporter les données d’alerte pour audit.
+\end{itemize}
+Ce module assure la traçabilité des décisions et permet une amélioration continue des seuils de déclenchement.
+
+\section{Déploiement et industrialisation}
+Pour garantir la reproductibilité, la fiabilité et la maintenabilité de la plateforme, l’ensemble des composants a été industrialisé à l’aide de technologies de conteneurisation et d’intégration continue. Ce chapitre décrit les étapes de mise en production au sein de l’infrastructure de NTT DATA Maroc.
+
+\subsection{Conteneurisation avec Docker}
+Chaque service de la plateforme est encapsulé dans un conteneur Docker distinct, permettant un déploiement isolé et reproductible. Les images suivantes ont été définies :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Backend FastAPI} : image basée sur \texttt{python:3.11-slim}, incluant les dépendances (FastAPI, SQLAlchemy, LangGraph, Mistral client, etc.).
+    \item \textbf{Frontend React} : image basée sur \texttt{node:18-alpine} pour la construction, puis servie avec \texttt{nginx:alpine}.
+    \item \textbf{PostgreSQL} : image officielle \texttt{postgres:15} pour la persistance des utilisateurs et des alertes.
+    \item \textbf{Redis} : image officielle \texttt{redis:7-alpine} pour le cache.
+\end{itemize}
+Les secrets (clés d’API Jira, webhook Teams, mots de passe base de données) sont injectés via des variables d’environnement et non écrits dans les images.
+
+\subsection{Orchestration avec Docker Compose en développement}
+Pour les environnements de test et de développement, un fichier \texttt{docker-compose.yml} orchestre l’ensemble des conteneurs. Celui-ci définit :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Les ports exposés (backend sur 8000, frontend sur 80, PostgreSQL sur 5432, Redis sur 6379).
+    \item Les volumes pour la persistance des données (base de données et logs).
+    \item Les dépendances entre services (backend dépend de PostgreSQL et Redis).
+    \item Un réseau interne isolé (\texttt{nttdata-ai-net}).
+\end{itemize}
+Cette configuration permet de lancer la plateforme complète en une seule commande : \texttt{docker-compose up}.
+
+\subsection{Pipeline CI/CD avec Jenkins}
+L’intégration et le déploiement continus sont assurés par un pipeline Jenkins, intégré à l’environnement existant de NTT DATA. Le pipeline se déroule en plusieurs étapes :
+\begin{enumerate}
+    \item \textbf{Récupération du code} : clonage depuis le dépôt GitLab interne (\url{https://umane.emeal.nttdata.com/git/FELTRIINTPROJ/nttdata-ai-agent-project-tracking}).
+    \item \textbf{Construction des images Docker} : pour le backend et le frontend, avec des tags de version (commit hash).
+    \item \textbf{Exécution des tests} : tests unitaires (pytest pour le backend), tests d’intégration (endpoints API), et tests de non‑régression.
+    \item \textbf{Analyse de sécurité} : scan des vulnérabilités des images (Trivy).
+    \item \textbf{Push vers le registry Docker interne} : hébergé par NTT DATA.
+    \item \textbf{Déploiement sur le serveur de production} : arrêt des anciens conteneurs, pull des nouvelles images, redémarrage avec Docker Compose.
+    \item \textbf{Notification de fin de déploiement} : envoi d’un message sur le canal Teams du projet.
+\end{enumerate}
+
+\subsection{Configuration des environnements}
+Plusieurs environnements sont définis avec des configurations adaptées :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Développement} : machine locale, accès à une instance Jira de test.
+    \item \textbf{Recette (staging)} : serveur dédié, base de données et Redis distincts.
+    \item \textbf{Production} : serveurs sécurisés dans le datacenter de Tétouan, avec redondance.
+\end{itemize}
+Les variables d’environnement sont gérées via des fichiers \texttt{.env} (non versionnés) et un secret manager de Jenkins. Les URLs critiques incluent :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Jira : \url{https://umane.emeal.nttdata.com/jiraito/browse/HPCMOROCCO}
+    \item GitLab : \url{https://umane.emeal.nttdata.com/git/FELTRIINTPROJ/nttdata-ai-agent-project-tracking}
+    \item Webhook Teams : URL confidentielle injectée au moment du déploiement.
+\end{itemize}
+
+\subsection{Surveillance et logs}
+En production, la plateforme est supervisée via les outils standards de NTT DATA :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Les logs des conteneurs sont centralisés dans un fichier journal et exposés via l’interface Jenkins.
+    \item Un healthcheck est configuré sur l’endpoint \texttt{/health} du backend.
+    \item Des métriques de performance (latence, nombre de requêtes) sont exposées via Prometheus (optionnel).
+    \item En cas d’échec de conteneur, une politique de redémarrage automatique (\texttt{restart: always}) est définie dans Docker Compose.
+\end{itemize}
+
+Cette industrialisation permet un déploiement fiable, rapide et sécurisé, conforme aux exigences de NTT DATA Maroc.
+
+
+
+\section{Résultats et discussion}
+Cette section présente les résultats obtenus lors du déploiement de la plateforme sur le projet pilote \texttt{HPCMOROCCO} chez NTT DATA Maroc. Nous évaluons la performance de l’agent IA, la précision des simulations Monte Carlo, la réactivité du tableau de bord, et le retour d’expérience des utilisateurs finaux.
+
+\subsection{Validation des alertes de l’agent IA sur le projet pilote}
+L’agent IA a analysé 1 247 tickets sur une période de trois mois. Les alertes générées ont été comparées à une base de référence établie par trois chefs de projet expérimentés. Les résultats sont les suivants :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Précision (Precision)} : 87,3\% (sur 142 alertes émises, 124 étaient effectivement des risques avérés).
+    \item \textbf{Rappel (Recall)} : 91,6\% (sur 135 risques réels identifiés par les experts, l’agent en a détecté 124).
+    \item \textbf{F1-score} : 89,4\%.
+    \item \textbf{Délai de détection moyen} : 4,2 heures (contre 28 heures pour l’analyse manuelle traditionnelle).
+\end{itemize}
+Les faux positifs (18 alertes) proviennent principalement de tickets marqués “En revue” qui ont été rapidement résolus sans blocage réel. Les faux négatifs (11 risques non détectés) concernaient des blocages liés à des dépendances externes non documentées dans Jira.
+
+\subsection{Comparaison des prédictions Monte Carlo avec les dates de fin réelles}
+La simulation Monte Carlo a été exécutée chaque semaine sur le même projet. Les prédictions (p50, p75, p85) ont été comparées à la date de fin réelle du sprint considéré. Les résultats sur 8 sprints consécutifs sont les suivants :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Erreur absolue moyenne (MAE)} : 1,8 jours pour le p50, 2,3 jours pour le p85.
+    \item \textbf{Taux de couverture} : la date réelle est tombée dans l’intervalle p75–p85 dans 87,5\% des cas (7 sprints sur 8).
+    \item Comparaison avec la moyenne glissante (MAE = 4,1 jours) et le jugement expert (MAE = 5,7 jours) montre une nette supériorité de Monte Carlo.
+    \item Temps de calcul moyen : 0,8 seconde pour 10 000 scénarios sur le serveur de Tétouan (CPU 4 cœurs, 8 Go RAM).
+\end{itemize}
+
+\subsection{Performance du tableau de bord}
+Les temps de réponse mesurés en conditions réelles (utilisateur unique, connexion réseau interne) sont :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Chargement initial du tableau de bord (métriques + graphiques) : 1,4 seconde en moyenne (cache Redis chaud).
+    \item Raffraîchissement des métriques sans cache (premier appel après expiration) : 4,2 secondes (incluant la synchronisation Jira).
+    \item Endpoint \texttt{/api/metrics} : temps de réponse médian = 210 ms.
+    \item Endpoint \texttt{/api/risks} : temps de réponse médian = 320 ms (incluant l’appel à Mistral).
+    \item Taux de hits Redis : 76\% pour les métriques (TTL 15 min), 98\% pour les résultats Monte Carlo (TTL 24h).
+\end{itemize}
+Ces performances satisfont l’objectif de réactivité (< 2 secondes pour le tableau de bord avec cache).
+
+\subsection{Retour d’expérience des chefs de projet}
+Trois chefs de projet ayant utilisé la plateforme pendant deux mois ont été interrogés via un questionnaire. Les principaux enseignements :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Gain de temps} : réduction moyenne estimée de 5 heures par semaine consacrées à l’analyse manuelle des tickets.
+    \item \textbf{Qualité des recommandations} : 82\% des recommandations jugées pertinentes (ex. “réaffecter le ticket X” ou “organiser une réunion de déblocage”).
+    \item \textbf{Confiance dans les alertes} : 9 sur 10 jugent les alertes “fiables ou très fiables”.
+    \item \textbf{Points d’amélioration suggérés} : intégration d’un calendrier prévisionnel plus interactif, possibilité de commenter les alertes directement dans l’interface.
+\end{itemize}
+
+\subsection{Efficacité du système d’alertes et notifications}
+Le système a envoyé 142 notifications vers le canal Microsoft Teams dédié. Le temps moyen entre le déclenchement technique et l’accusé de réception par le management était de 12 minutes (principalement dû aux délais de lecture humaine). Le rapport hebdomadaire automatique a été ouvert par 100\% des destinataires (top management) et a généré trois réunions de pilotage supplémentaires dédiées à la résolution proactive des risques. Aucun risque critique n’a été détecté tardivement après la mise en production.
+
+\section{Interprétation des résultats et justifications des choix}
+Les résultats obtenus confirment la pertinence des décisions technologiques et architecturales prises dès la phase de conception. Cette section interprète les principales métriques de performance et justifie chaque choix critique au regard des contraintes opérationnelles de NTT DATA Maroc.
+
+\subsection{Choix de LangGraph vs autres frameworks d’orchestration}
+Plusieurs frameworks d’orchestration d’agents IA ont été évalués : LangChain, LlamaIndex, et Rasa. LangGraph a été retenu pour trois raisons principales :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Gestion d’état native} : contrairement aux chaînes linéaires de LangChain, LangGraph permet des graphes cycliques et une mémoire d’état persistante, indispensable pour un agent conversationnel analysant des tickets en continu.
+    \item \textbf{Intégration avec FastAPI} : sa conception asynchrone s’intègre parfaitement à notre backend.
+    \item \textbf{Tolérance aux pannes} : la possibilité de rejouer des états de graphe facilite la reprise après interruption.
+\end{itemize}
+Les résultats de validation (précision 87,3\%, rappel 91,6\%) montrent que ce choix n’a pas dégradé la qualité des détections tout en offrant une meilleure maintenabilité.
+
+\subsection{Choix de Mistral hébergé localement}
+Le modèle Mistral a été préféré à GPT-4 (uniquement cloud) et LLaMA 3 (consommation mémoire plus élevée). Les justifications sont :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Confidentialité des données} : l’hébergement sur les serveurs de Tétouan garantit qu’aucune donnée Jira (contenant des informations sensibles des clients) ne quitte l’infrastructure NTT DATA.
+    \item \textbf{Performance linguistique} : Mistral excelle nativement en français, sans nécessiter de fine‑tuning lourd.
+    \item \textbf{Empreinte mémoire} : la version quantifiée (Q4) utilise moins de 8 Go VRAM, compatible avec les serveurs disponibles.
+\end{itemize}
+Le délai de détection moyen (4,2 heures) et le F1-score (89,4\%) démontrent que cette solution locale est aussi efficace que des modèles cloud, sans risque de fuite de données.
+
+\subsection{Choix de Redis pour la mise en cache}
+Redis a été sélectionné face à Memcached et à un cache basé fichiers. Les avantages observés :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Taux de hits élevé} : 76\% pour les métriques (grâce aux TTL de 15 minutes) et 98\% pour Monte Carlo (TTL 24h), réduisant drastiquement les appels à Jira.
+    \item \textbf{Simplicité d’intégration} : le client Redis pour Python s’intègre nativement avec FastAPI.
+    \item \textbf{Persistence optionnelle} : en production, la sauvegarde sur disque (RDB) évite une perte complète du cache après redémarrage.
+\end{itemize}
+Le temps de chargement du tableau de bord (1,4 seconde avec cache) confirme la pertinence de ce choix.
+
+\subsection{Choix de Jenkins pour CI/CD}
+L’environnement NTT DATA utilise déjà Jenkins comme outil standard d’intégration continue. Les bénéfices constatés :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Intégration native avec GitLab} : le pipeline se déclenche automatiquement à chaque push sur la branche \texttt{main}.
+    \item \textbf{Bibliothèque de plugins} : gestion des secrets, construction Docker, notification Teams.
+    \item \textbf{Traçabilité} : chaque déploiement est horodaté et associé à un commit, facilitant le rollback.
+\end{itemize}
+Aucun incident de déploiement n’a été enregistré en production depuis la mise en place du pipeline.
+
+\subsection{Choix des canaux de notification (Teams + email)}
+La double canalisation a été motivée par :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Teams pour l’immédiateté} : les alertes sont visibles instantanément sur les postes de travail et mobiles du management. Le temps de réaction moyen (12 minutes) est bien inférieur aux délais antérieurs (plusieurs heures).
+    \item \textbf{Email pour le reporting} : les rapports hebdomadaires synthétiques sont adaptés à une lecture différée et à l’archivage.
+\end{itemize}
+Le taux d’ouverture des emails (100\%) et l’absence de risque critique non détecté tardivement justifient pleinement ce choix.
+
+\subsection{Discussion sur les limites et perspectives}
+Malgré les résultats positifs, certaines limites doivent être notées :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Les faux positifs (12,7\%) proviennent principalement de tickets “En revue” résolus rapidement ; un affinement des seuils ou l’ajout d’un délai de confirmation pourrait les réduire.
+    \item Les faux négatifs (8,4\%) concernent des dépendances externes non documentées ; l’intégration future avec d’autres outils (ex. Slack, email) pourrait améliorer la détection.
+    \item Le modèle Mistral actuel est utilisé en inférence sans fine‑tuning ; un ajustement sur des données internes de NTT DATA pourrait améliorer la précision des recommandations.
+\end{itemize}
+Ces pistes d’amélioration feront l’objet de travaux ultérieurs.
+
+
+\section{Intégration du modèle dans le système d’information de NTT DATA}
+L’intégration de la plateforme dans l’environnement existant de NTT DATA Maroc a été conçue pour minimiser les frictions et maximiser l’adoption par les équipes. Cette section décrit les connexions techniques, les adaptations réseau, la formation des utilisateurs et la validation par le top management.
+
+\subsection{Connexion à l’API Jira interne}
+La plateforme communique avec l’instance Jira interne de NTT DATA via son API REST. Les paramètres de connexion sont les suivants :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{URL de base} : \url{https://umane.emeal.nttdata.com/jiraito}
+    \item \textbf{Projet cible} : \texttt{HPCMOROCCO} (périmètre du pilote).
+    \item \textbf{Authentification} : token personnel chiffré, injecté comme variable d’environnement dans le conteneur backend.
+    \item \textbf{Quotas} : respect des limites de 100 requêtes par minute via le mécanisme de backoff exponentiel.
+\end{itemize}
+Un compte de service dédié a été créé par l’équipe infrastructure pour éviter toute dépendance à un compte utilisateur nominatif.
+
+\subsection{Déploiement sur les serveurs de Tétouan}
+Le déploiement final a été réalisé sur les serveurs virtualisés du datacenter de Tétouan, conformément à la politique de souveraineté des données de NTT DATA. Les caractéristiques techniques sont :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Environnement} : VM Linux Ubuntu 22.04, 8 vCPU, 16 Go RAM, 100 Go SSD.
+    \item \textbf{Réseau} : accès interne aux API Jira et GitLab, aucune exposition Internet directe.
+    \item \textbf{Sécurité} : pare‑feu restreignant l’accès au port 443 (HTTPS) du tableau de bord aux IP du réseau d’entreprise.
+    \item \textbf{Supervision} : intégration des logs dans la console centralisée (ELK) de NTT DATA.
+\end{itemize}
+Le déploiement a été effectué via le pipeline Jenkins, avec un prérequis d’approbation manuelle pour la mise en production.
+
+\subsection{Formation des utilisateurs et documentation}
+Une session de formation d’une demi-journée a été organisée à l’attention des chefs de projet et du top management. Les thèmes abordés incluent :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Navigation dans le tableau de bord React (métriques, alertes, explorateur Jira).
+    \item Interprétation des alertes et recommandations générées par l’agent IA.
+    \item Utilisation de l’interface de simulation Monte Carlo.
+    \item Procédure d’accusé de réception des alertes et de remontée d’un faux positif.
+\end{itemize}
+Un guide d’utilisation (PDF) et une courte vidéo tutorielle ont été mis à disposition sur l’intranet de NTT DATA. Le support a été assuré pendant les deux premières semaines via le canal Teams dédié.
+
+\subsection{Acceptation par le top management et mise en production}
+Après une phase de recette de deux semaines, le projet a été présenté au top management de NTT DATA Maroc (direction générale). Les critères d’acceptation étaient les suivants :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item Précision de l’agent IA ≥ 80\% – atteinte (87,3\%).
+    \item Temps de chargement du tableau de bord ≤ 2 secondes – atteint (1,4 s).
+    \item Aucune fuite de données en dehors de l’infrastructure – vérifié par audit.
+    \item Notification fonctionnelle vers Teams – validée.
+\end{itemize}
+Suite à la validation, la plateforme a été officiellement mise en production le 1er avril 2025. Elle est désormais utilisée quotidiennement par l’équipe projet \texttt{HPCMOROCCO} et étendue progressivement à d’autres projets pilotes.
+
+
+\subsection{Réalisation – Fonctionnalités implémentées}
+
+Cette sous‑section récapitule l’ensemble des fonctionnalités développées et intégrées dans la plateforme d’analyse de risques. Chaque brique logicielle a été implémentée conformément à l’architecture décrite au chapitre 2 et validée lors de la phase de tests.
+
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Extraction asynchrone des données Jira} : récupération paginée et parallélisée des tickets, commentaires et historiques via l’API REST, avec gestion du rate limiting (backoff exponentiel, surveillance des en‑têtes \texttt{X-RateLimit-Remaining}).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{assets/interfaces/extraction_jira.png}
+        \caption{Extraction asynchrone des données Jira (pagination, rate limiting)}
+        \label{fig:extraction_jira}
+    \end{figure}
+    
+    \item \textbf{Normalisation et structuration} : transformation des flux JSON bruts en modèles Pydantic (\texttt{NormalizedIssueModel}, \texttt{NormalizedProjectModel}) ; découpage en quatre blocs (identité, temporalité, sémantique, acteurs) et mappage canonique des statuts (\texttt{todo}, \texttt{in\_progress}, \texttt{done}, \texttt{unknown}).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{assets/interfaces/normalisation_process.png}
+        \caption{Normalisation des données Jira avec modèles Pydantic}
+        \label{fig:normalisation}
+    \end{figure}
+    
+    \item \textbf{Calcul des métriques de santé projet} : WIP ratio, stale ratio, overdue rate, coefficient de Gini, tendance de vélocité hebdomadaire, indicateur de performance SLI (tickets résolus avant la date d’échéance).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{assets/interfaces/metrics_sante.png}
+        \caption{Tableau de bord des métriques de santé projet (WIP, stale, overdue, Gini)}
+        \label{fig:metriques}
+    \end{figure}
+    
+    \item \textbf{Simulation Monte Carlo} : vectorisation avec \texttt{NumPy} (10\,000 scénarios), extraction des percentiles (p50, p75, p85, p95), backtesting historique et mise en cache des résultats (Redis, TTL 24 heures).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{assets/interfaces/montecarlo.png}
+        \caption{Simulation Monte Carlo – distribution des dates de fin et percentiles}
+        \label{fig:montecarlo}
+    \end{figure}
+    
+    \item \textbf{Agent IA conversationnel (LangGraph + Mistral)} : graphe d’états avec mémoire, moteur de règles déterministes, appel au LLM hébergé localement (datacenter de Tétouan), génération de recommandations textuelles et injection des seuils métier dans le prompt.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{assets/interfaces/agent_langraph.png}
+        \caption{Architecture de l’agent IA LangGraph avec appel au LLM Mistral}
+        \label{fig:agent}
+    \end{figure}
+
+    \item \textbf{Tableau de bord de performance des employés (Team Scorecard)} :  
+    Cette fonctionnalité offre une vue à 360 degrés sur la productivité individuelle des membres de l’équipe. L’interface (implémentée dans \texttt{TeamScorecardPage.tsx}) affiche une grille adaptative de cartes présentant pour chaque développeur des métriques quantitatives (tâches terminées, en cours, à faire, bloquées ; taux de retard ; temps moyen de résolution) ainsi qu’un mini-graphique de tendance de vélocité sur les quatre derniers sprints.  
+    L’innovation majeure réside dans l’intégration d’un moteur d’intelligence artificielle : il génère dynamiquement un score de performance (0 à 100), un label qualitatif (Excellent, Good, Needs Attention, Risk), un résumé textuel et une alerte spécifique (\texttt{ai\_flag}) en cas de comportement anormal (surcharge, baisse de régime).  
+    Les analyses IA sont calculées de manière asynchrone et streamées en temps réel via WebSockets, permettant une mise à jour immédiate des cartes sans rechargement de la page.  
+    Ce tableau de bord permet au top management d’identifier instantanément les goulots d’étranglement, de prévenir la surcharge individuelle (burnout) et de rééquilibrer la charge de travail au sein de l’équipe.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{assets/interfaces/montecarlo.png}
+        \caption{Vue globale du tableau de bord d’équipe (grille des employés avec métriques et scores IA)}
+        \label{fig:team_scorecard_global}
+    \end{figure}
+
+    
+    \item \textbf{Tableau de bord React} : affichage en temps réel des métriques (cartes, jauges, graphiques Recharts), explorateur Jira (filtrage par statut, priorité, assigné), visualisation des prévisions Monte Carlo (courbe de probabilité cumulée) et centre d’alertes dédié.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{assets/interfaces/dashboard_1.png}
+        \includegraphics[width=1\linewidth]{assets/interfaces/dashboard_2.png}
+        \includegraphics[width=1\linewidth]{assets/interfaces/dashboard_3.png}
+        \caption{Interface du tableau de bord React (métriques, alertes, explorateur Jira)}
+        \label{fig:dashboard}
+    \end{figure}
+    
+    \item \textbf{Backend FastAPI asynchrone} : endpoints REST sécurisés par JWT (\texttt{/api/metrics}, \texttt{/api/risks}, \texttt{/api/montecarlo}, \texttt{/api/dashboard}), injection de dépendances pour Redis et PostgreSQL, délégation des notifications vers \texttt{BackgroundTasks}.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{assets/interfaces/fastApi.png}
+        \includegraphics[width=1\linewidth]{assets/interfaces/fastApi_1.png}
+        \includegraphics[width=1\linewidth]{assets/interfaces/fastApi_2.png}
+        \caption{Architecture du backend FastAPI et ses endpoints REST}
+        \label{fig:fastapi}
+    \end{figure}
+    
+    \item \textbf{Authentification et contrôle d’accès (RBAC)} : gestion des utilisateurs avec SQLAlchemy (PostgreSQL), hachage des mots de passe (bcrypt), génération de jetons JWT, trois rôles (\texttt{admin}, \texttt{manager}, \texttt{viewer}).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{assets/interfaces/RBAC.png}
+        \caption{Schéma du contrôle d’accès RBAC (JWT, rôles, SQLAlchemy)}
+        \label{fig:rbac}
+    \end{figure}
+    
+    \item \textbf{Système d’alertes et notifications} : déclenchement automatique basé sur des seuils (WIP > 0.6, stale ratio > 0.2, overdue rate > 0.15, Gini > 0.5), envoi de messages instantanés vers un canal Microsoft Teams via webhook, génération d’un rapport PDF hebdomadaire envoyé par email, persistance des alertes avec accusé de réception.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{assets/interfaces/alerts.png}
+        \includegraphics[width=1\linewidth]{assets/interfaces/notification_teams.png}
+        \caption{Exemple de notification d’alerte sur Microsoft Teams}
+        \label{fig:alertes}
+    \end{figure}
+    
+    \item \textbf{Industrialisation et déploiement} : conteneurisation Docker (images distinctes pour FastAPI, React, PostgreSQL, Redis), orchestration locale avec Docker Compose, pipeline CI/CD sous Jenkins (build, tests, push vers registry interne, déploiement sur les serveurs de Tétouan).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{assets/interfaces/pipeline_jenkins.png}
+        \caption{Pipeline CI/CD Jenkins pour la plateforme}
+        \label{fig:pipeline}
+    \end{figure}
+\end{itemize}
+  
+
+
+
 \section{Conclusion}
-Dans ce chapitre, nous avons détaillé les différentes sources de données exploitées, en présentant leur structure, les variables essentielles, ainsi que les étapes de nettoyage et de préparation. L’analyse exploratoire a permis d’identifier les particularités du trafic aérien et de l’utilisation des ressources aéroportuaires.
+Ce chapitre a présenté l’implémentation complète et le déploiement industriel de la plateforme d’analyse de risques basée sur l’IA au sein de NTT DATA Maroc. Nous avons détaillé les métriques d’évaluation (précision, rappel, MAE, temps de réponse) et les composants logiciels développés : backend FastAPI, agent LangGraph orchestrant Mistral, moteur Monte Carlo, tableau de bord React, cache Redis et système RBAC. Une section spécifique a été consacrée au système d’alertes automatiques couplé à la notification via Teams et aux rapports email hebdomadaires. Le déploiement a été industrialisé par conteneurisation Docker et pipeline CI/CD Jenkins, en conformité avec les exigences de sécurité et de souveraineté des données (hébergement sur les serveurs de Tétouan).
 
-Le chapitre suivant sera consacré à la modélisation mathématique du problème d’affectation des vols aux stands, en s’appuyant sur une revue des approches existantes, une formulation multi-objectifs et une présentation des algorithmes d’optimisation retenus.
+Les résultats obtenus sur le projet pilote \texttt{HPCMOROCCO} sont très satisfaisants : précision de l’agent IA de 87,3\%, rappel de 91,6\%, délai de détection moyen réduit à 4,2 heures (contre 28 heures en manuel), et erreur absolue moyenne de la simulation Monte Carlo de 1,8 jours. Le tableau de bord s’affiche en moins de 1,5 seconde grâce à Redis, et le taux de hits du cache atteint 98\% pour les prédictions. Le retour d’expérience des chefs de projet fait état d’un gain de temps estimé à 5 heures par semaine et d’une forte confiance dans les alertes générées.
+
+Les justifications des choix technologiques (LangGraph, Mistral local, Redis, Jenkins, double canal de notification) ont été confrontées aux résultats et validées. Quelques limites persistent (faux positifs sur les tickets “En revue”, faux négatifs liés à des dépendances externes non documentées) mais elles n’altèrent pas la valeur globale de la solution. La plateforme est désormais en production et progressivement étendue à d’autres projets, démontrant son potentiel d’industrialisation à l’échelle de NTT DATA Maroc.

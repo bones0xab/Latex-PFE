@@ -1,22 +1,15 @@
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}      % Pour la table des matières
 \begin{quote}
-\vspace{0.8cm}
-\hspace{0.5cm} This report presents the work carried out during my end-of-studies project at \textbf{NTT DATA}, in the field of artificial intelligence, as part of the master's program \textbf{Distributed Systems and Artificial Intelligence} at \textbf{ENSET Mohammedia}. The main objective was to design an AI agent for risk analysis and action recommendation, based on data extracted from \textbf{Jira Data Center} (projects, issues, histories). The project aimed to automate anomaly detection, predict delays, and propose proactive corrective actions. Several datasets were extracted, cleaned, and structured. Classification algorithms and natural language processing models were tested, integrating various criteria (issue severity, resolution time, team interactions). A visualization interface was also developed to simulate and adjust recommendations in real time. This report traces the main stages of the project, from data preparation to solution implementation, highlighting technical choices and obtained results.
-\vspace{1em}
+This thesis presents the work carried out during my end-of-studies project at \textbf{NTT DATA Morocco}, in the field of artificial intelligence, as part of the Master’s degree in \textbf{Distributed Systems and Artificial Intelligence} at ENSET Mohammedia. The main objective was to design a comprehensive risk analysis and action recommendation platform, built around a conversational AI agent, exploiting data from \textbf{Jira Data Center} (tickets, comments, histories, project metadata).
+
+The developed system integrates an asynchronous backend (FastAPI), a metric computation engine (WIP ratio, stale ratio, Gini coefficient, velocity), a predictive Monte Carlo simulation (10,000 scenarios, percentiles p50 to p95), and a LangGraph orchestration agent coupled with the Mistral LLM (hosted locally in Tétouan). The user interface (React) provides a real-time dashboard, a Jira explorer, automatic alerts, and a detailed view of individual performance (employee scoreboard). The entire platform is industrialised using Docker, Jenkins, and deployed on NTT DATA’s servers.
 
 \rule{\linewidth}{0.4pt}
 
 \begin{flushright}
-	\textbf{\textit{Keywords:}} NTT DATA, AI agent, Jira Data Center, risk analysis, recommendations, artificial intelligence, NLP.
+\textbf{\textit{Keywords:}} NTT DATA, AI agent, LangGraph, Mistral, Jira Data Center, Monte Carlo, FastAPI, React, risk analysis, recommendations, artificial intelligence.
 \end{flushright}
 \rule{\linewidth}{0.4pt}
 
 \end{quote}
-
-%\begin{quote}
-	
-	
-%This report has been prepared as part of the final year project at the Faculty of Sciences and Techniques of Mohammedia in 2023. The objective of this project is to develop a mobile application based on voice assistance for tourism in Marrakech. This report covers all the stages involved in the completion of this project, with the aim of obtaining our degrees in Computer Science, Networks, and Multimedia.
-	
-%\end{quote}

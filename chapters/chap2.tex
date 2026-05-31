@@ -11,8 +11,17 @@ Ce chapitre est dédié à la conception fonctionnelle et technique de la platef
 Le processus de recueil des exigences s'est appuyé sur une démarche hautement collaborative et itérative, essentielle pour s'aligner sur les réalités du terrain. Plusieurs réunions de cadrage et des revues d'avancement hebdomadaires ont été menées en étroite collaboration avec le management et l'équipe d'encadrement, notamment Monsieur Mohammed Amine Elmeknassi et Monsieur Anis Khairi. Ces échanges se sont déroulés selon un format hybride, alliant des ateliers en présentiel dans les locaux de NTT DATA Maroc à Casablanca et des sessions de travail à distance. L'utilisation systématique de présentations lors de ces points d'étape a permis de valider progressivement les hypothèses de conception et de cerner avec précision les attentes des futurs utilisateurs vis-à-vis de l'automatisation par l'intelligence artificielle.
 
 \subsection{Les besoins fonctionnels}
-Les fonctionnalités du système ont été définies en fonction des interactions attendues pour chaque acteur clé de la plateforme. En premier lieu, l'agent d'intelligence artificielle agit comme le moteur d'analyse continu du système ; il a pour mission d'interroger l'API Jira de façon autonome, de traiter les descriptions et les commentaires pour y déceler des anomalies, et de générer des recommandations d'actions correctives. En second lieu, l'utilisateur final nécessite un accès interactif à un tableau de bord global. Cet espace doit lui permettre de visualiser les métriques de performance, de consulter les prévisions de la date de fin générées par les simulations de Monte Carlo, et d'exporter ces indicateurs de manière intuitive. En troisième lieu, l'administrateur doit disposer des interfaces nécessaires pour configurer les paramètres globaux de l'application, gérer les comptes utilisateurs et définir finement les niveaux d'autorisation grâce à un système de contrôle d'accès basé sur les rôles. Enfin, l'acteur DevOps requiert des mécanismes automatisés facilitant le déploiement de l'infrastructure conteneurisée, ainsi que des outils permettant de superviser la bonne exécution des tâches d'arrière-plan.
 
+Les fonctionnalités du système ont été définies en fonction des interactions attendues pour chaque acteur clé de la plateforme.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{assets/diagrams/diagram_case.png}
+    \caption{Diagramme de cas d’utilisation de la plateforme IA}
+    \label{fig:use_case}
+\end{figure}
+
+En premier lieu, l’agent d’intelligence artificielle agit comme le moteur d’analyse continu du système ; il a pour mission d’interroger l’API Jira de façon autonome, de traiter les descriptions et les commentaires pour y déceler des anomalies, et de générer des recommandations d’actions correctives. En second lieu, l’utilisateur final nécessite un accès interactif à un tableau de bord global. Cet espace doit lui permettre de visualiser les métriques de performance, de consulter les prévisions de la date de fin générées par les simulations de Monte Carlo, et d’exporter ces indicateurs de manière intuitive. En troisième lieu, l’administrateur doit disposer des interfaces nécessaires pour configurer les paramètres globaux de l’application, gérer les comptes utilisateurs et définir finement les niveaux d’autorisation grâce à un système de contrôle d’accès basé sur les rôles. Enfin, l’acteur DevOps requiert des mécanismes automatisés facilitant le déploiement de l’infrastructure conteneurisée, ainsi que des outils permettant de superviser la bonne exécution des tâches d’arrière-plan.
 \subsection{Les besoins non fonctionnels}
 
 Afin de garantir une exploitation fiable et fluide en milieu industriel, l'application doit satisfaire des critères non fonctionnels rigoureux. Sur le plan des performances, le système s'engage à fournir des temps d'affichage minimaux de l'interface, rendus possibles par l'implémentation d'un système de mise en cache Redis qui évite le recalcul des métriques lourdes. La sécurité constitue une priorité absolue ; elle est assurée par une authentification stricte basée sur des jetons JWT et par l'utilisation d'un modèle de langage hébergé localement, garantissant ainsi qu'aucune donnée de projet confidentielle ne transite vers des serveurs externes. En matière de disponibilité, la plateforme est conçue pour fonctionner de manière ininterrompue en arrière-plan, s'appuyant sur des processus asynchrones qui assurent un service en continu. La maintenabilité est assurée par une architecture logicielle modulaire séparant clairement l'interface utilisateur des logiques de l'agent IA, facilitant ainsi l'ajout futur de nouveaux indicateurs. L'utilisabilité a été pensée pour offrir une expérience visuelle moderne, favorisant une interprétation instantanée des graphiques complexes. Enfin, l'interopérabilité est garantie par le respect strict des standards d'interface de programmation, permettant au système de s'intégrer de manière transparente avec l'écosystème Jira de l'entreprise.
@@ -49,7 +58,7 @@ Pour répondre aux exigences complexes de l'analyse prédictive et de l'automati
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\linewidth]{assets/architecture_globale.png}
+\includegraphics[width=0.9\linewidth]{assets/arch_global.png}
 \caption{Architecture globale de la plateforme IA de pilotage de projets}
 \label{fig:archi_globale}
 \end{figure}
@@ -64,6 +73,7 @@ L'architecture se compose des éléments suivants :
 \item \textbf{Interface utilisateur :} L'interaction avec le chef de projet est matérialisée par une application web dynamique (Single Page Application) construite avec la bibliothèque React. Elle héberge le tableau de bord principal et des explorateurs spécifiques, affichant en temps réel des métriques avancées telles que le ratio des travaux en cours (WIP ratio), le taux de tickets obsolètes (stale ratio), le taux de retard (overdue rate) et le coefficient d'inégalité de Gini.
 \item \textbf{Reporting et pilotage :} Le tableau de bord agit comme la tour de contrôle du projet en agrégeant les indicateurs de performance clés (KPI) au sein de grilles graphiques et de diagrammes. Il intègre un système de boutons d'exportation pour le reporting de direction, ainsi qu'un centre d'alertes affichant directement les recommandations de l'IA.
 \item \textbf{Sécurité et gestion des accès :} La sécurisation des points de terminaison est garantie par un mécanisme de jetons JSON Web Tokens (JWT). Une politique stricte de contrôle d'accès basé sur les rôles (RBAC) est mise en place, avec un mappage des droits géré par l'ORM SQLAlchemy communiquant avec la base PostgreSQL.
+\item \textbf{Supervision et alerting :} Pour assurer une détection proactive des anomalies et une visibilité en temps réel sur la santé des projets, une stack de supervision a été déployée. \textbf{Prometheus} collecte les métriques exposées par le backend FastAPI (WIP ratio, stale ratio, overdue rate, etc.) et évalue des règles d’alerte définies (ex. \texttt{CriticalWipRatio}, \texttt{ProjectAtRisk}). \textbf{Grafana} visualise ces métriques sur des tableaux de bord personnalisés (health over time, heatmaps, statut des projets). \textbf{Alertmanager} reçoit les alertes déclenchées par Prometheus et les route vers un webhook FastAPI, qui les transforme en notifications instantanées envoyées à un canal \textbf{Microsoft Teams}. Ce canal permet au top management de réagir immédiatement aux situations critiques.
 \item \textbf{Déploiement et DevOps :} Afin d'assurer une reproductibilité sans faille entre le développement et l'infrastructure client, l'ensemble des composants (frontend, backend FastAPI, bases de données) est encapsulé dans des conteneurs Docker. Le cycle de livraison est orchestré par un pipeline d'intégration et de déploiement continus (CI/CD) opéré sous Jenkins.
 \end{enumerate}
 
@@ -71,47 +81,114 @@ L'architecture se compose des éléments suivants :
 Le module d'intelligence artificielle constitue le noyau prédictif et qualitatif de la plateforme. Conçu pour dépasser la simple agrégation statistique, il agit comme un véritable agent expert autonome, capable de déduire des risques systémiques en croisant des données mathématiques avec des nuances sémantiques. L'intégration de LangGraph permet spécifiquement de maintenir l'état conversationnel de l'agent, lui conférant une « mémoire » de sa chaîne de raisonnement à travers les différentes étapes de l'analyse.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\linewidth]{assets/architecture_ai.png}
+\includegraphics[width=0.9\linewidth]{assets/architect_ai.png}
 \caption{Architecture globale de IA}
 \label{fig:archi_ai}
 \end{figure}
 
 
 L'architecture de ce module suit un pipeline structuré en plusieurs phases :
+
 \begin{enumerate}
-\item \textbf{Prétraitement et préparation des données}
+    \item \textbf{Ingestion et normalisation des données}
+    \begin{itemize}
+        \renewcommand{\labelitemi}{—}
+        \item Extraction asynchrone des données via l'API REST Jira (bibliothèques \texttt{httpx}, \texttt{asyncio}), avec gestion de la pagination (\texttt{startAt}) et backoff exponentiel en cas d'erreurs 429/503.
+        \item Normalisation rigoureuse via des modèles Pydantic (\texttt{NormalizedIssueModel}), incluant l'aplatissement des champs et le mapping des statuts vers une ontologie canonique (\texttt{todo}, \texttt{in\_progress}, \texttt{done}, \texttt{unknown}).
+        \item Déclenchement périodique (boucle de fond toutes les 30 minutes) ou à la demande via l'API.
+    \end{itemize}
+    
+    \item \textbf{Moteur de règles déterministes}
+    \begin{itemize}
+        \renewcommand{\labelitemi}{—}
+        \item Application de règles statiques avant toute inférence LLM : seuils critiques (WIP ratio $> 0.60$, stale ratio $> 0.15$), détection de charge concentrée, tickets non assignés.
+        \item Production d'objets \texttt{RuleHit} contenant la sévérité (\texttt{warn} / \texttt{risk}) et une justification textuelle.
+    \end{itemize}
+    
+    \item \textbf{Orchestration LangGraph}
+    \begin{itemize}
+        \renewcommand{\labelitemi}{—}
+        \item Construction d'un \texttt{StateGraph} avec deux nœuds principaux : \texttt{agent\_decision\_node} (décision) et \texttt{tool\_executor\_node} (exécution d'outils).
+        \item Gestion de l'état via un \texttt{ProjectState} (\texttt{TypedDict}) maintenant les messages, les métriques calculées et les résultats finaux.
+        \item Mise à disposition d'outils pour le LLM : \texttt{fetch\_issues}, \texttt{compute\_metrics}, \texttt{evaluate\_rules}.
+    \end{itemize}
+    
+    \item \textbf{Appel au LLM Mistral (hébergé sur les serveurs internes de NTT DATA à Tétouan)}
 \begin{itemize}
-\renewcommand{\labelitemi}{—}
-    \item Extraction asynchrone des données de gestion de projet via l'API REST Jira.
-    \item Normalisation des champs pour consolider les structures disparates en un format pivot unifié.
-    \item Calcul intensif des métriques quantitatives fondamentales (WIP ratio, stale ratio, overdue rate, coefficient de Gini).
-    \item Préparation contextuelle des entrées pour le modèle LLM, impliquant l'assemblage cohérent des descriptions de tâches, des commentaires techniques et des historiques d'évolution.
+    \renewcommand{\labelitemi}{—}
+    \item Le modèle Mistral est déployé sur les serveurs sécurisés du datacenter de Tétouan, accessible via une API REST interne.
+    \item En cas d’indisponibilité du serveur Mistral, un mécanisme de bascule (fallback) vers Deepseek via l’API Groq est activé.
+    \item Construction d’un prompt système enrichi injectant les seuils métier, les métriques précalculées et les résultats du moteur de règles.
+    \item Sortie structurée en JSON validé par Pydantic (\texttt{ProjectAnalysisModel}) : risques, justifications, actions correctives.
+    \item Température fixée à $0.0$ pour un raisonnement déterministe.
 \end{itemize}
-
-\item \textbf{Modélisation et optimisation IA}
-\begin{itemize}
-\renewcommand{\labelitemi}{—}
-    \item Filtrage préalable par un moteur de règles statiques visant à identifier instantanément les risques évidents (délais structurellement dépassés, tickets bloqués).
-    \item Orchestration du flux cognitif par LangGraph, qui encadre la logique de décision et gère l'état d'exécution de l'agent.
-    \item Soumission des requêtes au LLM Mistral (hébergé en circuit fermé à Tétouan) pour effectuer une analyse sémantique des échanges et générer des recommandations d'actions correctives.
-    \item Exécution de la simulation de Monte Carlo pour déduire, à partir de la variance historique, une prédiction probabiliste de la date de fin de projet.
-\end{itemize}
-
-\item \textbf{Déploiement via API et conteneurisation}
-\begin{itemize}
-\renewcommand{\labelitemi}{—}
-    \item Exposition unifiée des conclusions algorithmiques (scores de risques, textes de recommandation, intervalles de confiance prédictifs) par l'intermédiaire d'une API REST développée avec le framework asynchrone FastAPI.
-    \item Isolation du processus analytique au sein d'un environnement conteneurisé Docker.
-\end{itemize}
-
-\item \textbf{Intégration applicative et visualisation}
-\begin{itemize}
-\renewcommand{\labelitemi}{—}
-    \item Transmission asynchrone des résultats d'analyse vers le système de cache Redis, garantissant une mise à disposition véloce au backend.
-    \item Restitution visuelle et interprétation dans le tableau de bord React, traduisant les vecteurs de données en éléments d'interface lisibles (alertes, recommandations, graphiques dynamiques).
-    \item Maintien d'une traçabilité des décisions algorithmiques et conservation de l'historique des analyses.
-\end{itemize}
+    
+    \item \textbf{Agrégation et post-traitement}
+    \begin{itemize}
+        \renewcommand{\labelitemi}{—}
+        \item Fusion des résultats JSON issus du LLM et normalisation.
+        \item Garde-fous : en cas d'absence de statut santé global dans la réponse LLM, le pipeline utilise le niveau de santé calculé par le moteur de règles.
+    \end{itemize}
+    
+    \item \textbf{Stockage, cache et audit}
+    \begin{itemize}
+        \renewcommand{\labelitemi}{—}
+        \item Cache Redis des résultats sérialisés avec une durée de vie (TTL) de 1800 secondes.
+        \item Sauvegarde de snapshots JSON locaux (\texttt{snapshots/latest.json}) pour assurer la traçabilité (l'implémentation actuelle n'utilise pas PostgreSQL pour cette fonction).
+    \end{itemize}
+    
+    \item \textbf{Interface avec le reste de la plateforme}
+    \begin{itemize}
+        \renewcommand{\labelitemi}{—}
+        \item Exposition des résultats via les endpoints FastAPI \texttt{/api/ai/insights} et \texttt{/api/ai/projects}.
+        \item Consommation des alertes exclusivement par consultation de l'API depuis le tableau de bord (l'envoi vers Microsoft Teams n'est pas encore implémenté dans cette version).
+    \end{itemize}
 \end{enumerate}
+
+
+\section{Modélisation statique et dynamique}
+
+Afin de compléter la description architecturale, nous présentons ci‑dessous les diagrammes UML illustrant la structure statique et les interactions dynamiques des composants principaux.
+
+\subsection{Diagramme de classe}
+
+La figure \ref{fig:class_diagram} présente les principales entités manipulées par la plateforme : \texttt{Project}, \texttt{Issue} (ticket Jira), \texttt{User} (avec rôles RBAC), \texttt{Alert} et \texttt{Metrics}. Les associations montrent qu’un projet contient plusieurs tickets, qu’un ticket peut générer plusieurs alertes et qu’un utilisateur peut être assigné à plusieurs tickets.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/diagrams/diagram_class.png}
+    \caption{Diagramme de classes – structure statique du système}
+    \label{fig:class_diagram}
+\end{figure}
+
+\subsection{Diagrammes de séquence}
+
+Les diagrammes ci‑dessous illustrent les interactions temporelles entre les composants clés de la plateforme.
+
+\subsubsection{Extraction des données Jira}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/diagrams/diagram_seq_extraction.png}
+    \caption{Extraction asynchrone des données Jira avec pagination et gestion des quotas}
+    \label{fig:seq_extraction}
+\end{figure}
+
+\subsubsection{Orchestration de l’agent IA}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/diagrams/diagram_seq_orchestration.png}
+    \caption{Orchestration LangGraph du pipeline IA (règles, Mistral, cache, snapshot)}
+    \label{fig:seq_orchestration}
+\end{figure}
+
+\subsubsection{Authentification et RBAC}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/diagrams/diagram_seq_rbac.png}
+    \caption{Authentification JWT et contrôle d’accès basé sur les rôles}
+    \label{fig:seq_rbac}
+\end{figure}
 
 
 \section{Environnements logiciels et technologies}
@@ -125,7 +202,7 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.2\linewidth]{assets/logos/python.png}
-\caption{Python}
+\caption{Logo de Python}
 \label{fig:Python}
 \end{figure}
 
@@ -135,35 +212,52 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/fastApi.png}
-    \caption{Python fast api}
+    \caption{Logo de FastAPI}
     \label{fig:Python_fastapi}
     \end{figure}
     \item \textbf{SQLAlchemy} : ORM utilisé pour interagir avec la base de données PostgreSQL, permettant une gestion élégante des modèles utilisateurs et des rôles RBAC.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/sqlalchemy.jpg}
-    \caption{sqlalchemy}
+    \caption{Logo de SQLAlchemy}
     \label{fig:sqlalchemy}
     \end{figure}
     \item \textbf{LangGraph} : framework d’orchestration d’agents IA, retenu pour sa capacité à maintenir un état conversationnel et à gérer des flux de décision cycliques.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/langgraph.png}
-    \caption{Python langgraph}
+    \caption{Logo de LangGraph}
     \label{fig:Python_langgraph}
+    \end{figure}
+    \item \textbf{Prometheus} : système de surveillance et de collecte de métriques en temps réel. Il extrait les indicateurs exposés par le backend FastAPI (WIP ratio, stale ratio, taux de retard, nombre d’alertes) et évalue des règles d’alerte personnalisées (ex. \texttt{CriticalWipRatio}, \texttt{ProjectAtRisk}). 
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.15\textwidth]{assets/logos/prometheus_log.png}
+        \caption{Logo de Prometheus}
+        \label{fig:prometheus_logo}
+    \end{figure}
+
+    \item \textbf{Grafana} : plateforme de visualisation de données. Elle se connecte à Prometheus pour produire des tableaux de bord interactifs (health over time, heatmaps, statut des projets, alertes firing). Ces dashboards sont consultables par les chefs de projet et le top management pour un suivi synthétique de la santé du portefeuille.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.1\textwidth]{assets/logos/grafana_logo.jpg}
+        \caption{Logo de Grafana}
+        \label{fig:grafana_logo}
     \end{figure}
     \item \textbf{Mistral} : modèle de langage large (LLM) hébergé localement sur les serveurs de Tétouan, choisi pour son équilibre entre performance et confidentialité des données.
     \begin{figure}[H]
     \centering
-    \includegraphics[width=0.2\linewidth]{assets/logos/mistral.jpeg}
-    \caption{Python}
+    \includegraphics[width=0.4\linewidth]{assets/logos/mistral.jpeg}
+    \caption{Logo de Mistral}
     \label{fig:Python_mistral}
     \end{figure}
     \item \textbf{NumPy, Pandas} : bibliothèques de calcul scientifique utilisées pour les simulations de Monte Carlo et le calcul des métriques (WIP ratio, stale ratio, coefficient de Gini).
     \begin{figure}[H]
     \centering
-    \includegraphics[width=0.2\linewidth]{assets/logos/numpy.jpg}
-    \caption{Python numpy}
+    \includegraphics[width=0.4\linewidth]{assets/logos/numpy.jpg}
+    \caption{Numpy et Pandas}
     \label{fig:Python_numpy}
     \end{figure}
 \end{itemize}
@@ -172,8 +266,8 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.2\linewidth]{assets/logos/react_logo.png}
-\caption{react}
+\includegraphics[width=0.4\linewidth]{assets/logos/react_logo.png}
+\caption{Logo de REACT JS}
 \label{fig:react}
 \end{figure}
 
@@ -181,8 +275,8 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.3\linewidth]{assets/logos/postgres_logo.png}
-\caption{postgres}
+\includegraphics[width=0.4\linewidth]{assets/logos/postgres_logo.png}
+\caption{Logo de PostgreSQL}
 \label{fig:postgres}
 \end{figure}
 
@@ -191,7 +285,7 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.2\linewidth]{assets/logos/redis.png}
-\caption{redis}
+\caption{Logo de Redis}
 \label{fig:redis}
 \end{figure}
 
@@ -200,15 +294,15 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.2\linewidth]{assets/logos/docker.png}
-\caption{docker}
+\caption{Logo de Docker}
 \label{fig:docker}
 \end{figure}
 
 \textbf{Jenkins} — Serveur d’intégration continue utilisé pour automatiser les pipelines CI/CD, assurant les tests, la construction et le déploiement de la plateforme.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\linewidth]{assets/logos/jenkins.jpg}
-\caption{jenkins}
+\includegraphics[width=0.4\linewidth]{assets/logos/logo_jenkins.png}
+\caption{Logo de Jenkins}
 \label{fig:jenkins}
 \end{figure}
 
@@ -219,30 +313,30 @@ L’équipe de développement a utilisé un ensemble d’outils collaboratifs et
     \item \textbf{Visual Studio Code} : IDE principal, apprécié pour ses extensions Python, son débogueur intégré et son terminal facilitant les tests.
     \begin{figure}[H]
     \centering
-    \includegraphics[width=0.2\linewidth]{assets/logos/vsCode.png}
-    \caption{vs}
-    \label{vs}
+    \includegraphics[width=0.15\linewidth]{assets/logos/vsCode.png}
+    \caption{Logo de Visual Studio Code}
+    \label{fig:vsCode}
     \end{figure}
     \item \textbf{GitLab} : plateforme de gestion de version basée sur Git, utilisée pour le suivi des modifications du code source et la collaboration entre développeurs, accessible à l’adresse \href{https://umane.emeal.nttdata.com/git/FELTRIINTPROJ/nttdata-ai-agent-project-tracking}{https://umane.emeal.nttdata.com/git/FELTRIINTPROJ/nttdata-ai-agent-project-tracking}.    \item \textbf{Microsoft Teams} : outil de communication quotidienne pour les réunions de synchronisation (daily stand-ups) et les échanges avec l’encadrement.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/gitlab_logo.png}
-    \caption{gitlab}
+    \caption{Logo de GitLab}
     \label{fig:gitlab}
     \end{figure}
     \item \textbf{Jira} : utilisé pour le suivi des tâches du projet lui-même, accessible à l’adresse \href{https://umane.emeal.nttdata.com/jiraito/browse/HPCMOROCCO}{https://umane.emeal.nttdata.com/jiraito/browse/HPCMOROCCO}, démontrant ainsi l’adéquation de la plateforme avec les méthodes agiles.    \item \textbf{Postman} : outil de test d’API REST, employé pour valider les endpoints FastAPI avant intégration.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/jira_logo.png}
-    \caption{jira}
+    \caption{Logo de Jira}
     \label{fig:jira}
     \end{figure}
     \item \textbf{Docker Compose} : utilisé en développement pour orchestrer l’exécution simultanée des conteneurs backend, frontend, PostgreSQL et Redis.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/docker.png}
-    \caption{docker}
-    \label{fig:docker}
+    \caption{Logo de Docker Compose}
+    \label{fig:docker_compose}
     \end{figure}
 \end{itemize}
 
@@ -254,35 +348,35 @@ Dans le cadre de l’exploration des solutions open-source pour l’analyse auto
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/langchain.png}
-    \caption{langchain}
+    \caption{Logo de LangChain}
     \label{fig:langchain}
     \end{figure}
     \item \textbf{LlamaIndex} : spécialisé dans l’indexation et la récupération de documents, sans capacité native d’orchestration d’agents.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/llamaindex_logo.png}
-    \caption{llama}
+    \caption{Logo de LlamaIndex}
     \label{fig:llama}
     \end{figure}
     \item \textbf{Rasa} : conçu pour les chatbots conversationnels, mais trop lourd et non orienté vers l’analyse de données structurées de gestion de projet.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/rasa_logo.png}
-    \caption{rasa}
+    \caption{Logo de Rasa}
     \label{fig:rasa}
     \end{figure}
     \item \textbf{Mistral vs. LLaMA 3} : comparaison de modèles de langage open-source pouvant être hébergés localement.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/llama_mistral.jpg}
-    \caption{llama_index}
-    \label{fig:llama_index}
+    \caption{Mistral vs. LLaMA 3}
+    \label{fig:llama_mistral}
     \end{figure}
 \end{itemize}
 À l’issue de cette veille, \textbf{LangGraph} a été retenu pour l’orchestration de l’agent IA, et \textbf{Mistral} pour le LLM, en raison de sa faible empreinte mémoire et de son excellente gestion de la langue française.
 
 \subsection{Comparaison des outils d’orchestration d’agents IA}
-Le tableau \ref{tab:comparaison_orchestration} présente une comparaison synthétique entre deux frameworks d’orchestration envisagés : LangChain et LangGraph.
+Le tableau  présente une comparaison synthétique entre deux frameworks d’orchestration envisagés : LangChain et LangGraph.
 
 \begin{table}[H]
 \centering

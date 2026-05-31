@@ -2,10 +2,13 @@
 \addcontentsline{toc}{chapter}{Résumé} 
 \vspace{-0.8cm}
 
-Ce mémoire présente le travail réalisé lors de mon projet de fin d’études chez \textbf{NTT DATA}, dans le domaine de l’intelligence artificielle, dans le cadre du master \textbf{Systèmes Distribués et Intelligence Artificielle} à l’\textbf{ENSET de Mohammedia}. L’objectif principal était de concevoir un agent IA d’analyse des risques et de recommandation d’actions, fondé sur l’exploitation des données issues de \textbf{Jira Data Center} (projets, tickets, historiques). Le projet visait à automatiser la détection des anomalies, à prédire les retards et à proposer des actions correctives proactives. Plusieurs jeux de données ont été extraits, nettoyés et structurés. Des algorithmes de classification et des modèles de traitement du langage naturel ont été testés, intégrant divers critères (sévérité des tickets, temps de résolution, interactions entre équipes). Une interface de visualisation a également été développée pour simuler et ajuster les recommandations en temps réel. Ce rapport retrace les principales étapes du projet, de la préparation des données à la mise en œuvre des solutions, en soulignant les choix techniques et les résultats obtenus.
+Ce mémoire présente le travail réalisé lors de mon projet de fin d’études chez \textbf{NTT DATA Maroc}, dans le domaine de l’intelligence artificielle, dans le cadre du master \textbf{Systèmes Distribués et Intelligence Artificielle} à l’ENSET de Mohammedia. L’objectif principal était de concevoir une plateforme complète d’analyse de risques et de recommandation d’actions, articulée autour d’un agent IA conversationnel, exploitant les données issues de \textbf{Jira Data Center} (tickets, commentaires, historiques, métadonnées de projet).
+
+Le système développé intègre un backend asynchrone (FastAPI), un moteur de calcul de métriques (WIP ratio, stale ratio, coefficient de Gini, vélocité), une simulation prédictive par Monte Carlo (10 000 scénarios, percentiles p50 à p95) et un agent d’orchestration LangGraph couplé au LLM Mistral (hébergé localement à Tétouan). L’interface utilisateur (React) offre un tableau de bord temps réel, un explorateur Jira, des alertes automatiques et une vue détaillée des performances individuelles (scoreboard employé). L’ensemble est industrialisé via Docker, Jenkins et déployé sur les serveurs de NTT DATA.
+
 \vspace{2em}
-\hline
+\noindent\rule{\linewidth}{0.4pt}
+
 \begin{flushright}
-	\textbf{\textit{Mots-clés :}}NTT DATA, Agent IA, Jira Data Center, analyse des risques, recommandations, intelligence artificielle, NLP.
+	\textbf{\textit{Mots-clés :}} NTT DATA, agent IA, LangGraph, Mistral, Jira Data Center, Monte Carlo, FastAPI, React, analyse des risques, recommandations, intelligence artificielle.
 \end{flushright}
-\hline
