@@ -34,6 +34,9 @@ Au Maroc, NTT DATA accompagne ses clients à travers une gamme complète de serv
 
 \subsection{Fiche signalétique de l’entreprise}
 Ce tableau présente les informations permettant d’identifier l’entreprise NTT DATA.
+
+Le stage s’est déroulé au sein de la filiale marocaine de NTT DATA, située à Casablanca, qui opère sur l’ensemble des métiers de conseil, développement et infrastructure.
+
 \begin{table}[H]
 	\centering
 	\renewcommand{\arraystretch}{0.9}
@@ -65,12 +68,12 @@ Ce tableau présente les informations permettant d’identifier l’entreprise N
 
 \subsubsection{Domaines d’expertise et secteurs d’activité}
 
-La figure suivante \ref{fig:domaines_ntt} présente les principaux domaines d’expertise de NTT DATA Maroc.
+La figure suivante \ref{fig:domaines_ntt} présente les principaux domaines d’expertise de NTT DATA Casablanca.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\linewidth]{assets/organigramme_ntt.png}
-	\caption{Domaines d’expertise et secteurs d’activité de NTT DATA Maroc}
+	\includegraphics[width=0.8\linewidth]{assets/org.png}
+	\caption{Domaines d’expertise et secteurs d’activité de NTT DATA Casablanca}
 	\label{fig:domaines_ntt}
 \end{figure}
 
@@ -84,7 +87,7 @@ Comme l’illustre la figure \ref{fig:domaines_ntt}, NTT DATA Maroc structure se
     \item \textbf{Business Intelligence \& Conseil IT} : tableaux de bord décisionnels, indicateurs de performance, accompagnement stratégique des projets.
 \end{enumerate}
 
-L’entreprise intervante principalement dans les secteurs suivants : banque et finance, télécommunications, assurance, industrie et services, retail et commerce, ainsi que le secteur public.
+L’entreprise intervient principalement dans les secteurs suivants : banque et finance, télécommunications, assurance, industrie et services, retail et commerce, ainsi que le secteur public.
 
 \subsubsection{Présence internationale}
 La figure \ref{fig:map_ntt} illustre la présence géographique de NTT DATA à travers le monde.
@@ -100,7 +103,7 @@ NTT DATA dispose d’une présence stratégique sur plusieurs continents, avec d
 \begin{itemize}
 	\renewcommand{\labelitemi}{—}
 	\item \textbf{Tokyo (siège mondial)} : Plus de 150 000 collaborateurs dans le monde
-	\item \textbf{Casablanca} : Siège social pour l’Afrique, moteur de la transformation digitale au Maroc
+	\item \textbf{Casablanca, Tétouan} : Sièges social pour l’Afrique, moteur de la transformation digitale au Maroc
 	\item \textbf{Paris} : Centre européen majeur
 	\item \textbf{Washington} : Hub stratégique pour l’Amérique du Nord
 	\item \textbf{Dubaï} : Base pour les opérations au Moyen‑Orient
@@ -108,7 +111,7 @@ NTT DATA dispose d’une présence stratégique sur plusieurs continents, avec d
 
 \subsection{Structure organisationnelle de l’entreprise}
 
-La Figure \ref{fig:secteurs-nttdata} illustre la structure organisationnelle de la filiale marocaine de NTT DATA. Bien que l'entreprise fasse partie d'un groupe mondial, elle dispose d'une organisation locale agile pour répondre aux enjeux du marché marocain et à ses objectifs de création de 1000 emplois d'ici 2025.
+La Figure \ref{fig:secteurs-nttdata} illustre la structure organisationnelle de la filiale marocaine de NTT DATA. Bien que l'entreprise fasse partie d'un groupe mondial, elle dispose d'une organisation locale agile pour répondre aux enjeux du marché marocain et à ses objectifs de création de plusieurs emplois d'ici 2026.
 
 \begin{figure}[H]
     \centering
@@ -153,6 +156,9 @@ Face à ce constat, une initiative de modernisation du pilotage de projet a ét�
     \item Un système de contrôle d’accès (RBAC) garantissant que chaque utilisateur (chef de projet, développeur, manager) ne voit que les informations correspondant à son périmètre.
 	\item Un système d’alertes automatiques couplé à Microsoft Teams, permettant de notifier instantanément le top management en cas de détection de risque critique.
 	\item Une industrialisation complète via un pipeline Jenkins, assurant l’intégration continue, les tests et le déploiement automatisé de la plateforme sur les serveurs de NTT DATA.
+	\item Une architecture multi-agents spécialisée, incluant des agents dédiés à l’analyse fine des performances individuelles et collectives (Team Scoreboard et Worker Insights), afin d’optimiser la répartition de la charge de travail.
+	\item Une stack d’observabilité technique (Prometheus et Grafana) garantissant la supervision en temps réel de la santé de l’application, des performances du système et des métriques liées à l’intelligence artificielle.
+	\item Des métriques avancées et indicateurs de performance (KPIs) permettant d’évaluer en profondeur la dynamique de l’équipe et l’efficacité globale des développements.
 \end{itemize}
 
 Cette plateforme répond à un besoin urgent d’accélération de l’analyse : là où une équipe humaine mettrait plusieurs heures ou jours à détecter un risque émergent, l’agent IA opère 24h/24 et 7j/7, fournissant des alertes quasi immédiates. Elle permet également de surmonter les goulots d’étranglement liés à la supervision manuelle détaillée, en libérant du temps pour les tâches à forte valeur ajoutée. Enfin, la capacité prédictive (Monte Carlo) offre une aide à la décision proactive, transformant la gestion de projet réactive en une gestion anticipative et stratégique.
@@ -189,41 +195,44 @@ Cela conduit à des risques non identifiés à temps, des retards qui se propage
 
 La problématique est donc de concevoir une plateforme intelligente, articulée autour d’un agent IA conversationnel, capable d’analyser en temps réel les données Jira, de détecter automatiquement les risques et les goulots d’étranglement, de générer des recommandations actionnables, de notifier instantanément le management (Microsoft Teams) et de s’intégrer dans une chaîne d’industrialisation (Docker, Jenkins). La solution doit également offrir une vision prédictive (Monte Carlo) et un tableau de bord de monitoring adapté aux besoins des chefs de projet et des équipes techniques.
 
-\subsection{Objectifs du projet}
 
-\subsubsection{Objectifs généraux du projet}
+\subsection{Objectifs généraux du projet}
 
-Ce projet vise à moderniser le pilotage des projets logiciels chez NTT DATA à travers la mise en place d’une plateforme full‑stack intelligente, articulée autour d’un agent IA conversationnel, d’un tableau de bord de monitoring, de simulations prédictives et d’un système de contrôle d’accès sécurisé. L’objectif principal est de renforcer la performance et la réactivité des équipes de gestion de projet en leur fournissant des outils d’analyse automatique des risques, de détection des goulots d’étranglement et d’aide à la décision.
+Ce projet vise à moderniser le pilotage des projets logiciels chez NTT DATA à travers la mise en place d’une plateforme full‑stack intelligente, articulée autour d’un agent IA conversationnel, d’un tableau de bord de monitoring, de simulations prédictives, d’une stack d’observabilité et d’un système de contrôle d’accès sécurisé. L’objectif principal est de renforcer la performance et la réactivité des équipes de gestion de projet en leur fournissant des outils d’analyse automatique des risques, de détection des goulots d’étranglement, de prédiction et d’aide à la décision.
 
 La démarche s’articule autour de plusieurs axes stratégiques :
 
 \begin{itemize}
-	\renewcommand{\labelitemi}{—}
-	\item Développer un agent IA (LangGraph + Mistral) pour l’extraction, la normalisation et l’analyse en continu des données Jira, avec génération automatique de risques et de recommandations.
-	\item Concevoir un tableau de bord de métriques et de visualisations (React) offrant aux chefs de projet une vue synthétique et en temps réel de la santé des projets.
-	\item Mettre en place une authentification sécurisée par rôles (RBAC, JWT, PostgreSQL) pour garantir la confidentialité et la granularité des accès selon les profils utilisateurs.
-	\item Intégrer un cache Redis pour optimiser les performances d’accès aux données fréquemment sollicitées.
-	\item Industrialiser la solution via Docker (conteneurisation) et Jenkins (intégration et déploiement continus).
+    \renewcommand{\labelitemi}{—}
+    \item Développer un agent IA (LangGraph + Mistral) pour l’extraction, la normalisation et l’analyse en continu des données Jira, avec génération automatique de risques et de recommandations.
+    \item Concevoir un tableau de bord de métriques et de visualisations (React) offrant aux chefs de projet une vue synthétique et en temps réel de la santé des projets.
+    \item Mettre en place une authentification sécurisée par rôles (RBAC, JWT, PostgreSQL) pour garantir la confidentialité et la granularité des accès selon les profils utilisateurs.
+    \item Intégrer un cache Redis pour optimiser les performances d’accès aux données fréquemment sollicitées.
+    \item Industrialiser la solution via Docker (conteneurisation) et Jenkins (intégration et déploiement continus).
+    \item Déployer une stack de supervision (Prometheus, Grafana, Alertmanager) pour collecter les métriques système et applicatives, visualiser la santé des projets en temps réel et déclencher des alertes.
+    \item Mettre en place un système de notification automatique vers Microsoft Teams afin d’alerter instantanément le top management en cas de risque critique.
+    \item Développer un tableau de bord des performances individuelles (Team Scoreboard) permettant d’analyser la charge, la vélocité et la productivité de chaque membre de l’équipe.
 \end{itemize}
 
-\subsubsection{Objectifs spécifiques de la plateforme IA}
+\subsection{Objectifs spécifiques de la plateforme IA}
 
-Dans cette première phase, l’objectif est de développer une solution dédiée à l’analyse automatique des risques projet à partir des tickets Jira. 
+Dans cette première phase, l’objectif est de développer une solution dédiée à l’analyse automatique des risques projet à partir des tickets Jira.
 
 La solution devra :
 
 \begin{itemize}
-	\renewcommand{\labelitemi}{—}
-	\item Extraire et normaliser les tickets Jira via l’API REST, en gérant l’hétérogénéité des champs entre les projets.
-	\item Calculer des signaux de santé projet (WIP ratio, stale ratio, overdue rate, coefficient de Gini) à partir des données historiques et en temps réel.
-	\item Implémenter un moteur de règles combiné à un LLM (Mistral hébergé à Tétouan, accessible via API) pour générer des risques, des actions correctives et des recommandations contextuelles.
-	\item Fournir une interface React avec visualisations de métriques et un explorateur Jira structuré.
-	\item Assurer la sécurité des échanges (JWT) et la gestion fine des rôles utilisateurs.
-	\item Conteneuriser l’application avec Docker et orchestrer le déploiement via Jenkins.
+    \renewcommand{\labelitemi}{—}
+    \item Extraire et normaliser les tickets Jira via l’API REST, en gérant l’hétérogénéité des champs entre les projets.
+    \item Calculer des signaux de santé projet (WIP ratio, stale ratio, overdue rate, coefficient de Gini) à partir des données historiques et en temps réel.
+    \item Implémenter un moteur de règles combiné à un LLM (Mistral hébergé à Tétouan, accessible via API) pour générer des risques, des actions correctives et des recommandations contextuelles.
+    \item Fournir une interface React avec visualisations de métriques, un explorateur Jira structuré et un tableau de bord des performances individuelles.
+    \item Assurer la sécurité des échanges (JWT) et la gestion fine des rôles utilisateurs.
+    \item Conteneuriser l’application avec Docker et orchestrer le déploiement via Jenkins.
+    \item Implémenter des simulations de Monte Carlo pour prédire la date de fin des projets en fonction de la vélocité historique et du backlog restant (percentiles p50 à p95).
+    \item Superviser l’état de santé de l’application via Prometheus et Grafana, avec des règles d’alerte personnalisées (ex. \texttt{CriticalWipRatio}, \texttt{ProjectAtRisk}).
 \end{itemize}
 
-L’approche proposée repose sur l’utilisation d’algorithmes d’intelligence artificielle et d’un agent conversationnel capable d’opérer 24h/24 et 7j/7, permettant non seulement de réduire les délais de détection des anomalies, mais aussi d’anticiper les retards et de maximiser la réactivité des équipes de pilotage.
-
+L’approche proposée repose sur l’utilisation d’algorithmes d’intelligence artificielle et d’un agent conversationnel capable d’opérer 24h/24 et 7j/7, couplé à une stack d’observabilité moderne, permettant non seulement de réduire les délais de détection des anomalies, mais aussi d’anticiper les retards, d’alerter proactivement le management et de maximiser la réactivité des équipes de pilotage.
 Ce travail constitue une première brique essentielle, posant les bases techniques et méthodologiques sur lesquelles s’appuieront les prochaines phases du projet, visant à étendre l’analyse prédictive (simulations Monte Carlo) et l’optimisation à d’autres dimensions de la gestion de projet (budget, ressources humaines, qualité logicielle).
 
 \subsection{Conduite du projet}
@@ -266,7 +275,7 @@ Bien que Scrum repose sur une gestion itérative des priorités, un diagramme de
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{assets/diagram_gant.png}
-	\caption{Diagram of Gantt}
+	\caption{Diagramme de Gantt du projet}
 	\label{fig:gant_ntt}
 \end{figure}
 
