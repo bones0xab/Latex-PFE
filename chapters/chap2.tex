@@ -16,30 +16,64 @@ Les fonctionnalités du système ont été définies en fonction des interaction
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{assets/diagrams/diagram_case.png}
+    \includegraphics[width=0.9\linewidth]{assets/diagrams/new_diagram_casa.png}
     \caption{Diagramme de cas d’utilisation de la plateforme IA}
     \label{fig:use_case}
 \end{figure}
 
-En premier lieu, l’agent d’intelligence artificielle agit comme le moteur d’analyse continu du système ; il a pour mission d’interroger l’API Jira de façon autonome, de traiter les descriptions et les commentaires pour y déceler des anomalies, et de générer des recommandations d’actions correctives. En second lieu, l’utilisateur final nécessite un accès interactif à un tableau de bord global. Cet espace doit lui permettre de visualiser les métriques de performance, de consulter les prévisions de la date de fin générées par les simulations de Monte Carlo, et d’exporter ces indicateurs de manière intuitive. En troisième lieu, l’administrateur doit disposer des interfaces nécessaires pour configurer les paramètres globaux de l’application, gérer les comptes utilisateurs et définir finement les niveaux d’autorisation grâce à un système de contrôle d’accès basé sur les rôles. Enfin, l’acteur DevOps requiert des mécanismes automatisés facilitant le déploiement de l’infrastructure conteneurisée, ainsi que des outils permettant de superviser la bonne exécution des tâches d’arrière-plan.
-\subsection{Les besoins non fonctionnels}
+En premier lieu, l’agent d’intelligence artificielle agit comme le moteur d’analyse continu du système ; il a pour mission d’interroger l’API Jira de façon autonome, de traiter les descriptions et les commentaires pour y déceler des anomalies, et de générer des recommandations d’actions correctives. En second lieu, le chef de projet nécessite un accès interactif à un tableau de bord global. Cet espace doit lui permettre de visualiser les métriques de performance, de consulter les prévisions de la date de fin générées par les simulations de Monte Carlo, et d’exporter ces indicateurs de manière intuitive. Le développeur, quant à lui, peut consulter ses propres métriques et les tickets qui lui sont assignés. En troisième lieu, l’administrateur doit disposer des interfaces nécessaires pour configurer les paramètres globaux de l’application, gérer les comptes utilisateurs et définir finement les niveaux d’autorisation grâce à un système de contrôle d’accès basé sur les rôles. Enfin, le top management reçoit des alertes critiques instantanées via Microsoft Teams ainsi qu’un rapport de santé hebdomadaire par email, lui permettant de superviser l’état général des projets.
+\subsection{Besoins non fonctionnels}
 
-Afin de garantir une exploitation fiable et fluide en milieu industriel, l'application doit satisfaire des critères non fonctionnels rigoureux. Sur le plan des performances, le système s'engage à fournir des temps d'affichage minimaux de l'interface, rendus possibles par l'implémentation d'un système de mise en cache Redis qui évite le recalcul des métriques lourdes. La sécurité constitue une priorité absolue ; elle est assurée par une authentification stricte basée sur des jetons JWT et par l'utilisation d'un modèle de langage hébergé localement, garantissant ainsi qu'aucune donnée de projet confidentielle ne transite vers des serveurs externes. En matière de disponibilité, la plateforme est conçue pour fonctionner de manière ininterrompue en arrière-plan, s'appuyant sur des processus asynchrones qui assurent un service en continu. La maintenabilité est assurée par une architecture logicielle modulaire séparant clairement l'interface utilisateur des logiques de l'agent IA, facilitant ainsi l'ajout futur de nouveaux indicateurs. L'utilisabilité a été pensée pour offrir une expérience visuelle moderne, favorisant une interprétation instantanée des graphiques complexes. Enfin, l'interopérabilité est garantie par le respect strict des standards d'interface de programmation, permettant au système de s'intégrer de manière transparente avec l'écosystème Jira de l'entreprise.
+Afin de garantir une exploitation fiable et fluide en milieu industriel, l’application doit satisfaire des critères non fonctionnels rigoureux.
 
+\paragraph{Performances}
+Sur le plan des performances, le système s’engage à fournir des temps d’affichage minimaux de l’interface, rendus possibles par l’implémentation d’un système de mise en cache Redis qui évite le recalcul des métriques lourdes. L’agent IA doit analyser un projet typique (plusieurs centaines de tickets) en moins de deux minutes, et la simulation Monte Carlo (10 000 scénarios) doit s’exécuter en moins d’une seconde grâce à la vectorisation NumPy.
+
+\paragraph{Sécurité}
+La sécurité constitue une priorité absolue ; elle est assurée par une authentification stricte basée sur des jetons JWT et par l’utilisation d’un modèle de langage hébergé localement (serveurs de Tétouan), garantissant ainsi qu’aucune donnée de projet confidentielle ne transite vers des serveurs externes. Le contrôle d’accès basé sur les rôles (RBAC) restreint les fonctionnalités selon le profil (admin, manager, viewer).
+
+\paragraph{Disponibilité et tolérance aux pannes}
+La plateforme est conçue pour fonctionner de manière ininterrompue en arrière‑plan, s’appuyant sur des processus asynchrones qui assurent un service en continu. En cas d’indisponibilité de l’API Jira, le système conserve les dernières données en cache et applique un mécanisme de backoff exponentiel pour les réessais. Si Redis est inaccessible, un basculement automatique vers des fichiers JSON locaux garantit la continuité du service.
+
+\paragraph{Maintenabilité et évolutivité}
+La maintenabilité est assurée par une architecture logicielle modulaire séparant clairement l’interface utilisateur des logiques de l’agent IA, facilitant ainsi l’ajout futur de nouveaux indicateurs ou agents. L’architecture doit supporter l’ajout de nouveaux projets et l’augmentation du nombre de tickets sans dégradation significative des performances.
+
+\paragraph{Utilisabilité}
+L’utilisabilité a été pensée pour offrir une expérience visuelle moderne, favorisant une interprétation instantanée des graphiques complexes. Le tableau de bord doit rester intuitif pour les chefs de projet, les développeurs et le top management.
+
+\paragraph{Interopérabilité}
+L’interopérabilité est garantie par le respect strict des standards d’interface de programmation, permettant au système de s’intégrer de manière transparente avec l’écosystème Jira de l’entreprise.
+
+\paragraph{Observabilité et supervision}
+La plateforme expose des métriques techniques (Prometheus) pour surveiller la santé des composants (backend, cache, base de données) et les performances de l’agent IA. Des tableaux de bord Grafana permettent de visualiser en temps réel l’état du système et les alertes déclenchées. Les logs sont centralisés pour faciliter le diagnostic.
+
+\paragraph{Déployabilité et industrialisation}
+L’application est entièrement conteneurisée (Docker) pour garantir un déploiement reproductible sur les serveurs de NTT DATA à Tétouan. Un pipeline d’intégration et de déploiement continu (Jenkins) automatise les tests, la construction et la mise en production.
+
+\paragraph{Traçabilité et audit}
+Chaque analyse de l’agent IA est enregistrée sous forme de snapshots JSON (fichiers locaux) afin de pouvoir retracer les décisions et justifier les alertes émises. Les actions des utilisateurs (consultation, validation des alertes) sont conservées dans des journaux d’audit.
+
+\paragraph{Concurrence et efficacité des ressources}
+Le tableau de bord doit supporter au moins dix utilisateurs simultanés sans latence perceptible. Les tâches de fond (extraction Jira, analyses IA) ne bloquent pas l’accès aux endpoints utilisateurs. Le modèle Mistral hébergé localement utilise moins de 8 Go de VRAM, respectant les capacités des serveurs de Tétouan. L’utilisation CPU reste modérée lors des simulations Monte Carlo.
+
+\paragraph{Sauvegarde et reprise après sinistre}
+Les données de configuration (utilisateurs, rôles, seuils) stockées dans PostgreSQL sont sauvegardées quotidiennement. Les snapshots JSON d’analyse sont conservés pour permettre une reconstruction en cas de perte du cache Redis.
 \section{Analyse de l'existant}
 
 Avant de proposer une solution d’optimisation, il est essentiel d’analyser l’existant afin d’identifier
 les forces et les limites du système actuellement en place.
 
 \subsection{Étude de l'existant}
-Au sein de NTT DATA Maroc, le pilotage des projets et l'analyse des risques reposent historiquement sur une exploitation classique des outils de gestion de cycle de vie des applications, principalement Jira. Les chefs de projet s'appuient sur les tableaux de bord natifs de la plateforme pour suivre l'avancement global des tâches et identifier visuellement les éventuels points de blocage. Pour répondre aux exigences de reporting du top management, cette approche est couramment complétée par des extractions manuelles de données vers des tableurs Excel, qui sont ensuite souvent intégrées dans des solutions de type Power BI. Ces données agrégées servent finalement de support lors des revues d'avancement hebdomadaires sous forme de présentations. Par ailleurs, bien que des extensions spécialisées du marché telles que BigPicture, EazyBI ou Risk Explorer soient reconnues pour offrir des capacités avancées de visualisation et de gestion de portefeuille, elles demeurent fondamentalement orientées vers l'analyse rétrospective. Actuellement, la détection des risques repose donc presque exclusivement sur l'expertise humaine des chefs de projet, qui doivent examiner individuellement l'état des tickets, vérifier leur ancienneté et interpréter les commentaires pour évaluer la santé réelle d'un projet de développement.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.9\linewidth]{assets/state_of_existance.png}
-	\caption{State of Existance}
+	\includegraphics[width=0.9\linewidth]{assets/state_of_existant.png}
+	\caption{État d'existence}
 	\label{fig:state_existance}
 \end{figure}
+Au sein de NTT DATA Maroc, le pilotage des projets et l'analyse des risques reposent historiquement sur une exploitation classique des outils de gestion de cycle de vie des applications, principalement Jira. Les chefs de projet s'appuient sur les tableaux de bord natifs de la plateforme pour suivre l'avancement global des tâches et identifier visuellement les éventuels points de blocage. Pour répondre aux exigences de reporting du top management, cette approche est couramment complétée par des extractions manuelles de données vers des tableurs Excel, qui sont ensuite souvent intégrées dans des solutions de type Power BI. Ces données agrégées servent finalement de support lors des revues d'avancement hebdomadaires sous forme de présentations. Par ailleurs, bien que des extensions spécialisées du marché telles que BigPicture, EazyBI ou Risk Explorer soient reconnues pour offrir des capacités avancées de visualisation et de gestion de portefeuille, elles demeurent fondamentalement orientées vers l'analyse rétrospective. Actuellement, la détection des risques repose donc presque exclusivement sur l'expertise humaine des chefs de projet, qui doivent examiner individuellement l'état des tickets, vérifier leur ancienneté et interpréter les commentaires pour évaluer la santé réelle d'un projet de développement.
+
+
 
 \subsection{Identification des limitations de l'existant}
 Cette approche traditionnelle présente plusieurs limitations majeures qui entravent l'efficacité opérationnelle et la réactivité des équipes :

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.5.9)  4 JUN 2026 22:32
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.5.9)  5 JUN 2026 13:09
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"c:/Users/ELITEBOOK/Downloads/New Rapport (4)/New Rapport/main"
@@ -2553,12 +2553,12 @@ Chapitre 2.
 
 
 ]
-<assets/diagrams/diagram_case.png, id=942, 1584.92125pt x 999.735pt>
-File: assets/diagrams/diagram_case.png Graphic file (type png)
-<use assets/diagrams/diagram_case.png>
-Package luatex.def Info: assets/diagrams/diagram_case.png  used on input line 1
-9.
-(luatex.def)             Requested size: 414.58246pt x 261.51146pt.
+<assets/diagrams/new_diagram_casa.png, id=942, 1640.1275pt x 966.61125pt>
+File: assets/diagrams/new_diagram_casa.png Graphic file (type png)
+<use assets/diagrams/new_diagram_casa.png>
+Package luatex.def Info: assets/diagrams/new_diagram_casa.png  used on input li
+ne 19.
+(luatex.def)             Requested size: 414.58246pt x 244.3366pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2575,15 +2575,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20<./assets/diagrams/diagram_case.png>]
-<assets/state_of_existance.png, id=951, 2826.56pt x 1541.76pt>
-File: assets/state_of_existance.png Graphic file (type png)
-<use assets/state_of_existance.png>
-Package luatex.def Info: assets/state_of_existance.png  used on input line 39.
-(luatex.def)             Requested size: 414.58246pt x 226.12549pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+[20<./assets/diagrams/new_diagram_casa.png>]
+<assets/state_of_existant.png, id=951, 1541.76pt x 1027.84pt>
+File: assets/state_of_existant.png Graphic file (type png)
+<use assets/state_of_existant.png>
+Package luatex.def Info: assets/state_of_existant.png  used on input line 38.
+(luatex.def)             Requested size: 414.58246pt x 276.37561pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2592,7 +2589,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21]
+[21<./assets/state_of_existant.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2600,12 +2597,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22<./assets/state_of_existance.png>]
-<assets/arch_global.png, id=967, 2770.35pt x 1509.64pt>
+[22]
+<assets/arch_global.png, id=966, 1575.8875pt x 1005.7575pt>
 File: assets/arch_global.png Graphic file (type png)
 <use assets/arch_global.png>
-Package luatex.def Info: assets/arch_global.png  used on input line 61.
-(luatex.def)             Requested size: 414.58246pt x 225.90642pt.
+Package luatex.def Info: assets/arch_global.png  used on input line 63.
+(luatex.def)             Requested size: 414.58246pt x 264.59079pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2623,10 +2620,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24]
-<assets/architect_ai.png, id=987, 1027.84pt x 1541.76pt>
+<assets/architect_ai.png, id=984, 1027.84pt x 1541.76pt>
 File: assets/architect_ai.png Graphic file (type png)
 <use assets/architect_ai.png>
-Package luatex.def Info: assets/architect_ai.png  used on input line 84.
+Package luatex.def Info: assets/architect_ai.png  used on input line 86.
 (luatex.def)             Requested size: 414.58246pt x 621.86865pt.
 
 
@@ -2645,20 +2642,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [26<./assets/architect_ai.png>]
-Overfull \hbox (8.24414pt too wide) in paragraph at lines 96--97
+Overfull \hbox (8.24414pt too wide) in paragraph at lines 98--99
 []\TU/TimesNewRoman(0)/m/n/12 Ex-trac-tion asyn-chrone des don-nées via l’API
  REST Jira (bi-blio-thèques \TU/lmtt/m/n/12 httpx\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 asyncio\TU/TimesNewRoman(0)/m/n/12 ),
  []
 
 
-Overfull \hbox (1.95198pt too wide) in paragraph at lines 111--112
+Overfull \hbox (1.95198pt too wide) in paragraph at lines 113--114
 []\TU/TimesNewRoman(0)/m/n/12 Construc-tion d’un \TU/lmtt/m/n/12 StateGraph \
 TU/TimesNewRoman(0)/m/n/12 avec deux nœuds prin-ci-paux : \TU/lmtt/m/n/12 agent
 _decision_node
  []
 
 
-Overfull \hbox (50.28183pt too wide) in paragraph at lines 113--114
+Overfull \hbox (50.28183pt too wide) in paragraph at lines 115--116
 []\TU/TimesNewRoman(0)/m/n/12 Mise à dis-po-si-tion d’ou-tils pour le LLM : 
 \TU/lmtt/m/n/12 fetch_issues\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 comput
 e_metrics\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 evaluate_rules\TU/TimesN
@@ -2673,15 +2670,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [27]
-Overfull \hbox (38.37817pt too wide) in paragraph at lines 143--144
+Overfull \hbox (38.37817pt too wide) in paragraph at lines 145--146
 []\TU/TimesNewRoman(0)/m/n/12 Ex-po-si-tion des ré-sul-tats via les end-points Fas-tAPI \TU/lmtt/m/n/12 /api/ai/insights \TU/TimesNewRoman(0)/m/n/12 et \TU/lmtt/m/n/12 /api/ai/projects\TU/TimesNewRoman(0)/m/n/12 . 
  []
 
-<assets/diagrams/diagram_class.png, id=1009, 1725.44624pt x 918.43124pt>
+<assets/diagrams/diagram_class.png, id=1007, 1725.44624pt x 918.43124pt>
 File: assets/diagrams/diagram_class.png Graphic file (type png)
 <use assets/diagrams/diagram_class.png>
 Package luatex.def Info: assets/diagrams/diagram_class.png  used on input line 
-159.
+161.
 (luatex.def)             Requested size: 460.65031pt x 245.19093pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2691,12 +2688,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [28]
-<assets/diagrams/diagram_seq_extraction.png, id=1017, 1650.165pt x 960.58875pt>
+<assets/diagrams/diagram_seq_extraction.png, id=1015, 1650.165pt x 960.58875pt>
 
 File: assets/diagrams/diagram_seq_extraction.png Graphic file (type png)
 <use assets/diagrams/diagram_seq_extraction.png>
 Package luatex.def Info: assets/diagrams/diagram_seq_extraction.png  used on in
-put line 172.
+put line 174.
 (luatex.def)             Requested size: 460.65031pt x 268.1422pt.
 
 
@@ -2707,18 +2704,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [29<./assets/diagrams/diagram_class.png>]
-<assets/diagrams/diagram_seq_orchestration.png, id=1022, 1628.0825pt x 973.6375
+<assets/diagrams/diagram_seq_orchestration.png, id=1020, 1628.0825pt x 973.6375
 pt>
 File: assets/diagrams/diagram_seq_orchestration.png Graphic file (type png)
 <use assets/diagrams/diagram_seq_orchestration.png>
 Package luatex.def Info: assets/diagrams/diagram_seq_orchestration.png  used on
- input line 180.
+ input line 182.
 (luatex.def)             Requested size: 460.65031pt x 275.48393pt.
-<assets/diagrams/diagram_seq_rbac.png, id=1023, 1621.05624pt x 977.6525pt>
+<assets/diagrams/diagram_seq_rbac.png, id=1021, 1621.05624pt x 977.6525pt>
 File: assets/diagrams/diagram_seq_rbac.png Graphic file (type png)
 <use assets/diagrams/diagram_seq_rbac.png>
 Package luatex.def Info: assets/diagrams/diagram_seq_rbac.png  used on input li
-ne 188.
+ne 190.
 (luatex.def)             Requested size: 460.65031pt x 277.81339pt.
 
 
@@ -2730,10 +2727,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [30<./assets/diagrams/diagram_seq_extraction.png><./assets/diagrams/diagram_seq_
 orchestration.png>]
-<assets/logos/python.png, id=1030, 4015.0pt x 2269.47874pt>
+<assets/logos/python.png, id=1028, 4015.0pt x 2269.47874pt>
 File: assets/logos/python.png Graphic file (type png)
 <use assets/logos/python.png>
-Package luatex.def Info: assets/logos/python.png  used on input line 204.
+Package luatex.def Info: assets/logos/python.png  used on input line 206.
 (luatex.def)             Requested size: 92.12865pt x 52.048pt.
 
 
@@ -2744,26 +2741,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [31<./assets/diagrams/diagram_seq_rbac.png>]
-<assets/logos/fastApi.png, id=1036, 1275.93932pt x 459.78673pt>
+<assets/logos/fastApi.png, id=1034, 1275.93932pt x 459.78673pt>
 File: assets/logos/fastApi.png Graphic file (type png)
 <use assets/logos/fastApi.png>
-Package luatex.def Info: assets/logos/fastApi.png  used on input line 214.
+Package luatex.def Info: assets/logos/fastApi.png  used on input line 216.
 (luatex.def)             Requested size: 92.12865pt x 33.19862pt.
-<assets/logos/sqlalchemy.jpg, id=1037, 592.2125pt x 293.095pt>
+<assets/logos/sqlalchemy.jpg, id=1035, 592.2125pt x 293.095pt>
 File: assets/logos/sqlalchemy.jpg Graphic file (type jpg)
 <use assets/logos/sqlalchemy.jpg>
-Package luatex.def Info: assets/logos/sqlalchemy.jpg  used on input line 221.
+Package luatex.def Info: assets/logos/sqlalchemy.jpg  used on input line 223.
 (luatex.def)             Requested size: 92.12865pt x 45.59473pt.
-<assets/logos/langgraph.png, id=1038, 271.0125pt x 148.555pt>
+<assets/logos/langgraph.png, id=1036, 271.0125pt x 148.555pt>
 File: assets/logos/langgraph.png Graphic file (type png)
 <use assets/logos/langgraph.png>
-Package luatex.def Info: assets/logos/langgraph.png  used on input line 228.
+Package luatex.def Info: assets/logos/langgraph.png  used on input line 230.
 (luatex.def)             Requested size: 92.12865pt x 50.49895pt.
-<assets/logos/prometheus_log.png, id=1039, 401.5pt x 245.91875pt>
+<assets/logos/prometheus_log.png, id=1037, 401.5pt x 245.91875pt>
 File: assets/logos/prometheus_log.png Graphic file (type png)
 <use assets/logos/prometheus_log.png>
 Package luatex.def Info: assets/logos/prometheus_log.png  used on input line 23
-6.
+8.
 (luatex.def)             Requested size: 69.09473pt x 42.3197pt.
 
 
@@ -2775,26 +2772,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [32<./assets/logos/python.png><./assets/logos/fastApi.png><./assets/logos/sqlalc
 hemy.jpg><./assets/logos/langgraph.png><./assets/logos/prometheus_log.png>]
-<assets/logos/grafana_logo.jpg, id=1048, 216.81pt x 233.87375pt>
+<assets/logos/grafana_logo.jpg, id=1046, 216.81pt x 233.87375pt>
 File: assets/logos/grafana_logo.jpg Graphic file (type jpg)
 <use assets/logos/grafana_logo.jpg>
-Package luatex.def Info: assets/logos/grafana_logo.jpg  used on input line 245.
+Package luatex.def Info: assets/logos/grafana_logo.jpg  used on input line 247.
 
 (luatex.def)             Requested size: 46.06784pt x 49.69304pt.
-<assets/logos/mistral.jpeg, id=1049, 602.25pt x 316.18124pt>
+<assets/logos/mistral.jpeg, id=1047, 602.25pt x 316.18124pt>
 File: assets/logos/mistral.jpeg Graphic file (type jpg)
 <use assets/logos/mistral.jpeg>
-Package luatex.def Info: assets/logos/mistral.jpeg  used on input line 252.
+Package luatex.def Info: assets/logos/mistral.jpeg  used on input line 254.
 (luatex.def)             Requested size: 184.25731pt x 96.73666pt.
-<assets/logos/numpy.jpg, id=1050, 1204.5pt x 677.53125pt>
+<assets/logos/numpy.jpg, id=1048, 1204.5pt x 677.53125pt>
 File: assets/logos/numpy.jpg Graphic file (type jpg)
 <use assets/logos/numpy.jpg>
-Package luatex.def Info: assets/logos/numpy.jpg  used on input line 259.
+Package luatex.def Info: assets/logos/numpy.jpg  used on input line 261.
 (luatex.def)             Requested size: 184.25731pt x 103.64127pt.
-<assets/logos/react_logo.png, id=1051, 307.1475pt x 165.61874pt>
+<assets/logos/react_logo.png, id=1049, 307.1475pt x 165.61874pt>
 File: assets/logos/react_logo.png Graphic file (type png)
 <use assets/logos/react_logo.png>
-Package luatex.def Info: assets/logos/react_logo.png  used on input line 269.
+Package luatex.def Info: assets/logos/react_logo.png  used on input line 271.
 (luatex.def)             Requested size: 184.25731pt x 99.35431pt.
 
 
@@ -2806,26 +2803,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [33<./assets/logos/grafana_logo.jpg><./assets/logos/mistral.jpeg><./assets/logos
 /numpy.jpg>]
-<assets/logos/postgres_logo.png, id=1056, 171.64125pt x 148.555pt>
+<assets/logos/postgres_logo.png, id=1054, 171.64125pt x 148.555pt>
 File: assets/logos/postgres_logo.png Graphic file (type png)
 <use assets/logos/postgres_logo.png>
-Package luatex.def Info: assets/logos/postgres_logo.png  used on input line 278
+Package luatex.def Info: assets/logos/postgres_logo.png  used on input line 280
 .
 (luatex.def)             Requested size: 184.25731pt x 159.47362pt.
-<assets/logos/redis.png, id=1057, 168.63pt x 148.555pt>
+<assets/logos/redis.png, id=1055, 168.63pt x 148.555pt>
 File: assets/logos/redis.png Graphic file (type png)
 <use assets/logos/redis.png>
-Package luatex.def Info: assets/logos/redis.png  used on input line 287.
+Package luatex.def Info: assets/logos/redis.png  used on input line 289.
 (luatex.def)             Requested size: 92.12865pt x 81.16147pt.
-<assets/logos/docker.png, id=1058, 445.665pt x 114.4275pt>
+<assets/logos/docker.png, id=1056, 445.665pt x 114.4275pt>
 File: assets/logos/docker.png Graphic file (type png)
 <use assets/logos/docker.png>
-Package luatex.def Info: assets/logos/docker.png  used on input line 296.
+Package luatex.def Info: assets/logos/docker.png  used on input line 298.
 (luatex.def)             Requested size: 92.12865pt x 23.65334pt.
-<assets/logos/logo_jenkins.png, id=1059, 301.125pt x 168.63pt>
+<assets/logos/logo_jenkins.png, id=1057, 301.125pt x 168.63pt>
 File: assets/logos/logo_jenkins.png Graphic file (type png)
 <use assets/logos/logo_jenkins.png>
-Package luatex.def Info: assets/logos/logo_jenkins.png  used on input line 304.
+Package luatex.def Info: assets/logos/logo_jenkins.png  used on input line 306.
 
 (luatex.def)             Requested size: 184.25731pt x 103.18834pt.
 
@@ -2838,27 +2835,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [34<./assets/logos/react_logo.png><./assets/logos/postgres_logo.png><./assets/lo
 gos/redis.png><./assets/logos/docker.png>]
-<assets/logos/vsCode.png, id=1068, 1204.5pt x 1204.5pt>
+<assets/logos/vsCode.png, id=1066, 1204.5pt x 1204.5pt>
 File: assets/logos/vsCode.png Graphic file (type png)
 <use assets/logos/vsCode.png>
-Package luatex.def Info: assets/logos/vsCode.png  used on input line 316.
+Package luatex.def Info: assets/logos/vsCode.png  used on input line 318.
 (luatex.def)             Requested size: 69.09473pt x 69.08728pt.
-<assets/logos/gitlab_logo.png, id=1070, 363.3575pt x 139.52126pt>
+<assets/logos/gitlab_logo.png, id=1068, 363.3575pt x 139.52126pt>
 File: assets/logos/gitlab_logo.png Graphic file (type png)
 <use assets/logos/gitlab_logo.png>
-Package luatex.def Info: assets/logos/gitlab_logo.png  used on input line 323.
+Package luatex.def Info: assets/logos/gitlab_logo.png  used on input line 325.
 (luatex.def)             Requested size: 92.12865pt x 35.37413pt.
 
-Overfull \hbox (43.45895pt too wide) in paragraph at lines 327--327
+Overfull \hbox (43.45895pt too wide) in paragraph at lines 329--329
 []\TU/TimesNewRoman(0)/b/n/12 Jira \TU/TimesNewRoman(0)/m/n/12 : uti-lisé pour le suivi des t
 âches du pro-jet lui-même, ac-ces-sible à l’adresse [][]https ://umane.emea
 l.ntt-
  []
 
-<assets/logos/jira_logo.png, id=1072, 225.84375pt x 225.84375pt>
+<assets/logos/jira_logo.png, id=1070, 225.84375pt x 225.84375pt>
 File: assets/logos/jira_logo.png Graphic file (type png)
 <use assets/logos/jira_logo.png>
-Package luatex.def Info: assets/logos/jira_logo.png  used on input line 330.
+Package luatex.def Info: assets/logos/jira_logo.png  used on input line 332.
 (luatex.def)             Requested size: 92.12865pt x 92.1313pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2871,23 +2868,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 itlab_logo.png>]
 File: assets/logos/docker.png Graphic file (type png)
 <use assets/logos/docker.png>
-Package luatex.def Info: assets/logos/docker.png  used on input line 337.
+Package luatex.def Info: assets/logos/docker.png  used on input line 339.
 (luatex.def)             Requested size: 92.12865pt x 23.65334pt.
-<assets/logos/langchain.png, id=1082, 319.1925pt x 159.59625pt>
+<assets/logos/langchain.png, id=1080, 319.1925pt x 159.59625pt>
 File: assets/logos/langchain.png Graphic file (type png)
 <use assets/logos/langchain.png>
-Package luatex.def Info: assets/logos/langchain.png  used on input line 350.
+Package luatex.def Info: assets/logos/langchain.png  used on input line 352.
 (luatex.def)             Requested size: 92.12865pt x 46.06255pt.
-<assets/logos/llamaindex_logo.png, id=1083, 384.43625pt x 131.49126pt>
+<assets/logos/llamaindex_logo.png, id=1081, 384.43625pt x 131.49126pt>
 File: assets/logos/llamaindex_logo.png Graphic file (type png)
 <use assets/logos/llamaindex_logo.png>
 Package luatex.def Info: assets/logos/llamaindex_logo.png  used on input line 3
-57.
+59.
 (luatex.def)             Requested size: 92.12865pt x 31.51038pt.
-<assets/logos/rasa_logo.png, id=1084, 323.2075pt x 156.585pt>
+<assets/logos/rasa_logo.png, id=1082, 323.2075pt x 156.585pt>
 File: assets/logos/rasa_logo.png Graphic file (type png)
 <use assets/logos/rasa_logo.png>
-Package luatex.def Info: assets/logos/rasa_logo.png  used on input line 364.
+Package luatex.def Info: assets/logos/rasa_logo.png  used on input line 366.
 (luatex.def)             Requested size: 92.12865pt x 44.63196pt.
 
 
@@ -2899,10 +2896,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [36<./assets/logos/jira_logo.png><./assets/logos/langchain.png><./assets/logos/l
 lamaindex_logo.png>]
-<assets/logos/llama_mistral.jpg, id=1093, 291.0875pt x 174.6525pt>
+<assets/logos/llama_mistral.jpg, id=1091, 291.0875pt x 174.6525pt>
 File: assets/logos/llama_mistral.jpg Graphic file (type jpg)
 <use assets/logos/llama_mistral.jpg>
-Package luatex.def Info: assets/logos/llama_mistral.jpg  used on input line 371
+Package luatex.def Info: assets/logos/llama_mistral.jpg  used on input line 373
 .
 (luatex.def)             Requested size: 92.12865pt x 55.277pt.
 
@@ -2925,7 +2922,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 \openout2 = chapters/chap3.aux
  (./chapters/chap3.tex
 Chapitre 3.
-<assets/sourceD_authentification.png, id=1103, 1699.34875pt x 932.48375pt>
+<assets/sourceD_authentification.png, id=1101, 1699.34875pt x 932.48375pt>
 File: assets/sourceD_authentification.png Graphic file (type png)
 <use assets/sourceD_authentification.png>
 Package luatex.def Info: assets/sourceD_authentification.png  used on input lin
@@ -2945,7 +2942,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [40<./assets/sourceD_authentification.png>]
-<assets/diagrams/arch_jql.jpg, id=1113, 1027.84pt x 561.09625pt>
+<assets/diagrams/arch_jql.jpg, id=1111, 1027.84pt x 561.09625pt>
 File: assets/diagrams/arch_jql.jpg Graphic file (type jpg)
 <use assets/diagrams/arch_jql.jpg>
 Package luatex.def Info: assets/diagrams/arch_jql.jpg  used on input line 50.
@@ -3044,7 +3041,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [49]
-<assets/metrics_ai.png, id=1214, 2826.56pt x 1541.76pt>
+<assets/metrics_ai.png, id=1212, 2826.56pt x 1541.76pt>
 File: assets/metrics_ai.png Graphic file (type png)
 <use assets/metrics_ai.png>
 Package luatex.def Info: assets/metrics_ai.png  used on input line 19.
@@ -3273,13 +3270,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [70]
-<assets/interfaces/extraction_jira.png, id=1340, 1443.14156pt x 709.14937pt>
+<assets/interfaces/extraction_jira.png, id=1338, 1443.14156pt x 709.14937pt>
 File: assets/interfaces/extraction_jira.png Graphic file (type png)
 <use assets/interfaces/extraction_jira.png>
 Package luatex.def Info: assets/interfaces/extraction_jira.png  used on input l
 ine 598.
 (luatex.def)             Requested size: 460.65031pt x 226.35893pt.
-<assets/interfaces/normalisation_process.png, id=1341, 1155.31625pt x 1371.1225
+<assets/interfaces/normalisation_process.png, id=1339, 1155.31625pt x 1371.1225
 pt>
 File: assets/interfaces/normalisation_process.png Graphic file (type png)
 <use assets/interfaces/normalisation_process.png>
@@ -3299,7 +3296,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [71<./assets/interfaces/extraction_jira.png>]
-<assets/interfaces/metrics_sante.png, id=1347, 1444.64719pt x 709.14937pt>
+<assets/interfaces/metrics_sante.png, id=1345, 1444.64719pt x 709.14937pt>
 File: assets/interfaces/metrics_sante.png Graphic file (type png)
 <use assets/interfaces/metrics_sante.png>
 Package luatex.def Info: assets/interfaces/metrics_sante.png  used on input lin
@@ -3314,13 +3311,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [72<./assets/interfaces/normalisation_process.png>]
-<assets/interfaces/montecarlo.png, id=1352, 1442.38875pt x 707.64375pt>
+<assets/interfaces/montecarlo.png, id=1350, 1442.38875pt x 707.64375pt>
 File: assets/interfaces/montecarlo.png Graphic file (type png)
 <use assets/interfaces/montecarlo.png>
 Package luatex.def Info: assets/interfaces/montecarlo.png  used on input line 6
 22.
 (luatex.def)             Requested size: 460.65031pt x 225.99712pt.
-<assets/interfaces/agent_langraph.png, id=1353, 1444.64719pt x 697.8572pt>
+<assets/interfaces/agent_langraph.png, id=1351, 1444.64719pt x 697.8572pt>
 File: assets/interfaces/agent_langraph.png Graphic file (type png)
 <use assets/interfaces/agent_langraph.png>
 Package luatex.def Info: assets/interfaces/agent_langraph.png  used on input li
@@ -3348,19 +3345,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [74<./assets/interfaces/agent_langraph.png>]
-<assets/interfaces/dashboard_1.png, id=1365, 1443.14156pt x 706.13812pt>
+<assets/interfaces/dashboard_1.png, id=1363, 1443.14156pt x 706.13812pt>
 File: assets/interfaces/dashboard_1.png Graphic file (type png)
 <use assets/interfaces/dashboard_1.png>
 Package luatex.def Info: assets/interfaces/dashboard_1.png  used on input line 
 652.
 (luatex.def)             Requested size: 460.65031pt x 225.39775pt.
-<assets/interfaces/dashboard_2.png, id=1366, 1444.64719pt x 709.14937pt>
+<assets/interfaces/dashboard_2.png, id=1364, 1444.64719pt x 709.14937pt>
 File: assets/interfaces/dashboard_2.png Graphic file (type png)
 <use assets/interfaces/dashboard_2.png>
 Package luatex.def Info: assets/interfaces/dashboard_2.png  used on input line 
 653.
 (luatex.def)             Requested size: 460.65031pt x 226.12088pt.
-<assets/interfaces/dashboard_3.png, id=1367, 1444.64719pt x 707.64375pt>
+<assets/interfaces/dashboard_3.png, id=1365, 1444.64719pt x 707.64375pt>
 File: assets/interfaces/dashboard_3.png Graphic file (type png)
 <use assets/interfaces/dashboard_3.png>
 Package luatex.def Info: assets/interfaces/dashboard_3.png  used on input line 
@@ -3390,19 +3387,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [76<./assets/interfaces/dashboard_1.png><./assets/interfaces/dashboard_2.png><./
 assets/interfaces/dashboard_3.png>]
-<assets/interfaces/fastApi.png, id=1380, 1441.63594pt x 710.655pt>
+<assets/interfaces/fastApi.png, id=1378, 1441.63594pt x 710.655pt>
 File: assets/interfaces/fastApi.png Graphic file (type png)
 <use assets/interfaces/fastApi.png>
 Package luatex.def Info: assets/interfaces/fastApi.png  used on input line 662.
 
 (luatex.def)             Requested size: 460.65031pt x 227.07808pt.
-<assets/interfaces/fastApi_1.png, id=1381, 1441.63594pt x 700.86844pt>
+<assets/interfaces/fastApi_1.png, id=1379, 1441.63594pt x 700.86844pt>
 File: assets/interfaces/fastApi_1.png Graphic file (type png)
 <use assets/interfaces/fastApi_1.png>
 Package luatex.def Info: assets/interfaces/fastApi_1.png  used on input line 66
 3.
 (luatex.def)             Requested size: 460.65031pt x 223.95096pt.
-<assets/interfaces/fastApi_2.png, id=1382, 1437.87187pt x 703.87968pt>
+<assets/interfaces/fastApi_2.png, id=1380, 1437.87187pt x 703.87968pt>
 File: assets/interfaces/fastApi_2.png Graphic file (type png)
 <use assets/interfaces/fastApi_2.png>
 Package luatex.def Info: assets/interfaces/fastApi_2.png  used on input line 66
@@ -3432,17 +3429,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [78<./assets/interfaces/fastApi.png><./assets/interfaces/fastApi_1.png><./assets
 /interfaces/fastApi_2.png>]
-<assets/interfaces/RBAC.png, id=1394, 1443.14156pt x 712.16063pt>
+<assets/interfaces/RBAC.png, id=1392, 1443.14156pt x 712.16063pt>
 File: assets/interfaces/RBAC.png Graphic file (type png)
 <use assets/interfaces/RBAC.png>
 Package luatex.def Info: assets/interfaces/RBAC.png  used on input line 672.
 (luatex.def)             Requested size: 460.65031pt x 227.32011pt.
-<assets/interfaces/alerts.png, id=1395, 1437.11906pt x 710.655pt>
+<assets/interfaces/alerts.png, id=1393, 1437.11906pt x 710.655pt>
 File: assets/interfaces/alerts.png Graphic file (type png)
 <use assets/interfaces/alerts.png>
 Package luatex.def Info: assets/interfaces/alerts.png  used on input line 680.
 (luatex.def)             Requested size: 460.65031pt x 227.79378pt.
-<assets/interfaces/notification_teams.png, id=1396, 1124.70187pt x 707.64375pt>
+<assets/interfaces/notification_teams.png, id=1394, 1124.70187pt x 707.64375pt>
 
 File: assets/interfaces/notification_teams.png Graphic file (type png)
 <use assets/interfaces/notification_teams.png>
@@ -3458,7 +3455,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [79<./assets/interfaces/RBAC.png>]
-<assets/interfaces/pipeline_jenkins.png, id=1402, 1441.63594pt x 712.91344pt>
+<assets/interfaces/pipeline_jenkins.png, id=1400, 1441.63594pt x 712.91344pt>
 File: assets/interfaces/pipeline_jenkins.png Graphic file (type png)
 <use assets/interfaces/pipeline_jenkins.png>
 Package luatex.def Info: assets/interfaces/pipeline_jenkins.png  used on input 
@@ -3534,13 +3531,13 @@ No file main.bbl.
 
 \openout2 = Intro_pages/annexe.aux
 (./Intro_pages/annexe.tex
-<assets/Annexe/macroplanning.png, id=1428, 941.5175pt x 334.75063pt>
+<assets/Annexe/macroplanning.png, id=1426, 941.5175pt x 334.75063pt>
 File: assets/Annexe/macroplanning.png Graphic file (type png)
 <use assets/Annexe/macroplanning.png>
 Package luatex.def Info: assets/Annexe/macroplanning.png  used on input line 10
 .
 (luatex.def)             Requested size: 460.65031pt x 163.77895pt.
-<assets/Annexe/plan.png, id=1429, 735.24687pt x 405.515pt>
+<assets/Annexe/plan.png, id=1427, 735.24687pt x 405.515pt>
 File: assets/Annexe/plan.png Graphic file (type png)
 <use assets/Annexe/plan.png>
 Package luatex.def Info: assets/Annexe/plan.png  used on input line 24.
@@ -3576,7 +3573,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [87]
-<assets/Annexe/affectation.png, id=1462, 1438.6247pt x 745.28438pt>
+<assets/Annexe/affectation.png, id=1460, 1438.6247pt x 745.28438pt>
 File: assets/Annexe/affectation.png Graphic file (type png)
 <use assets/Annexe/affectation.png>
 Package luatex.def Info: assets/Annexe/affectation.png  used on input line 106.
@@ -3619,7 +3616,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [89]
 No file main.bbl.
-runsystem(latexminted cleantemp  --timestamp 20260604223241 FAD58DE7366495DB4650
+runsystem(latexminted cleantemp  --timestamp 20260605130923 FAD58DE7366495DB4650
 CFEFAC2FCD61)...(Command execution disabled via shell_escape='p').
 (./main.aux (./Intro_pages/pagedegarde.aux) (./Intro_pages/introduction.aux)
 (./chapters/chap1.aux) (./chapters/chap2.aux) (./chapters/chap3.aux)
@@ -3639,13 +3636,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 
 Here is how much of LuaTeX's memory you used:
  49696 strings out of 476081
- 244177,1977958 words of node,token memory allocated
+ 244184,1977958 words of node,token memory allocated
  20688 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 1367 glue, 5 kern, 488 penalty, 4 glyp
 h, 2649 attribute, 602 glue_spec, 536 attribute_list, 4 write, 5 pdf_action node
 s
-   avail lists: 1:22,2:8847,3:390,4:3600,5:3257,6:142,7:6259,8:87,9:8678,10:26,1
-1:710
+   avail lists: 1:21,2:8847,3:396,4:3600,5:3257,6:142,7:6628,8:90,9:8678,10:26,1
+1:791
  70283 multiletter control sequences out of 65536+600000
  83 fonts using 29697687 bytes
  98i,12n,113p,2577b,1228s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3664,9 +3661,9 @@ EBOOK/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/
 Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cms
 y10.pfb><C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmsy8.pfb>
-Output written on main.pdf (104 pages, 29411226 bytes).
+Output written on main.pdf (104 pages, 23707149 bytes).
 
-PDF statistics: 1574 PDF objects out of 1728 (max. 8388607)
+PDF statistics: 1572 PDF objects out of 1728 (max. 8388607)
  430 named destinations out of 1000 (max. 1048576)
  912 words of extra memory for PDF output out of 10000 (max. 100000000)
 
