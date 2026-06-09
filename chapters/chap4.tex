@@ -203,15 +203,39 @@ Le backend est développé en Python avec le framework asynchrone FastAPI. Il ex
 \end{itemize}
 
 \subsection{Agent IA avec LangGraph et Mistral}
-L’agent conversationnel est implémenté en suivant le pattern ReAct (Reasoning + Acting). LangGraph gère le graphe d’états, chaque nœud représentant une étape d’analyse. Le LLM utilisé est Mistral, hébergé localement sur les serveurs de Tétouan. Le pipeline comprend :
+
+L’agent conversationnel est implémenté suivant le pattern ReAct (Reasoning + Acting) en utilisant le framework LangGraph. Le LLM utilisé est Mistral, hébergé localement sur les serveurs de Tétouan (avec fallback vers Llama-3.1-8b-instant via Groq). Le pipeline intègre systématiquement Redis pour optimiser les performances et respecter les quotas de l’API Jira.
+
+\subsubsection*{Flux d’exécution avec cache Redis}
+
+\begin{enumerate}
+    \item \textbf{Vérification du cache} : avant toute analyse, l’agent consulte Redis avec la clé \texttt{ai\_analysis:\{project\_key\}} ou \texttt{ai\_insights\_\{project\_key\}}.
+    \begin{itemize}
+        \item Si une entrée valide existe (\texttt{status = "ok"}), le résultat est désérialisé et retourné immédiatement (\textbf{cache hit}) – aucun appel à Jira ni au LLM.
+        \item Si le statut est \texttt{"running"}, une réponse partielle \texttt{ANALYZING} est renvoyée au client.
+    \end{itemize}
+    \item \textbf{Cache miss – déclenchement de l’analyse complète} :
+    \begin{enumerate}
+        \item Récupération des tickets via \texttt{get\_jira\_data\_issues()} (qui interroge d’abord Redis, puis Jira si nécessaire).
+        \item Normalisation Pydantic (\texttt{NormalizedIssueModel}) et calcul des métriques (WIP, stale, Gini, throughput).
+        \item Application du moteur de règles (\texttt{evaluate\_rules}) – génère des indicateurs \textsc{ok}/\textsc{warn}/\textsc{risk}.
+        \item Appel au LLM Mistral (ou fallback) avec un prompt système injectant les métriques et les seuils métier. La réponse est un JSON structuré validé par Pydantic.
+        \item Stockage du résultat dans Redis avec TTL de 30 minutes, sous la clé \texttt{ai\_analysis:\{project\_key\}} (pour la boucle de fond) et également dans \texttt{ai\_insights\_\{project\_key\}} (pour les requêtes à la demande).
+        \item Sauvegarde d’un snapshot d’audit dans \texttt{snapshots/latest.json}.
+    \end{enumerate}
+    \item \textbf{État intermédiaire} : pendant l’exécution, Redis contient \texttt{\{"status": "running"\}} ; les endpoints peuvent ainsi informer les utilisateurs que l’analyse est en cours.
+\end{enumerate}
+
+\subsubsection*{Interaction avec les autres composants}
+
 \begin{itemize}
     \renewcommand{\labelitemi}{—}
-    \item Extraction des tickets actifs via l’API Jira.
-    \item Construction du contexte (statuts, commentaires récents, métriques).
-    \item Appel à Mistral via une API REST interne (Ollama compatible).
-    \item Détection des risques (retard, blocage, surcharge) et génération de recommandations textuelles.
-    \item Envoi des alertes au cache Redis et à la file de notifications.
+    \item \textbf{Boucle d’arrière‑plan} : un thread daemon exécute périodiquement (\texttt{\_background\_analysis\_loop}) l’analyse de tous les projets actifs (découverts via \texttt{ai\_issues\_cache:\_\_all\_\_}). Pour chaque projet, il appelle \texttt{\_run\_analysis\_for\_project}, qui suit le même pipeline cache → miss → LLM.
+    \item \textbf{Endpoint à la demande} : \texttt{GET /api/ai/insights} utilise la clé \texttt{ai\_insights\_\{project\}}. En cas de miss, il déclenche \texttt{graph.invoke} dans un thread offload (\texttt{anyio.to\_thread.run\_sync}).
+    \item \textbf{Cache des tickets Jira} : \texttt{get\_jira\_data\_issues} utilise des clés distinctes (\texttt{ai\_issues\_cache:\{project\}}, TTL 5 min) pour éviter de re‑synchroniser Jira à chaque analyse LLM.
 \end{itemize}
+
+Cette architecture garantit une latence minimale en environnement production : les analyses d’un même projet ne sont recalculées qu’une fois toutes les 30 minutes, sauf si l’utilisateur force un rafraîchissement manuel.
 
 \subsection{Calcul des métriques projet}
 Le module \texttt{metrics.py} implémente les indicateurs suivants, calculés à partir des données normalisées :
@@ -259,14 +283,65 @@ La gestion des utilisateurs repose sur PostgreSQL et SQLAlchemy. Les fonctionnal
 \end{itemize}
 
 \subsection{Mise en cache avec Redis}
-Pour réduire la charge sur l’API Jira et accélérer l’affichage, Redis est utilisé comme cache :
+
+Afin de réduire la charge sur l’API Jira et d’accélérer les réponses du système, Redis est utilisé comme une couche de persistance partagée entre la boucle d’analyse en arrière‑plan, les endpoints FastAPI et le module Monte Carlo. Aucune donnée n’est conservée en mémoire vive du processus Python entre les requêtes.
+
+\subsubsection*{Clés Redis et durées de vie (TTL)}
+
+Le tableau ci‑dessous récapitule l’ensemble des clés Redis utilisées, leur contenu et leur durée de vie.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{5.2cm}p{2.2cm}p{5cm}}
+\hline
+\textbf{Clé Redis} & \textbf{TTL} & \textbf{Contenu} \\
+\hline
+\texttt{ai\_issues\_cache:\{project\}} & 5~min & Tickets Jira normalisés (liste JSON) \\
+\texttt{ai\_issues\_cache:\_\_all\_\_} & 5~min & Tous projets confondus (découverte) \\
+\texttt{ai\_analysis:\{project\}} & 30~min & Résultat LLM – boucle de fond \\
+\texttt{ai\_insights\_\{project\}} & 30~min & Résultat LLM – appel à la demande \\
+\texttt{ai\_alert\_state:\{project\}} & $\infty$ & Hash MD5 + niveaux d’alerte \\
+\texttt{worker\_snapshot:\{project\}:\{days\}} & 15~min & Snapshots par assignee (Worker Insights) \\
+\texttt{ai\_worker\_insight:\{worker\}:\{project\}} & 1~h & Analyse LLM individuelle \\
+\texttt{montecarlo:project:\{project\}} & 24~h & Throughput historique + backlog \\
+\texttt{montecarlo:master\_project\_keys} & 24~h & Liste de clés Jira \\
+\texttt{jira\_projects\_sync} & 15~min & Métadonnées projets Jira \\
+\hline
+\end{tabular}
+\caption{Inventaire des clés Redis et TTL associés.}
+\label{tab:redis-keys}
+\end{table}
+
+\subsubsection*{Logique cache hit / cache miss}
+
+\paragraph{Récupération des tickets Jira.}
+La fonction \texttt{get\_jira\_data\_issues(project\_key)} interroge d’abord Redis avec la clé \texttt{ai\_issues\_cache:\{project\_key\}}.
+En cas de \textbf{cache hit}, la liste normalisée est retournée immédiatement sans appel réseau. En cas de \textbf{cache miss}, elle exécute une requête JQL paginée (lots de 200 tickets, parallélisation avec \texttt{ThreadPoolExecutor}), normalise chaque ticket (statut canonique, \texttt{days\_since\_update}, assignee) et stocke le résultat dans Redis avec un TTL de 5 minutes.
+
+\paragraph{Analyse LLM d’un projet.}
+La boucle d’arrière‑plan (\texttt{\_background\_analysis\_loop}) appelle \texttt{\_run\_analysis\_for\_project(project\_key)}. Avant d’invoquer le graphe LangGraph, elle écrit dans Redis un état intermédiaire \texttt{\{"status": "running"\}} (TTL 30 min). Après l’exécution complète (extraction, normalisation, calcul des métriques, évaluation des règles, appel Mistral), elle remplace cette entrée par le résultat final \texttt{\{"status": "ok", "result": llm\_output\}}. En cas d’échec, un état \texttt{error} est persisté.
+
+L’endpoint \texttt{GET /api/ai/insights} utilise une clé distincte \texttt{ai\_insights\_\{project\}} (même TTL) pour servir les requêtes à la demande. Il suit la même logique : cache hit → réponse immédiate ; cache miss → déclenchement de l’analyse via \texttt{anyio.to\_thread.run\_sync}.
+
+\subsubsection*{Gestion automatique de plusieurs projets}
+
+Au démarrage de l’application, FastAPI lance deux threads daemon :
+
 \begin{itemize}
-    \renewcommand{\labelitemi}{—}
-    \item Clé \texttt{project:HPCMOROCCO:metrics} avec TTL de 15 minutes.
-    \item Clé \texttt{montecarlo:HPCMOROCCO:result} avec TTL de 24 heures.
-    \item Clé \texttt{jira:issues:search} pour les résultats de requêtes JQL fréquentes.
-    \item En cas d’indisponibilité de Redis, un fallback vers des fichiers JSON locaux est activé pour garantir la continuité du service.
+    \item \textbf{Boucle d’analyse} : elle découvre dynamiquement tous les projets actifs en lisant \texttt{ai\_issues\_cache:\_\_all\_\_} (obtenu via \texttt{\_get\_all\_project\_keys()}). Pour chaque projet, elle lance une analyse séquentielle avec une pause de 2 secondes entre chaque (respect des rate limits Jira). Le cycle se répète après un sommeil de \texttt{AI\_ANALYSIS\_TTL\_SECONDS} (30 min).
+    \item \textbf{Boucle d’alerte} : toutes les 60 secondes, elle parcourt les clés \texttt{ai\_analysis:*} et \texttt{ai\_insights\_*} via \texttt{redis.scan\_iter()}. Elle calcule un hash MD5 du résultat LLM et le compare à la valeur stockée dans \texttt{ai\_alert\_state:\{project\}}. Si le hash change et que la santé du projet s’est dégradée, une notification est envoyée vers Microsoft Teams (avec un délai de recharge d’une heure).
 \end{itemize}
+
+Chaque projet est mis en cache indépendamment, garantissant un accès O(1) à ses données.
+
+\subsubsection*{Cas particulier : simulation Monte Carlo}
+
+Le module Monte Carlo interroge Redis avec la clé \texttt{montecarlo:project:\{project\_key\}} (TTL 24 heures). Si Redis est indisponible, un fallback vers un fichier JSON local (\texttt{orchestration/montecarlo\_cache.json}) assure la continuité du service. Le flag \texttt{from\_cache} dans la réponse permet de distinguer les données fraîches des données en cache.
+
+\subsubsection*{Résilience}
+
+Tous les accès Redis sont encapsulés dans des blocs \texttt{try/except}. En cas d’indisponibilité (timeout de connexion de 2 secondes), le système bascule automatiquement en mode « sans cache » : les données sont recalculées à chaque requête directement depuis Jira, sans interruption du service. Cette dégradation gracieuse garantit que le cache n’est jamais un point de blocage critique.
 
 \subsection{Moteur de règles et seuils de décision}
 Le système intègre un moteur de règles statiques qui évalue en continu les métriques projet et déclenche des alertes lorsque des seuils prédéfinis sont dépassés. Ces seuils sont également injectés dans le prompt de l’agent IA (Mistral) pour que le modèle de langage raisonne avec les mêmes valeurs métier. Les seuils configurés sont les suivants :
@@ -293,6 +368,124 @@ Le système intègre un moteur de règles statiques qui évalue en continu les m
             \item Seuil d’avertissement : 0,50 – un seul assigné porte plus de 50\% des tickets actifs.
         \end{itemize}
 \end{itemize}
+
+\subsection{Worker Insights -- Analyse IA des performances individuelles}
+\label{subsec:worker-insights}
+
+\subsubsection*{Vue d'ensemble}
+
+Le module \textbf{Worker Insights} constitue une fonctionnalité d'analyse individuelle des développeurs pilotée par intelligence artificielle. Contrairement au tableau de bord d'équipe, qui présente des statistiques agrégées statiques, ce module génère pour chaque assignee Jira une évaluation dynamique de sa charge de travail, de ses performances et des risques qui lui sont propres, en s'appuyant sur un grand modèle de langage (LLM).
+
+\subsubsection*{Collecte et agrégation des données par développeur}
+
+Le pipeline démarre dans la fonction \texttt{\_build\_worker\_snapshots()} du module \texttt{app/routes/workers.py}. Une requête JQL paramétrée par la clé de projet et la fenêtre temporelle (14, 30 ou 60~jours) récupère l'ensemble des tickets mis à jour, puis les regroupe par identifiant d'assignee. Les champs extraits de l'API~Jira~v2 incluent le résumé, le statut, l'assignee, la priorité, le type de ticket, les dates de création, de mise à jour, de résolution et d'échéance, ainsi que les story points (\texttt{customfield\_10016}).
+
+Pour chaque développeur, les métriques suivantes sont calculées en Python \emph{avant} tout appel au LLM~:
+
+\begin{itemize}
+    \item \textbf{total\_issues\_assigned}~: nombre total de tickets assignés dans la fenêtre.
+    \item \textbf{tasks\_completed}~: tickets dont le statut appartient à \{done, resolved, closed\}.
+    \item \textbf{in\_progress\_count}~: tickets en cours (in progress, in review, in development).
+    \item \textbf{blocked\_count}~: heuristique de blocage -- ticket non terminé sans mise à jour depuis $\geq 3$~jours.
+    \item \textbf{overdue\_count} et \textbf{overdue\_rate\_pct}~: tickets dont la date d'échéance est dépassée et qui ne sont pas terminés, exprimés en nombre et en pourcentage.
+    \item \textbf{avg\_cycle\_time\_days}~: durée moyenne entre la création et la résolution des tickets terminés dans la fenêtre, en jours.
+\end{itemize}
+
+Le snapshot transmis au LLM est complété par les \textbf{moyennes d'équipe} (\texttt{team\_averages}~: \texttt{avg\_completed}, \texttt{avg\_wip}, \texttt{avg\_assigned}), calculées sur l'ensemble des assignees du projet, afin de fournir un référentiel de comparaison. Seuls les tickets actifs (non terminés) sont inclus dans le champ \texttt{issues} du snapshot, ce qui limite le volume de tokens consommés.
+
+\subsubsection*{Traitement par l'agent IA}
+
+L'analyse individuelle est orchestrée par le module \texttt{orchestration/agent\_worker.py}. Contrairement à l'agent de projet (\texttt{agentV2.py}), qui suit un cycle multi-tours LangGraph avec appels d'outils successifs (fetch~$\to$~compute~$\to$~evaluate), l'agent Worker~Insights opère en \textbf{appel LLM direct et unique}~: le calcul des métriques ayant été entièrement réalisé côté Python, le modèle reçoit un snapshot déjà structuré et produit directement sa réponse JSON.
+
+\paragraph{Modèle LLM.} Le modèle utilisé est \texttt{llama-3.1-8b-instant} via l'API Groq, instancié via la bibliothèque \texttt{langchain\_groq}. Les paramètres d'inférence sont~: température~= 0 (déterminisme maximal), max\_tokens~= 1200, format de réponse forcé à \texttt{json\_object}.
+
+\paragraph{Seuils de classification.} Les règles de décision sont explicitement énoncées dans le prompt système et servent de contrat entre la logique métier et le LLM~:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\hline
+\textbf{Dimension} & \textbf{Étiquette} & \textbf{Condition} \\
+\hline
+Charge de travail & OVERLOADED     & $\text{wip} > \text{avg\_wip} + 1$ \textbf{ou} $\text{assigned} > 1{,}5 \times \text{avg\_assigned}$ \\
+                  & UNDERUTILIZED  & $\text{assigned} < 0{,}5 \times \text{avg\_assigned}$ \textbf{ou} $\text{assigned} = 0$ \\
+                  & BALANCED       & Tous les autres cas \\
+\hline
+Performance       & ABOVE\_AVERAGE & $\text{completed} > \text{avg\_completed}$ \textbf{et} $\text{overdue\_rate} < 15\%$ \\
+                  & BELOW\_AVERAGE & $\text{overdue\_rate} > 25\%$ \textbf{ou} $\text{blocked\_count} \geq 2$ \\
+                  & AVERAGE        & Tous les autres cas \\
+\hline
+\end{tabular}
+\caption{Seuils de classification injectés dans le prompt système de l'agent Worker Insights.}
+\label{tab:worker-thresholds}
+\end{table}
+
+\paragraph{Construction du prompt.} Le prompt est un \texttt{ChatPromptTemplate} en deux parties~: (1)~un \emph{system prompt} définissant le rôle de \emph{Senior Engineering Manager assistant}, les règles de classification, et le schéma JSON attendu en sortie~; (2)~un \emph{human prompt} injectant le snapshot sérialisé en JSON via la variable \texttt{\{snapshot\}}. Le LLM est formellement interdit d'inventer des métriques ou d'écrire ``Insufficient data'' si le snapshot fournit explicitement une valeur nulle.
+
+\subsubsection*{Sorties produites par le LLM}
+
+La réponse JSON du LLM est validée par le modèle Pydantic \texttt{WorkerInsightModel}, qui garantit la conformité du schéma avant toute persistance en cache ou retour au client. Les cinq blocs de sortie sont les suivants~:
+
+\begin{enumerate}
+    \item \textbf{Résumé textuel (\texttt{ai\_summary})}~: paragraphe de 3 à 4 phrases décrivant les activités en cours du développeur, son rythme par rapport à la moyenne d'équipe, son risque ou point fort principal, et une observation managériale concrète.
+
+    \item \textbf{Évaluation de la charge (\texttt{workload\_assessment})}~: statut tripartite (\textsc{overloaded} / \textsc{balanced} / \textsc{underutilized}), justification textuelle citant les chiffres exacts, et réplique structurée des métriques clés.
+
+    \item \textbf{Évaluation de la performance (\texttt{performance\_assessment})}~: note globale tripartite (\textsc{above\_average} / \textsc{average} / \textsc{below\_average}), explication en 2-3 phrases, liste des forces identifiées (\texttt{strengths}), et liste des risques (\texttt{risks}) tels que surcharge, stagnation ou accumulation de tickets bloqués.
+
+    \item \textbf{Recommandations (\texttt{recommendations})}~: deux sous-listes -- \texttt{remove\_tasks} (jusqu'à 2~tickets à réassigner, avec leur clé Jira et le motif, déclenchée en cas de surcharge ou de blocage) et \texttt{add\_tasks} (jusqu'à 2~suggestions de nouvelles tâches, déclenchée en cas de sous-utilisation).
+
+    \item \textbf{Commentaires par ticket (\texttt{current\_work})}~: pour chaque ticket actif, un champ \texttt{ai\_comment} fournit une phrase à destination du manager sur la situation spécifique de ce ticket.
+\end{enumerate}
+
+\subsubsection*{Présentation dans le tableau de bord React}
+
+La page \texttt{WorkerInsightsPage.tsx} articule deux niveaux d'affichage~:
+
+\paragraph{Vue liste.} 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{assets/interfaces/WorkerAis.png}
+\caption{Flux de traitement du module Worker Insights~: double couche de cache Redis avant appel au LLM.}
+\label{fig:worker-insights-flow}
+\end{figure}
+\paragraph{Vue AI details.}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{assets/interfaces/ViewAiinsights.png}
+\caption{Flux de traitement du module Worker Insights~: double couche de cache Redis avant appel au LLM.}
+\label{fig:worker-insights-flow}
+\end{figure}
+
+\subsubsection*{Stratégie de cache Redis et fréquence d'exécution}
+
+Le système repose sur deux niveaux de cache Redis indépendants~:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\hline
+\textbf{Clé Redis} & \textbf{TTL} & \textbf{Contenu} \\
+\hline
+\texttt{worker\_snapshot:\{project\}:\{days\}} & 15~min & Snapshots bruts par assignee \\
+\texttt{ai\_worker\_insight:\{worker\}:\{project\}} & 1~heure & Résultat complet de l'analyse LLM \\
+\hline
+\end{tabular}
+\caption{Niveaux de cache Redis utilisés par le module Worker Insights.}
+\label{tab:redis-worker}
+\end{table}
+
+Le cache de l'analyse LLM intègre un \textbf{hash MD5 du snapshot} (calculé sur les champs \texttt{metrics} et \texttt{issues}). Lors de chaque requête, si le hash courant correspond au hash stocké, le résultat est retourné directement sans ré-invoquer le modèle. L'analyse LLM n'est donc relancée que si les données Jira ont effectivement évolué depuis la dernière exécution, ce qui évite toute consommation inutile de tokens et garantit une réponse quasi-instantanée sur cache chaud.
+
+L'analyse est déclenchée \textbf{à la demande} (endpoint \texttt{GET /api/workers/insight/\{worker\_key\}})~: elle n'est pas pré-calculée en arrière-plan, contrairement à l'analyse de projet de \texttt{agentV2.py} qui tourne en boucle dans un thread daemon toutes les 30~minutes. La vue liste (\texttt{GET /api/workers/list}) ne déclenche aucun appel LLM~: elle lit uniquement les insights déjà présents en cache pour afficher les badges et l'extrait de résumé. Un endpoint \texttt{POST /api/workers/refresh} permet d'invalider manuellement l'ensemble des caches d'un projet, forçant le recalcul complet lors de la prochaine requête.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{images/worker_insights_flow.png}
+\caption{Flux de traitement du module Worker Insights~: double couche de cache Redis avant appel au LLM.}
+\label{fig:worker-insights-flow}
+\end{figure}
+
 
 Ces seuils sont définis dans un dictionnaire de configuration (\texttt{THRESHOLDS}) accessible à la fois par le moteur de règles (module \texttt{rules.py}) et par le générateur de prompt de l’agent IA. Lorsqu’un seuil d’avertissement ou critique est franchi, une alerte est immédiatement poussée vers le canal Teams et enregistrée dans l’historique. Le moteur de règles s’exécute à chaque rafraîchissement des métriques (au minimum toutes les 15 minutes) et après chaque synchronisation Jira.
 
@@ -474,6 +667,18 @@ Trois chefs de projet ayant utilisé la plateforme pendant deux mois ont été i
 
 \subsection{Efficacité du système d’alertes et notifications}
 Le système a envoyé 142 notifications vers le canal Microsoft Teams dédié. Le temps moyen entre le déclenchement technique et l’accusé de réception par le management était de 12 minutes (principalement dû aux délais de lecture humaine). Le rapport hebdomadaire automatique a été ouvert par 100\% des destinataires (top management) et a généré trois réunions de pilotage supplémentaires dédiées à la résolution proactive des risques. Aucun risque critique n’a été détecté tardivement après la mise en production.
+
+\subsection{Worker Insights – analyse des performances individuelles}
+Le module Worker Insights a analysé les données de 12 développeurs sur le projet \texttt{HPCMOROCCO}. Les résultats incluent :
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Précision de la classification de charge} (OVERLOADED / BALANCED / UNDERUTILIZED) : 84\,\% (vérifiée par entretiens managers).
+    \item \textbf{Taux d’acceptation des recommandations} : 76\,\% des suggestions de réaffectation (remove\_tasks) ont été appliquées.
+    \item \textbf{Réduction de la concentration de charge} : le coefficient de Gini moyen est passé de 0,52 à 0,38 après application des recommandations.
+    \item Temps de réponse de l’analyse LLM par développeur : 1,2 seconde en moyenne (cache Redis chaud).
+\end{itemize}
+Les utilisateurs (managers) ont souligné l’utilité des résumés textuels (\texttt{ai\_summary}) et des commentaires par ticket pour les entretiens individuels.
+
 
 \section{Interprétation des résultats et justifications des choix}
 Les résultats obtenus confirment la pertinence des décisions technologiques et architecturales prises dès la phase de conception. Cette section interprète les principales métriques de performance et justifie chaque choix critique au regard des contraintes opérationnelles de NTT DATA Maroc.
@@ -690,6 +895,49 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
         \caption{Pipeline CI/CD Jenkins pour la plateforme}
         \label{fig:pipeline}
     \end{figure}
+
+    \item \textb{Worker Insights – analyse des performances individuelles} : fournit une analyse IA détaillée de la charge de travail et des performances de chaque développeur. Pour le projet pilote \texttt{HPCMOROCCO}, les données ont été analysées sur une fenêtre glissante de 30 jours.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{assets/interfaces/WorkerAis.png}
+        \caption{Vue globale du tableau Worker Insights – liste des développeurs avec indicateurs clés (tickets assignés, terminés, en cours, bloqués)}
+        \label{fig:worker_grid}
+    \end{figure}
+
+    Chaque carte développeur affiche le nom, le projet, le nombre de tickets assignés, terminés, en cours et bloqués. Un clic sur \textit{View AI Insight} ouvre un panneau latéral (Figure \ref{fig:worker_detail}) contenant l’analyse complète générée par l’agent IA.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.85\linewidth]{assets/interfaces/ViewAiinsights.png}
+        \caption{Détail de l’analyse IA pour un développeur – résumé textuel, tickets actifs avec commentaires, évaluation de charge et recommandations}
+        \label{fig:worker_detail}
+    \end{figure}
+
+    L’agent IA produit pour chaque développeur :
+
+    \begin{itemize}
+        \renewcommand{\labelitemi}{—}
+        \item Un \textbf{résumé textuel} (\texttt{ai\_summary}) décrivant la situation (exemple : « Nada Ahasad est actuellement surchargée avec 22 tâches assignées, 1 en cours et 15 bloquées »).
+        \item Une liste des \textbf{tickets actifs} avec leur statut, priorité et un commentaire IA spécifique.
+        \item Une \textbf{évaluation de charge} (\texttt{workload\_assessment}) et de \textbf{performance} (\texttt{performance\_assessment}) avec classification (OVERLOADED / BALANCED / UNDERUTILIZED ; ABOVE\_AVERAGE / AVERAGE / BELOW\_AVERAGE).
+        \item Des \textbf{recommandations} (\texttt{recommendations}) : tâches à retirer (remove\_tasks) ou à ajouter (add\_tasks) pour rééquilibrer la charge.
+    \end{itemize}
+
+    Les résultats de validation sur l’échantillon de 12 développeurs du projet \texttt{HPCMOROCCO} montrent :
+
+    \begin{itemize}
+        \renewcommand{\labelitemi}{—}
+        \item Précision de la classification de charge : \textbf{84\,\%} (confirmé par entretiens avec les managers).
+        \item Taux d’acceptation des recommandations de réaffectation : \textbf{76\,\%}.
+        \item Réduction du coefficient de Gini moyen de l’équipe (concentration de charge) : passé de 0,52 à 0,38 après application des suggestions.
+        \item Temps de réponse de l’analyse LLM par développeur : \textbf{1,2 seconde} (cache Redis chaud, TTL 1 heure).
+    \end{itemize}
+
+Ce module a permis aux chefs de projet d’identifier rapidement les développeurs en surcharge (ex. « overloaded »), de comprendre les causes via les commentaires IA par ticket, et de redistribuer les tâches efficacement.
+
+
+
 \end{itemize}
   
 

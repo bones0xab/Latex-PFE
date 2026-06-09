@@ -1,8 +1,11 @@
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Fiche signalétique de NTT DATA Maroc}}{7}{table.caption.11}%
+\contentsline {table}{\numberline {1.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Fiche signalétique de NTT DATA Maroc}}{6}{table.caption.11}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Comparaison entre LangChain et LangGraph}}{37}{table.caption.55}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Comparaison entre LangChain et LangGraph}}{37}{table.caption.66}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Exemples de relations d'incompatibilité entre les stands}}{87}{table.caption.93}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Description des attributs du fichier d’affectation des vols}}{89}{table.caption.98}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Inventaire des clés Redis et TTL associés.}}{60}{table.caption.87}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Seuils de classification injectés dans le prompt système de l'agent Worker Insights.}}{63}{table.caption.99}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Niveaux de cache Redis utilisés par le module Worker Insights.}}{67}{table.caption.108}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Exemples de relations d'incompatibilité entre les stands}}{98}{table.caption.132}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Description des attributs du fichier d’affectation des vols}}{100}{table.caption.137}%
