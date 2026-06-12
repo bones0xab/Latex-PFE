@@ -32,43 +32,49 @@
 \contentsline {subsection}{\numberline {1.3.7}Mise en cache avec Redis}{xv}{subsection.1.3.7}%
 \contentsline {paragraph}{Récupération des tickets Jira.}{xvi}{section*.21}%
 \contentsline {paragraph}{Analyse LLM d’un projet.}{xvi}{section*.22}%
-\contentsline {subsection}{\numberline {1.3.8}Moteur de règles et seuils de décision}{xvii}{subsection.1.3.8}%
-\contentsline {subsection}{\numberline {1.3.9}Worker Insights -- Analyse IA des performances individuelles}{xvii}{subsection.1.3.9}%
+\contentsline {subsection}{\numberline {1.3.8}Supervision et exposition des métriques (Prometheus)}{xvii}{subsection.1.3.8}%
+\contentsline {subsection}{\numberline {1.3.9}Moteur de règles et seuils de décision}{xvii}{subsection.1.3.9}%
+\contentsline {subsection}{\numberline {1.3.10}Worker Insights -- Analyse IA des performances individuelles}{xviii}{subsection.1.3.10}%
 \contentsline {paragraph}{Modèle LLM.}{xix}{section*.29}%
 \contentsline {paragraph}{Seuils de classification.}{xix}{section*.30}%
 \contentsline {paragraph}{Construction du prompt.}{xix}{section*.32}%
 \contentsline {paragraph}{Vue liste.}{xx}{figure.caption.36}%
 \contentsline {paragraph}{Vue AI details.}{xxii}{figure.caption.38}%
-\contentsline {section}{\numberline {1.4}Système d’alertes et notification}{xxiii}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Génération automatique des alertes}{xxiii}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Typologie des alertes}{xxiii}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}Canal de notification vers Microsoft Teams}{xxiv}{subsection.1.4.3}%
-\contentsline {subsection}{\numberline {1.4.4}Envoi de rapports synthétiques par email}{xxiv}{subsection.1.4.4}%
-\contentsline {subsection}{\numberline {1.4.5}Historique des alertes et tableau de bord dédié}{xxv}{subsection.1.4.5}%
-\contentsline {section}{\numberline {1.5}Déploiement et industrialisation}{xxv}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Conteneurisation avec Docker}{xxv}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Orchestration avec Docker Compose en développement}{xxvi}{subsection.1.5.2}%
-\contentsline {subsection}{\numberline {1.5.3}Pipeline CI/CD avec Jenkins}{xxvi}{subsection.1.5.3}%
-\contentsline {subsection}{\numberline {1.5.4}Configuration des environnements}{xxvii}{subsection.1.5.4}%
-\contentsline {subsection}{\numberline {1.5.5}Surveillance et logs}{xxvii}{subsection.1.5.5}%
-\contentsline {section}{\numberline {1.6}Résultats et discussion}{xxvii}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}Validation des alertes de l’agent IA sur le projet pilote}{xxviii}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2}Comparaison des prédictions Monte Carlo avec les dates de fin réelles}{xxviii}{subsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.6.3}Performance du tableau de bord}{xxviii}{subsection.1.6.3}%
-\contentsline {subsection}{\numberline {1.6.4}Retour d’expérience des chefs de projet}{xxix}{subsection.1.6.4}%
-\contentsline {subsection}{\numberline {1.6.5}Efficacité du système d’alertes et notifications}{xxix}{subsection.1.6.5}%
-\contentsline {subsection}{\numberline {1.6.6}Worker Insights – analyse des performances individuelles}{xxx}{subsection.1.6.6}%
-\contentsline {section}{\numberline {1.7}Interprétation des résultats et justifications des choix}{xxx}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}Choix de LangGraph vs autres frameworks d’orchestration}{xxx}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}Choix de Mistral hébergé localement}{xxxi}{subsection.1.7.2}%
-\contentsline {subsection}{\numberline {1.7.3}Choix de Redis pour la mise en cache}{xxxi}{subsection.1.7.3}%
-\contentsline {subsection}{\numberline {1.7.4}Choix de Jenkins pour CI/CD}{xxxi}{subsection.1.7.4}%
-\contentsline {subsection}{\numberline {1.7.5}Choix des canaux de notification (Teams + email)}{xxxii}{subsection.1.7.5}%
-\contentsline {subsection}{\numberline {1.7.6}Discussion sur les limites et perspectives}{xxxii}{subsection.1.7.6}%
-\contentsline {section}{\numberline {1.8}Intégration du modèle dans le système d’information de NTT DATA}{xxxii}{section.1.8}%
-\contentsline {subsection}{\numberline {1.8.1}Connexion à l’API Jira interne}{xxxii}{subsection.1.8.1}%
-\contentsline {subsection}{\numberline {1.8.2}Déploiement sur les serveurs de Tétouan}{xxxiii}{subsection.1.8.2}%
-\contentsline {subsection}{\numberline {1.8.3}Formation des utilisateurs et documentation}{xxxiii}{subsection.1.8.3}%
-\contentsline {subsection}{\numberline {1.8.4}Acceptation par le top management et mise en production}{xxxiv}{subsection.1.8.4}%
-\contentsline {subsection}{\numberline {1.8.5}Réalisation – Fonctionnalités implémentées}{xxxiv}{subsection.1.8.5}%
-\contentsline {section}{\numberline {1.9}Conclusion}{xlvi}{section.1.9}%
+\contentsline {subsection}{\numberline {1.3.11}Exposition des métriques (endpoint \texttt {/metrics})}{xxiii}{subsection.1.3.11}%
+\contentsline {subsubsection}{Règles d'alerte Prometheus}{xxiii}{section*.42}%
+\contentsline {subsubsection}{Visualisation avec Grafana}{xxiv}{section*.43}%
+\contentsline {subsubsection}{Routage des alertes – Alertmanager et webhook Teams}{xxiv}{section*.44}%
+\contentsline {subsubsection}{Conteneurisation de la stack supervision}{xxiv}{section*.45}%
+\contentsline {section}{\numberline {1.4}Système d’alertes et notification}{xxv}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Génération automatique des alertes}{xxv}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Typologie des alertes}{xxvi}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Canal de notification vers Microsoft Teams}{xxvi}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Envoi de rapports synthétiques par email}{xxvii}{subsection.1.4.4}%
+\contentsline {subsection}{\numberline {1.4.5}Historique des alertes et tableau de bord dédié}{xxvii}{subsection.1.4.5}%
+\contentsline {section}{\numberline {1.5}Déploiement et industrialisation}{xxvii}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Conteneurisation avec Docker}{xxviii}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Orchestration avec Docker Compose en développement}{xxviii}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Pipeline CI/CD avec Jenkins}{xxviii}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Configuration des environnements}{xxix}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5}Surveillance et logs}{xxix}{subsection.1.5.5}%
+\contentsline {section}{\numberline {1.6}Résultats et discussion}{xxx}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Validation des alertes de l’agent IA sur le projet pilote}{xxx}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Comparaison des prédictions Monte Carlo avec les dates de fin réelles}{xxx}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Performance du tableau de bord}{xxxi}{subsection.1.6.3}%
+\contentsline {subsection}{\numberline {1.6.4}Retour d’expérience des chefs de projet}{xxxi}{subsection.1.6.4}%
+\contentsline {subsection}{\numberline {1.6.5}Efficacité du système d’alertes et notifications}{xxxii}{subsection.1.6.5}%
+\contentsline {subsection}{\numberline {1.6.6}Worker Insights – analyse des performances individuelles}{xxxii}{subsection.1.6.6}%
+\contentsline {section}{\numberline {1.7}Interprétation des résultats et justifications des choix}{xxxii}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Choix de LangGraph vs autres frameworks d’orchestration}{xxxii}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Choix de Mistral hébergé localement}{xxxiii}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Choix de Redis pour la mise en cache}{xxxiii}{subsection.1.7.3}%
+\contentsline {subsection}{\numberline {1.7.4}Choix de Jenkins pour CI/CD}{xxxiv}{subsection.1.7.4}%
+\contentsline {subsection}{\numberline {1.7.5}Choix des canaux de notification (Teams + email)}{xxxiv}{subsection.1.7.5}%
+\contentsline {subsection}{\numberline {1.7.6}Discussion sur les limites et perspectives}{xxxiv}{subsection.1.7.6}%
+\contentsline {section}{\numberline {1.8}Intégration du modèle dans le système d’information de NTT DATA}{xxxv}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Connexion à l’API Jira interne}{xxxv}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Déploiement sur les serveurs de Tétouan}{xxxv}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Formation des utilisateurs et documentation}{xxxvi}{subsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.8.4}Acceptation par le top management et mise en production}{xxxvi}{subsection.1.8.4}%
+\contentsline {section}{\numberline {1.9}Réalisation – Fonctionnalités implémentées}{xxxvi}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Conclusion}{xlix}{section.1.10}%

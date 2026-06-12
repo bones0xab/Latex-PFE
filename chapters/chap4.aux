@@ -50,10 +50,11 @@
 \@writefile{toc}{\contentsline {paragraph}{Récupération des tickets Jira.}{xvi}{section*.21}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Analyse LLM d’un projet.}{xvi}{section*.22}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.8}Moteur de règles et seuils de décision}{xvii}{subsection.1.3.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.9}Worker Insights -- Analyse IA des performances individuelles}{xvii}{subsection.1.3.9}\protected@file@percent }
-\newlabel{subsec:worker-insights}{{1.3.9}{xvii}{Worker Insights -- Analyse IA des performances individuelles}{subsection.1.3.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.8}Supervision et exposition des métriques (Prometheus)}{xvii}{subsection.1.3.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.9}Moteur de règles et seuils de décision}{xvii}{subsection.1.3.9}\protected@file@percent }
 \def\@LN@column{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.10}Worker Insights -- Analyse IA des performances individuelles}{xviii}{subsection.1.3.10}\protected@file@percent }
+\newlabel{subsec:worker-insights}{{1.3.10}{xviii}{Worker Insights -- Analyse IA des performances individuelles}{subsection.1.3.10}{}}
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {paragraph}{Modèle LLM.}{xix}{section*.29}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Seuils de classification.}{xix}{section*.30}\protected@file@percent }
@@ -74,91 +75,99 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Flux de traitement du module Worker Insights~: double couche de cache Redis avant appel au LLM.}}{xxii}{figure.caption.41}\protected@file@percent }
 \newlabel{fig:worker-insights-flow}{{1.4}{xxii}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Flux de traitement du module Worker Insights~: double couche de cache Redis avant appel au LLM}{figure.caption.41}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {1.4}Système d’alertes et notification}{xxiii}{section.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Génération automatique des alertes}{xxiii}{subsection.1.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.2}Typologie des alertes}{xxiii}{subsection.1.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.11}Exposition des métriques (endpoint \texttt  {/metrics})}{xxiii}{subsection.1.3.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Règles d'alerte Prometheus}{xxiii}{section*.42}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.3}Canal de notification vers Microsoft Teams}{xxiv}{subsection.1.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.4}Envoi de rapports synthétiques par email}{xxiv}{subsection.1.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Visualisation avec Grafana}{xxiv}{section*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Routage des alertes – Alertmanager et webhook Teams}{xxiv}{section*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Conteneurisation de la stack supervision}{xxiv}{section*.45}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.5}Historique des alertes et tableau de bord dédié}{xxv}{subsection.1.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.5}Déploiement et industrialisation}{xxv}{section.1.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.1}Conteneurisation avec Docker}{xxv}{subsection.1.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Système d’alertes et notification}{xxv}{section.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Génération automatique des alertes}{xxv}{subsection.1.4.1}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.2}Orchestration avec Docker Compose en développement}{xxvi}{subsection.1.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.3}Pipeline CI/CD avec Jenkins}{xxvi}{subsection.1.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.2}Typologie des alertes}{xxvi}{subsection.1.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.3}Canal de notification vers Microsoft Teams}{xxvi}{subsection.1.4.3}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.4}Configuration des environnements}{xxvii}{subsection.1.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.5}Surveillance et logs}{xxvii}{subsection.1.5.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.6}Résultats et discussion}{xxvii}{section.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.4}Envoi de rapports synthétiques par email}{xxvii}{subsection.1.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.5}Historique des alertes et tableau de bord dédié}{xxvii}{subsection.1.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Déploiement et industrialisation}{xxvii}{section.1.5}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.1}Validation des alertes de l’agent IA sur le projet pilote}{xxviii}{subsection.1.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.2}Comparaison des prédictions Monte Carlo avec les dates de fin réelles}{xxviii}{subsection.1.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.3}Performance du tableau de bord}{xxviii}{subsection.1.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.1}Conteneurisation avec Docker}{xxviii}{subsection.1.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.2}Orchestration avec Docker Compose en développement}{xxviii}{subsection.1.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.3}Pipeline CI/CD avec Jenkins}{xxviii}{subsection.1.5.3}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.4}Retour d’expérience des chefs de projet}{xxix}{subsection.1.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.5}Efficacité du système d’alertes et notifications}{xxix}{subsection.1.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.4}Configuration des environnements}{xxix}{subsection.1.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.5}Surveillance et logs}{xxix}{subsection.1.5.5}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.6}Worker Insights – analyse des performances individuelles}{xxx}{subsection.1.6.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.7}Interprétation des résultats et justifications des choix}{xxx}{section.1.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.7.1}Choix de LangGraph vs autres frameworks d’orchestration}{xxx}{subsection.1.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.6}Résultats et discussion}{xxx}{section.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.1}Validation des alertes de l’agent IA sur le projet pilote}{xxx}{subsection.1.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.2}Comparaison des prédictions Monte Carlo avec les dates de fin réelles}{xxx}{subsection.1.6.2}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.7.2}Choix de Mistral hébergé localement}{xxxi}{subsection.1.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.7.3}Choix de Redis pour la mise en cache}{xxxi}{subsection.1.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.7.4}Choix de Jenkins pour CI/CD}{xxxi}{subsection.1.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.3}Performance du tableau de bord}{xxxi}{subsection.1.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.4}Retour d’expérience des chefs de projet}{xxxi}{subsection.1.6.4}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.7.5}Choix des canaux de notification (Teams + email)}{xxxii}{subsection.1.7.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.7.6}Discussion sur les limites et perspectives}{xxxii}{subsection.1.7.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.8}Intégration du modèle dans le système d’information de NTT DATA}{xxxii}{section.1.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.1}Connexion à l’API Jira interne}{xxxii}{subsection.1.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.5}Efficacité du système d’alertes et notifications}{xxxii}{subsection.1.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.6}Worker Insights – analyse des performances individuelles}{xxxii}{subsection.1.6.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.7}Interprétation des résultats et justifications des choix}{xxxii}{section.1.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.7.1}Choix de LangGraph vs autres frameworks d’orchestration}{xxxii}{subsection.1.7.1}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.2}Déploiement sur les serveurs de Tétouan}{xxxiii}{subsection.1.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.3}Formation des utilisateurs et documentation}{xxxiii}{subsection.1.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.7.2}Choix de Mistral hébergé localement}{xxxiii}{subsection.1.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.7.3}Choix de Redis pour la mise en cache}{xxxiii}{subsection.1.7.3}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.4}Acceptation par le top management et mise en production}{xxxiv}{subsection.1.8.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.5}Réalisation – Fonctionnalités implémentées}{xxxiv}{subsection.1.8.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Extraction asynchrone des données Jira (pagination, rate limiting)}}{xxxiv}{figure.caption.42}\protected@file@percent }
-\newlabel{fig:extraction_jira}{{1.5}{xxxiv}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Extraction asynchrone des données Jira (pagination, rate limiting)}{figure.caption.42}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.7.4}Choix de Jenkins pour CI/CD}{xxxiv}{subsection.1.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.7.5}Choix des canaux de notification (Teams + email)}{xxxiv}{subsection.1.7.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.7.6}Discussion sur les limites et perspectives}{xxxiv}{subsection.1.7.6}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces \xpg@aux {}{french}\ignorespaces Normalisation des données Jira avec modèles Pydantic}}{xxxv}{figure.caption.43}\protected@file@percent }
-\newlabel{fig:normalisation}{{1.6}{xxxv}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Normalisation des données Jira avec modèles Pydantic}{figure.caption.43}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.8}Intégration du modèle dans le système d’information de NTT DATA}{xxxv}{section.1.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.1}Connexion à l’API Jira interne}{xxxv}{subsection.1.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.2}Déploiement sur les serveurs de Tétouan}{xxxv}{subsection.1.8.2}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces \xpg@aux {}{french}\ignorespaces Tableau de bord des métriques de santé projet (WIP, stale, overdue, Gini)}}{xxxvi}{figure.caption.44}\protected@file@percent }
-\newlabel{fig:metriques}{{1.7}{xxxvi}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Tableau de bord des métriques de santé projet (WIP, stale, overdue, Gini)}{figure.caption.44}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces \xpg@aux {}{french}\ignorespaces Simulation Monte Carlo – distribution des dates de fin et percentiles}}{xxxvi}{figure.caption.45}\protected@file@percent }
-\newlabel{fig:montecarlo}{{1.8}{xxxvi}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Simulation Monte Carlo – distribution des dates de fin et percentiles}{figure.caption.45}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.3}Formation des utilisateurs et documentation}{xxxvi}{subsection.1.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.8.4}Acceptation par le top management et mise en production}{xxxvi}{subsection.1.8.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.9}Réalisation – Fonctionnalités implémentées}{xxxvi}{section.1.9}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.9}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture de l’agent IA LangGraph avec appel au LLM Mistral}}{xxxvii}{figure.caption.46}\protected@file@percent }
-\newlabel{fig:agent}{{1.9}{xxxvii}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Architecture de l’agent IA LangGraph avec appel au LLM Mistral}{figure.caption.46}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Extraction asynchrone des données Jira (pagination, rate limiting)}}{xxxvii}{figure.caption.46}\protected@file@percent }
+\newlabel{fig:extraction_jira}{{1.5}{xxxvii}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Extraction asynchrone des données Jira (pagination, rate limiting)}{figure.caption.46}{}}
 \def\@LN@column{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.10}{\ignorespaces \xpg@aux {}{french}\ignorespaces Vue globale du tableau de bord d’équipe (grille des employés avec métriques et scores IA)}}{xxxviii}{figure.caption.47}\protected@file@percent }
-\newlabel{fig:team_scorecard_global}{{1.10}{xxxviii}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Vue globale du tableau de bord d’équipe (grille des employés avec métriques et scores IA)}{figure.caption.47}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces \xpg@aux {}{french}\ignorespaces Normalisation des données Jira avec modèles Pydantic}}{xxxviii}{figure.caption.47}\protected@file@percent }
+\newlabel{fig:normalisation}{{1.6}{xxxviii}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Normalisation des données Jira avec modèles Pydantic}{figure.caption.47}{}}
 \def\@LN@column{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.11}{\ignorespaces \xpg@aux {}{french}\ignorespaces Interface du tableau de bord React (métriques, alertes, explorateur Jira)}}{xxxix}{figure.caption.48}\protected@file@percent }
-\newlabel{fig:dashboard}{{1.11}{xxxix}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Interface du tableau de bord React (métriques, alertes, explorateur Jira)}{figure.caption.48}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces \xpg@aux {}{french}\ignorespaces Tableau de bord des métriques de santé projet (WIP, stale, overdue, Gini)}}{xxxix}{figure.caption.48}\protected@file@percent }
+\newlabel{fig:metriques}{{1.7}{xxxix}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Tableau de bord des métriques de santé projet (WIP, stale, overdue, Gini)}{figure.caption.48}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces \xpg@aux {}{french}\ignorespaces Simulation Monte Carlo – distribution des dates de fin et percentiles}}{xxxix}{figure.caption.49}\protected@file@percent }
+\newlabel{fig:montecarlo}{{1.8}{xxxix}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Simulation Monte Carlo – distribution des dates de fin et percentiles}{figure.caption.49}{}}
+\def\@LN@column{1}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.9}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture de l’agent IA LangGraph avec appel au LLM Mistral}}{xl}{figure.caption.50}\protected@file@percent }
+\newlabel{fig:agent}{{1.9}{xl}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Architecture de l’agent IA LangGraph avec appel au LLM Mistral}{figure.caption.50}{}}
+\def\@LN@column{1}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.10}{\ignorespaces \xpg@aux {}{french}\ignorespaces Vue globale du tableau de bord d’équipe (grille des employés avec métriques et scores IA)}}{xli}{figure.caption.51}\protected@file@percent }
+\newlabel{fig:team_scorecard_global}{{1.10}{xli}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Vue globale du tableau de bord d’équipe (grille des employés avec métriques et scores IA)}{figure.caption.51}{}}
+\def\@LN@column{1}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.11}{\ignorespaces \xpg@aux {}{french}\ignorespaces Interface du tableau de bord React (métriques, alertes, explorateur Jira)}}{xlii}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:dashboard}{{1.11}{xlii}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Interface du tableau de bord React (métriques, alertes, explorateur Jira)}{figure.caption.52}{}}
 \def\@LN@column{1}
 \def\@LN@column{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.12}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture du backend FastAPI et ses endpoints REST}}{xli}{figure.caption.49}\protected@file@percent }
-\newlabel{fig:fastapi}{{1.12}{xli}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Architecture du backend FastAPI et ses endpoints REST}{figure.caption.49}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.12}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture du backend FastAPI et ses endpoints REST}}{xliv}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:fastapi}{{1.12}{xliv}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Architecture du backend FastAPI et ses endpoints REST}{figure.caption.53}{}}
 \def\@LN@column{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.13}{\ignorespaces \xpg@aux {}{french}\ignorespaces Schéma du contrôle d’accès RBAC (JWT, rôles, SQLAlchemy)}}{xlii}{figure.caption.50}\protected@file@percent }
-\newlabel{fig:rbac}{{1.13}{xlii}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Schéma du contrôle d’accès RBAC (JWT, rôles, SQLAlchemy)}{figure.caption.50}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.13}{\ignorespaces \xpg@aux {}{french}\ignorespaces Schéma du contrôle d’accès RBAC (JWT, rôles, SQLAlchemy)}}{xlv}{figure.caption.54}\protected@file@percent }
+\newlabel{fig:rbac}{{1.13}{xlv}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Schéma du contrôle d’accès RBAC (JWT, rôles, SQLAlchemy)}{figure.caption.54}{}}
 \def\@LN@column{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.14}{\ignorespaces \xpg@aux {}{french}\ignorespaces Exemple de notification d’alerte sur Microsoft Teams}}{xliii}{figure.caption.51}\protected@file@percent }
-\newlabel{fig:alertes}{{1.14}{xliii}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Exemple de notification d’alerte sur Microsoft Teams}{figure.caption.51}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.14}{\ignorespaces \xpg@aux {}{french}\ignorespaces Exemple de notification d’alerte sur Microsoft Teams}}{xlvi}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:alertes}{{1.14}{xlvi}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Exemple de notification d’alerte sur Microsoft Teams}{figure.caption.55}{}}
 \def\@LN@column{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.15}{\ignorespaces \xpg@aux {}{french}\ignorespaces Pipeline CI/CD Jenkins pour la plateforme}}{xliv}{figure.caption.52}\protected@file@percent }
-\newlabel{fig:pipeline}{{1.15}{xliv}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Pipeline CI/CD Jenkins pour la plateforme}{figure.caption.52}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.16}{\ignorespaces \xpg@aux {}{french}\ignorespaces Vue globale du tableau Worker Insights – liste des développeurs avec indicateurs clés (tickets assignés, terminés, en cours, bloqués)}}{xliv}{figure.caption.53}\protected@file@percent }
-\newlabel{fig:worker_grid}{{1.16}{xliv}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Vue globale du tableau Worker Insights – liste des développeurs avec indicateurs clés (tickets assignés, terminés, en cours, bloqués)}{figure.caption.53}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.15}{\ignorespaces \xpg@aux {}{french}\ignorespaces Pipeline CI/CD Jenkins pour la plateforme}}{xlvii}{figure.caption.56}\protected@file@percent }
+\newlabel{fig:pipeline}{{1.15}{xlvii}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Pipeline CI/CD Jenkins pour la plateforme}{figure.caption.56}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.16}{\ignorespaces \xpg@aux {}{french}\ignorespaces Vue globale du tableau Worker Insights – liste des développeurs avec indicateurs clés (tickets assignés, terminés, en cours, bloqués)}}{xlvii}{figure.caption.57}\protected@file@percent }
+\newlabel{fig:worker_grid}{{1.16}{xlvii}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Vue globale du tableau Worker Insights – liste des développeurs avec indicateurs clés (tickets assignés, terminés, en cours, bloqués)}{figure.caption.57}{}}
 \def\@LN@column{1}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.17}{\ignorespaces \xpg@aux {}{french}\ignorespaces Détail de l’analyse IA pour un développeur – résumé textuel, tickets actifs avec commentaires, évaluation de charge et recommandations}}{xlv}{figure.caption.54}\protected@file@percent }
-\newlabel{fig:worker_detail}{{1.17}{xlv}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Détail de l’analyse IA pour un développeur – résumé textuel, tickets actifs avec commentaires, évaluation de charge et recommandations}{figure.caption.54}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.17}{\ignorespaces \xpg@aux {}{french}\ignorespaces Détail de l’analyse IA pour un développeur – résumé textuel, tickets actifs avec commentaires, évaluation de charge et recommandations}}{xlviii}{figure.caption.58}\protected@file@percent }
+\newlabel{fig:worker_detail}{{1.17}{xlviii}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Détail de l’analyse IA pour un développeur – résumé textuel, tickets actifs avec commentaires, évaluation de charge et recommandations}{figure.caption.58}{}}
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {1.9}Conclusion}{xlvi}{section.1.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.10}Conclusion}{xlix}{section.1.10}\protected@file@percent }
 \def\@LN@column{1}
 \@setckpt{chapters/chap4}{
-\setcounter{page}{48}
+\setcounter{page}{51}
 \setcounter{equation}{4}
 \setcounter{enumi}{7}
 \setcounter{enumii}{6}
@@ -168,7 +177,7 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{1}
-\setcounter{section}{9}
+\setcounter{section}{10}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
@@ -200,7 +209,7 @@
 \setcounter{lstnumber}{1}
 \setcounter{FancyVerbLine}{0}
 \setcounter{linenumber}{1}
-\setcounter{LN@truepage}{49}
+\setcounter{LN@truepage}{52}
 \setcounter{FancyVerbWriteLine}{0}
 \setcounter{FancyVerbBufferLine}{0}
 \setcounter{FV@TrueTabGroupLevel}{0}
@@ -216,7 +225,7 @@
 \setcounter{section@level}{1}
 \setcounter{Item}{26}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{52}
+\setcounter{bookmark@seq@number}{54}
 \setcounter{tmpA}{0}
 \setcounter{tmpB}{0}
 \setcounter{tmpC}{0}

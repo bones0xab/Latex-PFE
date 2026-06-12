@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.5.9)  11 JUN 2026 11:27
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.5.9)  12 JUN 2026 01:53
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"c:/Users/ELITEBOOK/Downloads/New Rapport (4)/New Rapport/main"
@@ -2224,7 +2224,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [17]
-Overfull \hbox (65.54016pt too wide) in paragraph at lines 383--384
+Overfull \hbox (65.54016pt too wide) in paragraph at lines 387--388
 []\TU/TimesNewRoman(0)/m/n/12 Le pi-pe-line dé-marre dans la fonc-tion \TU/lmt
 t/m/n/12 _build_worker_snapshots() \TU/TimesNewRoman(0)/m/n/12 du mo-dule \TU/l
 mtt/m/n/12 app/routes/workers.py\TU/TimesNewRoman(0)/m/n/12 .
@@ -2238,12 +2238,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [18]
-Overfull \hbox (27.81586pt too wide) in paragraph at lines 408--421
+Overfull \hbox (27.81586pt too wide) in paragraph at lines 412--425
  [][] 
  []
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 432.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 436.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -2252,23 +2252,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [19]
-Overfull \hbox (6.85207pt too wide) in paragraph at lines 440--441
+Overfull \hbox (6.85207pt too wide) in paragraph at lines 444--445
 []\TU/TimesNewRoman(0)/b/n/12 Com-men-taires par ti-cket (\TU/lmtt/b/n/12 curren
 t_work\TU/TimesNewRoman(0)/b/n/12 ) \TU/TimesNewRoman(0)/m/n/12 : pour chaque ti
 -cket ac-tif, un champ \TU/lmtt/m/n/12 ai_comment
  []
 
-<assets/interfaces/WorkerAis.png, id=183, 1443.14156pt x 709.90219pt>
+<assets/interfaces/WorkerAis.png, id=182, 1443.14156pt x 709.90219pt>
 File: assets/interfaces/WorkerAis.png Graphic file (type png)
 <use assets/interfaces/WorkerAis.png>
 Package luatex.def Info: assets/interfaces/WorkerAis.png  used on input line 45
-0.
+4.
 (luatex.def)             Requested size: 414.58246pt x 203.93822pt.
-<assets/interfaces/ViewAiinsights.png, id=184, 478.03593pt x 709.90219pt>
+<assets/interfaces/ViewAiinsights.png, id=183, 478.03593pt x 709.90219pt>
 File: assets/interfaces/ViewAiinsights.png Graphic file (type png)
 <use assets/interfaces/ViewAiinsights.png>
 Package luatex.def Info: assets/interfaces/ViewAiinsights.png  used on input li
-ne 457.
+ne 461.
 (luatex.def)             Requested size: 414.58246pt x 615.67094pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2286,19 +2286,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [21<./assets/interfaces/ViewAiinsights.png>]
-Overfull \hbox (3.42903pt too wide) in paragraph at lines 468--476
+Overfull \hbox (3.42903pt too wide) in paragraph at lines 472--480
  [][] 
  []
 
 
-Overfull \hbox (23.88669pt too wide) in paragraph at lines 482--483
+Overfull \hbox (23.88669pt too wide) in paragraph at lines 486--487
 []\TU/TimesNewRoman(0)/m/n/12 L’ana-lyse est dé-clen-chée \TU/TimesNewRoman
 (0)/b/n/12 à la de-mande \TU/TimesNewRoman(0)/m/n/12 (end-point \TU/lmtt/m/n/1
 2 GET /api/workers/insight/{worker_key}\TU/TimesNewRoman(0)/m/n/12 ) :
  []
 
 
-Overfull \hbox (18.65208pt too wide) in paragraph at lines 482--483
+Overfull \hbox (18.65208pt too wide) in paragraph at lines 486--487
 \TU/TimesNewRoman(0)/m/n/12 tourne en boucle dans un thread dae-mon toutes les 
 30 mi-nutes. La vue liste (\TU/lmtt/m/n/12 GET /api/workers/list\TU/TimesNewRom
 an(0)/m/n/12 )
@@ -2306,8 +2306,8 @@ an(0)/m/n/12 )
 
 File: assets/interfaces/WorkerAis.png Graphic file (type png)
 <use assets/interfaces/WorkerAis.png>
-Package luatex.def Info: assets/interfaces/WorkerAis.png  used on input line 48
-6.
+Package luatex.def Info: assets/interfaces/WorkerAis.png  used on input line 49
+0.
 (luatex.def)             Requested size: 414.58246pt x 203.93822pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2317,6 +2317,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [22]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 498.
+
+Overfull \hbox (56.73108pt too wide) in paragraph at lines 504--505
+[]\TU/TimesNewRoman(0)/b/n/12 Re-quêtes HTTP \TU/TimesNewRoman(0)/m/n/12 : comp
+-teur par end-point, mé-thode HTTP et code de sta-tut (ex. \TU/lmtt/m/n/12 http
+_requests_total\TU/TimesNewRoman(0)/m/n/12 ). 
+ []
+
+
+Overfull \hbox (33.04245pt too wide) in paragraph at lines 505--506
+[]\TU/TimesNewRoman(0)/b/n/12 Temps de ré-ponse \TU/TimesNewRoman(0)/m/n/12 : 
+his-to-gramme des la-tences par end-point (\TU/lmtt/m/n/12 http_request_duration
+_seconds\TU/TimesNewRoman(0)/m/n/12 ). 
+ []
+
+
+Overfull \hbox (15.13457pt too wide) in paragraph at lines 507--508
+[]\TU/TimesNewRoman(0)/b/n/12 Cache Re-dis \TU/TimesNewRoman(0)/m/n/12 : taux de
+ hits/miss (\TU/lmtt/m/n/12 redis_cache_hits_total\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 redis_cache_misses_total\TU/TimesNewRoman(0)/m/n/12 ). 
+ []
+
+
+Overfull \hbox (39.9291pt too wide) in paragraph at lines 533--533
+[]          \TU/lmtt/m/n/12 summary : "WIP ratio critique pour le projet {{ $lab
+els.project_key }}"[] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -2325,6 +2353,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [23]
+
+LaTeX Warning: Reference `subsec:alerting' on page xxiv undefined on input line
+ 557.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -2349,18 +2381,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [26]
-Overfull \hbox (124.86981pt too wide) in paragraph at lines 606--607
-[]\TU/TimesNewRoman(0)/m/n/12 Git-Lab : [][]$\TU/lmtt/m/n/12 https://umane.emeal
-.nttdata.com/git/FELTRIINTPROJ/nttdata-[]ai-[]agent-[]project-[]tracking$[][] 
- []
-
-
-Overfull \hbox (6.57547pt too wide) in paragraph at lines 617--618
-[]\TU/TimesNewRoman(0)/m/n/12 En cas d’échec de conte-neur, une po-li-tique 
-de re-dé-mar-rage au-to-ma-tique (\TU/lmtt/m/n/12 restart : always\TU/TimesNew
-Roman(0)/m/n/12 )
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -2377,6 +2397,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [28]
+Overfull \hbox (124.86981pt too wide) in paragraph at lines 699--700
+[]\TU/TimesNewRoman(0)/m/n/12 Git-Lab : [][]$\TU/lmtt/m/n/12 https://umane.emeal
+.nttdata.com/git/FELTRIINTPROJ/nttdata-[]ai-[]agent-[]project-[]tracking$[][] 
+ []
+
+
+Overfull \hbox (6.57547pt too wide) in paragraph at lines 710--711
+[]\TU/TimesNewRoman(0)/m/n/12 En cas d’échec de conte-neur, une po-li-tique 
+de re-dé-mar-rage au-to-ma-tique (\TU/lmtt/m/n/12 restart : always\TU/TimesNew
+Roman(0)/m/n/12 )
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -2417,21 +2449,46 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [33]
-<assets/interfaces/extraction_jira.png, id=299, 1443.14156pt x 709.14937pt>
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.87933pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.87933pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
+
+[34]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.87933pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.87933pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
+
+[35]
+<assets/interfaces/extraction_jira.png, id=312, 1443.14156pt x 709.14937pt>
 File: assets/interfaces/extraction_jira.png Graphic file (type png)
 <use assets/interfaces/extraction_jira.png>
 Package luatex.def Info: assets/interfaces/extraction_jira.png  used on input l
-ine 805.
+ine 898.
 (luatex.def)             Requested size: 460.65031pt x 226.35893pt.
-<assets/interfaces/normalisation_process.png, id=300, 1155.31625pt x 1371.1225p
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.87933pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.87933pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
+
+[36]
+<assets/interfaces/normalisation_process.png, id=320, 1155.31625pt x 1371.1225p
 t>
 File: assets/interfaces/normalisation_process.png Graphic file (type png)
 <use assets/interfaces/normalisation_process.png>
 Package luatex.def Info: assets/interfaces/normalisation_process.png  used on i
-nput line 813.
+nput line 906.
 (luatex.def)             Requested size: 460.65031pt x 546.68187pt.
 
-Overfull \hbox (3.50581pt too wide) in paragraph at lines 810--816
+Overfull \hbox (3.50581pt too wide) in paragraph at lines 903--909
 \TU/TimesNewRoman(0)/m/n/12 tité, tem-po-ra-lité, sé-man-tique, ac-teurs) et map-page ca-no-nique des sta-tuts (\TU/lmtt/m/n/12 todo\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 in_progress\TU/TimesNewRoman(0)/m/n/12 ,
  []
 
@@ -2442,12 +2499,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[34<./assets/interfaces/extraction_jira.png>]
-<assets/interfaces/metrics_sante.png, id=309, 1444.64719pt x 709.14937pt>
+[37<./assets/interfaces/extraction_jira.png>]
+<assets/interfaces/metrics_sante.png, id=327, 1444.64719pt x 709.14937pt>
 File: assets/interfaces/metrics_sante.png Graphic file (type png)
 <use assets/interfaces/metrics_sante.png>
 Package luatex.def Info: assets/interfaces/metrics_sante.png  used on input lin
-e 821.
+e 914.
 (luatex.def)             Requested size: 460.65031pt x 226.12088pt.
 
 
@@ -2457,18 +2514,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[35<./assets/interfaces/normalisation_process.png>]
-<assets/interfaces/montecarlo.png, id=315, 1442.38875pt x 707.64375pt>
+[38<./assets/interfaces/normalisation_process.png>]
+<assets/interfaces/montecarlo.png, id=333, 1442.38875pt x 707.64375pt>
 File: assets/interfaces/montecarlo.png Graphic file (type png)
 <use assets/interfaces/montecarlo.png>
-Package luatex.def Info: assets/interfaces/montecarlo.png  used on input line 8
-29.
+Package luatex.def Info: assets/interfaces/montecarlo.png  used on input line 9
+22.
 (luatex.def)             Requested size: 460.65031pt x 225.99712pt.
-<assets/interfaces/agent_langraph.png, id=316, 1444.64719pt x 697.8572pt>
+<assets/interfaces/agent_langraph.png, id=334, 1444.64719pt x 697.8572pt>
 File: assets/interfaces/agent_langraph.png Graphic file (type png)
 <use assets/interfaces/agent_langraph.png>
 Package luatex.def Info: assets/interfaces/agent_langraph.png  used on input li
-ne 837.
+ne 930.
 (luatex.def)             Requested size: 460.65031pt x 222.52023pt.
 
 
@@ -2478,11 +2535,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[36<./assets/interfaces/metrics_sante.png><./assets/interfaces/montecarlo.png>]
+[39<./assets/interfaces/metrics_sante.png><./assets/interfaces/montecarlo.png>]
 File: assets/interfaces/montecarlo.png Graphic file (type png)
 <use assets/interfaces/montecarlo.png>
-Package luatex.def Info: assets/interfaces/montecarlo.png  used on input line 8
-50.
+Package luatex.def Info: assets/interfaces/montecarlo.png  used on input line 9
+43.
 (luatex.def)             Requested size: 460.65031pt x 225.99712pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2491,24 +2548,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[37<./assets/interfaces/agent_langraph.png>]
-<assets/interfaces/dashboard_1.png, id=331, 1443.14156pt x 706.13812pt>
+[40<./assets/interfaces/agent_langraph.png>]
+<assets/interfaces/dashboard_1.png, id=350, 1443.14156pt x 706.13812pt>
 File: assets/interfaces/dashboard_1.png Graphic file (type png)
 <use assets/interfaces/dashboard_1.png>
 Package luatex.def Info: assets/interfaces/dashboard_1.png  used on input line 
-859.
+952.
 (luatex.def)             Requested size: 460.65031pt x 225.39775pt.
-<assets/interfaces/dashboard_2.png, id=332, 1444.64719pt x 709.14937pt>
+<assets/interfaces/dashboard_2.png, id=351, 1444.64719pt x 709.14937pt>
 File: assets/interfaces/dashboard_2.png Graphic file (type png)
 <use assets/interfaces/dashboard_2.png>
 Package luatex.def Info: assets/interfaces/dashboard_2.png  used on input line 
-860.
+953.
 (luatex.def)             Requested size: 460.65031pt x 226.12088pt.
-<assets/interfaces/dashboard_3.png, id=333, 1444.64719pt x 707.64375pt>
+<assets/interfaces/dashboard_3.png, id=352, 1444.64719pt x 707.64375pt>
 File: assets/interfaces/dashboard_3.png Graphic file (type png)
 <use assets/interfaces/dashboard_3.png>
 Package luatex.def Info: assets/interfaces/dashboard_3.png  used on input line 
-861.
+954.
 (luatex.def)             Requested size: 460.65031pt x 225.6408pt.
 
 
@@ -2518,7 +2575,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[38]
+[41]
 Overfull \vbox (25.34587pt too high) has occurred while \output is active []
 
 
@@ -2532,25 +2589,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[39<./assets/interfaces/dashboard_1.png><./assets/interfaces/dashboard_2.png><./
+[42<./assets/interfaces/dashboard_1.png><./assets/interfaces/dashboard_2.png><./
 assets/interfaces/dashboard_3.png>]
-<assets/interfaces/fastApi.png, id=348, 1441.63594pt x 710.655pt>
+<assets/interfaces/fastApi.png, id=366, 1441.63594pt x 710.655pt>
 File: assets/interfaces/fastApi.png Graphic file (type png)
 <use assets/interfaces/fastApi.png>
-Package luatex.def Info: assets/interfaces/fastApi.png  used on input line 869.
+Package luatex.def Info: assets/interfaces/fastApi.png  used on input line 962.
 
 (luatex.def)             Requested size: 460.65031pt x 227.07808pt.
-<assets/interfaces/fastApi_1.png, id=349, 1441.63594pt x 700.86844pt>
+<assets/interfaces/fastApi_1.png, id=367, 1441.63594pt x 700.86844pt>
 File: assets/interfaces/fastApi_1.png Graphic file (type png)
 <use assets/interfaces/fastApi_1.png>
-Package luatex.def Info: assets/interfaces/fastApi_1.png  used on input line 87
-0.
+Package luatex.def Info: assets/interfaces/fastApi_1.png  used on input line 96
+3.
 (luatex.def)             Requested size: 460.65031pt x 223.95096pt.
-<assets/interfaces/fastApi_2.png, id=350, 1437.87187pt x 703.87968pt>
+<assets/interfaces/fastApi_2.png, id=368, 1437.87187pt x 703.87968pt>
 File: assets/interfaces/fastApi_2.png Graphic file (type png)
 <use assets/interfaces/fastApi_2.png>
-Package luatex.def Info: assets/interfaces/fastApi_2.png  used on input line 87
-1.
+Package luatex.def Info: assets/interfaces/fastApi_2.png  used on input line 96
+4.
 (luatex.def)             Requested size: 460.65031pt x 225.50386pt.
 
 
@@ -2560,7 +2617,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[40]
+[43]
 Overfull \vbox (24.71935pt too high) has occurred while \output is active []
 
 
@@ -2574,23 +2631,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[41<./assets/interfaces/fastApi.png><./assets/interfaces/fastApi_1.png><./assets
+[44<./assets/interfaces/fastApi.png><./assets/interfaces/fastApi_1.png><./assets
 /interfaces/fastApi_2.png>]
-<assets/interfaces/RBAC.png, id=363, 1443.14156pt x 712.16063pt>
+<assets/interfaces/RBAC.png, id=381, 1443.14156pt x 712.16063pt>
 File: assets/interfaces/RBAC.png Graphic file (type png)
 <use assets/interfaces/RBAC.png>
-Package luatex.def Info: assets/interfaces/RBAC.png  used on input line 879.
+Package luatex.def Info: assets/interfaces/RBAC.png  used on input line 972.
 (luatex.def)             Requested size: 460.65031pt x 227.32011pt.
-<assets/interfaces/alerts.png, id=364, 1437.11906pt x 710.655pt>
+<assets/interfaces/alerts.png, id=382, 1437.11906pt x 710.655pt>
 File: assets/interfaces/alerts.png Graphic file (type png)
 <use assets/interfaces/alerts.png>
-Package luatex.def Info: assets/interfaces/alerts.png  used on input line 887.
+Package luatex.def Info: assets/interfaces/alerts.png  used on input line 980.
 (luatex.def)             Requested size: 460.65031pt x 227.79378pt.
-<assets/interfaces/notification_teams.png, id=365, 1124.70187pt x 707.64375pt>
+<assets/interfaces/notification_teams.png, id=383, 1124.70187pt x 707.64375pt>
 File: assets/interfaces/notification_teams.png Graphic file (type png)
 <use assets/interfaces/notification_teams.png>
 Package luatex.def Info: assets/interfaces/notification_teams.png  used on inpu
-t line 888.
+t line 981.
 (luatex.def)             Requested size: 460.65031pt x 289.83348pt.
 
 
@@ -2600,12 +2657,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[42<./assets/interfaces/RBAC.png>]
-<assets/interfaces/pipeline_jenkins.png, id=372, 1441.63594pt x 712.91344pt>
+[45<./assets/interfaces/RBAC.png>]
+<assets/interfaces/pipeline_jenkins.png, id=390, 1441.63594pt x 712.91344pt>
 File: assets/interfaces/pipeline_jenkins.png Graphic file (type png)
 <use assets/interfaces/pipeline_jenkins.png>
 Package luatex.def Info: assets/interfaces/pipeline_jenkins.png  used on input 
-line 896.
+line 989.
 (luatex.def)             Requested size: 460.65031pt x 227.79973pt.
 
 
@@ -2615,11 +2672,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[43<./assets/interfaces/alerts.png><./assets/interfaces/notification_teams.png>]
-./chapters/chap4.tex:901: Undefined control sequence.
+[46<./assets/interfaces/alerts.png><./assets/interfaces/notification_teams.png>]
+./chapters/chap4.tex:994: Undefined control sequence.
 <recently read> \textb 
                        
-l.901     \item \textb
+l.994     \item \textb
                       {Worker Insights – analyse des performances individu...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2629,17 +2686,17 @@ and I'll forget about whatever was undefined.
 
 File: assets/interfaces/WorkerAis.png Graphic file (type png)
 <use assets/interfaces/WorkerAis.png>
-Package luatex.def Info: assets/interfaces/WorkerAis.png  used on input line 90
-5.
+Package luatex.def Info: assets/interfaces/WorkerAis.png  used on input line 99
+8.
 (luatex.def)             Requested size: 414.58246pt x 203.93822pt.
 
-LaTeX Warning: Reference `fig:worker_detail' on page xliv undefined on input li
-ne 910.
+LaTeX Warning: Reference `fig:worker_detail' on page xlvii undefined on input l
+ine 1003.
 
 File: assets/interfaces/ViewAiinsights.png Graphic file (type png)
 <use assets/interfaces/ViewAiinsights.png>
 Package luatex.def Info: assets/interfaces/ViewAiinsights.png  used on input li
-ne 914.
+ne 1007.
 (luatex.def)             Requested size: 391.55557pt x 581.47363pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2648,7 +2705,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[44<./assets/interfaces/pipeline_jenkins.png>]
+[47<./assets/interfaces/pipeline_jenkins.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -2656,8 +2713,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[45]
-Overfull \hbox (81.8107pt too wide) in paragraph at lines 925--926
+[48]
+Overfull \hbox (81.8107pt too wide) in paragraph at lines 1018--1019
 []\TU/TimesNewRoman(0)/m/n/12 Une \TU/TimesNewRoman(0)/b/n/12 éva-lua-tion de 
 charge \TU/TimesNewRoman(0)/m/n/12 (\TU/lmtt/m/n/12 workload_assessment\TU/Time
 sNewRoman(0)/m/n/12 ) et de \TU/TimesNewRoman(0)/b/n/12 per-for-mance \TU/Times
@@ -2666,7 +2723,7 @@ m/n/12 )
  []
 
 
-Overfull \hbox (17.20824pt too wide) in paragraph at lines 925--926
+Overfull \hbox (17.20824pt too wide) in paragraph at lines 1018--1019
 \TU/TimesNewRoman(0)/m/n/12 avec clas-si-fi-ca-tion (OVER-LOA-DED / BA-LAN-CED 
 / UN-DE-RU-TI-LI-ZED; ABOVE_AVE-
  []
@@ -2678,7 +2735,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[46])
+[49])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -2686,7 +2743,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[47] (./main.aux (./Intro_pages/pagedegarde.aux) (./chapters/chap4.aux))
+[50] (./main.aux (./Intro_pages/pagedegarde.aux) (./chapters/chap4.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -2705,21 +2762,21 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  A66C67393A3A3BDBAF532982EC3DD6CA;13641.
+(rerunfilecheck)             After:  095F8E36648BD7D24C93DF021786E62B;14286.
 )
 
 Here is how much of LuaTeX's memory you used:
- 48411 strings out of 476081
+ 48424 strings out of 476081
  100000,1977958 words of node,token memory allocated
- 13740 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 1 local_par, 902 glue, 7 kern, 301 penalty, 1 margi
-n_kern, 11 glyph, 1712 attribute, 419 glue_spec, 345 attribute_list, 4 write, 1 
+ 15229 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 986 glue, 8 kern, 315 penalty, 1 margi
+n_kern, 11 glyph, 1945 attribute, 475 glue_spec, 399 attribute_list, 4 write, 1 
 pdf_action nodes
-   avail lists: 1:2,2:1404,3:511,4:207,5:166,6:97,7:5864,8:83,9:720,10:26,11:525
+   avail lists: 1:2,2:1199,3:497,4:207,5:166,6:97,7:5866,8:83,9:720,10:26,11:525
 
- 69557 multiletter control sequences out of 65536+600000
- 71 fonts using 24876975 bytes
- 98i,13n,113p,2577b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 69561 multiletter control sequences out of 65536+600000
+ 72 fonts using 25003383 bytes
+ 98i,13n,113p,2577b,909s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/users/elitebook/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmon
 olt10-bold.otf><c:/users/elitebook/appdata/local/programs/miktex/fonts/opentype/
 public/lm/lmmono12-regular.otf><c:/users/elitebook/appdata/local/programs/miktex
@@ -2732,9 +2789,9 @@ mmi8.pfb><C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmr12.pfb><C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmr8.pfb><C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (49 pages, 7536641 bytes).
+Output written on main.pdf (52 pages, 7545127 bytes).
 
-PDF statistics: 465 PDF objects out of 1000 (max. 8388607)
- 186 named destinations out of 1000 (max. 1048576)
+PDF statistics: 485 PDF objects out of 1000 (max. 8388607)
+ 195 named destinations out of 1000 (max. 1048576)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

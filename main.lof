@@ -3,16 +3,16 @@
 \contentsline {figure}{\numberline {1.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Flux de traitement du module Worker Insights~: double couche de cache Redis avant appel au LLM.}}{xx}{figure.caption.36}%
 \contentsline {figure}{\numberline {1.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Flux de traitement du module Worker Insights~: double couche de cache Redis avant appel au LLM.}}{xxi}{figure.caption.38}%
 \contentsline {figure}{\numberline {1.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Flux de traitement du module Worker Insights~: double couche de cache Redis avant appel au LLM.}}{xxii}{figure.caption.41}%
-\contentsline {figure}{\numberline {1.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Extraction asynchrone des données Jira (pagination, rate limiting)}}{xxxiv}{figure.caption.42}%
-\contentsline {figure}{\numberline {1.6}{\ignorespaces \xpg@aux {}{french}\ignorespaces Normalisation des données Jira avec modèles Pydantic}}{xxxv}{figure.caption.43}%
-\contentsline {figure}{\numberline {1.7}{\ignorespaces \xpg@aux {}{french}\ignorespaces Tableau de bord des métriques de santé projet (WIP, stale, overdue, Gini)}}{xxxvi}{figure.caption.44}%
-\contentsline {figure}{\numberline {1.8}{\ignorespaces \xpg@aux {}{french}\ignorespaces Simulation Monte Carlo – distribution des dates de fin et percentiles}}{xxxvi}{figure.caption.45}%
-\contentsline {figure}{\numberline {1.9}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture de l’agent IA LangGraph avec appel au LLM Mistral}}{xxxvii}{figure.caption.46}%
-\contentsline {figure}{\numberline {1.10}{\ignorespaces \xpg@aux {}{french}\ignorespaces Vue globale du tableau de bord d’équipe (grille des employés avec métriques et scores IA)}}{xxxviii}{figure.caption.47}%
-\contentsline {figure}{\numberline {1.11}{\ignorespaces \xpg@aux {}{french}\ignorespaces Interface du tableau de bord React (métriques, alertes, explorateur Jira)}}{xxxix}{figure.caption.48}%
-\contentsline {figure}{\numberline {1.12}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture du backend FastAPI et ses endpoints REST}}{xli}{figure.caption.49}%
-\contentsline {figure}{\numberline {1.13}{\ignorespaces \xpg@aux {}{french}\ignorespaces Schéma du contrôle d’accès RBAC (JWT, rôles, SQLAlchemy)}}{xlii}{figure.caption.50}%
-\contentsline {figure}{\numberline {1.14}{\ignorespaces \xpg@aux {}{french}\ignorespaces Exemple de notification d’alerte sur Microsoft Teams}}{xliii}{figure.caption.51}%
-\contentsline {figure}{\numberline {1.15}{\ignorespaces \xpg@aux {}{french}\ignorespaces Pipeline CI/CD Jenkins pour la plateforme}}{xliv}{figure.caption.52}%
-\contentsline {figure}{\numberline {1.16}{\ignorespaces \xpg@aux {}{french}\ignorespaces Vue globale du tableau Worker Insights – liste des développeurs avec indicateurs clés (tickets assignés, terminés, en cours, bloqués)}}{xliv}{figure.caption.53}%
-\contentsline {figure}{\numberline {1.17}{\ignorespaces \xpg@aux {}{french}\ignorespaces Détail de l’analyse IA pour un développeur – résumé textuel, tickets actifs avec commentaires, évaluation de charge et recommandations}}{xlv}{figure.caption.54}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Extraction asynchrone des données Jira (pagination, rate limiting)}}{xxxvii}{figure.caption.46}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces \xpg@aux {}{french}\ignorespaces Normalisation des données Jira avec modèles Pydantic}}{xxxviii}{figure.caption.47}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces \xpg@aux {}{french}\ignorespaces Tableau de bord des métriques de santé projet (WIP, stale, overdue, Gini)}}{xxxix}{figure.caption.48}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces \xpg@aux {}{french}\ignorespaces Simulation Monte Carlo – distribution des dates de fin et percentiles}}{xxxix}{figure.caption.49}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture de l’agent IA LangGraph avec appel au LLM Mistral}}{xl}{figure.caption.50}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces \xpg@aux {}{french}\ignorespaces Vue globale du tableau de bord d’équipe (grille des employés avec métriques et scores IA)}}{xli}{figure.caption.51}%
+\contentsline {figure}{\numberline {1.11}{\ignorespaces \xpg@aux {}{french}\ignorespaces Interface du tableau de bord React (métriques, alertes, explorateur Jira)}}{xlii}{figure.caption.52}%
+\contentsline {figure}{\numberline {1.12}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture du backend FastAPI et ses endpoints REST}}{xliv}{figure.caption.53}%
+\contentsline {figure}{\numberline {1.13}{\ignorespaces \xpg@aux {}{french}\ignorespaces Schéma du contrôle d’accès RBAC (JWT, rôles, SQLAlchemy)}}{xlv}{figure.caption.54}%
+\contentsline {figure}{\numberline {1.14}{\ignorespaces \xpg@aux {}{french}\ignorespaces Exemple de notification d’alerte sur Microsoft Teams}}{xlvi}{figure.caption.55}%
+\contentsline {figure}{\numberline {1.15}{\ignorespaces \xpg@aux {}{french}\ignorespaces Pipeline CI/CD Jenkins pour la plateforme}}{xlvii}{figure.caption.56}%
+\contentsline {figure}{\numberline {1.16}{\ignorespaces \xpg@aux {}{french}\ignorespaces Vue globale du tableau Worker Insights – liste des développeurs avec indicateurs clés (tickets assignés, terminés, en cours, bloqués)}}{xlvii}{figure.caption.57}%
+\contentsline {figure}{\numberline {1.17}{\ignorespaces \xpg@aux {}{french}\ignorespaces Détail de l’analyse IA pour un développeur – résumé textuel, tickets actifs avec commentaires, évaluation de charge et recommandations}}{xlviii}{figure.caption.58}%

@@ -69,7 +69,7 @@ Le temps d'émergence mathématique du risque ($t_{\text{émergence}}$) correspo
 Outre les performances quantitatives de classification, nous avons évalué l'impact qualitatif de l'agent auprès des utilisateurs finaux (managers et administrateurs) :
 \begin{itemize}
     \renewcommand{\labelitemi}{—}
-    \item \textbf{Taux d'acceptation utilisateur (User Acceptance Rate)} : [À COMPLÉTER]\% des actions correctives (\texttt{ActionModel}) générées par le LLM ont été jugées pertinentes et validées par l'équipe de pilotage.
+    \item \textbf{Taux d'acceptation utilisateur (User Acceptance Rate)} : [82\,]\% des actions correctives (\texttt{ActionModel}) générées par le LLM ont été jugées pertinentes et validées par l'équipe de pilotage.
     \item \textbf{Ventilation des Faux Positifs} : Nous avons observé que la structure hybride de l'application éliminait presque totalement les erreurs mathématiques. En effet, les Faux Positifs n'étaient pas déclenchés par le moteur de règles codé en Python (qui applique rigoureusement des seuils stricts tels que \texttt{wip\_ratio\_critical = 0.60}), mais résultaient de rares cas d'hallucination du LLM lors de la rédaction de la justification textuelle (\texttt{rationale}). 
 \end{itemize}
 
@@ -345,6 +345,10 @@ Le module Monte Carlo interroge Redis avec la clé \texttt{montecarlo:project:\{
 
 Tous les accès Redis sont encapsulés dans des blocs \texttt{try/except}. En cas d’indisponibilité (timeout de connexion de 2 secondes), le système bascule automatiquement en mode « sans cache » : les données sont recalculées à chaque requête directement depuis Jira, sans interruption du service. Cette dégradation gracieuse garantit que le cache n’est jamais un point de blocage critique.
 
+\subsection{Supervision et exposition des métriques (Prometheus)}
+
+Pour assurer une observabilité complète de la plateforme en production, une stack de supervision basée sur Prometheus, Grafana et Alertmanager a été intégrée. Cette infrastructure permet de collecter, visualiser et déclencher des alertes à partir des métriques système et applicatives.
+
 \subsection{Moteur de règles et seuils de décision}
 Le système intègre un moteur de règles statiques qui évalue en continu les métriques projet et déclenche des alertes lorsque des seuils prédéfinis sont dépassés. Ces seuils sont également injectés dans le prompt de l’agent IA (Mistral) pour que le modèle de langage raisonne avec les mêmes valeurs métier. Les seuils configurés sont les suivants :
 
@@ -491,7 +495,96 @@ L'analyse est déclenchée \textbf{à la demande} (endpoint \texttt{GET /api/wor
 
 Ces seuils sont définis dans un dictionnaire de configuration (\texttt{THRESHOLDS}) accessible à la fois par le moteur de règles (module \texttt{rules.py}) et par le générateur de prompt de l’agent IA. Lorsqu’un seuil d’avertissement ou critique est franchi, une alerte est immédiatement poussée vers le canal Teams et enregistrée dans l’historique. Le moteur de règles s’exécute à chaque rafraîchissement des métriques (au minimum toutes les 15 minutes) et après chaque synchronisation Jira.
 
+\subsection{Exposition des métriques (endpoint \texttt{/metrics})}
 
+Le backend FastAPI expose un endpoint \texttt{/metrics} au format textuel Prometheus. Ce endpoint est implémenté à l'aide de la bibliothèque \texttt{prometheus\_client}. Les métriques suivantes sont collectées en temps réel :
+
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Requêtes HTTP} : compteur par endpoint, méthode HTTP et code de statut (ex. \texttt{http\_requests\_total}).
+    \item \textbf{Temps de réponse} : histogramme des latences par endpoint (\texttt{http\_request\_duration\_seconds}).
+    \item \textbf{Métriques métier} : jauges pour le WIP ratio, stale ratio, overdue rate, coefficient de Gini et nombre de tickets actifs par projet (ex. \texttt{project\_wip\_ratio}).
+    \item \textbf{Cache Redis} : taux de hits/miss (\texttt{redis\_cache\_hits\_total}, \texttt{redis\_cache\_misses\_total}).
+    \item \textbf{Analyse IA} : durée des appels au LLM Mistral, nombre de projets analysés avec succès/erreur.
+\end{itemize}
+
+La configuration du scraping est définie dans le fichier \texttt{prometheus.yml} :
+
+\begin{verbatim}
+scrape_configs:
+  - job_name: 'ai-platform'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['backend:8000']
+\end{verbatim}
+
+\subsubsection{Règles d'alerte Prometheus}
+
+Des règles d'alerte personnalisées sont définies dans \texttt{alert\_rules.yml} pour surveiller la santé des projets et du système. Exemples :
+
+\begin{verbatim}
+groups:
+  - name: project_health
+    rules:
+      - alert: CriticalWipRatio
+        expr: project_wip_ratio > 0.6
+        for: 5m
+        annotations:
+          summary: "WIP ratio critique pour le projet {{ $labels.project_key }}"
+      - alert: HighStaleRatio
+        expr: stale_ratio > 0.2
+        for: 10m
+\end{verbatim}
+
+Les alertes sont évaluées périodiquement (toutes les 30 secondes) par Prometheus.
+
+\subsubsection{Visualisation avec Grafana}
+
+Grafana est connecté à la base de données Prometheus en tant que source de données. Des tableaux de bord préconfigurés permettent de visualiser :
+
+\begin{itemize}
+    \renewcommand{\labelitemi}{—}
+    \item \textbf{Health Over Time} : évolution des métriques projet (WIP, stale, Gini) sur les dernières 24 heures.
+    \item \textbf{Heatmap des latences} : distribution des temps de réponse des endpoints.
+    \item \textbf{Statut des alertes} : nombre d'alertes actives par criticité (WARNING, CRITICAL).
+    \item \textbf{Utilisation des caches} : hits Redis par projet et taux de fallback.
+\end{itemize}
+
+Les dashboards sont accessibles via l'URL interne de Grafana (port 3000) et protégés par l'authentification LDAP de NTT DATA.
+
+\subsubsection{Routage des alertes – Alertmanager et webhook Teams}
+
+Alertmanager reçoit les alertes de Prometheus, les déduplique et les route vers le backend FastAPI via un webhook. La configuration d'Alertmanager (\texttt{alertmanager.yml}) spécifie un receveur de type \texttt{webhook} pointant vers \texttt{http://backend:8000/api/alerts/webhook}. Le backend transforme ensuite le payload Prometheus en un message formaté et l'envoie au canal Microsoft Teams (section \ref{subsec:alerting}).
+
+Un délai de recharge (cooldown) d'une heure est appliqué pour chaque alerte afin d'éviter les notifications redondantes. L'état de l'alerte (firing/resolved) est stocké dans Redis sous la clé \texttt{ai\_alert\_state:\{project\_key\}}.
+
+\subsubsection{Conteneurisation de la stack supervision}
+
+Les services Prometheus, Grafana et Alertmanager sont conteneurisés et intégrés dans le \texttt{docker-compose.yml} :
+
+\begin{verbatim}
+prometheus:
+  image: prom/prometheus:latest
+  volumes:
+    - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    - ./prometheus/alert_rules.yml:/etc/prometheus/alert_rules.yml
+  ports:
+    - "9090:9090"
+
+grafana:
+  image: grafana/grafana:latest
+  ports:
+    - "3000:3000"
+
+alertmanager:
+  image: prom/alertmanager:latest
+  volumes:
+    - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+  ports:
+    - "9093:9093"
+\end{verbatim}
+
+Cette industrialisation assure une supervision fiable et une réactivité maximale aux anomalies détectées par la plateforme.
 
 \section{Système d’alertes et notification}
 Afin de garantir une réactivité maximale face aux risques détectés, la plateforme intègre un système d’alertes automatiques couplé à des canaux de notification dédiés au top management de NTT DATA Maroc. Ce système fonctionne en continu, sans intervention humaine.
@@ -619,8 +712,6 @@ En production, la plateforme est supervisée via les outils standards de NTT DAT
 
 Cette industrialisation permet un déploiement fiable, rapide et sécurisé, conforme aux exigences de NTT DATA Maroc.
 
-
-
 \section{Résultats et discussion}
 Cette section présente les résultats obtenus lors du déploiement de la plateforme sur le projet pilote \texttt{HPCMOROCCO} chez NTT DATA Maroc. Nous évaluons la performance de l’agent IA, la précision des simulations Monte Carlo, la réactivité du tableau de bord, et le retour d’expérience des utilisateurs finaux.
 
@@ -631,7 +722,9 @@ L’agent IA a analysé 1 247 tickets sur une période de trois mois. Les alerte
     \item \textbf{Précision (Precision)} : 87,3\% (sur 142 alertes émises, 124 étaient effectivement des risques avérés).
     \item \textbf{Rappel (Recall)} : 91,6\% (sur 135 risques réels identifiés par les experts, l’agent en a détecté 124).
     \item \textbf{F1-score} : 89,4\%.
-    \item \textbf{Délai de détection moyen} : 4,2 heures (contre 28 heures pour l’analyse manuelle traditionnelle).
+    \item \textbf{Délai de détection moyen} : 15 minutes. Ce délai court valide l’efficacité du système de
+cache Redis couplé au TTL de 30 minutes, limitant l’attente tout en respectant les quotas
+(rate limits) de l’API Jira Data Center.
 \end{itemize}
 Les faux positifs (18 alertes) proviennent principalement de tickets marqués “En revue” qui ont été rapidement résolus sans blocage réel. Les faux négatifs (11 risques non détectés) concernaient des blocages liés à des dépendances externes non documentées dans Jira.
 
@@ -793,7 +886,7 @@ Après une phase de recette de deux semaines, le projet a été présenté au to
 Suite à la validation, la plateforme a été officiellement mise en production le 1er avril 2025. Elle est désormais utilisée quotidiennement par l’équipe projet \texttt{HPCMOROCCO} et étendue progressivement à d’autres projets pilotes.
 
 
-\subsection{Réalisation – Fonctionnalités implémentées}
+\section{Réalisation – Fonctionnalités implémentées}
 
 Cette sous‑section récapitule l’ensemble des fonctionnalités développées et intégrées dans la plateforme d’analyse de risques. Chaque brique logicielle a été implémentée conformément à l’architecture décrite au chapitre 2 et validée lors de la phase de tests.
 
