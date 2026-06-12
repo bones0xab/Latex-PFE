@@ -345,10 +345,6 @@ Le module Monte Carlo interroge Redis avec la clé \texttt{montecarlo:project:\{
 
 Tous les accès Redis sont encapsulés dans des blocs \texttt{try/except}. En cas d’indisponibilité (timeout de connexion de 2 secondes), le système bascule automatiquement en mode « sans cache » : les données sont recalculées à chaque requête directement depuis Jira, sans interruption du service. Cette dégradation gracieuse garantit que le cache n’est jamais un point de blocage critique.
 
-\subsection{Supervision et exposition des métriques (Prometheus)}
-
-Pour assurer une observabilité complète de la plateforme en production, une stack de supervision basée sur Prometheus, Grafana et Alertmanager a été intégrée. Cette infrastructure permet de collecter, visualiser et déclencher des alertes à partir des métriques système et applicatives.
-
 \subsection{Moteur de règles et seuils de décision}
 Le système intègre un moteur de règles statiques qui évalue en continu les métriques projet et déclenche des alertes lorsque des seuils prédéfinis sont dépassés. Ces seuils sont également injectés dans le prompt de l’agent IA (Mistral) pour que le modèle de langage raisonne avec les mêmes valeurs métier. Les seuils configurés sont les suivants :
 
@@ -459,8 +455,8 @@ La page \texttt{WorkerInsightsPage.tsx} articule deux niveaux d'affichage~:
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{assets/interfaces/ViewAiinsights.png}
-\caption{Flux de traitement du module Worker Insights~: double couche de cache Redis avant appel au LLM.}
-\label{fig:worker-insights-flow}
+\caption{Carte des employees avec résumé AI et badges de charge/performance.}
+\label{fig:worker-insights-card}
 \end{figure}
 
 \subsubsection*{Stratégie de cache Redis et fréquence d'exécution}
@@ -487,13 +483,12 @@ L'analyse est déclenchée \textbf{à la demande} (endpoint \texttt{GET /api/wor
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\linewidth]{assets/interfaces/WorkerAis.png}
-\caption{Flux de traitement du module Worker Insights~: double couche de cache Redis avant appel au LLM.}
-\label{fig:worker-insights-flow}
+\includegraphics[width=0.9\linewidth]{assets/entreprise/clients.png}
+\caption{Vue détaillée des insights worker.}
+\label{fig:hello}
 \end{figure}
 
 
-Ces seuils sont définis dans un dictionnaire de configuration (\texttt{THRESHOLDS}) accessible à la fois par le moteur de règles (module \texttt{rules.py}) et par le générateur de prompt de l’agent IA. Lorsqu’un seuil d’avertissement ou critique est franchi, une alerte est immédiatement poussée vers le canal Teams et enregistrée dans l’historique. Le moteur de règles s’exécute à chaque rafraîchissement des métriques (au minimum toutes les 15 minutes) et après chaque synchronisation Jira.
 
 \subsection{Exposition des métriques (endpoint \texttt{/metrics})}
 
@@ -989,15 +984,6 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
         \includegraphics[width=1\linewidth]{assets/interfaces/pipeline_jenkins.png}
         \caption{Pipeline CI/CD Jenkins pour la plateforme}
         \label{fig:pipeline}
-    \end{figure}
-
-    \item \textb{Worker Insights – analyse des performances individuelles} : fournit une analyse IA détaillée de la charge de travail et des performances de chaque développeur. Pour le projet pilote \texttt{HPCMOROCCO}, les données ont été analysées sur une fenêtre glissante de 30 jours.
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.9\linewidth]{assets/interfaces/WorkerAis.png}
-        \caption{Vue globale du tableau Worker Insights – liste des développeurs avec indicateurs clés (tickets assignés, terminés, en cours, bloqués)}
-        \label{fig:worker_grid}
     \end{figure}
 
     Chaque carte développeur affiche le nom, le projet, le nombre de tickets assignés, terminés, en cours et bloqués. Un clic sur \textit{View AI Insight} ouvre un panneau latéral (Figure \ref{fig:worker_detail}) contenant l’analyse complète générée par l’agent IA.
