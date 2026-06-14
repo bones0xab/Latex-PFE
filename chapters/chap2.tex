@@ -17,7 +17,7 @@ Les fonctionnalités du système ont été définies en fonction des interaction
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{assets/diagrams/new_diagram_casa.png}
-    \caption{Diagramme de cas d’utilisation de la plateforme IA}
+    \caption{Diagramme de cas d’utilisation de la plateforme d’intelligence artificielle}
     \label{fig:use_case}
 \end{figure}
 
@@ -68,7 +68,7 @@ les forces et les limites du système actuellement en place.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{assets/state_of_existant.png}
-	\caption{État d'existence}
+	\caption{Diagramme des limitations de l’existant (problématiques identifiées)}
 	\label{fig:state_existance}
 \end{figure}
 Au sein de NTT DATA Maroc, le pilotage des projets et l'analyse des risques reposent historiquement sur une exploitation classique des outils de gestion de cycle de vie des applications, principalement Jira. Les chefs de projet s'appuient sur les tableaux de bord natifs de la plateforme pour suivre l'avancement global des tâches et identifier visuellement les éventuels points de blocage. Pour répondre aux exigences de reporting du top management, cette approche est couramment complétée par des extractions manuelles de données vers des tableurs Excel, qui sont ensuite souvent intégrées dans des solutions de type Power BI. Ces données agrégées servent finalement de support lors des revues d'avancement hebdomadaires sous forme de présentations. Par ailleurs, bien que des extensions spécialisées du marché telles que BigPicture, EazyBI ou Risk Explorer soient reconnues pour offrir des capacités avancées de visualisation et de gestion de portefeuille, elles demeurent fondamentalement orientées vers l'analyse rétrospective. Actuellement, la détection des risques repose donc presque exclusivement sur l'expertise humaine des chefs de projet, qui doivent examiner individuellement l'état des tickets, vérifier leur ancienneté et interpréter les commentaires pour évaluer la santé réelle d'un projet de développement.
@@ -93,7 +93,7 @@ Pour répondre aux exigences complexes de l'analyse prédictive et de l'automati
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{assets/arch_global.png}
-\caption{Architecture globale de la plateforme IA de pilotage de projets}
+\caption{Architecture technique globale de la plateforme IA de pilotage de projets}
 \label{fig:archi_globale}
 \end{figure}
 
@@ -116,7 +116,7 @@ Le module d'intelligence artificielle constitue le noyau prédictif et qualitati
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{assets/architect_ai.png}
-\caption{Architecture globale de IA}
+\caption{Architecture détaillée du module d’intelligence artificielle (zoom)}
 \label{fig:archi_ai}
 \end{figure}
 
@@ -191,7 +191,7 @@ La figure \ref{fig:class_diagram} présente les principales entités manipulées
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/diagrams/diagram_class.png}
-    \caption{Diagramme de classes – structure statique du système}
+    \caption{Diagramme de classes UML – structure statique des entités principales}
     \label{fig:class_diagram}
 \end{figure}
 
@@ -204,7 +204,7 @@ Les diagrammes ci‑dessous illustrent les interactions temporelles entre les co
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/diagrams/diagram_seq_extraction.png}
-    \caption{Extraction asynchrone des données Jira avec pagination et gestion des quotas}
+    \caption{Séquence d’extraction asynchrone des données Jira (pagination, rate limiting)}
     \label{fig:seq_extraction}
 \end{figure}
 
@@ -212,7 +212,7 @@ Les diagrammes ci‑dessous illustrent les interactions temporelles entre les co
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/diagrams/diagram_seq_orchestration.png}
-    \caption{Orchestration LangGraph du pipeline IA (règles, Mistral, cache, snapshot)}
+    \caption{Diagramme de séquence – orchestration LangGraph du pipeline IA (règles, LLM, cache)}
     \label{fig:seq_orchestration}
 \end{figure}
 
@@ -220,7 +220,7 @@ Les diagrammes ci‑dessous illustrent les interactions temporelles entre les co
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/diagrams/diagram_seq_rbac.png}
-    \caption{Authentification JWT et contrôle d’accès basé sur les rôles}
+    \caption{Séquence d’authentification JWT et contrôle d’accès RBAC}
     \label{fig:seq_rbac}
 \end{figure}
 
@@ -236,7 +236,7 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.2\linewidth]{assets/logos/python.png}
-\caption{Logo de Python}
+\caption{Logo du langage Python}
 \label{fig:Python}
 \end{figure}
 
@@ -246,21 +246,21 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/fastApi.png}
-    \caption{Logo de FastAPI}
+    \caption{Logo du framework FastAPI}
     \label{fig:Python_fastapi}
     \end{figure}
     \item \textbf{SQLAlchemy} : ORM utilisé pour interagir avec la base de données PostgreSQL, permettant une gestion élégante des modèles utilisateurs et des rôles RBAC.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/sqlalchemy.jpg}
-    \caption{Logo de SQLAlchemy}
+    \caption{Logo de l’ORM SQLAlchemy}
     \label{fig:sqlalchemy}
     \end{figure}
     \item \textbf{LangGraph} : framework d’orchestration d’agents IA, retenu pour sa capacité à maintenir un état conversationnel et à gérer des flux de décision cycliques.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/langgraph.png}
-    \caption{Logo de LangGraph}
+    \caption{Logo du framework LangGraph}
     \label{fig:Python_langgraph}
     \end{figure}
     \item \textbf{Prometheus} : système de surveillance et de collecte de métriques en temps réel. Il extrait les indicateurs exposés par le backend FastAPI (WIP ratio, stale ratio, taux de retard, nombre d’alertes) et évalue des règles d’alerte personnalisées (ex. \texttt{CriticalWipRatio}, \texttt{ProjectAtRisk}). 
@@ -268,7 +268,7 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.15\textwidth]{assets/logos/prometheus_log.png}
-        \caption{Logo de Prometheus}
+        \caption{Logo de la plateforme Prometheus}
         \label{fig:prometheus_logo}
     \end{figure}
 
@@ -284,14 +284,14 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\linewidth]{assets/logos/mistral.jpeg}
-    \caption{Logo de Mistral}
+    \caption{Logo du LLM Mistral}
     \label{fig:Python_mistral}
     \end{figure}
     \item \textbf{NumPy, Pandas} : bibliothèques de calcul scientifique utilisées pour les simulations de Monte Carlo et le calcul des métriques (WIP ratio, stale ratio, coefficient de Gini).
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\linewidth]{assets/logos/numpy.jpg}
-    \caption{Numpy et Pandas}
+    \caption{Logos des bibliothèques NumPy et Pandas}
     \label{fig:Python_numpy}
     \end{figure}
 \end{itemize}
@@ -301,7 +301,7 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.4\linewidth]{assets/logos/react_logo.png}
-\caption{Logo de REACT JS}
+\caption{Logo de la bibliothèque React.js}
 \label{fig:react}
 \end{figure}
 
@@ -310,7 +310,7 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.4\linewidth]{assets/logos/postgres_logo.png}
-\caption{Logo de PostgreSQL}
+\caption{Logo du SGBD PostgreSQL}
 \label{fig:postgres}
 \end{figure}
 
@@ -319,7 +319,7 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.2\linewidth]{assets/logos/redis.png}
-\caption{Logo de Redis}
+\caption{Logo du cache Redis}
 \label{fig:redis}
 \end{figure}
 
@@ -328,7 +328,7 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.2\linewidth]{assets/logos/docker.png}
-\caption{Logo de Docker}
+\caption{Logo de la plateforme Docker}
 \label{fig:docker}
 \end{figure}
 
@@ -336,7 +336,7 @@ Afin de mettre en œuvre le projet selon l’architecture définie, nous avons m
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.4\linewidth]{assets/logos/logo_jenkins.png}
-\caption{Logo de Jenkins}
+\caption{Logo de l’outil d’intégration continue Jenkins}
 \label{fig:jenkins}
 \end{figure}
 
@@ -348,21 +348,21 @@ L’équipe de développement a utilisé un ensemble d’outils collaboratifs et
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.15\linewidth]{assets/logos/vsCode.png}
-    \caption{Logo de Visual Studio Code}
+    \caption{Logo de l’IDE Visual Studio Code}
     \label{fig:vsCode}
     \end{figure}
     \item \textbf{GitLab} : plateforme de gestion de version basée sur Git, utilisée pour le suivi des modifications du code source et la collaboration entre développeurs, accessible à l’adresse \href{https://umane.emeal.nttdata.com/git/FELTRIINTPROJ/nttdata-ai-agent-project-tracking}{https://umane.emeal.nttdata.com/git/FELTRIINTPROJ/nttdata-ai-agent-project-tracking}.    \item \textbf{Microsoft Teams} : outil de communication quotidienne pour les réunions de synchronisation (daily stand-ups) et les échanges avec l’encadrement.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/gitlab_logo.png}
-    \caption{Logo de GitLab}
+    \caption{Logo de la forge GitLab}
     \label{fig:gitlab}
     \end{figure}
     \item \textbf{Jira} : utilisé pour le suivi des tâches du projet lui-même, accessible à l’adresse \href{https://umane.emeal.nttdata.com/jiraito/browse/HPCMOROCCO}{https://umane.emeal.nttdata.com/jiraito/browse/HPCMOROCCO}, démontrant ainsi l’adéquation de la plateforme avec les méthodes agiles.    \item \textbf{Postman} : outil de test d’API REST, employé pour valider les endpoints FastAPI avant intégration.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/jira_logo.png}
-    \caption{Logo de Jira}
+    \caption{Logo de l’outil de gestion de projet Jira}
     \label{fig:jira}
     \end{figure}
     \item \textbf{Docker Compose} : utilisé en développement pour orchestrer l’exécution simultanée des conteneurs backend, frontend, PostgreSQL et Redis.
@@ -382,7 +382,7 @@ Dans le cadre de l’exploration des solutions open-source pour l’analyse auto
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/langchain.png}
-    \caption{Logo de LangChain}
+    \caption{Logo du framework LangChain}
     \label{fig:langchain}
     \end{figure}
     \item \textbf{LlamaIndex} : spécialisé dans l’indexation et la récupération de documents, sans capacité native d’orchestration d’agents.
@@ -396,14 +396,14 @@ Dans le cadre de l’exploration des solutions open-source pour l’analyse auto
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/rasa_logo.png}
-    \caption{Logo de Rasa}
+    \caption{Logo du framework Rasa}
     \label{fig:rasa}
     \end{figure}
     \item \textbf{Mistral vs. LLaMA 3} : comparaison de modèles de langage open-source pouvant être hébergés localement.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\linewidth]{assets/logos/llama_mistral.jpg}
-    \caption{Mistral vs. LLaMA 3}
+    \caption{Comparaison des modèles de langage Mistral et LLaMA 3}
     \label{fig:llama_mistral}
     \end{figure}
 \end{itemize}
@@ -415,7 +415,7 @@ Le tableau  présente une comparaison synthétique entre deux frameworks d’orc
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.2}
-\caption{Comparaison entre LangChain et LangGraph}
+\caption{Comparaison des frameworks d’orchestration d’agents IA : LangChain vs. LangGraph}
 \begin{tabular}{|l|l|l|}
 \hline
 \textbf{Critère} & \textbf{LangChain} & \textbf{LangGraph} \\

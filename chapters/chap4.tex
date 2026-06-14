@@ -17,7 +17,7 @@ Afin de valider l'efficacité de l'agent d'orchestration (implémenté via LangG
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{assets/metrics_ai.png}
-\caption{metrics\_ai}
+\caption{Métriques de validation de l’agent IA (précision, rappel, F1, délai)}
 \label{fig:metrics_ai}
 \end{figure}    
 
@@ -311,7 +311,7 @@ Le tableau ci‑dessous récapitule l’ensemble des clés Redis utilisées, leu
 \texttt{jira\_projects\_sync} & 15~min & Métadonnées projets Jira \\
 \hline
 \end{tabular}
-\caption{Inventaire des clés Redis et TTL associés.}
+\caption{Inventaire des clés Redis utilisées dans la plateforme et leurs durées de vie (TTL)}
 \label{tab:redis-keys}
 \end{table}
 
@@ -418,7 +418,7 @@ Performance       & ABOVE\_AVERAGE & $\text{completed} > \text{avg\_completed}$ 
                   & AVERAGE        & Tous les autres cas \\
 \hline
 \end{tabular}
-\caption{Seuils de classification injectés dans le prompt système de l'agent Worker Insights.}
+\caption{Seuils de classification pour l’évaluation de la charge et des performances – injection dans le prompt système de l’agent Worker Insights}
 \label{tab:worker-thresholds}
 \end{table}
 
@@ -448,14 +448,14 @@ La page \texttt{WorkerInsightsPage.tsx} articule deux niveaux d'affichage~:
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{assets/interfaces/WorkerAis.png}
-\caption{Flux de traitement du module Worker Insights~: double couche de cache Redis avant appel au LLM.}
+\caption{Architecture du module Worker Insights – double niveau de cache Redis avant appel LLM}
 \label{fig:worker-insights-flow}
 \end{figure}
 \paragraph{Vue AI details.}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{assets/interfaces/ViewAiinsights.png}
-\caption{Carte des employees avec résumé AI et badges de charge/performance.}
+\caption{Vue liste du module Worker Insights – cartes développeur avec résumé IA et badges}
 \label{fig:worker-insights-card}
 \end{figure}
 
@@ -473,7 +473,7 @@ Le système repose sur deux niveaux de cache Redis indépendants~:
 \texttt{ai\_worker\_insight:\{worker\}:\{project\}} & 1~heure & Résultat complet de l'analyse LLM \\
 \hline
 \end{tabular}
-\caption{Niveaux de cache Redis utilisés par le module Worker Insights.}
+\caption{Niveaux de cache Redis (snapshots et analyses IA) pour le module Worker Insights}
 \label{tab:redis-worker}
 \end{table}
 
@@ -484,7 +484,7 @@ L'analyse est déclenchée \textbf{à la demande} (endpoint \texttt{GET /api/wor
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{assets/entreprise/clients.png}
-\caption{Vue détaillée des insights worker.}
+\caption{Panneau détaillé d’un développeur – analyse IA complète (charge, performance, recommandations)}
 \label{fig:hello}
 \end{figure}
 
@@ -891,7 +891,7 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
     \begin{figure}[H]
         \centering
         \includegraphics[width=1\linewidth]{assets/interfaces/extraction_jira.png}
-        \caption{Extraction asynchrone des données Jira (pagination, rate limiting)}
+        \caption{Extraction asynchrone des données Jira – mécanismes de pagination et de respect des quotas}
         \label{fig:extraction_jira}
     \end{figure}
     
@@ -899,7 +899,7 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
     \begin{figure}[H]
         \centering
         \includegraphics[width=1\linewidth]{assets/interfaces/normalisation_process.png}
-        \caption{Normalisation des données Jira avec modèles Pydantic}
+        \caption{Normalisation des données Jira via les modèles Pydantic}
         \label{fig:normalisation}
     \end{figure}
     
@@ -907,7 +907,7 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
     \begin{figure}[H]
         \centering
         \includegraphics[width=1\linewidth]{assets/interfaces/metrics_sante.png}
-        \caption{Tableau de bord des métriques de santé projet (WIP, stale, overdue, Gini)}
+        \caption{Tableau de bord principal – métriques de santé projet (WIP, stale, overdue, Gini)}
         \label{fig:metriques}
     \end{figure}
     
@@ -915,7 +915,7 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
     \begin{figure}[H]
         \centering
         \includegraphics[width=1\linewidth]{assets/interfaces/montecarlo.png}
-        \caption{Simulation Monte Carlo – distribution des dates de fin et percentiles}
+        \caption{Résultat de la simulation Monte Carlo – distribution des dates de fin et percentiles}
         \label{fig:montecarlo}
     \end{figure}
     
@@ -923,7 +923,7 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
     \begin{figure}[H]
         \centering
         \includegraphics[width=1\linewidth]{assets/interfaces/agent_langraph.png}
-        \caption{Architecture de l’agent IA LangGraph avec appel au LLM Mistral}
+        \caption{Architecture détaillée de l’agent IA (LangGraph) avec appel au LLM Mistral}
         \label{fig:agent}
     \end{figure}
 
@@ -936,7 +936,7 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
     \begin{figure}[H]
         \centering
         \includegraphics[width=1\linewidth]{assets/interfaces/montecarlo.png}
-        \caption{Vue globale du tableau de bord d’équipe (grille des employés avec métriques et scores IA)}
+        \caption{Tableau de bord d’équipe – grille des employés avec métriques IA et scores}
         \label{fig:team_scorecard_global}
     \end{figure}
 
@@ -947,7 +947,7 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
         \includegraphics[width=1\linewidth]{assets/interfaces/dashboard_1.png}
         \includegraphics[width=1\linewidth]{assets/interfaces/dashboard_2.png}
         \includegraphics[width=1\linewidth]{assets/interfaces/dashboard_3.png}
-        \caption{Interface du tableau de bord React (métriques, alertes, explorateur Jira)}
+        \caption{Interface du tableau de bord React (métriques, centre d’alertes, explorateur Jira)}
         \label{fig:dashboard}
     \end{figure}
     
@@ -957,7 +957,7 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
         \includegraphics[width=1\linewidth]{assets/interfaces/fastApi.png}
         \includegraphics[width=1\linewidth]{assets/interfaces/fastApi_1.png}
         \includegraphics[width=1\linewidth]{assets/interfaces/fastApi_2.png}
-        \caption{Architecture du backend FastAPI et ses endpoints REST}
+        \caption{Architecture du backend FastAPI – endpoints REST exposés}
         \label{fig:fastapi}
     \end{figure}
     
@@ -965,7 +965,7 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
     \begin{figure}[H]
         \centering
         \includegraphics[width=1\linewidth]{assets/interfaces/RBAC.png}
-        \caption{Schéma du contrôle d’accès RBAC (JWT, rôles, SQLAlchemy)}
+        \caption{Schéma du contrôle d’accès RBAC (JWT, gestion des rôles, SQLAlchemy)}
         \label{fig:rbac}
     \end{figure}
     
@@ -974,7 +974,7 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
         \centering
         \includegraphics[width=1\linewidth]{assets/interfaces/alerts.png}
         \includegraphics[width=1\linewidth]{assets/interfaces/notification_teams.png}
-        \caption{Exemple de notification d’alerte sur Microsoft Teams}
+        \caption{Notification d’alerte critique envoyée vers Microsoft Teams}
         \label{fig:alertes}
     \end{figure}
     
@@ -982,7 +982,7 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
     \begin{figure}[H]
         \centering
         \includegraphics[width=1\linewidth]{assets/interfaces/pipeline_jenkins.png}
-        \caption{Pipeline CI/CD Jenkins pour la plateforme}
+        \caption{Pipeline d’intégration et de déploiement continu (CI/CD) avec Jenkins}
         \label{fig:pipeline}
     \end{figure}
 
@@ -991,7 +991,7 @@ Cette sous‑section récapitule l’ensemble des fonctionnalités développées
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.85\linewidth]{assets/interfaces/ViewAiinsights.png}
-        \caption{Détail de l’analyse IA pour un développeur – résumé textuel, tickets actifs avec commentaires, évaluation de charge et recommandations}
+        \caption{Analyse IA individuelle (Worker Insights) – résumé, tickets actifs, évaluation de charge et recommandations}
         \label{fig:worker_detail}
     \end{figure}
 
