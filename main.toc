@@ -9,54 +9,54 @@
 \contentsline {chapter}{Liste des tableaux}{xi}{chapter*.6}%
 \contentsline {chapter}{Abréviations}{xii}{chapter*.8}%
 \contentsline {chapter}{Introduction Générale}{2}{chapter*.9}%
-\contentsline {chapter}{\numberline {1}Contexte de projet}{5}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Contexte de projet}{4}{chapter.1}%
 \etoc@startlocaltoc {2}
-\contentsline {section}{\numberline {1.1}Introduction}{5}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Organisme d’accueil}{6}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Présentation de l’organisme d’accueil}{6}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Fiche signalétique de l’entreprise}{6}{subsection.1.2.2}%
-\contentsline {subsubsection}{Domaines d’expertise et secteurs d’activité}{7}{section*.12}%
-\contentsline {subsubsection}{Présence internationale}{8}{section*.14}%
-\contentsline {subsection}{\numberline {1.2.3}Structure organisationnelle de l’entreprise}{9}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Contexte interne : utilisation de Jira Data Center}{10}{subsection.1.2.4}%
-\contentsline {section}{\numberline {1.3}Présentation du projet}{12}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Contexte du projet}{12}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Problématique du projet}{12}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Objectifs généraux du projet}{13}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}Objectifs spécifiques de la plateforme IA}{14}{subsection.1.3.4}%
-\contentsline {subsection}{\numberline {1.3.5}Conduite du projet}{15}{subsection.1.3.5}%
-\contentsline {subsubsection}{Méthodologie de travail}{15}{section*.17}%
-\contentsline {paragraph}{Les rôles Scrum dans notre projet}{16}{section*.19}%
-\contentsline {paragraph}{Cérémonies Scrum}{16}{section*.20}%
-\contentsline {subsubsection}{Planification du projet}{16}{section*.21}%
-\contentsline {section}{\numberline {1.4}Conclusion}{17}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Conception fonctionnelle et technique}{18}{chapter.2}%
+\contentsline {section}{\numberline {1.1}Introduction}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Organisme d’accueil}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Présentation de l’organisme d’accueil}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Fiche signalétique de l’entreprise}{5}{subsection.1.2.2}%
+\contentsline {subsubsection}{Domaines d’expertise et secteurs d’activité}{6}{section*.12}%
+\contentsline {subsubsection}{Présence internationale}{7}{section*.14}%
+\contentsline {subsection}{\numberline {1.2.3}Structure organisationnelle de l’entreprise}{8}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Contexte interne : utilisation de Jira Data Center}{9}{subsection.1.2.4}%
+\contentsline {section}{\numberline {1.3}Présentation du projet}{11}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Contexte du projet}{11}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Problématique du projet}{11}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Objectifs généraux du projet}{12}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Objectifs spécifiques de la plateforme IA}{13}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Conduite du projet}{14}{subsection.1.3.5}%
+\contentsline {subsubsection}{Méthodologie de travail}{14}{section*.17}%
+\contentsline {paragraph}{Les rôles Scrum dans notre projet}{15}{section*.19}%
+\contentsline {paragraph}{Cérémonies Scrum}{15}{section*.20}%
+\contentsline {subsubsection}{Planification du projet}{15}{section*.21}%
+\contentsline {section}{\numberline {1.4}Conclusion}{16}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Conception fonctionnelle et technique}{17}{chapter.2}%
 \etoc@startlocaltoc {3}
-\contentsline {section}{\numberline {2.1}Introduction}{19}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Analyse des besoins}{19}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Processus d'identification des besoins}{19}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Les besoins fonctionnels}{19}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Besoins non fonctionnels}{20}{subsection.2.2.3}%
-\contentsline {paragraph}{Performances}{20}{section*.24}%
-\contentsline {paragraph}{Sécurité}{21}{section*.25}%
-\contentsline {paragraph}{Disponibilité et tolérance aux pannes}{21}{section*.26}%
-\contentsline {paragraph}{Maintenabilité et évolutivité}{21}{section*.27}%
-\contentsline {paragraph}{Utilisabilité}{21}{section*.28}%
-\contentsline {paragraph}{Interopérabilité}{21}{section*.29}%
-\contentsline {paragraph}{Observabilité et supervision}{21}{section*.30}%
-\contentsline {paragraph}{Déployabilité et industrialisation}{21}{section*.31}%
-\contentsline {paragraph}{Traçabilité et audit}{22}{section*.32}%
-\contentsline {paragraph}{Concurrence et efficacité des ressources}{22}{section*.33}%
-\contentsline {paragraph}{Sauvegarde et reprise après sinistre}{22}{section*.34}%
-\contentsline {section}{\numberline {2.3}Analyse de l'existant}{22}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Étude de l'existant}{22}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Identification des limitations de l'existant}{23}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Vue d'ensemble}{24}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Zoom sur l'architecture du module d'intelligence artificielle}{26}{subsection.2.3.4}%
-\contentsline {section}{\numberline {2.4}Modélisation statique et dynamique}{29}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Diagramme de classe}{29}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Diagrammes de séquence}{30}{subsection.2.4.2}%
-\contentsline {subsubsection}{Extraction des données Jira}{31}{section*.39}%
+\contentsline {section}{\numberline {2.1}Introduction}{17}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Analyse des besoins}{18}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Processus d'identification des besoins}{18}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Les besoins fonctionnels}{18}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Besoins non fonctionnels}{19}{subsection.2.2.3}%
+\contentsline {paragraph}{Performances}{19}{section*.24}%
+\contentsline {paragraph}{Sécurité}{19}{section*.25}%
+\contentsline {paragraph}{Disponibilité et tolérance aux pannes}{19}{section*.26}%
+\contentsline {paragraph}{Maintenabilité et évolutivité}{20}{section*.27}%
+\contentsline {paragraph}{Utilisabilité}{20}{section*.28}%
+\contentsline {paragraph}{Interopérabilité}{20}{section*.29}%
+\contentsline {paragraph}{Observabilité et supervision}{20}{section*.30}%
+\contentsline {paragraph}{Déployabilité et industrialisation}{20}{section*.31}%
+\contentsline {paragraph}{Traçabilité et audit}{20}{section*.32}%
+\contentsline {paragraph}{Concurrence et efficacité des ressources}{20}{section*.33}%
+\contentsline {paragraph}{Sauvegarde et reprise après sinistre}{20}{section*.34}%
+\contentsline {section}{\numberline {2.3}Analyse de l'existant}{21}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Étude de l'existant}{21}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Identification des limitations de l'existant}{22}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Vue d'ensemble}{22}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Zoom sur l'architecture du module d'intelligence artificielle}{25}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Modélisation statique et dynamique}{28}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Diagramme de classe}{28}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Diagrammes de séquence}{29}{subsection.2.4.2}%
+\contentsline {subsubsection}{Extraction des données Jira}{30}{section*.39}%
 \contentsline {subsubsection}{Orchestration de l’agent IA}{31}{section*.41}%
 \contentsline {subsubsection}{Authentification et RBAC}{32}{section*.43}%
 \contentsline {section}{\numberline {2.5}Environnements logiciels et technologies}{32}{section.2.5}%
@@ -68,99 +68,101 @@
 \contentsline {chapter}{\numberline {3}Description des données}{40}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introduction}{40}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Source des données}{40}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Authentification et endpoints utilisés}{41}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Requêtes JQL (Jira Query Language)}{42}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.1}Authentification et endpoints utilisés}{40}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Requêtes JQL (Jira Query Language)}{41}{subsection.3.2.2}%
 \contentsline {paragraph}{Bénéfices de l’utilisation de JQL dans notre plateforme}{42}{section*.68}%
 \contentsline {paragraph}{Architecture de l’intégration des requêtes JQL dans l’application}{42}{section*.69}%
 \contentsline {paragraph}{Exemples de requêtes utilisées}{43}{section*.71}%
 \contentsline {subsection}{\numberline {3.2.3}Gestion des limites de taux et optimisation}{43}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}Description des données}{43}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Champs des tickets (issues)}{44}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Commentaires et historique}{44}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Métadonnées de projet}{44}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Volumétrie et pagination}{44}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Analyse et Visualisation des Données}{45}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Analyse des tickets}{45}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Analyse des métriques de santé projet}{45}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Analyse prédictive par Monte Carlo}{46}{subsection.3.4.3}%
-\contentsline {section}{\numberline {3.5}Préparation des données}{46}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Normalisation structurelle}{46}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Standardisation sémantique}{47}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Ingénierie des caractéristiques pour Monte Carlo}{47}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Stockage et mise en cache}{47}{subsection.3.5.4}%
-\contentsline {section}{\numberline {3.6}Conclusion}{47}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Implémentation et Déploiement}{49}{chapter.4}%
+\contentsline {subsection}{\numberline {3.3.2}Commentaires et historique}{45}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Métadonnées de projet}{45}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Volumétrie et pagination}{45}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Analyse et Visualisation des Données}{46}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Analyse prédictive par Monte Carlo}{46}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Visualisation des métriques de santé projet}{46}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Visualisation du module Worker Insights}{46}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Explorateur Jira et supervision Grafana}{47}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Préparation des données}{47}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Normalisation structurelle et aplatissement du changelog}{47}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Standardisation sémantique}{48}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Agrégation pour le module Worker Insights}{48}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Ingénierie des caractéristiques et préparation du contexte LLM}{49}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Stockage et mise en cache}{49}{subsection.3.5.5}%
+\contentsline {section}{\numberline {3.6}Conclusion}{49}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Implémentation et Déploiement}{50}{chapter.4}%
 \etoc@startlocaltoc {4}
-\contentsline {section}{\numberline {4.1}Introduction}{50}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Métriques d’évaluation}{51}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Métriques de validation de l'agent IA}{51}{subsection.4.2.1}%
-\contentsline {subsubsection}{Définition des métriques quantitatives}{51}{section*.73}%
-\contentsline {subsubsection}{Constitution de la base de vérité (Ground Truth) et mesure du délai}{52}{section*.74}%
-\contentsline {subsubsection}{Résultats expérimentaux sur le projet HPCMOROCCO}{53}{section*.75}%
-\contentsline {subsubsection}{Métriques qualitatives : Acceptation et typologie d'erreurs}{53}{section*.76}%
-\contentsline {subsection}{\numberline {4.2.2}Métriques de validation des simulations Monte Carlo}{53}{subsection.4.2.2}%
-\contentsline {subsubsection}{Définition des métriques d'évaluation}{53}{section*.77}%
-\contentsline {subsubsection}{Acquisition de la vérité terrain (Ground Truth)}{54}{section*.78}%
-\contentsline {subsubsection}{Méthodologie de Backtesting (Validation historique)}{54}{section*.79}%
-\contentsline {subsubsection}{Résultats et métriques additionnelles (Projet de Référence)}{55}{section*.80}%
-\contentsline {subsection}{\numberline {4.2.3}Métriques de performance technique}{55}{subsection.4.2.3}%
-\contentsline {subsubsection}{Définition et mesure des métriques}{56}{section*.81}%
-\contentsline {subsubsection}{Résultats et ordres de grandeur en environnement de test}{56}{section*.82}%
-\contentsline {subsubsection}{Gestion de la concurrence, Rate Limiting et Ressources matérielles}{57}{section*.83}%
-\contentsline {subsection}{\numberline {4.2.4}Métriques de validation du module Worker Insights}{57}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Détails de l’implémentation}{58}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Backend FastAPI et couche d’accès aux données}{58}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Agent IA avec LangGraph et Mistral}{58}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Calcul des métriques projet}{60}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Moteur de simulation Monte Carlo}{60}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Développement du tableau de bord React}{60}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Système d’authentification et RBAC}{61}{subsection.4.3.6}%
-\contentsline {subsection}{\numberline {4.3.7}Mise en cache avec Redis}{61}{subsection.4.3.7}%
-\contentsline {paragraph}{Récupération des tickets Jira.}{62}{section*.89}%
-\contentsline {paragraph}{Analyse LLM d’un projet.}{62}{section*.90}%
-\contentsline {subsection}{\numberline {4.3.8}Moteur de règles et seuils de décision}{63}{subsection.4.3.8}%
-\contentsline {subsection}{\numberline {4.3.9}Worker Insights -- Analyse IA des performances individuelles}{64}{subsection.4.3.9}%
-\contentsline {paragraph}{Modèle LLM.}{65}{section*.97}%
-\contentsline {paragraph}{Seuils de classification.}{65}{section*.98}%
-\contentsline {paragraph}{Construction du prompt.}{66}{section*.100}%
-\contentsline {paragraph}{Vue liste.}{67}{figure.caption.104}%
-\contentsline {paragraph}{Vue AI details.}{68}{figure.caption.106}%
-\contentsline {subsection}{\numberline {4.3.10}Exposition des métriques (endpoint \texttt {/metrics})}{70}{subsection.4.3.10}%
-\contentsline {subsubsection}{Règles d'alerte Prometheus}{70}{section*.110}%
-\contentsline {subsubsection}{Visualisation avec Grafana}{71}{section*.111}%
-\contentsline {subsubsection}{Routage des alertes – Alertmanager et webhook Teams}{71}{section*.112}%
-\contentsline {subsubsection}{Conteneurisation de la stack supervision}{71}{section*.113}%
-\contentsline {section}{\numberline {4.4}Système d’alertes et notification}{72}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Génération automatique des alertes}{72}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Typologie des alertes}{73}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Canal de notification vers Microsoft Teams}{73}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Envoi de rapports synthétiques par email}{73}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Historique des alertes et tableau de bord dédié}{74}{subsection.4.4.5}%
-\contentsline {section}{\numberline {4.5}Déploiement et industrialisation}{74}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Conteneurisation avec Docker}{74}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Orchestration avec Docker Compose en développement}{75}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Pipeline CI/CD avec Jenkins}{75}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}Configuration des environnements}{76}{subsection.4.5.4}%
-\contentsline {subsection}{\numberline {4.5.5}Surveillance et logs}{76}{subsection.4.5.5}%
-\contentsline {section}{\numberline {4.6}Résultats et discussion}{76}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Validation des alertes de l’agent IA sur le projet pilote}{77}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Comparaison des prédictions Monte Carlo avec les dates de fin réelles}{77}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}Performance du tableau de bord}{77}{subsection.4.6.3}%
-\contentsline {subsection}{\numberline {4.6.4}Retour d’expérience des chefs de projet}{78}{subsection.4.6.4}%
-\contentsline {subsection}{\numberline {4.6.5}Efficacité du système d’alertes et notifications}{78}{subsection.4.6.5}%
-\contentsline {subsection}{\numberline {4.6.6}Worker Insights – analyse des performances individuelles}{79}{subsection.4.6.6}%
-\contentsline {section}{\numberline {4.7}Interprétation des résultats et justifications des choix}{79}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Choix de LangGraph vs autres frameworks d’orchestration}{79}{subsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.7.2}Choix de Mistral hébergé localement}{80}{subsection.4.7.2}%
-\contentsline {subsection}{\numberline {4.7.3}Choix de Redis pour la mise en cache}{80}{subsection.4.7.3}%
-\contentsline {subsection}{\numberline {4.7.4}Choix de Jenkins pour CI/CD}{80}{subsection.4.7.4}%
-\contentsline {subsection}{\numberline {4.7.5}Choix des canaux de notification (Teams + email)}{81}{subsection.4.7.5}%
-\contentsline {subsection}{\numberline {4.7.6}Discussion sur les limites et perspectives}{81}{subsection.4.7.6}%
-\contentsline {section}{\numberline {4.8}Intégration du modèle dans le système d’information de NTT DATA}{81}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}Connexion à l’API Jira interne}{81}{subsection.4.8.1}%
-\contentsline {subsection}{\numberline {4.8.2}Déploiement sur les serveurs de Tétouan}{82}{subsection.4.8.2}%
-\contentsline {subsection}{\numberline {4.8.3}Formation des utilisateurs et documentation}{82}{subsection.4.8.3}%
-\contentsline {subsection}{\numberline {4.8.4}Acceptation par le top management et mise en production}{83}{subsection.4.8.4}%
-\contentsline {section}{\numberline {4.9}Réalisation – Fonctionnalités implémentées}{83}{section.4.9}%
-\contentsline {section}{\numberline {4.10}Conclusion}{95}{section.4.10}%
-\contentsline {chapter}{Conclusion Générale}{97}{chapter*.126}%
+\contentsline {section}{\numberline {4.1}Introduction}{51}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Métriques d’évaluation}{52}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Métriques de validation de l'agent IA}{52}{subsection.4.2.1}%
+\contentsline {subsubsection}{Définition des métriques quantitatives}{52}{section*.75}%
+\contentsline {subsubsection}{Constitution de la base de vérité (Ground Truth) et mesure du délai}{53}{section*.76}%
+\contentsline {subsubsection}{Résultats expérimentaux sur le projet HPCMOROCCO}{54}{section*.77}%
+\contentsline {subsubsection}{Métriques qualitatives : Acceptation et typologie d'erreurs}{54}{section*.78}%
+\contentsline {subsection}{\numberline {4.2.2}Métriques de validation des simulations Monte Carlo}{54}{subsection.4.2.2}%
+\contentsline {subsubsection}{Définition des métriques d'évaluation}{54}{section*.79}%
+\contentsline {subsubsection}{Acquisition de la vérité terrain (Ground Truth)}{55}{section*.80}%
+\contentsline {subsubsection}{Méthodologie de Backtesting (Validation historique)}{55}{section*.81}%
+\contentsline {subsubsection}{Résultats et métriques additionnelles (Projet de Référence)}{56}{section*.82}%
+\contentsline {subsection}{\numberline {4.2.3}Métriques de performance technique}{56}{subsection.4.2.3}%
+\contentsline {subsubsection}{Définition et mesure des métriques}{57}{section*.83}%
+\contentsline {subsubsection}{Résultats et ordres de grandeur en environnement de test}{57}{section*.84}%
+\contentsline {subsubsection}{Gestion de la concurrence, Rate Limiting et Ressources matérielles}{58}{section*.85}%
+\contentsline {subsection}{\numberline {4.2.4}Métriques de validation du module Worker Insights}{58}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Détails de l’implémentation}{59}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Backend FastAPI et couche d’accès aux données}{59}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Agent IA avec LangGraph et Mistral}{59}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Calcul des métriques projet}{61}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Moteur de simulation Monte Carlo}{61}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Développement du tableau de bord React}{61}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Système d’authentification et RBAC}{62}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.3.7}Mise en cache avec Redis}{62}{subsection.4.3.7}%
+\contentsline {paragraph}{Récupération des tickets Jira.}{63}{section*.91}%
+\contentsline {paragraph}{Analyse LLM d’un projet.}{63}{section*.92}%
+\contentsline {subsection}{\numberline {4.3.8}Moteur de règles et seuils de décision}{64}{subsection.4.3.8}%
+\contentsline {subsection}{\numberline {4.3.9}Worker Insights -- Analyse IA des performances individuelles}{65}{subsection.4.3.9}%
+\contentsline {paragraph}{Modèle LLM.}{66}{section*.99}%
+\contentsline {paragraph}{Seuils de classification.}{66}{section*.100}%
+\contentsline {paragraph}{Construction du prompt.}{67}{section*.102}%
+\contentsline {paragraph}{Vue liste.}{68}{figure.caption.106}%
+\contentsline {paragraph}{Vue AI details.}{69}{figure.caption.108}%
+\contentsline {subsection}{\numberline {4.3.10}Exposition des métriques (endpoint \texttt {/metrics})}{71}{subsection.4.3.10}%
+\contentsline {subsubsection}{Règles d'alerte Prometheus}{71}{section*.112}%
+\contentsline {subsubsection}{Visualisation avec Grafana}{72}{section*.113}%
+\contentsline {subsubsection}{Routage des alertes – Alertmanager et webhook Teams}{72}{section*.114}%
+\contentsline {subsubsection}{Conteneurisation de la stack supervision}{72}{section*.115}%
+\contentsline {section}{\numberline {4.4}Système d’alertes et notification}{73}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Génération automatique des alertes}{73}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Typologie des alertes}{74}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Canal de notification vers Microsoft Teams}{74}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Envoi de rapports synthétiques par email}{74}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Historique des alertes et tableau de bord dédié}{75}{subsection.4.4.5}%
+\contentsline {section}{\numberline {4.5}Déploiement et industrialisation}{75}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Conteneurisation avec Docker}{75}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Orchestration avec Docker Compose en développement}{76}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Pipeline CI/CD avec Jenkins}{76}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Configuration des environnements}{77}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Surveillance et logs}{77}{subsection.4.5.5}%
+\contentsline {section}{\numberline {4.6}Résultats et discussion}{77}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Validation des alertes de l’agent IA sur le projet pilote}{78}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Comparaison des prédictions Monte Carlo avec les dates de fin réelles}{78}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Performance du tableau de bord}{78}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4}Retour d’expérience des chefs de projet}{79}{subsection.4.6.4}%
+\contentsline {subsection}{\numberline {4.6.5}Efficacité du système d’alertes et notifications}{79}{subsection.4.6.5}%
+\contentsline {subsection}{\numberline {4.6.6}Worker Insights – analyse des performances individuelles}{80}{subsection.4.6.6}%
+\contentsline {section}{\numberline {4.7}Interprétation des résultats et justifications des choix}{80}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Choix de LangGraph vs autres frameworks d’orchestration}{80}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Choix de Mistral hébergé localement}{81}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Choix de Redis pour la mise en cache}{81}{subsection.4.7.3}%
+\contentsline {subsection}{\numberline {4.7.4}Choix de Jenkins pour CI/CD}{81}{subsection.4.7.4}%
+\contentsline {subsection}{\numberline {4.7.5}Choix des canaux de notification (Teams + email)}{82}{subsection.4.7.5}%
+\contentsline {subsection}{\numberline {4.7.6}Discussion sur les limites et perspectives}{82}{subsection.4.7.6}%
+\contentsline {section}{\numberline {4.8}Intégration du modèle dans le système d’information de NTT DATA}{82}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Connexion à l’API Jira interne}{82}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Déploiement sur les serveurs de Tétouan}{83}{subsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.8.3}Formation des utilisateurs et documentation}{83}{subsection.4.8.3}%
+\contentsline {subsection}{\numberline {4.8.4}Acceptation par le top management et mise en production}{84}{subsection.4.8.4}%
+\contentsline {section}{\numberline {4.9}Réalisation – Fonctionnalités implémentées}{84}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Conclusion}{96}{section.4.10}%
+\contentsline {chapter}{Conclusion Générale}{98}{chapter*.128}%

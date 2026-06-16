@@ -1,9 +1,9 @@
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Fiche signalétique de NTT DATA Maroc (coordonnées et informations clés)}}{7}{table.caption.11}%
+\contentsline {table}{\numberline {1.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Fiche signalétique de NTT DATA Maroc (coordonnées et informations clés)}}{6}{table.caption.11}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {2.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Comparaison des frameworks d’orchestration d’agents IA : LangChain vs. LangGraph}}{38}{table.caption.66}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Inventaire des clés Redis utilisées dans la plateforme et leurs durées de vie (TTL)}}{62}{table.caption.87}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Seuils de classification pour l’évaluation de la charge et des performances – injection dans le prompt système de l’agent Worker Insights}}{65}{table.caption.99}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Niveaux de cache Redis (snapshots et analyses IA) pour le module Worker Insights}}{69}{table.caption.108}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Inventaire des clés Redis utilisées dans la plateforme et leurs durées de vie (TTL)}}{63}{table.caption.89}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Seuils de classification pour l’évaluation de la charge et des performances – injection dans le prompt système de l’agent Worker Insights}}{66}{table.caption.101}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Niveaux de cache Redis (snapshots et analyses IA) pour le module Worker Insights}}{70}{table.caption.110}%

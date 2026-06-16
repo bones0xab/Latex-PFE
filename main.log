@@ -1,70 +1,34 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.5.9)  14 JUN 2026 17:22
- restricted system commands enabled.
- file:line:error style messages enabled.
-**"c:/Users/ELITEBOOK/Downloads/New Rapport (4)/New Rapport/main"
-("c:/Users/ELITEBOOK/Downloads/New Rapport (4)/New Rapport/main.tex"
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.5.20)  16 JUN 2026 12:40
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./main.tex
+(main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
-Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
-Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
-Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended 
-collection.
-luaotfload | conf : Root cache directory is "C:/Users/ELITEBOOK/AppData/Local/Mi
-KTeX/luatex-cache/generic/names".
-luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-res
-olved path "C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/luatex/luaotflo
-ad/fontloader-2023-12-28.lua".
-Lua-only attribute luaotfload@noligature = 1
-luaotfload | init : Context OpenType loader version 3.134
-Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
-Inserting `luaotfload.node_processor' in `hpack_filter'.
-Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
-Inserting `luaotfload.define_font' in `define_font'.
-Lua-only attribute luaotfload_color_attribute = 2
-luaotfload | conf : Root cache directory is "C:/Users/ELITEBOOK/AppData/Local/Mi
-KTeX/luatex-cache/generic/names".
-Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
-Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
-Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
-Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
-Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
-Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
-Inserting `luaotfload.cleanup_files' in `wrapup_run'.
-Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
-Inserting `luaotfload.glyphinfo' in `glyph_info'.
-Lua-only attribute luaotfload.letterspace_done = 3
-Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
-Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
-Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
-Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
-Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
-Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
-Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
-Inserting `tracingstacklevels' in `input_level_string'. (C:/Users/ELITEBOOK/App
-Data/Local/Programs/MiKTeX/tex/latex/base/report.cls
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/base/size12.clo
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
 File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
-luaotfload | db : Font names database loaded from C:/Users/ELITEBOOK/AppData/Loc
-al/MiKTeX/luatex-cache/generic/names/luaotfload-names.luc.gz)
-\c@part=\count273
-\c@chapter=\count274
-\c@section=\count275
-\c@subsection=\count276
-\c@subsubsection=\count277
-\c@paragraph=\count278
-\c@subparagraph=\count279
-\c@figure=\count280
-\c@table=\count281
+)
+\c@part=\count271
+\c@chapter=\count272
+\c@section=\count273
+\c@subsection=\count274
+\c@subsubsection=\count275
+\c@paragraph=\count276
+\c@subparagraph=\count277
+\c@figure=\count278
+\c@table=\count279
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\bibindent=\dimen147
+\bibindent=\dimen148
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.s
 ty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/base/inputenc.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
@@ -73,26 +37,28 @@ Package: inputenc 2024/02/08 v1.3d Input encoding file
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.s
 ty
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/l3packages/xparse/x
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\x
 parse.sty
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/l3kernel/expl3.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2025-12-24 L3 programming layer (loader) 
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend
--luatex.def
-File: l3backend-luatex.def 2025-10-09 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count282
-Inserting `l3color' in `luaotfload.parse_color'.))
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend
+-xetex.def
+File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
+\g__graphics_track_int=\count280
+\g__pdfannot_backend_int=\count281
+\g__pdfannot_backend_link_int=\count282
+))
 Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
-Lua module: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec-l
-uatex.sty
-Package: fontspec-luatex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaT
-eX
+
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-x
+etex.sty
+Package: fontspec-xetex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTe
+X
 \l__fontspec_script_int=\count283
 \l__fontspec_language_int=\count284
 \l__fontspec_strnum_int=\count285
@@ -104,111 +70,26 @@ eX
 \l__fontspec_emdef_int=\count291
 \l__fontspec_strong_int=\count292
 \l__fontspec_strongdef_int=\count293
-\l__fontspec_tmpa_dim=\dimen148
-\l__fontspec_tmpb_dim=\dimen149
-\l__fontspec_tmpc_dim=\dimen150
+\l__fontspec_tmpa_dim=\dimen149
+\l__fontspec_tmpb_dim=\dimen150
+\l__fontspec_tmpc_dim=\dimen151
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/base/fontenc.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.c
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.c
 fg)))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/base/fontenc.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
 6.
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/lm/t1lmr.fd
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/babel/babel.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLa
 TeX and XeLaTeX
-
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/babel/luababel.de
-f
-\bbl@readstream=\read2
-\l@afrikaans=\language2
-Package babel Info: Non-standard hyphenation setup on input line 118.
-\l@ancientgreek=\language3
-\l@armenian=\language4
-\l@assamese=\language5
-\l@basque=\language6
-\l@belarusian=\language7
-\l@bengali=\language8
-\l@bokmal=\language9
-\l@bulgarian=\language10
-\l@catalan=\language11
-\l@churchslavonic=\language12
-\l@classiclatin=\language13
-\l@coptic=\language14
-\l@croatian=\language15
-\l@czech=\language16
-\l@danish=\language17
-\l@dutch=\language18
-\l@esperanto=\language19
-\l@estonian=\language20
-\l@ethiopic=\language21
-\l@finnish=\language22
-\l@french=\language23
-\l@friulan=\language24
-\l@galician=\language25
-\l@georgian=\language26
-\l@german=\language27
-\l@greek=\language28
-\l@gujarati=\language29
-\l@hindi=\language30
-\l@hungarian=\language31
-\l@icelandic=\language32
-\l@indonesian=\language33
-\l@interlingua=\language34
-\l@irish=\language35
-\l@italian=\language36
-\l@kannada=\language37
-\l@kurmanji=\language38
-\l@latin=\language39
-\l@latvian=\language40
-\l@lithuanian=\language41
-\l@liturgicallatin=\language42
-\l@macedonian=\language43
-\l@malayalam=\language44
-\l@marathi=\language45
-\l@mongolian=\language46
-\l@mongolianlmc=\language47
-\l@monogreek=\language48
-\l@ngerman=\language49
-\l@nynorsk=\language50
-\l@occitan=\language51
-\l@oriya=\language52
-\l@pali=\language53
-\l@panjabi=\language54
-\l@piedmontese=\language55
-\l@polish=\language56
-\l@portuguese=\language57
-\l@romanian=\language58
-\l@romansh=\language59
-\l@russian=\language60
-\l@sanskrit=\language61
-\l@serbian=\language62
-\l@serbianc=\language63
-\l@slovak=\language64
-\l@slovenian=\language65
-\l@spanish=\language66
-\l@swedish=\language67
-\l@swissgerman=\language68
-\l@tamil=\language69
-\l@telugu=\language70
-\l@thai=\language71
-\l@turkish=\language72
-\l@turkmen=\language73
-\l@ukenglish=\language74
-\l@ukrainian=\language75
-\l@uppersorbian=\language76
-\l@usenglishmax=\language77
-\l@welsh=\language78
-\babelcatcodetablenum=\catcodetable14
-\bbl@pattcodes=\catcodetable15
-)
 \babel@savecnt=\count294
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
 ne 2068.
@@ -224,13 +105,13 @@ LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?)
 on input line 2076.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
 on input line 2101.
-\U@D=\dimen151
+\U@D=\dimen152
 \l@unhyphenated=\language79
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/babel/luababel.de
-f
-\bbl@attr@locale=\attribute4
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/babel\xebabel.def
 )
+\bbl@readstream=\read2
+\bbl@dirlevel=\count295
 Package babel Info: Configuration files are deprecated, as
 (babel)             they can break document portability.
 (babel)             Reported on input line 4196.
@@ -238,94 +119,92 @@ Package babel Info: Configuration files are deprecated, as
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/arabi/bblopts.cfg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/babel/locale/fr/b
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/fr\b
 abel-french.tex)
 Package babel Info: Importing font and identification data for french
 (babel)             from babel-fr.ini. Reported on input line 4320.
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/babel-french/fren
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/babel-french\fren
 ch.ldf
 Language: french 2025-08-15 v4.0e French support from the babel system
-\FB@spacing=\attribute5
-\FB@addDPspace=\attribute6
-\FB@ucsNBSP=\attribute7
-\FBguill@level=\count295
-\FBold@everypar=\toks19
-\FB@Mht=\dimen152
-\mc@charclass=\count296
-\mc@charfam=\count297
-\mc@charslot=\count298
-\std@mcc=\count299
-\dec@mcc=\count300
-Inserting `frenchb.french_punctuation' in `kerning'.
-Inserting `frenchb.euphonic_t' in `pre_linebreak_filter'.
-\FB@pardim=\dimen153
-\listindentFB=\dimen154
-\descindentFB=\dimen155
-\labelindentFB=\dimen156
-\labelwidthFB=\dimen157
-\leftmarginFB=\dimen158
-\parindentFFN=\dimen159
-\FBfnindent=\dimen160
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/loadhyp
-h/loadhyph-fr.tex UTF-8 French hyphenation patterns
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/pattern
-s/tex/hyph-fr.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/pattern
-s/quote/hyph-quote-fr.tex))))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/carlisle/scalefnt.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/babel-french\fren
+ch3.ldf
+Language: french 2025-08-15 v3.7e French support from the babel system
+\FB@stdchar=\count296
+Package french3.ldf Info: No need for active punctuation characters
+(french3.ldf)             with this version of XeTeX!
+(french3.ldf)             reported on input line 154.
+\FB@punctthick=\XeTeXcharclass4
+\FB@punctthin=\XeTeXcharclass5
+\FB@punctnul=\XeTeXcharclass6
+\FB@guilo=\XeTeXcharclass7
+\FB@guilf=\XeTeXcharclass8
+\FB@guilnul=\XeTeXcharclass9
+\FBguill@level=\count297
+\FBold@everypar=\toks19
+\FB@Mht=\dimen153
+\mc@charclass=\count298
+\mc@charfam=\count299
+\mc@charslot=\count300
+\std@mcc=\count301
+\dec@mcc=\count302
+\FB@pardim=\dimen154
+\listindentFB=\dimen155
+\descindentFB=\dimen156
+\labelindentFB=\dimen157
+\labelwidthFB=\dimen158
+\leftmarginFB=\dimen159
+\parindentFFN=\dimen160
+\FBfnindent=\dimen161
+)))
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.s
 ty)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/microtype/microtype
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype
 .sty
 Package: microtype 2026/03/01 v3.2d Micro-typographical refinements (RS)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks20
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.s
 ty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count301
+\etb@tempcnta=\count303
 )
 \MT@toks=\toks21
 \MT@tempbox=\box53
-\MT@count=\count302
+\MT@count=\count304
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1084.
 LaTeX Info: Redefining \leftprotrusion on input line 1085.
 \MT@prot@toks=\toks22
 LaTeX Info: Redefining \rightprotrusion on input line 1104.
 LaTeX Info: Redefining \textls on input line 1449.
-\MT@outer@kern=\dimen161
+\MT@outer@kern=\dimen162
 LaTeX Info: Redefining \microtypecontext on input line 2053.
 LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
-\MT@listname@count=\count303
+\MT@listname@count=\count305
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/microtype/microtype
--luatex.def
-File: microtype-luatex.def 2026/03/01 v3.2d Definitions specific to luatex (RS)
-
-Lua module: microtype 2026/03/01 v3.2d microtype module.
-Module microtype Info: overwriting function `keepligature' on input line 63
-LaTeX Info: Redefining \lsstyle on input line 779.
-LaTeX Info: Redefining \lslig on input line 779.
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype
+-xetex.def
+File: microtype-xetex.def 2026/03/01 v3.2d Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 443.
+LaTeX Info: Redefining \lslig on input line 451.
 \MT@outer@space=\skip51
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/microtype/microtype
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype
 .cfg
 File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
 )
 LaTeX Info: Redefining \microtypesetup on input line 3065.
 )
-luaotfload | cache : Lookup cache loaded from C:/Users/ELITEBOOK/AppData/Local/M
-iKTeX/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
 
 Package fontspec Info: 
 (fontspec)             Font family 'TimesNewRoman(0)' created for font 'Times
@@ -334,102 +213,103 @@ Package fontspec Info:
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:Times New
-(fontspec)             Roman:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"name:Times
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Times New
+(fontspec)             Roman/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"Times New
+(fontspec)             Roman/OT:script=latn;language=dflt;+smcp;mapping=tex-tex
+t;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Times New
+(fontspec)             Roman/B/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: <->"Times
 (fontspec)             New
-(fontspec)             Roman:mode=node;script=latn;language=dflt;+tlig;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"name:Times New
-(fontspec)             Roman/B:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"name:Times New
-(fontspec)             Roman/B:mode=node;script=latn;language=dflt;+tlig;+smcp;
-"
-(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"name:Times New
-(fontspec)             Roman/I:mode=node;script=latn;language=dflt;+tlig;"
+(fontspec)             Roman/B/OT:script=latn;language=dflt;+smcp;mapping=tex-t
+ext;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Times New
+(fontspec)             Roman/I/OT:script=latn;language=dflt;mapping=tex-text;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"name:Times New
-(fontspec)             Roman/I:mode=node;script=latn;language=dflt;+tlig;+smcp;
-"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"name:Times
-(fontspec)             New
-(fontspec)             Roman/BI:mode=node;script=latn;language=dflt;+tlig;"
+(fontspec)             <->"Times New
+(fontspec)             Roman/I/OT:script=latn;language=dflt;+smcp;mapping=tex-t
+ext;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Times New
+(fontspec)             Roman/BI/OT:script=latn;language=dflt;mapping=tex-text;"
+
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"name:Times New
-(fontspec)             Roman/BI:mode=node;script=latn;language=dflt;+tlig;+smcp
-;"
+(fontspec)             <->"Times New
+(fontspec)             Roman/BI/OT:script=latn;language=dflt;+smcp;mapping=tex-
+text;"
 
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.s
 ty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphics.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.s
 ty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/graphi
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphi
 cs.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: luatex.def on input line 106.
+Package graphics Info: Driver file: xetex.def on input line 106.
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/graphics-def/luatex
-.def
-File: luatex.def 2025/09/29 v1.2f Graphics/color driver for luatex
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.
+def
+File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
 ))
-\Gin@req@height=\dimen162
-\Gin@req@width=\dimen163
+\Gin@req@height=\dimen163
+\Gin@req@width=\dimen164
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/algorithms/algorith
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorith
 m.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/float/float.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count304
+\c@float@type=\count306
 \float@exts=\toks23
 \float@box=\box54
 \@float@everytoks=\toks24
 \@floatcapt=\box55
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/base/ifthen.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks25
-\c@algorithm=\count305
+\c@algorithm=\count307
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/algorithmicx/algpse
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpse
 udocode.sty
 Package: algpseudocode 
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/algorithmicx/algori
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algori
 thmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count306
-\c@ALG@rem=\count307
-\c@ALG@nested=\count308
+\c@ALG@line=\count308
+\c@ALG@rem=\count309
+\c@ALG@nested=\count310
 \ALG@tlm=\skip52
 \ALG@thistlm=\skip53
-\c@ALG@Lnr=\count309
-\c@ALG@blocknr=\count310
-\c@ALG@storecount=\count311
-\c@ALG@tmpcounter=\count312
+\c@ALG@Lnr=\count311
+\c@ALG@blocknr=\count312
+\c@ALG@storecount=\count313
+\c@ALG@tmpcounter=\count314
 \ALG@tmplength=\skip54
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amssymb.st
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.st
 y
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amsfonts.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.s
 ty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks26
@@ -439,33 +319,33 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsmath.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip55
 For additional information on amsmath, use the `?' option.
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amstext.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsgen.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks27
-\ex@=\dimen164
+\ex@=\dimen165
 ))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsbsy.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen165
-) (C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsopn.st
+\pmbraise@=\dimen166
+) (C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.st
 y
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count313
-LaTeX Info: Redefining \frac on input line 235.
-\uproot@=\count314
-\leftroot@=\count315
+\inf@bad=\count315
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count316
+\leftroot@=\count317
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count316
-\DOTSCASE@=\count317
+\classnum@=\count318
+\DOTSCASE@=\count319
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -475,30 +355,30 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen166
+\big@size=\dimen167
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count318
+\macc@depth=\count320
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count319
+\c@MaxMatrixCols=\count321
 \dotsspace@=\muskip17
-\c@parentequation=\count320
-\dspbrk@lvl=\count321
+\c@parentequation=\count322
+\dspbrk@lvl=\count323
 \tag@help=\toks28
-\row@=\count322
-\column@=\count323
-\maxfields@=\count324
+\row@=\count324
+\column@=\count325
+\maxfields@=\count326
 \andhelp@=\toks29
-\eqnshift@=\dimen167
-\alignsep@=\dimen168
-\tagshift@=\dimen169
-\tagwidth@=\dimen170
-\totwidth@=\dimen171
-\lineht@=\dimen172
+\eqnshift@=\dimen168
+\alignsep@=\dimen169
+\tagshift@=\dimen170
+\tagwidth@=\dimen171
+\totwidth@=\dimen172
+\lineht@=\dimen173
 \@envbody=\toks30
 \multlinegap=\skip56
 \multlinetaggap=\skip57
@@ -506,55 +386,55 @@ LaTeX Info: Redefining \Relbar on input line 970.
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/booktabs/booktabs.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.s
 ty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen173
-\lightrulewidth=\dimen174
-\cmidrulewidth=\dimen175
-\belowrulesep=\dimen176
-\belowbottomsep=\dimen177
-\aboverulesep=\dimen178
-\abovetopsep=\dimen179
-\cmidrulesep=\dimen180
-\cmidrulekern=\dimen181
-\defaultaddspace=\dimen182
-\@cmidla=\count325
-\@cmidlb=\count326
-\@aboverulesep=\dimen183
-\@belowrulesep=\dimen184
-\@thisruleclass=\count327
-\@lastruleclass=\count328
-\@thisrulewidth=\dimen185
+\heavyrulewidth=\dimen174
+\lightrulewidth=\dimen175
+\cmidrulewidth=\dimen176
+\belowrulesep=\dimen177
+\belowbottomsep=\dimen178
+\aboverulesep=\dimen179
+\abovetopsep=\dimen180
+\cmidrulesep=\dimen181
+\cmidrulekern=\dimen182
+\defaultaddspace=\dimen183
+\@cmidla=\count327
+\@cmidlb=\count328
+\@aboverulesep=\dimen184
+\@belowrulesep=\dimen185
+\@thisruleclass=\count329
+\@lastruleclass=\count330
+\@thisrulewidth=\dimen186
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/multirow/multirow.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.s
 ty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip58
-\multirow@cntb=\count329
+\multirow@cntb=\count331
 \multirow@dima=\skip59
-\bigstrutjot=\dimen186
+\bigstrutjot=\dimen187
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
-\c@tracingmulticols=\count330
+\c@tracingmulticols=\count332
 \mult@box=\box58
-\multicol@leftmargin=\dimen187
-\c@unbalance=\count331
-\c@collectmore=\count332
-\doublecol@number=\count333
-\multicoltolerance=\count334
-\multicolpretolerance=\count335
-\full@width=\dimen188
-\page@free=\dimen189
-\premulticols=\dimen190
-\postmulticols=\dimen191
+\multicol@leftmargin=\dimen188
+\c@unbalance=\count333
+\c@collectmore=\count334
+\doublecol@number=\count335
+\multicoltolerance=\count336
+\multicolpretolerance=\count337
+\full@width=\dimen189
+\page@free=\dimen190
+\premulticols=\dimen191
+\postmulticols=\dimen192
 \multicolsep=\skip60
 \multicolbaselineskip=\skip61
 \partial@page=\box59
 \last@line=\box60
 \mc@boxedresult=\box61
-\maxbalancingoverflow=\dimen192
+\maxbalancingoverflow=\dimen193
 \mult@rightbox=\box62
 \mult@grightbox=\box63
 \mult@firstbox=\box64
@@ -595,120 +475,125 @@ Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \@tempa=\box99
 \@tempa=\box100
 \@tempa=\box101
-\c@minrows=\count336
-\c@columnbadness=\count337
-\c@finalcolumnbadness=\count338
-\last@try=\dimen193
-\multicolovershoot=\dimen194
-\multicolundershoot=\dimen195
+\c@minrows=\count338
+\c@columnbadness=\count339
+\c@finalcolumnbadness=\count340
+\last@try=\dimen194
+\multicolovershoot=\dimen195
+\multicolundershoot=\dimen196
 \mult@nat@firstbox=\box102
 \colbreak@box=\box103
-\mc@col@check@num=\count339
-\g__mc_curr_col_int=\count340
+\mc@col@check@num=\count341
+\g__mc_curr_col_int=\count342
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/tcolorbox/tcolorbox
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox
 .sty
 Package: tcolorbox 2025/11/28 version 6.9.0 text color boxes
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/pgf/frontendlayer/t
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\t
 ikz.sty
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgf.
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.
 sty
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfrc
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrc
 s.sty
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgf
 util-common.tex
 \pgfutil@everybye=\toks32
-\pgfutil@tempdima=\dimen196
-\pgfutil@tempdimb=\dimen197
+\pgfutil@tempdima=\dimen197
+\pgfutil@tempdimb=\dimen198
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgf
 util-latex.def
 \pgfutil@abb=\box104
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgf
 rcs.code.tex
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/pgf.revision.
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.
 tex)
 Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
 ))
 Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgfc
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfc
 ore.sty
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/pgf/systemlayer/pgf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgf
 sys.sty
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/p
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\p
 gfsys.code.tex
 Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgf
 keys.code.tex
 \pgfkeys@pathtoks=\toks33
 \pgfkeys@temptoks=\toks34
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgf
 keyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks35
 ))
-\pgf@x=\dimen198
-\pgf@y=\dimen199
-\pgf@xa=\dimen256
-\pgf@ya=\dimen257
-\pgf@xb=\dimen258
-\pgf@yb=\dimen259
-\pgf@xc=\dimen260
-\pgf@yc=\dimen261
-\pgf@xd=\dimen262
-\pgf@yd=\dimen263
+\pgf@x=\dimen199
+\pgf@y=\dimen256
+\pgf@xa=\dimen257
+\pgf@ya=\dimen258
+\pgf@xb=\dimen259
+\pgf@yb=\dimen260
+\pgf@xc=\dimen261
+\pgf@yc=\dimen262
+\pgf@xd=\dimen263
+\pgf@yd=\dimen264
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count341
-\c@pgf@countb=\count342
-\c@pgf@countc=\count343
-\c@pgf@countd=\count344
+\c@pgf@counta=\count343
+\c@pgf@countb=\count344
+\c@pgf@countc=\count345
+\c@pgf@countd=\count346
 \t@pgf@toka=\toks36
 \t@pgf@tokb=\toks37
 \t@pgf@tokc=\toks38
-\pgf@sys@id@count=\count345
+\pgf@sys@id@count=\count347
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/p
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\p
 gf.cfg
 File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
-Driver file for pgf: pgfsys-luatex.def
+Driver file for pgf: pgfsys-xetex.def
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/p
-gfsys-luatex.def
-File: pgfsys-luatex.def 2025-08-29 v3.1.11a (3.1.11a)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\p
+gfsys-xetex.def
+File: pgfsys-xetex.def 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/p
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\p
+gfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\p
 gfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+)
+\pgfsys@objnum=\count348
 )))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/p
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\p
 gfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfsyssoftpath@smallbuffer@items=\count346
-\pgfsyssoftpath@bigbuffer@items=\count347
+\pgfsyssoftpath@smallbuffer@items=\count349
+\pgfsyssoftpath@bigbuffer@items=\count350
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/p
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\p
 gfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/color.
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.
 cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: luatex.def on input line 274.
+Package xcolor Info: Driver file: xetex.def on input line 274.
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/graphics/mathcolor.
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.
 ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
@@ -717,235 +602,235 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcore.code.tex
 Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmath.
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.
 code.tex
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathu
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathu
 til.code.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathp
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathp
 arser.code.tex
-\pgfmath@dimen=\dimen264
-\pgfmath@count=\count348
+\pgfmath@dimen=\dimen265
+\pgfmath@count=\count351
 \pgfmath@box=\box105
 \pgfmath@toks=\toks39
 \pgfmath@stack@operand=\toks40
 \pgfmath@stack@operation=\toks41
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathf
 unctions.code.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathf
 unctions.basic.code.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathf
 unctions.trigonometric.code.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathf
 unctions.random.code.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathf
 unctions.comparison.code.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathf
 unctions.base.code.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathf
 unctions.round.code.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathf
 unctions.misc.code.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathf
 unctions.integerarithmetics.code.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathc
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathc
 alc.code.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathf
 loat.code.tex
-\c@pgfmathroundto@lastzeros=\count349
+\c@pgfmathroundto@lastzeros=\count352
 ))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfint.c
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.c
 ode.tex)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcorepoints.code.tex
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@picminx=\dimen265
-\pgf@picmaxx=\dimen266
-\pgf@picminy=\dimen267
-\pgf@picmaxy=\dimen268
-\pgf@pathminx=\dimen269
-\pgf@pathmaxx=\dimen270
-\pgf@pathminy=\dimen271
-\pgf@pathmaxy=\dimen272
-\pgf@xx=\dimen273
-\pgf@xy=\dimen274
-\pgf@yx=\dimen275
-\pgf@yy=\dimen276
-\pgf@zx=\dimen277
-\pgf@zy=\dimen278
+\pgf@picminx=\dimen266
+\pgf@picmaxx=\dimen267
+\pgf@picminy=\dimen268
+\pgf@picmaxy=\dimen269
+\pgf@pathminx=\dimen270
+\pgf@pathmaxx=\dimen271
+\pgf@pathminy=\dimen272
+\pgf@pathmaxy=\dimen273
+\pgf@xx=\dimen274
+\pgf@xy=\dimen275
+\pgf@yx=\dimen276
+\pgf@yy=\dimen277
+\pgf@zx=\dimen278
+\pgf@zy=\dimen279
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@path@lastx=\dimen279
-\pgf@path@lasty=\dimen280
+\pgf@path@lastx=\dimen280
+\pgf@path@lasty=\dimen281
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@shorten@end@additional=\dimen281
-\pgf@shorten@start@additional=\dimen282
+\pgf@shorten@end@additional=\dimen282
+\pgf@shorten@start@additional=\dimen283
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcorescopes.code.tex
 File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box106
 \pgf@hbox=\box107
 \pgf@layerbox@main=\box108
-\pgf@picture@serial@count=\count350
+\pgf@picture@serial@count=\count353
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgflinewidth=\dimen283
+\pgflinewidth=\dimen284
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@pt@x=\dimen284
-\pgf@pt@y=\dimen285
-\pgf@pt@temp=\dimen286
+\pgf@pt@x=\dimen285
+\pgf@pt@y=\dimen286
+\pgf@pt@temp=\dimen287
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcorequick.code.tex
 File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcorearrows.code.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowsep=\dimen287
+\pgfarrowsep=\dimen288
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcoreshade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@max=\dimen288
-\pgf@sys@shading@range@num=\count351
-\pgf@shadingcount=\count352
+\pgf@max=\dimen289
+\pgf@sys@shading@range@num=\count354
+\pgf@shadingcount=\count355
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcoreimage.code.tex
 File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfexternal@startupbox=\box109
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcorelayers.code.tex
 File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pg
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pg
 fcorerdf.code.tex
 File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmo
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmo
 duleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodeparttextbox=\box110
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmo
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmo
 duleplot.code.tex
 File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/p
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\p
 gfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@nodesepstart=\dimen289
-\pgf@nodesepend=\dimen290
+\pgf@nodesepstart=\dimen290
+\pgf@nodesepend=\dimen291
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/p
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\p
 gfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
 ))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgffo
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffo
 r.sty
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfke
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfke
 ys.sty
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgf
 keys.code.tex))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/pgf/math/pgfmath.st
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.st
 y
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmath.
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.
 code.tex))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgf
 for.code.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
-\pgffor@iter=\dimen291
-\pgffor@skip=\dimen292
+\pgffor@iter=\dimen292
+\pgffor@skip=\dimen293
 \pgffor@stack=\toks42
 \pgffor@toks=\toks43
 ))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer
-/tikz/tikz.code.tex
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer
+/tikz\tikz.code.tex
 Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgf
 libraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@plot@mark@count=\count353
-\pgfplotmarksize=\dimen293
+\pgf@plot@mark@count=\count356
+\pgfplotmarksize=\dimen294
 )
-\tikz@lastx=\dimen294
-\tikz@lasty=\dimen295
-\tikz@lastxsaved=\dimen296
-\tikz@lastysaved=\dimen297
-\tikz@lastmovetox=\dimen298
-\tikz@lastmovetoy=\dimen299
-\tikzleveldistance=\dimen300
-\tikzsiblingdistance=\dimen301
+\tikz@lastx=\dimen295
+\tikz@lasty=\dimen296
+\tikz@lastxsaved=\dimen297
+\tikz@lastysaved=\dimen298
+\tikz@lastmovetox=\dimen299
+\tikz@lastmovetoy=\dimen300
+\tikzleveldistance=\dimen301
+\tikzsiblingdistance=\dimen302
 \tikz@figbox=\box111
 \tikz@figbox@bg=\box112
 \tikz@tempbox=\box113
 \tikz@tempbox@bg=\box114
-\tikztreelevel=\count354
-\tikznumberofchildren=\count355
-\tikznumberofcurrentchild=\count356
-\tikz@fig@count=\count357
+\tikztreelevel=\count357
+\tikznumberofchildren=\count358
+\tikznumberofcurrentchild=\count359
+\tikz@fig@count=\count360
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmo
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmo
 dulematrix.code.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfmatrixcurrentrow=\count358
-\pgfmatrixcurrentcolumn=\count359
-\pgf@matrix@numberofcolumns=\count360
+\pgfmatrixcurrentrow=\count361
+\pgfmatrixcurrentcolumn=\count362
+\pgf@matrix@numberofcolumns=\count363
 )
-\tikz@expandcount=\count361
+\tikz@expandcount=\count364
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer
-/tikz/libraries/tikzlibrarytopaths.code.tex
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer
+/tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/tools/verbatim.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks44
 \verbatim@line=\toks45
 \verbatim@in@stream=\read4
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/environ/environ.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspac
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspac
 es.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
@@ -953,147 +838,148 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@upperbox=\box116
 \tcb@lowerbox=\box117
 \tcb@phantombox=\box118
-\c@tcbbreakpart=\count362
-\c@tcblayer=\count363
-\c@tcolorbox@number=\count364
+\c@tcbbreakpart=\count365
+\c@tcblayer=\count366
+\c@tcolorbox@number=\count367
 \l__tcobox_tmpa_box=\box119
-\l__tcobox_tmpa_dim=\dimen302
+\l__tcobox_tmpa_dim=\dimen303
 \tcb@temp=\box120
 \tcb@temp=\box121
 \tcb@temp=\box122
 \tcb@temp=\box123
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/caption/subcaption.
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.
 sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption3.st
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.st
 y
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen303
-\captionmargin=\dimen304
-\caption@leftmargin=\dimen305
-\caption@rightmargin=\dimen306
-\caption@width=\dimen307
-\caption@indent=\dimen308
-\caption@parindent=\dimen309
-\caption@hangindent=\dimen310
+\caption@tempdima=\dimen304
+\captionmargin=\dimen305
+\caption@leftmargin=\dimen306
+\caption@rightmargin=\dimen307
+\caption@width=\dimen308
+\caption@indent=\dimen309
+\caption@parindent=\dimen310
+\caption@hangindent=\dimen311
 Package caption Info: Standard document class detected.
+Package caption Info: french babel package is loaded.
 )
-\c@caption@flags=\count365
-\c@continuedfloat=\count366
+\c@caption@flags=\count368
+\c@continuedfloat=\count369
 Package caption Info: float package is loaded.
 )
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count367
+\c@subfigure=\count370
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count368
+\c@subtable=\count371
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/acronym/acronym.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/acronym\acronym.sty
 Package: acronym 2025/01/17 v1.50 Support for acronyms (Tobias Oetiker)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/bigfoot/suffix.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bigfoot\suffix.sty
 Package: suffix 2006/07/15 1.5a Variant command support
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/xstring/xstring.t
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.t
 ex
-\xs_counta=\count369
-\xs_countb=\count370
+\xs_counta=\count372
+\xs_countb=\count373
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 )
 \AC@clearlist=\toks46
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen311
+\col@sep=\dimen312
 \ar@mcellbox=\box124
-\extrarowheight=\dimen312
+\extrarowheight=\dimen313
 \NC@list=\toks47
 \extratabsurround=\skip62
 \backup@length=\skip63
 \ar@cellbox=\box125
 )
-\TX@col@width=\dimen313
-\TX@old@table=\dimen314
-\TX@old@col=\dimen315
-\TX@target=\dimen316
-\TX@delta=\dimen317
-\TX@cols=\count371
+\TX@col@width=\dimen314
+\TX@old@table=\dimen315
+\TX@old@col=\dimen316
+\TX@target=\dimen317
+\TX@delta=\dimen318
+\TX@cols=\count374
 \TX@ftn=\toks48
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/enumitem/enumitem.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.s
 ty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip64
-\enit@outerparindent=\dimen318
+\enit@outerparindent=\dimen319
 \enit@toks=\toks49
 \enit@inbox=\box126
-\enit@count@id=\count372
-\enitdp@description=\count373
-) (C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/etoc/etoc.sty
+\enit@count@id=\count375
+\enitdp@description=\count376
+) (C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/etoc\etoc.sty
 Package: etoc 2023/10/29 v1.2d Completely customisable TOCs (JFB)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions
 .sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/ltxcmds/ltxcmds.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.s
 ty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys
 .sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ))
 \Etoc@toctoks=\toks50
-\c@etoc@tocid=\count374
+\c@etoc@tocid=\count377
 \etoc@framed@titlebox=\box127
 \etoc@framed@contentsbox=\box128
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/graphics/lscape.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/colortbl/colortbl.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.s
 ty
 Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
 \everycr=\toks51
 \minrowclearance=\skip65
-\rownum=\count375
+\rownum=\count378
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.s
 ty
 Package: geometry 2026/03/07 v6.0 Page Geometry
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count376
-\Gm@cntv=\count377
-\c@Gm@tempcnt=\count378
-\Gm@bindingoffset=\dimen319
-\Gm@wd@mp=\dimen320
-\Gm@odd@mp=\dimen321
-\Gm@even@mp=\dimen322
-\Gm@layoutwidth=\dimen323
-\Gm@layoutheight=\dimen324
-\Gm@layouthoffset=\dimen325
-\Gm@layoutvoffset=\dimen326
+\Gm@cnth=\count379
+\Gm@cntv=\count380
+\c@Gm@tempcnt=\count381
+\Gm@bindingoffset=\dimen320
+\Gm@wd@mp=\dimen321
+\Gm@odd@mp=\dimen322
+\Gm@even@mp=\dimen323
+\Gm@layoutwidth=\dimen324
+\Gm@layoutheight=\dimen325
+\Gm@layouthoffset=\dimen326
+\Gm@layoutvoffset=\dimen327
 \Gm@dimlist=\toks52
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.c
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.c
 fg))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/fancyhdr/fancyhdr.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.s
 ty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 
@@ -1113,74 +999,74 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthR=\skip79
 \@temptokenb=\toks53
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/lettrine/lettrine.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/lettrine\lettrine.s
 ty
 File: lettrine.sty 2025-12-06 v2.83 (Daniel Flipo)
-\c@DefaultLines=\count379
-\c@DefaultDepth=\count380
-\DefaultFindent=\dimen327
-\DefaultNindent=\dimen328
-\DefaultSlope=\dimen329
-\DiscardVskip=\dimen330
+\c@DefaultLines=\count382
+\c@DefaultDepth=\count383
+\DefaultFindent=\dimen328
+\DefaultNindent=\dimen329
+\DefaultSlope=\dimen330
+\DiscardVskip=\dimen331
 \L@lbox=\box129
-\c@L@lines=\count381
-\c@L@depth=\count382
-\L@Pindent=\dimen331
-\L@Findent=\dimen332
-\L@Nindent=\dimen333
-\L@lraise=\dimen334
-\L@first=\dimen335
-\L@next=\dimen336
-\L@slope=\dimen337
-\L@height=\dimen338
-\L@novskip=\dimen339
-\L@target@ht=\dimen340
-\L@target@dp=\dimen341
-\L@target@tht=\dimen342
-\LettrineWidth=\dimen343
-\LettrineHeight=\dimen344
-\LettrineDepth=\dimen345
-\L@finalht=\dimen346
-\L@finaldp=\dimen347
+\c@L@lines=\count384
+\c@L@depth=\count385
+\L@Pindent=\dimen332
+\L@Findent=\dimen333
+\L@Nindent=\dimen334
+\L@lraise=\dimen335
+\L@first=\dimen336
+\L@next=\dimen337
+\L@slope=\dimen338
+\L@height=\dimen339
+\L@novskip=\dimen340
+\L@target@ht=\dimen341
+\L@target@dp=\dimen342
+\L@target@tht=\dimen343
+\LettrineWidth=\dimen344
+\LettrineHeight=\dimen345
+\LettrineDepth=\dimen346
+\L@finalht=\dimen347
+\L@finaldp=\dimen348
 
 Loading lettrine.cfg
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/lettrine/lettrine.c
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/lettrine\lettrine.c
 fg)
 \Lettrine@tweaks=\toks54
 \Llist@everypar=\toks55
-) (C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/cite/cite.sty
+) (C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/listings/listings.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.s
 ty
-\lst@mode=\count383
+\lst@mode=\count386
 \lst@gtempboxa=\box130
 \lst@token=\toks56
-\lst@length=\count384
-\lst@currlwidth=\dimen348
-\lst@column=\count385
-\lst@pos=\count386
-\lst@lostspace=\dimen349
-\lst@width=\dimen350
-\lst@newlines=\count387
-\lst@lineno=\count388
-\lst@maxwidth=\dimen351
+\lst@length=\count387
+\lst@currlwidth=\dimen349
+\lst@column=\count388
+\lst@pos=\count389
+\lst@lostspace=\dimen350
+\lst@width=\dimen351
+\lst@newlines=\count390
+\lst@lineno=\count391
+\lst@maxwidth=\dimen352
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstpatch.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.s
 ty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstmisc.st
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.st
 y
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-\c@lstnumber=\count389
-\lst@skipnumbers=\count390
+\c@lstnumber=\count392
+\lst@skipnumbers=\count393
 \lst@framebox=\box131
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/listings/listings.c
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.c
 fg
 File: listings.cfg 2025/11/14 1.11b listings configuration
 ))
@@ -1192,280 +1078,280 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
     but found:
         2025/11/14 1.11b (Carsten Heinz)
     so I'm assuming it got fixed.
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/minted/minted.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/minted\minted.sty
 Package: minted 2026/03/03 v3.8.0 Yet another Pygments shim for LaTeX
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/catchfile/catchfi
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/catchfile\catchfi
 le.sty
 Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/infwarerr/infware
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infware
 rr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/etexcmds/etexcmds
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds
 .sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 ))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/fvextra/fvextra.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/fvextra\fvextra.sty
 Package: fvextra 2026/02/25 v1.14.0 fvextra - extensions and patches for fancyv
 rb
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/fancyvrb/fancyvrb.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.s
 ty
 Package: fancyvrb 2026/04/16 4.6a verbatim text (tvz,hv)
-\FV@CodeLineNo=\count391
+\FV@CodeLineNo=\count394
 \FV@InFile=\read5
 \FV@TabBox=\box132
-\c@FancyVerbLine=\count392
-\FV@StepNumber=\count393
+\c@FancyVerbLine=\count395
+\FV@StepNumber=\count396
 \FV@OutFile=\write4
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/upquote/upquote.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/base/textcomp.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-)) (C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/lineno/lineno.st
+)) (C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.st
 y
 Package: lineno 2026/03/08 line numbers on paragraphs v5.9
-\linenopenalty=\count394
+\linenopenalty=\count397
 \output=\toks57
-\linenoprevgraf=\count395
-\linenumbersep=\dimen352
-\linenumberwidth=\dimen353
-\c@linenumber=\count396
-\c@pagewiselinenumber=\count397
-\c@LN@truepage=\count398
-\c@internallinenumber=\count399
-\c@internallinenumbers=\count400
-\quotelinenumbersep=\dimen354
-\bframerule=\dimen355
-\bframesep=\dimen356
+\linenoprevgraf=\count398
+\linenumbersep=\dimen353
+\linenumberwidth=\dimen354
+\c@linenumber=\count399
+\c@pagewiselinenumber=\count400
+\c@LN@truepage=\count401
+\c@internallinenumber=\count402
+\c@internallinenumbers=\count403
+\quotelinenumbersep=\dimen355
+\bframerule=\dimen356
+\bframesep=\dimen357
 \bframebox=\box133
-\@LN@amsmath@ams@eqpen=\count401
+\@LN@amsmath@ams@eqpen=\count404
 )
-\c@FancyVerbWriteLine=\count402
-\c@FancyVerbBufferLine=\count403
-\c@FV@TrueTabGroupLevel=\count404
-\c@FV@TrueTabCounter=\count405
+\c@FancyVerbWriteLine=\count405
+\c@FancyVerbBufferLine=\count406
+\c@FV@TrueTabGroupLevel=\count407
+\c@FV@TrueTabCounter=\count408
 \FV@TabBox@Group=\box134
 \FV@bgcolorstructbox=\box135
 \FV@TmpLength=\skip80
-\c@FV@HighlightLinesStart=\count406
-\c@FV@HighlightLinesStop=\count407
-\FV@LoopCount=\count408
+\c@FV@HighlightLinesStart=\count409
+\c@FV@HighlightLinesStop=\count410
+\FV@LoopCount=\count411
 \FV@NCharsBox=\box136
-\FV@BreakIndent=\dimen357
-\FV@BreakIndentNChars=\count409
-\FV@BreakSymbolSepLeft=\dimen358
-\FV@BreakSymbolSepLeftNChars=\count410
-\FV@BreakSymbolSepRight=\dimen359
-\FV@BreakSymbolSepRightNChars=\count411
-\FV@BreakSymbolIndentLeft=\dimen360
-\FV@BreakSymbolIndentLeftNChars=\count412
-\FV@BreakSymbolIndentRight=\dimen361
-\FV@BreakSymbolIndentRightNChars=\count413
-\c@FancyVerbLineBreakLast=\count414
+\FV@BreakIndent=\dimen358
+\FV@BreakIndentNChars=\count412
+\FV@BreakSymbolSepLeft=\dimen359
+\FV@BreakSymbolSepLeftNChars=\count413
+\FV@BreakSymbolSepRight=\dimen360
+\FV@BreakSymbolSepRightNChars=\count414
+\FV@BreakSymbolIndentLeft=\dimen361
+\FV@BreakSymbolIndentLeftNChars=\count415
+\FV@BreakSymbolIndentRight=\dimen362
+\FV@BreakSymbolIndentRightNChars=\count416
+\c@FancyVerbLineBreakLast=\count417
 \FV@LineBox=\box137
 \FV@LineIndentBox=\box138
-\c@FV@BreakBufferDepth=\count415
-\FV@LineWidth=\dimen362
+\c@FV@BreakBufferDepth=\count418
+\FV@LineWidth=\dimen363
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/latex2pydata/latex2
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/latex2pydata\latex2
 pydata.sty
 Package: latex2pydata 2026/02/25 v0.7.0 latex2pydata - write data to file in Py
 thon literal format
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/pgfopts/pgfopts.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty
 Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
 \pgfopts@list@add@a@toks=\toks58
 \pgfopts@list@add@b@toks=\toks59
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/tools/shellesc.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
-\c@minted@FancyVerbLineTemp=\count416
+\c@minted@FancyVerbLineTemp=\count419
 \@float@every@listing=\toks60
-\c@listing=\count417
+\c@listing=\count420
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/glossaries/base/glo
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/base\glo
 ssaries.sty
 Package: glossaries 2026/04/21 v5.1 (NLCT)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/xkeyval/xkeyval.t
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.t
 ex
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/xkeyval/xkvutils.
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.
 tex
 \XKV@toks=\toks61
 \XKV@tempa@toks=\toks62
 )
-\XKV@depth=\count418
+\XKV@depth=\count421
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/mfirstuc/mfirstuc.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/mfirstuc\mfirstuc.s
 ty
 Package: mfirstuc 2025/04/03 v2.09 (NLCT)
 \@glsmfirst=\toks63
 \@glsmrest=\toks64
-) (C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/xfor/xfor.sty
+) (C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/xfor\xfor.sty
 Package: xfor 2009/02/05 v1.05 (NLCT)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/tracklang/tracklang
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tracklang\tracklang
 .sty
 Package: tracklang 2025/03/11 v1.6.6 (NLCT) Track Languages
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/tracklang/trackla
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/tracklang\trackla
 ng.tex)
 Package tracklang Info: Tracking dialect `french' (language `french') on input 
 line 53.
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/translator/translat
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/translator\translat
 or.sty
 Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/glossaries-french/g
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/glossaries-french\g
 lossaries-french.ldf
 File: glossaries-french.ldf 2016/12/12 v1.1
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/datatool/datatool-b
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool-b
 ase.sty
 Package: datatool-base 2025/12/04 v3.4.3 (NLCT)
-\l__datatool_tmpa_int=\count419
-\l__datatool_tmpb_int=\count420
-\l__datatool_tmpc_int=\count421
-\l__datatool_tmpd_int=\count422
-\l__datatool_count_int=\count423
-\l__datatool_tmp_datatype_int=\count424
-\l__datatool_tmpa_dim=\dimen363
-\l__datatool_tmpb_dim=\dimen364
+\l__datatool_tmpa_int=\count422
+\l__datatool_tmpb_int=\count423
+\l__datatool_tmpc_int=\count424
+\l__datatool_tmpd_int=\count425
+\l__datatool_count_int=\count426
+\l__datatool_tmp_datatype_int=\count427
+\l__datatool_tmpa_dim=\dimen364
+\l__datatool_tmpb_dim=\dimen365
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/datatool/datatool-l
-ua.def
-File: datatool-lua.def 2025/12/04 v3.4.3 (NLCT)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool-l
+3fp.def
+File: datatool-l3fp.def 2025/12/04 v3.4.3 (NLCT)
 )
 \@dtl@toks=\toks65
-\@dtl@tmpcount=\count425
+\@dtl@tmpcount=\count428
 \dtl@tmplength=\skip81
 \l__datatool_measure_box=\box139
-\dtl@sortresult=\count426
+\dtl@sortresult=\count429
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/datatool/datatool-u
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool-u
 tf8.ldf
 File: datatool-utf8.ldf 2025/12/04 v3.4.3 (NLCT)
 )
-\@dtl@datatype=\count427
-\c_datatool_unknown_int=\count428
-\l__datatool_year_int=\count429
-\l__datatool_month_int=\count430
-\l__datatool_day_int=\count431
-\l__datatool_hour_int=\count432
-\l__datatool_minute_int=\count433
-\l__datatool_second_int=\count434
-\l__datatool_tzhour_int=\count435
-\l__datatool_tzminute_int=\count436
-\l__datatool_julian_int=\count437
-\l__datatool_local_julian_int=\count438
-\l__datatool_prefix_int=\count439
-\l__datatool_suffix_int=\count440
-\@dtl@foreach@level=\count441
+\@dtl@datatype=\count430
+\c_datatool_unknown_int=\count431
+\l__datatool_year_int=\count432
+\l__datatool_month_int=\count433
+\l__datatool_day_int=\count434
+\l__datatool_hour_int=\count435
+\l__datatool_minute_int=\count436
+\l__datatool_second_int=\count437
+\l__datatool_tzhour_int=\count438
+\l__datatool_tzminute_int=\count439
+\l__datatool_julian_int=\count440
+\l__datatool_local_julian_int=\count441
+\l__datatool_prefix_int=\count442
+\l__datatool_suffix_int=\count443
+\@dtl@foreach@level=\count444
 
 
 Package tracklang Warning: No `datatool' support for dialect `french'  on input
  line 9924.
 
-\dtl@codeA=\count442
-\dtl@codeB=\count443
+\dtl@codeA=\count445
+\dtl@codeB=\count446
 )
-\gls@level=\count444
+\gls@level=\count447
 \@gls@tmpb=\toks66
 \gls@tmplen=\skip82
-\l__glossaries_tmpa_dim=\dimen365
-\l__glossaries_tmpb_dim=\dimen366
+\l__glossaries_tmpa_dim=\dimen366
+\l__glossaries_tmpb_dim=\dimen367
 \glskeylisttok=\toks67
 \glslabeltok=\toks68
 \glsshorttok=\toks69
 \glslongtok=\toks70
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/glossaries/styles/g
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\g
 lossary-hypernav.sty
 Package: glossary-hypernav 2026/04/21 v5.1 (NLCT)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/glossaries/styles/g
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\g
 lossary-list.sty
 Package: glossary-list 2026/04/21 v5.1 (NLCT)
 \glslistdottedwidth=\skip83
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/glossaries/styles/g
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\g
 lossary-long.sty
 Package: glossary-long 2026/04/21 v5.1 (NLCT)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/tools/longtable.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTleft=\skip84
 \LTright=\skip85
 \LTpre=\skip86
 \LTpost=\skip87
-\LTchunksize=\count445
-\LTcapwidth=\dimen367
+\LTchunksize=\count448
+\LTcapwidth=\dimen368
 \LT@head=\box140
 \LT@firsthead=\box141
 \LT@foot=\box142
 \LT@lastfoot=\box143
 \LT@gbox=\box144
-\LT@cols=\count446
-\LT@rows=\count447
-\c@LT@tables=\count448
-\c@LT@chunks=\count449
+\LT@cols=\count449
+\LT@rows=\count450
+\c@LT@tables=\count451
+\c@LT@chunks=\count452
 \LT@p@ftn=\toks71
 )
 \glsdescwidth=\skip88
 \glspagelistwidth=\skip89
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/glossaries/styles/g
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\g
 lossary-super.sty
 Package: glossary-super 2026/04/21 v5.1 (NLCT)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/supertabular/supert
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/supertabular\supert
 abular.sty
 Package: supertabular 2025/06/26 v4.2d the supertabular environment
-\c@tracingst=\count450
-\ST@wd=\dimen368
+\c@tracingst=\count453
+\ST@wd=\dimen369
 \ST@rightskip=\skip90
 \ST@leftskip=\skip91
 \ST@parfillskip=\skip92
-\ST@pageleft=\dimen369
-\ST@headht=\dimen370
-\ST@tailht=\dimen371
-\ST@pagesofar=\dimen372
-\ST@pboxht=\dimen373
-\ST@rowht=\dimen374
-\ST@prevht=\dimen375
-\ST@toadd=\dimen376
-\ST@dimen=\dimen377
+\ST@pageleft=\dimen370
+\ST@headht=\dimen371
+\ST@tailht=\dimen372
+\ST@pagesofar=\dimen373
+\ST@pboxht=\dimen374
+\ST@rowht=\dimen375
+\ST@prevht=\dimen376
+\ST@toadd=\dimen377
+\ST@dimen=\dimen378
 \ST@pbox=\box145
 ))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/glossaries/styles/g
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\g
 lossary-tree.sty
 Package: glossary-tree 2026/04/21 v5.1 (NLCT)
-\l__glossaries_tree_max_known_level_int=\count451
-\l__glossaries_tree_offset_dim=\dimen378
-\l__glossaries_tree_namewidth_dim=\dimen379
-\l__glossaries_tree_symbolwidth_dim=\dimen380
-\l__glossaries_tree_prenamesym_width_dim=\dimen381
-\l__glossaries_tree_presubnamesym_width_dim=\dimen382
-\l__glossaries_tree_namewidth_padding_dim=\dimen383
-\l__glossaries_tree_symbolwidth_padding_dim=\dimen384
-\l__glossaries_tree_namesymbolwidth_dim=\dimen385
-\l__glossaries_tree_namesymbolwidth_padding_dim=\dimen386
-\l__glossaries_tree_level_int=\count452
+\l__glossaries_tree_max_known_level_int=\count454
+\l__glossaries_tree_offset_dim=\dimen379
+\l__glossaries_tree_namewidth_dim=\dimen380
+\l__glossaries_tree_symbolwidth_dim=\dimen381
+\l__glossaries_tree_prenamesym_width_dim=\dimen382
+\l__glossaries_tree_presubnamesym_width_dim=\dimen383
+\l__glossaries_tree_namewidth_padding_dim=\dimen384
+\l__glossaries_tree_symbolwidth_padding_dim=\dimen385
+\l__glossaries_tree_namesymbolwidth_dim=\dimen386
+\l__glossaries_tree_namesymbolwidth_padding_dim=\dimen387
+\l__glossaries_tree_level_int=\count455
 \glstreeindent=\skip93
 ))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/fncychap/fncychap.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/fncychap\fncychap.s
 ty
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \RW=\skip94
@@ -1476,67 +1362,66 @@ Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \pyy=\skip99
 \pxx=\skip100
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/doublestroke/dsfont
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\dsfont
 .sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hyperref.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.s
 ty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/kvdefinekeys/kvde
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvde
 finekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pdfescape/pdfesca
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfesca
 pe.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/pdftexcmds/pdftex
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftex
 cmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks72
+Package pdftexcmds Info: \pdfdraftmode not found.
 ))
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/hycolor/hycolor.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/nameref.st
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.st
 y
 Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.s
 ty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/gettitlestring/ge
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\ge
 ttitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count453
+\c@section@level=\count456
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/stringenc/stringe
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringe
 nc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen387
-\Hy@linkcounter=\count454
-\Hy@pagecounter=\count455
+\@linkdim=\dimen388
+\Hy@linkcounter=\count457
+\Hy@pagecounter=\count458
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/pd1enc.def
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/intcalc/intcalc.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.s
 ty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count456
+\Hy@SavedSpaceFactor=\count459
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/puenc.def
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Hyper figures OFF on input line 4195.
@@ -1546,25 +1431,25 @@ Package hyperref Info: Plain pages OFF on input line 4210.
 Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4462.
-\c@Hy@tempcnt=\count457
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty
+\c@Hy@tempcnt=\count460
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4801.
-\XeTeXLinkMargin=\dimen388
+\XeTeXLinkMargin=\dimen389
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/bitset/bitset.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/bigintcalc/bigint
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigint
 calc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count458
-\Field@Width=\dimen389
-\Fld@charsize=\dimen390
+\Fld@menulength=\count461
+\Field@Width=\dimen390
+\Fld@charsize=\dimen391
 Package hyperref Info: Hyper figures OFF on input line 6078.
 Package hyperref Info: Link nesting OFF on input line 6083.
 Package hyperref Info: Hyper index ON on input line 6086.
@@ -1572,23 +1457,25 @@ Package hyperref Info: backreferencing OFF on input line 6093.
 Package hyperref Info: Link coloring OFF on input line 6098.
 Package hyperref Info: Link coloring with OCG OFF on input line 6103.
 Package hyperref Info: PDF/A mode OFF on input line 6108.
-\Hy@abspage=\count459
-\c@Item=\count460
-\c@Hfootnote=\count461
+\Hy@abspage=\count462
+\c@Item=\count463
+\c@Hfootnote=\count464
 )
-Package hyperref Info: Driver (autodetected): hluatex.
+Package hyperref Info: Driver (autodetected): hxetex.
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hluatex.de
-f
-File: hluatex.def 2025-07-12 v7.01o Hyperref driver for luaTeX
-\Fld@listcount=\count462
-\c@bookmark@seq@number=\count463
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
+File: hxetex.def 2025-07-12 v7.01o Hyperref driver for XeTeX
+\pdfm@box=\box146
+\c@Hy@AnnotLevel=\count465
+\HyField@AnnotCount=\count466
+\Fld@listcount=\count467
+\c@bookmark@seq@number=\count468
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/reru
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\reru
 nfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/generic/uniquecounter/uni
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uni
 quecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
@@ -1597,98 +1484,330 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip101
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/polyglossia/polyglo
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\polyglo
 ssia.sty
 Package: polyglossia 2026/04/18 v2.10 Modern multilingual typesetting with XeLa
 TeX and LuaLaTeX
-Lua module: polyglossia 2013/05/11 v1.3 Polyglossia
+
 
 Package polyglossia Warning: You have loaded both babel and polyglossia.
 (polyglossia)                The two packages are mutually exclusive!
 
-\l_xpg_alias_keyvals_int=\count464
+\l_xpg_alias_keyvals_int=\count469
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/polyglossia/gloss-l
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\gloss-l
 atex.ldf
 File: gloss-latex.ldf polyglossia: module for default language
-)
-
-Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz
-
-)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/polyglossia/gloss-f
+))
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\gloss-f
 rench.ldf
 File: gloss-french.ldf polyglossia: module for French
-Lua-only attribute polyglossia_punct = 8
-Inserting `polyglossia-punct.process' in `pre_shaping_filter'.)
+\french@openbrackets=\XeTeXcharclass10
+\french@closebrackets=\XeTeXcharclass11
+\french@questionexclamation=\XeTeXcharclass12
+\french@punctthin=\XeTeXcharclass13
+\french@punctthick=\XeTeXcharclass14
+\french@punctguillstart=\XeTeXcharclass15
+\french@punctguillend=\XeTeXcharclass16
+)
 
 Package polyglossia Info: Default language is french
 
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/polyglossia/gloss-a
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\gloss-a
 rabic.ldf
 File: gloss-arabic.ldf polyglossia: module for Arabic
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/lualatex/luabidi/luabidi.
-sty
-Package: luabidi 2026/04/10 v1.0 Bidirectional typesetting in LuaTeX
-\everyvbox=\toks73
-\luabidi@cctab=\catcodetable16
-\footnoterulewidth=\skip102
-Lua function luabidi@auto@fnr = 32
-Inserting `luabidi.pre_output' in `pre_output_filter'.
-Inserting `luabidi.post_output' in `buildpage_filter'.
-Inserting `luabidi.remove_spurious_enddir' in `pre_linebreak_filter'.)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/polyglossia/arabicn
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\bidi.sty
+Package: bidi 2026/01/08 v26.01.08 (Release Iran) Bidirectional typesetting in 
+plain TeX and LaTeX
+
+****************************************************
+* 
+* bidi package (Bidirectional typesetting with
+* plain TeX and LaTeX formats in XeTeX and LuaTeX engines)
+* 
+* Description: A convenient interface for
+* typesetting bidirectional texts in plain TeX
+* and LaTeX. The package includes adaptations
+* for use with many other commonly-used packages.
+* 
+* Copyright (c) 2007--2026 Vafa Khalighi
+* Copyright (c) 2018--2020 bidi-tex GitHub organization
+* 
+* v26.01.08 (Release Iran), 2026/01/08
+* 
+* License: LaTeX Project Public License, version
+* 1.3c or higher (your choice)
+* 
+* Location on CTAN: /macros/unicodetex/generic/bidi
+* 
+* Issue tracker: https://github.com/xepersian/bidi/issues
+* 
+* Primary author of bidi package: Vafa Khalighi.
+* 
+****************************************************
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\biditools.sty
+Package: biditools 2025/12/19 v2.9 Programming tools for bidi package
+\@bidi@envbody=\toks72
+\@bidi@emptytoks=\toks73
+\bidi@poscount=\count470
+\bidi@tempcountb=\count471
+\bidi@temptoksa=\toks74
+\bidi@temptoksb=\toks75
+\bidi@dummies=\count472
+\bidi@are@these@correct=\toks76
+\bidi@toks@lista=\toks77
+\bidi@toks@listb=\toks78
+\bidi@stack@length=\count473
+\bidi@empty@stack=\toks79
+\bidi@looprepeat@depth=\count474
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.s
+ty
+Package: zref-abspage 2026-03-07 v2.37 Module abspage for zref (HO)
+
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
+Package: zref-base 2026-03-07 v2.37 Module base for zref (HO)
+
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count475
+Package zref Info: New property: abspage on input line 67.
+)
+\@bidi@copyins@=\insert252
+\bidi@typesethour=\count476
+\bidi@typesetminute=\count477
+
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\latex-xetex-bi
+di.def
+File: latex-xetex-bidi.def 2025/12/19 v1.5.6 bidi adaptations for `latex.ltx' f
+or XeTeX engine
+\bidi@n@everypar=\toks80
+LaTeX Info: Redefining \centerline on input line 317.
+LaTeX Info: Redefining \leftline on input line 326.
+LaTeX Info: Redefining \rightline on input line 327.
+LaTeX Info: Redefining \underline on input line 335.
+\bidi@column@check@number=\count478
+
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\footnote-xetex
+-bidi.def
+File: footnote-xetex-bidi.def 2025/09/30 v1.6 bidi footnote macros for XeTeX en
+gine
+\c@footdir@label=\count479
+\footdir@toks=\toks81
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\report-xetex-b
+idi.def
+File: report-xetex-bidi.def 2025/12/19 v1.3 bidi adaptations for standard repor
+t class for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\amsmath-xetex-
+bidi.def
+File: amsmath-xetex-bidi.def 2020/05/16 v1.2 bidi adaptations for amsmath packa
+ge for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\amstext-xetex-
+bidi.def
+File: amstext-xetex-bidi.def 2016/09/12 v0.2 bidi adaptations for amstext packa
+ge for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\array-xetex-bi
+di.def
+File: array-xetex-bidi.def 2025/12/06 v0.8 bidi adaptations for array package f
+or XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\caption-xetex-
+bidi.def
+File: caption-xetex-bidi.def 2010/07/25 v0.1 bidi adaptations for caption packa
+ge for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\caption3-xetex
+-bidi.def
+File: caption3-xetex-bidi.def 2013/04/01 v0.1 bidi adaptations for caption3 pac
+kage for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\color-xetex-bi
+di.def
+File: color-xetex-bidi.def 2013/04/08 v0.2 bidi adaptations for color package f
+or XeTeX engine
+LaTeX Info: Redefining \color on input line 50.
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\colortbl-xetex
+-bidi.def
+File: colortbl-xetex-bidi.def 2012/06/10 v0.2 bidi adaptations for colortbl pac
+kage for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\fancyhdr-xetex
+-bidi.def
+File: fancyhdr-xetex-bidi.def 2025/09/03 v1.0 bidi adaptations for fancyhdr pac
+kage for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\float-xetex-bi
+di.def
+File: float-xetex-bidi.def 2013/04/04 v0.2 bidi adaptations for float package f
+or XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\geometry-xetex
+-bidi.def
+File: geometry-xetex-bidi.def 2017/01/14 v0.2 bidi adaptations for geometry pac
+kage for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\graphicx-xetex
+-bidi.def
+File: graphicx-xetex-bidi.def 2017/06/17 v0.5 bidi adaptations for graphicx pac
+kage for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\hyperref-xetex
+-bidi.def
+File: hyperref-xetex-bidi.def 2025/12/06 v1.5 bidi adaptations for hyperref pac
+kage for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\lettrine-xetex
+-bidi.def
+File: lettrine-xetex-bidi.def 2024/12/08 v0.9 bidi adaptations for lettrine pac
+kage for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\lineno-xetex-b
+idi.def
+File: lineno-xetex-bidi.def 2024/12/07 v0.3 bidi adaptations for lineno package
+ for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\listings-xetex
+-bidi.def
+File: listings-xetex-bidi.def 2025/01/03 v1.6 bidi adaptations for listings pac
+kage for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\longtable-xete
+x-bidi.def
+File: longtable-xetex-bidi.def 2025/01/05 v0.8 bidi adaptations for longtable p
+ackage for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\lscape-xetex-b
+idi.def
+File: lscape-xetex-bidi.def 2025/01/03 v0.3 bidi adaptations for lscape package
+ for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\multicol-xetex
+-bidi.def
+File: multicol-xetex-bidi.def 2025/09/30 v1.5 bidi adaptations for multicol pac
+kage for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\pgfsys-xetex-b
+idi.def
+File: pgfsys-xetex-bidi.def 2025/01/05 v0.1 bidi adaptations for pgfsys package
+ for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\tabularx-xetex
+-bidi.def
+File: tabularx-xetex-bidi.def 2014/11/08 v0.1 bidi adaptations for tabularx pac
+kage for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\tcolorbox-xete
+x-bidi.def
+File: tcolorbox-xetex-bidi.def 2018/11/11 v0.2 bidi adaptations for tcolorbox p
+ackage for XeTeX engine
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\xcolor-xetex-b
+idi.def
+File: xcolor-xetex-bidi.def 2022/06/13 v0.3 bidi adaptations for xcolor package
+ for XeTeX engine
+LaTeX Info: Redefining \color on input line 49.
+LaTeX Info: Redefining \bidicolor on input line 92.
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\pgfcorescopes.
+code-xetex-bidi.def
+File: pgfcorescopes.code-xetex-bidi.def 2015/11/14 v0.1 bidi adaptations for pg
+f package for XeTeX engine
+))
+\bidi@digits=\count480
+\bidi@digits@charclass=\XeTeXcharclass17
+\bidi@sepmark@charclass=\XeTeXcharclass18
+)
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\arabicn
 umbers.sty
 Package: arabicnumbers 2010/03/18 v0.2 Formatting of Arabic and Farsi digits an
 d of Arabic abjad numerals
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/polyglossia/hijrica
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\hijrica
 l.sty
 Package: hijrical 2010/07/12 v0.2 Islamic calendar
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
-\calc@Acount=\count465
-\calc@Bcount=\count466
-\calc@Adimen=\dimen391
-\calc@Bdimen=\dimen392
-\calc@Askip=\skip103
-\calc@Bskip=\skip104
+\calc@Acount=\count481
+\calc@Bcount=\count482
+\calc@Adimen=\dimen392
+\calc@Bdimen=\dimen393
+\calc@Askip=\skip102
+\calc@Bskip=\skip103
 LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
-\calc@Ccount=\count467
-\calc@Cskip=\skip105
+\calc@Ccount=\count483
+\calc@Cskip=\skip104
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/polyglossia/cal-uti
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/polyglossia\cal-uti
 l.def
-\c@tmpA=\count468
-\c@tmpB=\count469
-\c@tmpC=\count470
-\c@tmpD=\count471
-\c@tmpE=\count472
-\c@tmpF=\count473
+\c@tmpA=\count484
+\c@tmpB=\count485
+\c@tmpC=\count486
+\c@tmpD=\count487
+\c@tmpE=\count488
+\c@tmpF=\count489
 )
-\c@Hijriday=\count474
-\c@Hijrimonth=\count475
-\c@Hijriyear=\count476
+\c@Hijriday=\count490
+\c@Hijrimonth=\count491
+\c@Hijriyear=\count492
 ))
-\c@objective=\count477
-\c@hardconstraint=\count478
-\c@softconstraint=\count479
+\c@objective=\count493
+\c@hardconstraint=\count494
+\c@softconstraint=\count495
 Package hyperref Info: Option `colorlinks' set `true' on input line 139.
-Package french.ldf Info: Setting StandardItemizeEnv=true for
-(french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 162.
-Package french.ldf Info: Setting StandardEnumerateEnv=true for
-(french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 162.
- (./main.aux (./Intro_pages/pagedegarde.aux)
-(./Intro_pages/introduction.aux) (./chapters/chap1.aux) (./chapters/chap2.aux)
-(./chapters/chap3.aux) (./chapters/chap4.aux) (./chapters/revue.aux)
-(./Intro_pages/Conclusion.aux))
-\openout1 = main.aux
+Package french3.ldf Info: Setting StandardItemizeEnv=true for
+(french3.ldf)             compatibility with enumitem package,
+(french3.ldf)             reported on input line 162.
+Package french3.ldf Info: Setting StandardEnumerateEnv=true for
+(french3.ldf)             compatibility with enumitem package,
+(french3.ldf)             reported on input line 162.
+
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/bidi\float-xetex-bi
+di.def
+File: float-xetex-bidi.def 2013/04/04 v0.2 bidi adaptations for float package f
+or XeTeX engine
+) (main.aux (Intro_pages/pagedegarde.aux)
+! Argument of \AC@newacro has an extra }.
+<inserted text> 
+                \par 
+l.60 ...acro{PFE}[\AC@hypeject-Relational Mapping}
+                                                  }
+? 
+Runaway argument?
+\AC@hypeject -Relational Mapping
+! Paragraph ended before \AC@newacro was complete.
+<to be read again> 
+                   \par 
+l.60 ...acro{PFE}[\AC@hypeject-Relational Mapping}
+                                                  }
+? 
+! Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.60 ...acro{PFE}[\AC@hypeject-Relational Mapping}
+                                                  }
+? 
+! Extra }, or forgotten \endgroup.
+l.60 ...cro{PFE}[\AC@hypeject-Relational Mapping}}
+                                                  
+? 
+(Intro_pages/introduction.aux) (chapters/chap1.aux) (chapters/chap2.aux)
+(chapters/chap3.aux) (chapters/chap4.aux) (chapters/revue.aux)
+(Intro_pages/Conclusion.aux))
+\openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 162.
 LaTeX Font Info:    ... okay on input line 162.
@@ -1779,16 +1898,14 @@ LaTeX Info: Redefining \microtypecontext on input line 162.
 Package microtype Info: Applying patch `item' on input line 162.
 Package microtype Info: Applying patch `toc' on input line 162.
 Package microtype Info: Applying patch `eqnum' on input line 162.
-Package microtype Info: Applying patch `footnote' on input line 162.
+
+
+Package microtype Warning: Unable to apply patch `footnote' on input line 162.
+
 Package microtype Info: Applying patch `verbatim' on input line 162.
 LaTeX Info: Redefining \microtypesetup on input line 162.
-Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
-Package microtype Info: Automatic font expansion enabled (level 2),
-(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
-Package microtype Info: Using default expansion set `alltext-nott'.
-Package microtype Info: Patching command `\showhyphens'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
@@ -1796,38 +1913,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `TimesNewRoman' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pd
-f.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count480
-\scratchdimen=\dimen393
-\scratchbox=\box146
-\nofMPsegments=\count481
-\nofMParguments=\count482
-\everyMPshowfont=\toks74
-\MPscratchCnt=\count483
-\MPscratchDim=\dimen394
-\MPnumerator=\count484
-\makeMPintoPDFobject=\count485
-\everyMPtoPDFconversion=\toks75
-)
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstop
-df-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/00miktex/epstopdf-s
-ys.cfg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/caption/ltcaption.s
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.s
 ty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
@@ -1836,9 +1927,9 @@ Package caption Info: End \AtBeginDocument code.
 \Etoc@tf=\read6
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: luatex
+*geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
-* driver: luatex
+* driver: xetex
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -1869,87 +1960,86 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count486
+\c@lstlisting=\count496
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/glossaries-english/
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/glossaries-english\
 glossaries-dictionary-English.dict
 Dictionary: glossaries-dictionary, Language: English 
 )
 Package hyperref Info: Link coloring ON on input line 162.
- (./main.out) (./main.out)
+ (main.out) (main.out)
 \@outlinefile=\write5
+\openout5 = `main.out'.
 
-\openout5 = main.out
 
-\openout2 = Intro_pages/pagedegarde.aux
 
-(./Intro_pages/pagedegarde.tex
-<assets/logoEnset.png, id=466, 477.785pt x 202.25563pt>
-File: assets/logoEnset.png Graphic file (type png)
-<use assets/logoEnset.png>
-Package luatex.def Info: assets/logoEnset.png  used on input line 7.
-(luatex.def)             Requested size: 178.19931pt x 74.40134pt.
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 48--49
- [][] 
+\openout2 = `Intro_pages/pagedegarde.aux'.
+
+(Intro_pages/pagedegarde.tex
+File: assets/logoEnset.png Graphic file (type bmp)
+<assets/logoEnset.png>
+
+Overfull \hbox (3.0pt too wide) in paragraph at lines 41--49
+ [][][][][][] 
  []
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 49.
 
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/microtype/mt-msa.cf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cf
 g
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 49.
 
- (C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
+ (C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/microtype/mt-msb.cf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cf
 g
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-(C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/tex/latex/microtype/mt-cmr.cf
+(C:\Users\ELITEBOOK\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cf
 g
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-<assets/Nttdata_log.png, id=467, 312.16624pt x 162.6075pt>
-File: assets/Nttdata_log.png Graphic file (type png)
-<use assets/Nttdata_log.png>
-Package luatex.def Info: assets/Nttdata_log.png  used on input line 57.
-(luatex.def)             Requested size: 98.31859pt x 51.21419pt.
+File: assets/Nttdata_log.png Graphic file (type bmp)
+<assets/Nttdata_log.png>
  [1
 
 
-{C:/Users/ELITEBOOK/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}<./assets/l
-ogoEnset.png><./assets/Nttdata_log.png>]) [2
+]) [2
 
 
 
-] (./Intro_pages/Dedicace.tex
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmss' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+] (Intro_pages/Dedicace.tex
 Package lettrine.sty Info: Targeted height = 46.35959pt
 (lettrine.sty)             (for loversize=0, accent excluded),
 (lettrine.sty)             Lettrine height = 70.6521pt (\`A) loversize=0.15;
 (lettrine.sty)             reported on input line 5.
-) (./Intro_pages/Remeriement.tex [1
 
-]) (./Intro_pages/Resume.tex [2
+Overfull \hbox (12.08018pt too wide) in paragraph at lines 21--22
+[][]\TU/TimesNewRoman(0)/m/it/12 À mes encadrants de l’ENSET et de l’entreprise
+\TU/TimesNewRoman(0)/m/n/12 , pour leur encadrement rigoureux, leur confiance[]
+
+ []
+
+) (Intro_pages/Remeriement.tex [1
+
+]) (Intro_pages/Resume.tex [2
 
 ])
-(./Intro_pages/Abstract.tex [3
+(Intro_pages/Abstract.tex [3
 
 ])
 \tf@toc=\write6
+\openout6 = `main.toc'.
 
-\openout6 = main.toc
  [4
 
 ] [5
@@ -1983,12 +2073,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[8] (./main.lof [9
+[8] (main.lof [9
 
 ])
 \tf@lof=\write7
+\openout7 = `main.lof'.
 
-\openout7 = main.lof
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1997,11 +2087,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10] (./main.lot)
+[10] (main.lot)
 \tf@lot=\write8
+\openout8 = `main.lot'.
 
-\openout8 = main.lot
- (./Intro_pages/abreviation.tex [11
+ (Intro_pages/abreviation.tex [11
 
 ]
 
@@ -2147,43 +2237,43 @@ LaTeX Warning: Hyper reference `acro:LLM' on page xii undefined on input line 2
 
 LaTeX Warning: Hyper reference `acro:LLM' on page xii undefined on input line 2
 5.
+
+
+LaTeX Warning: Hyper reference `acro:MAE' on page xii undefined on input line 2
+6.
+
+
+LaTeX Warning: Hyper reference `acro:MAE' on page xii undefined on input line 2
+6.
+
+
+LaTeX Warning: Hyper reference `acro:Mistral' on page xii undefined on input li
+ne 27.
+
+
+LaTeX Warning: Hyper reference `acro:Mistral' on page xii undefined on input li
+ne 27.
+
+
+LaTeX Warning: Hyper reference `acro:MonteCarlo' on page xii undefined on input
+ line 28.
+
+
+LaTeX Warning: Hyper reference `acro:MonteCarlo' on page xii undefined on input
+ line 28.
+
+
+LaTeX Warning: Hyper reference `acro:NLP' on page xii undefined on input line 2
+9.
+
+
+LaTeX Warning: Hyper reference `acro:NLP' on page xii undefined on input line 2
+9.
 
 [12
 
 ]
 
-LaTeX Warning: Hyper reference `acro:MAE' on page xiii undefined on input line 
-26.
-
-
-LaTeX Warning: Hyper reference `acro:MAE' on page xiii undefined on input line 
-26.
-
-
-LaTeX Warning: Hyper reference `acro:Mistral' on page xiii undefined on input l
-ine 27.
-
-
-LaTeX Warning: Hyper reference `acro:Mistral' on page xiii undefined on input l
-ine 27.
-
-
-LaTeX Warning: Hyper reference `acro:MonteCarlo' on page xiii undefined on inpu
-t line 28.
-
-
-LaTeX Warning: Hyper reference `acro:MonteCarlo' on page xiii undefined on inpu
-t line 28.
-
-
-LaTeX Warning: Hyper reference `acro:NLP' on page xiii undefined on input line 
-29.
-
-
-LaTeX Warning: Hyper reference `acro:NLP' on page xiii undefined on input line 
-29.
-
-
 LaTeX Warning: Hyper reference `acro:NTT' on page xiii undefined on input line 
 30.
 
@@ -2352,20 +2442,12 @@ LaTeX Warning: Hyper reference `acro:VRAM' on page xiii undefined on input line
  50.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[13]
-
-LaTeX Warning: Hyper reference `acro:WIP' on page xiv undefined on input line 5
-1.
+LaTeX Warning: Hyper reference `acro:WIP' on page xiii undefined on input line 
+51.
 
 
-LaTeX Warning: Hyper reference `acro:WIP' on page xiv undefined on input line 5
-1.
+LaTeX Warning: Hyper reference `acro:WIP' on page xiii undefined on input line 
+51.
 
 )
 
@@ -2375,13 +2457,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-
-warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1]
-\openout2 = Intro_pages/introduction.aux
- (./Intro_pages/introduction.tex
-warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
-[2
+\openout2 = `Intro_pages/introduction.aux'.
+
+ (Intro_pages/introduction.tex [2
 
 
 ])
@@ -2393,6 +2472,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3]
+\openout2 = `chapters/chap1.aux'.
+
+ (chapters/chap1.tex
+Chapitre 1.
+[4
+
+
+
+
+]
+File: assets/Nttdata_log.png Graphic file (type bmp)
+<assets/Nttdata_log.png>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2400,20 +2492,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4]
-\openout2 = chapters/chap1.aux
- (./chapters/chap1.tex
-Chapitre 1.
-[5
-
-
-
-
-]
-File: assets/Nttdata_log.png Graphic file (type png)
-<use assets/Nttdata_log.png>
-Package luatex.def Info: assets/Nttdata_log.png  used on input line 19.
-(luatex.def)             Requested size: 115.16257pt x 59.98766pt.
+[5]
+File: assets/org.png Graphic file (type bmp)
+<assets/org.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2423,11 +2504,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6]
-<assets/org.png, id=869, 1453.43pt x 1090.0725pt>
-File: assets/org.png Graphic file (type png)
-<use assets/org.png>
-Package luatex.def Info: assets/org.png  used on input line 75.
-(luatex.def)             Requested size: 368.52165pt x 276.39297pt.
+File: assets/presence_international.jpeg Graphic file (type bmp)
+<assets/presence_international.jpeg>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2436,13 +2514,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7<./assets/org.png>]
-<assets/presence_international.jpeg, id=878, 1453.43pt x 1090.0725pt>
-File: assets/presence_international.jpeg Graphic file (type jpg)
-<use assets/presence_international.jpeg>
-Package luatex.def Info: assets/presence_international.jpeg  used on input line
- 97.
-(luatex.def)             Requested size: 368.52165pt x 276.39297pt.
+[7]
+File: assets/logos/secteurs_de_travail.jpeg Graphic file (type bmp)
+<assets/logos/secteurs_de_travail.jpeg>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2451,14 +2525,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8<./assets/presence_international.jpeg>]
-<assets/logos/secteurs_de_travail.jpeg, id=891, 1541.76pt x 1027.84pt>
-File: assets/logos/secteurs_de_travail.jpeg Graphic file (type jpg)
-<use assets/logos/secteurs_de_travail.jpeg>
-Package luatex.def Info: assets/logos/secteurs_de_travail.jpeg  used on input l
-ine 118.
-(luatex.def)             Requested size: 460.65031pt x 307.09969pt.
-
+[8]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2466,7 +2533,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9<./assets/logos/secteurs_de_travail.jpeg>]
+[9]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2499,6 +2566,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [13]
+File: assets/methodologie_travail.jpeg Graphic file (type bmp)
+<assets/methodologie_travail.jpeg>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2507,12 +2577,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
-<assets/methodologie_travail.jpeg, id=922, 1541.76pt x 1027.84pt>
-File: assets/methodologie_travail.jpeg Graphic file (type jpg)
-<use assets/methodologie_travail.jpeg>
-Package luatex.def Info: assets/methodologie_travail.jpeg  used on input line 2
-48.
-(luatex.def)             Requested size: 368.52165pt x 245.6672pt.
+File: assets/diagram_gant.png Graphic file (type bmp)
+<assets/diagram_gant.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2521,13 +2587,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15<./assets/methodologie_travail.jpeg>]
-<assets/diagram_gant.png, id=928, 1678.27pt x 944.52875pt>
-File: assets/diagram_gant.png Graphic file (type png)
-<use assets/diagram_gant.png>
-Package luatex.def Info: assets/diagram_gant.png  used on input line 277.
-(luatex.def)             Requested size: 368.52165pt x 207.39342pt.
-
+[15])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2535,31 +2595,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16])
+[16]
+\openout2 = `chapters/chap2.aux'.
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[17<./assets/diagram_gant.png>]
-\openout2 = chapters/chap2.aux
- (./chapters/chap2.tex
+ (chapters/chap2.tex
 Chapitre 2.
-[18
+[17
 
 
 
 
 ]
-<assets/diagrams/new_diagram_casa.png, id=967, 1640.1275pt x 966.61125pt>
-File: assets/diagrams/new_diagram_casa.png Graphic file (type png)
-<use assets/diagrams/new_diagram_casa.png>
-Package luatex.def Info: assets/diagrams/new_diagram_casa.png  used on input li
-ne 19.
-(luatex.def)             Requested size: 414.58246pt x 244.3366pt.
+File: assets/diagrams/new_diagram_casa.png Graphic file (type bmp)
+<assets/diagrams/new_diagram_casa.png>
 
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2575,7 +2632,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20<./assets/diagrams/new_diagram_casa.png>]
+[20]
+File: assets/state_of_existant.png Graphic file (type bmp)
+<assets/state_of_existant.png>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2584,14 +2644,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [21]
-<assets/state_of_existant.png, id=988, 1541.76pt x 1027.84pt>
-File: assets/state_of_existant.png Graphic file (type png)
-<use assets/state_of_existant.png>
-Package luatex.def Info: assets/state_of_existant.png  used on input line 70.
-(luatex.def)             Requested size: 414.58246pt x 276.37561pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+File: assets/arch_global.png Graphic file (type bmp)
+<assets/arch_global.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2608,12 +2662,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23<./assets/state_of_existant.png>]
-<assets/arch_global.png, id=1005, 1575.8875pt x 1005.7575pt>
-File: assets/arch_global.png Graphic file (type png)
-<use assets/arch_global.png>
-Package luatex.def Info: assets/arch_global.png  used on input line 95.
-(luatex.def)             Requested size: 414.58246pt x 264.59079pt.
+[23]
+File: assets/architect_ai.png Graphic file (type bmp)
+<assets/architect_ai.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2622,7 +2673,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24<./assets/arch_global.png>]
+[24]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2631,12 +2682,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [25]
-<assets/architect_ai.png, id=1023, 1027.84pt x 1541.76pt>
-File: assets/architect_ai.png Graphic file (type png)
-<use assets/architect_ai.png>
-Package luatex.def Info: assets/architect_ai.png  used on input line 118.
-(luatex.def)             Requested size: 414.58246pt x 621.86865pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2645,6 +2690,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [26]
+Overfull \hbox (14.99265pt too wide) in paragraph at lines 130--131
+[][]\TU/TimesNewRoman(0)/m/n/12 Extraction asynchrone des données via l’API RES
+T Jira (bibliothèques \TU/lmtt/m/n/12 httpx\TU/TimesNewRoman(0)/m/n/12 , \TU/lm
+tt/m/n/12 asyncio\TU/TimesNewRoman(0)/m/n/12 ),[]
+ []
+
+
+Overfull \hbox (9.54245pt too wide) in paragraph at lines 130--131
+[]\TU/TimesNewRoman(0)/m/n/12 avec gestion de la pagination (\TU/lmtt/m/n/12 st
+artAt\TU/TimesNewRoman(0)/m/n/12 ) et backoff exponentiel en cas d’erreurs 429/
+503. []
+ []
+
+
+Overfull \hbox (6.25781pt too wide) in paragraph at lines 145--146
+[][]\TU/TimesNewRoman(0)/m/n/12 Construction d’un \TU/lmtt/m/n/12 StateGraph \T
+U/TimesNewRoman(0)/m/n/12 avec deux nœuds principaux : \TU/lmtt/m/n/12 agent_de
+cision_node[]
+ []
+
+
+Overfull \hbox (54.0249pt too wide) in paragraph at lines 147--148
+[][]\TU/TimesNewRoman(0)/m/n/12 Mise à disposition d’outils pour le LLM : \TU/l
+mtt/m/n/12 fetch_issues\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 compute_me
+trics\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 evaluate_rules\TU/TimesNewRo
+man(0)/m/n/12 . []
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2652,27 +2725,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[27<./assets/architect_ai.png>]
-Overfull \hbox (8.24414pt too wide) in paragraph at lines 130--131
-[]\TU/TimesNewRoman(0)/m/n/12 Ex-trac-tion asyn-chrone des don-nées via l’API
- REST Jira (bi-blio-thèques \TU/lmtt/m/n/12 httpx\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 asyncio\TU/TimesNewRoman(0)/m/n/12 ),
+[27]
+Overfull \hbox (43.06882pt too wide) in paragraph at lines 177--178
+[][]\TU/TimesNewRoman(0)/m/n/12 Exposition des résultats via les endpoints Fast
+API \TU/lmtt/m/n/12 /api/ai/insights \TU/TimesNewRoman(0)/m/n/12 et \TU/lmtt/m/
+n/12 /api/ai/projects\TU/TimesNewRoman(0)/m/n/12 . []
  []
 
-
-Overfull \hbox (1.95198pt too wide) in paragraph at lines 145--146
-[]\TU/TimesNewRoman(0)/m/n/12 Construc-tion d’un \TU/lmtt/m/n/12 StateGraph \
-TU/TimesNewRoman(0)/m/n/12 avec deux nœuds prin-ci-paux : \TU/lmtt/m/n/12 agent
-_decision_node
- []
-
-
-Overfull \hbox (50.28183pt too wide) in paragraph at lines 147--148
-[]\TU/TimesNewRoman(0)/m/n/12 Mise à dis-po-si-tion d’ou-tils pour le LLM : 
-\TU/lmtt/m/n/12 fetch_issues\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 comput
-e_metrics\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 evaluate_rules\TU/TimesN
-ewRoman(0)/m/n/12 . 
- []
-
+File: assets/diagrams/diagram_class.png Graphic file (type bmp)
+<assets/diagrams/diagram_class.png>
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2681,16 +2742,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [28]
-Overfull \hbox (38.37817pt too wide) in paragraph at lines 177--178
-[]\TU/TimesNewRoman(0)/m/n/12 Ex-po-si-tion des ré-sul-tats via les end-points Fas-tAPI \TU/lmtt/m/n/12 /api/ai/insights \TU/TimesNewRoman(0)/m/n/12 et \TU/lmtt/m/n/12 /api/ai/projects\TU/TimesNewRoman(0)/m/n/12 . 
- []
+File: assets/diagrams/diagram_seq_extraction.png Graphic file (type bmp)
+<assets/diagrams/diagram_seq_extraction.png>
 
-<assets/diagrams/diagram_class.png, id=1047, 1725.44624pt x 918.43124pt>
-File: assets/diagrams/diagram_class.png Graphic file (type png)
-<use assets/diagrams/diagram_class.png>
-Package luatex.def Info: assets/diagrams/diagram_class.png  used on input line 
-193.
-(luatex.def)             Requested size: 460.65031pt x 245.19093pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2699,13 +2753,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [29]
-<assets/diagrams/diagram_seq_extraction.png, id=1055, 1650.165pt x 960.58875pt>
-
-File: assets/diagrams/diagram_seq_extraction.png Graphic file (type png)
-<use assets/diagrams/diagram_seq_extraction.png>
-Package luatex.def Info: assets/diagrams/diagram_seq_extraction.png  used on in
-put line 206.
-(luatex.def)             Requested size: 460.65031pt x 268.1422pt.
+File: assets/diagrams/diagram_seq_orchestration.png Graphic file (type bmp)
+<assets/diagrams/diagram_seq_orchestration.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2714,20 +2763,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[30<./assets/diagrams/diagram_class.png>]
-<assets/diagrams/diagram_seq_orchestration.png, id=1060, 1628.0825pt x 973.6375
-pt>
-File: assets/diagrams/diagram_seq_orchestration.png Graphic file (type png)
-<use assets/diagrams/diagram_seq_orchestration.png>
-Package luatex.def Info: assets/diagrams/diagram_seq_orchestration.png  used on
- input line 214.
-(luatex.def)             Requested size: 460.65031pt x 275.48393pt.
-<assets/diagrams/diagram_seq_rbac.png, id=1061, 1621.05624pt x 977.6525pt>
-File: assets/diagrams/diagram_seq_rbac.png Graphic file (type png)
-<use assets/diagrams/diagram_seq_rbac.png>
-Package luatex.def Info: assets/diagrams/diagram_seq_rbac.png  used on input li
-ne 222.
-(luatex.def)             Requested size: 460.65031pt x 277.81339pt.
+[30]
+File: assets/diagrams/diagram_seq_rbac.png Graphic file (type bmp)
+<assets/diagrams/diagram_seq_rbac.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2736,13 +2774,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[31<./assets/diagrams/diagram_seq_extraction.png><./assets/diagrams/diagram_seq_
-orchestration.png>]
-<assets/logos/python.png, id=1068, 4015.0pt x 2269.47874pt>
-File: assets/logos/python.png Graphic file (type png)
-<use assets/logos/python.png>
-Package luatex.def Info: assets/logos/python.png  used on input line 238.
-(luatex.def)             Requested size: 92.12865pt x 52.048pt.
+[31]
+File: assets/logos/python.png Graphic file (type bmp)
+<assets/logos/python.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2751,28 +2785,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[32<./assets/diagrams/diagram_seq_rbac.png>]
-<assets/logos/fastApi.png, id=1074, 1275.93932pt x 459.78673pt>
-File: assets/logos/fastApi.png Graphic file (type png)
-<use assets/logos/fastApi.png>
-Package luatex.def Info: assets/logos/fastApi.png  used on input line 248.
-(luatex.def)             Requested size: 92.12865pt x 33.19862pt.
-<assets/logos/sqlalchemy.jpg, id=1075, 592.2125pt x 293.095pt>
-File: assets/logos/sqlalchemy.jpg Graphic file (type jpg)
-<use assets/logos/sqlalchemy.jpg>
-Package luatex.def Info: assets/logos/sqlalchemy.jpg  used on input line 255.
-(luatex.def)             Requested size: 92.12865pt x 45.59473pt.
-<assets/logos/langgraph.png, id=1076, 271.0125pt x 148.555pt>
-File: assets/logos/langgraph.png Graphic file (type png)
-<use assets/logos/langgraph.png>
-Package luatex.def Info: assets/logos/langgraph.png  used on input line 262.
-(luatex.def)             Requested size: 92.12865pt x 50.49895pt.
-<assets/logos/prometheus_log.png, id=1077, 401.5pt x 245.91875pt>
-File: assets/logos/prometheus_log.png Graphic file (type png)
-<use assets/logos/prometheus_log.png>
-Package luatex.def Info: assets/logos/prometheus_log.png  used on input line 27
-0.
-(luatex.def)             Requested size: 69.09473pt x 42.3197pt.
+[32]
+File: assets/logos/fastApi.png Graphic file (type bmp)
+<assets/logos/fastApi.png>
+File: assets/logos/sqlalchemy.jpg Graphic file (type bmp)
+<assets/logos/sqlalchemy.jpg>
+File: assets/logos/langgraph.png Graphic file (type bmp)
+<assets/logos/langgraph.png>
+File: assets/logos/prometheus_log.png Graphic file (type bmp)
+<assets/logos/prometheus_log.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2781,29 +2802,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[33<./assets/logos/python.png><./assets/logos/fastApi.png><./assets/logos/sqlalc
-hemy.jpg><./assets/logos/langgraph.png><./assets/logos/prometheus_log.png>]
-<assets/logos/grafana_logo.jpg, id=1086, 216.81pt x 233.87375pt>
-File: assets/logos/grafana_logo.jpg Graphic file (type jpg)
-<use assets/logos/grafana_logo.jpg>
-Package luatex.def Info: assets/logos/grafana_logo.jpg  used on input line 279.
-
-(luatex.def)             Requested size: 46.06784pt x 49.69304pt.
-<assets/logos/mistral.jpeg, id=1087, 602.25pt x 316.18124pt>
-File: assets/logos/mistral.jpeg Graphic file (type jpg)
-<use assets/logos/mistral.jpeg>
-Package luatex.def Info: assets/logos/mistral.jpeg  used on input line 286.
-(luatex.def)             Requested size: 184.25731pt x 96.73666pt.
-<assets/logos/numpy.jpg, id=1088, 1204.5pt x 677.53125pt>
-File: assets/logos/numpy.jpg Graphic file (type jpg)
-<use assets/logos/numpy.jpg>
-Package luatex.def Info: assets/logos/numpy.jpg  used on input line 293.
-(luatex.def)             Requested size: 184.25731pt x 103.64127pt.
-<assets/logos/react_logo.png, id=1089, 307.1475pt x 165.61874pt>
-File: assets/logos/react_logo.png Graphic file (type png)
-<use assets/logos/react_logo.png>
-Package luatex.def Info: assets/logos/react_logo.png  used on input line 303.
-(luatex.def)             Requested size: 184.25731pt x 99.35431pt.
+[33]
+File: assets/logos/grafana_logo.jpg Graphic file (type bmp)
+<assets/logos/grafana_logo.jpg>
+File: assets/logos/mistral.jpeg Graphic file (type bmp)
+<assets/logos/mistral.jpeg>
+File: assets/logos/numpy.jpg Graphic file (type bmp)
+<assets/logos/numpy.jpg>
+File: assets/logos/react_logo.png Graphic file (type bmp)
+<assets/logos/react_logo.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2812,30 +2819,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[34<./assets/logos/grafana_logo.jpg><./assets/logos/mistral.jpeg><./assets/logos
-/numpy.jpg>]
-<assets/logos/postgres_logo.png, id=1094, 171.64125pt x 148.555pt>
-File: assets/logos/postgres_logo.png Graphic file (type png)
-<use assets/logos/postgres_logo.png>
-Package luatex.def Info: assets/logos/postgres_logo.png  used on input line 312
-.
-(luatex.def)             Requested size: 184.25731pt x 159.47362pt.
-<assets/logos/redis.png, id=1095, 168.63pt x 148.555pt>
-File: assets/logos/redis.png Graphic file (type png)
-<use assets/logos/redis.png>
-Package luatex.def Info: assets/logos/redis.png  used on input line 321.
-(luatex.def)             Requested size: 92.12865pt x 81.16147pt.
-<assets/logos/docker.png, id=1096, 445.665pt x 114.4275pt>
-File: assets/logos/docker.png Graphic file (type png)
-<use assets/logos/docker.png>
-Package luatex.def Info: assets/logos/docker.png  used on input line 330.
-(luatex.def)             Requested size: 92.12865pt x 23.65334pt.
-<assets/logos/logo_jenkins.png, id=1097, 301.125pt x 168.63pt>
-File: assets/logos/logo_jenkins.png Graphic file (type png)
-<use assets/logos/logo_jenkins.png>
-Package luatex.def Info: assets/logos/logo_jenkins.png  used on input line 338.
-
-(luatex.def)             Requested size: 184.25731pt x 103.18834pt.
+[34]
+File: assets/logos/postgres_logo.png Graphic file (type bmp)
+<assets/logos/postgres_logo.png>
+File: assets/logos/redis.png Graphic file (type bmp)
+<assets/logos/redis.png>
+File: assets/logos/docker.png Graphic file (type bmp)
+<assets/logos/docker.png>
+File: assets/logos/logo_jenkins.png Graphic file (type bmp)
+<assets/logos/logo_jenkins.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2844,30 +2836,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[35<./assets/logos/react_logo.png><./assets/logos/postgres_logo.png><./assets/lo
-gos/redis.png><./assets/logos/docker.png>]
-<assets/logos/vsCode.png, id=1106, 1204.5pt x 1204.5pt>
-File: assets/logos/vsCode.png Graphic file (type png)
-<use assets/logos/vsCode.png>
-Package luatex.def Info: assets/logos/vsCode.png  used on input line 350.
-(luatex.def)             Requested size: 69.09473pt x 69.08728pt.
-<assets/logos/gitlab_logo.png, id=1108, 363.3575pt x 139.52126pt>
-File: assets/logos/gitlab_logo.png Graphic file (type png)
-<use assets/logos/gitlab_logo.png>
-Package luatex.def Info: assets/logos/gitlab_logo.png  used on input line 357.
-(luatex.def)             Requested size: 92.12865pt x 35.37413pt.
+[35]
+File: assets/logos/vsCode.png Graphic file (type bmp)
+<assets/logos/vsCode.png>
+File: assets/logos/gitlab_logo.png Graphic file (type bmp)
+<assets/logos/gitlab_logo.png>
 
-Overfull \hbox (43.45895pt too wide) in paragraph at lines 361--361
-[]\TU/TimesNewRoman(0)/b/n/12 Jira \TU/TimesNewRoman(0)/m/n/12 : uti-lisé pour le suivi des t
-âches du pro-jet lui-même, ac-ces-sible à l’adresse [][]https ://umane.emea
-l.ntt-
+Overfull \hbox (253.06541pt too wide) in paragraph at lines 361--361
+[][]\TU/TimesNewRoman(0)/b/n/12 Jira \TU/TimesNewRoman(0)/m/n/12 : utilisé pour
+ le suivi des tâches du projet lui-même, accessible à l’adresse [][][]https ://
+umane.emeal.nttdata.com/jiraito/browse/HPCMOROCCO[][][],[]
  []
 
-<assets/logos/jira_logo.png, id=1110, 225.84375pt x 225.84375pt>
-File: assets/logos/jira_logo.png Graphic file (type png)
-<use assets/logos/jira_logo.png>
-Package luatex.def Info: assets/logos/jira_logo.png  used on input line 364.
-(luatex.def)             Requested size: 92.12865pt x 92.1313pt.
+File: assets/logos/jira_logo.png Graphic file (type bmp)
+<assets/logos/jira_logo.png>
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2875,28 +2857,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[36<./assets/logos/logo_jenkins.png><./assets/logos/vsCode.png><./assets/logos/g
-itlab_logo.png>]
-File: assets/logos/docker.png Graphic file (type png)
-<use assets/logos/docker.png>
-Package luatex.def Info: assets/logos/docker.png  used on input line 371.
-(luatex.def)             Requested size: 92.12865pt x 23.65334pt.
-<assets/logos/langchain.png, id=1121, 319.1925pt x 159.59625pt>
-File: assets/logos/langchain.png Graphic file (type png)
-<use assets/logos/langchain.png>
-Package luatex.def Info: assets/logos/langchain.png  used on input line 384.
-(luatex.def)             Requested size: 92.12865pt x 46.06255pt.
-<assets/logos/llamaindex_logo.png, id=1122, 384.43625pt x 131.49126pt>
-File: assets/logos/llamaindex_logo.png Graphic file (type png)
-<use assets/logos/llamaindex_logo.png>
-Package luatex.def Info: assets/logos/llamaindex_logo.png  used on input line 3
-91.
-(luatex.def)             Requested size: 92.12865pt x 31.51038pt.
-<assets/logos/rasa_logo.png, id=1123, 323.2075pt x 156.585pt>
-File: assets/logos/rasa_logo.png Graphic file (type png)
-<use assets/logos/rasa_logo.png>
-Package luatex.def Info: assets/logos/rasa_logo.png  used on input line 398.
-(luatex.def)             Requested size: 92.12865pt x 44.63196pt.
+[36]
+File: assets/logos/docker.png Graphic file (type bmp)
+<assets/logos/docker.png>
+File: assets/logos/langchain.png Graphic file (type bmp)
+<assets/logos/langchain.png>
+File: assets/logos/llamaindex_logo.png Graphic file (type bmp)
+<assets/logos/llamaindex_logo.png>
+File: assets/logos/rasa_logo.png Graphic file (type bmp)
+<assets/logos/rasa_logo.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2905,14 +2874,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[37<./assets/logos/jira_logo.png><./assets/logos/langchain.png><./assets/logos/l
-lamaindex_logo.png>]
-<assets/logos/llama_mistral.jpg, id=1131, 291.0875pt x 174.6525pt>
-File: assets/logos/llama_mistral.jpg Graphic file (type jpg)
-<use assets/logos/llama_mistral.jpg>
-Package luatex.def Info: assets/logos/llama_mistral.jpg  used on input line 405
-.
-(luatex.def)             Requested size: 92.12865pt x 55.277pt.
+[37]
+File: assets/logos/llama_mistral.jpg Graphic file (type bmp)
+<assets/logos/llama_mistral.jpg>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2921,7 +2885,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[38<./assets/logos/rasa_logo.png><./assets/logos/llama_mistral.jpg>])
+[38])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2930,34 +2894,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [39]
-\openout2 = chapters/chap3.aux
- (./chapters/chap3.tex
+\openout2 = `chapters/chap3.aux'.
+
+ (chapters/chap3.tex
 Chapitre 3.
-<assets/sourceD_authentification.png, id=1141, 1699.34875pt x 932.48375pt>
-File: assets/sourceD_authentification.png Graphic file (type png)
-<use assets/sourceD_authentification.png>
-Package luatex.def Info: assets/sourceD_authentification.png  used on input lin
-e 15.
-(luatex.def)             Requested size: 414.58246pt x 227.48586pt.
+File: assets/sourceD_authentification.png Graphic file (type bmp)
+<assets/sourceD_authentification.png>
 [40
 
 
 
 
 ]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.87933pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.87933pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
-
-[41<./assets/sourceD_authentification.png>]
-<assets/diagrams/arch_jql.jpg, id=1151, 1027.84pt x 561.09625pt>
-File: assets/diagrams/arch_jql.jpg Graphic file (type jpg)
-<use assets/diagrams/arch_jql.jpg>
-Package luatex.def Info: assets/diagrams/arch_jql.jpg  used on input line 50.
-(luatex.def)             Requested size: 414.58246pt x 226.31808pt.
+Overfull \hbox (0.1493pt too wide) in paragraph at lines 28--29
+[][]\TU/lmtt/m/n/12 /rest/api/2/issue/{issueKey}/transitions \TU/TimesNewRoman(
+0)/m/n/12 : obtention des transitions de workflow[]
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2966,7 +2918,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[42<./assets/diagrams/arch_jql.jpg>]
+[41]
+File: assets/diagrams/arch_jql.jpg Graphic file (type bmp)
+<assets/diagrams/arch_jql.jpg>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.87933pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.87933pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
+
+[42]
+File: assets/interfaces/json_screen.jpeg Graphic file (type bmp)
+<assets/interfaces/json_screen.jpeg>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -2975,11 +2941,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [43]
-Overfull \hbox (4.97136pt too wide) in paragraph at lines 95--96
-[]\TU/TimesNewRoman(0)/b/n/12 Es-ti-ma-tions \TU/TimesNewRoman(0)/m/n/12 : es-ti
--ma-tion ini-tiale (\TU/lmtt/m/n/12 timeoriginalestimate\TU/TimesNewRoman(0)/m/
-n/12 ), temps res-tant (\TU/lmtt/m/n/12 timeestimate\TU/TimesNewRoman(0)/m/n/12
- ),
+Overfull \hbox (2.61247pt too wide) in paragraph at lines 102--103
+[][]\TU/TimesNewRoman(0)/b/n/12 Identité \TU/TimesNewRoman(0)/m/n/12 : clé (ex.
+ \TU/lmtt/m/n/12 HPCMOROCCO-123\TU/TimesNewRoman(0)/m/n/12 ), URL, résumé (\TU/
+lmtt/m/n/12 summary\TU/TimesNewRoman(0)/m/n/12 ), description (\TU/lmtt/m/n/12 
+description\TU/TimesNewRoman(0)/m/n/12 ). []
  []
 
 
@@ -2990,19 +2956,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [44]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.87933pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.87933pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
-
-[45]
-Overfull \hbox (0.24669pt too wide) in paragraph at lines 160--161
-[]\TU/TimesNewRoman(0)/m/n/12 Ré-or-ga-nisent l’in-for-ma-tion en quatre bloc
-s : \TU/lmtt/m/n/12 identity\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 tempor
-ality\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 semantics\TU/TimesNewRoman(0
-)/m/n/12 , \TU/lmtt/m/n/12 actors\TU/TimesNewRoman(0)/m/n/12 . 
+Overfull \hbox (62.21527pt too wide) in paragraph at lines 107--108
+[][]\TU/TimesNewRoman(0)/b/n/12 Estimations et charges \TU/TimesNewRoman(0)/m/n
+/12 : estimation initiale (\TU/lmtt/m/n/12 timeoriginalestimate\TU/TimesNewRoma
+n(0)/m/n/12 ), temps restant (\TU/lmtt/m/n/12 timeestimate\TU/TimesNewRoman(0)/
+m/n/12 ),[]
  []
 
 
@@ -3012,10 +2970,50 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
+[45]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.87933pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.87933pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
+
 [46]
-Overfull \hbox (33.2765pt too wide) in paragraph at lines 183--184
-[]\TU/TimesNewRoman(0)/m/n/12 Les ti-ckets nor-ma-li-sés sont sto-ckés dans Re
--dis avec une clé du type \TU/lmtt/m/n/12 project:HPCMOROCCO:issues
+File: assets/description_donnees.png Graphic file (type bmp)
+<assets/description_donnees.png>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.87933pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.87933pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
+
+[47]
+Overfull \hbox (4.43236pt too wide) in paragraph at lines 168--169
+[][]\TU/TimesNewRoman(0)/m/n/12 Réorganisent l’information en quatre blocs : \T
+U/lmtt/m/n/12 identity\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 temporality
+\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 semantics\TU/TimesNewRoman(0)/m/n
+/12 , \TU/lmtt/m/n/12 actors\TU/TimesNewRoman(0)/m/n/12 . []
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.87933pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.87933pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
+
+[48]
+Overfull \hbox (24.52235pt too wide) in paragraph at lines 194--196
+[][]\TU/TimesNewRoman(0)/m/n/12 Pour éviter des appels répétitifs à l’API et ga
+rantir la réactivité, une stratégie de cache multi‑niveaux[]
+ []
+
+
+Overfull \hbox (39.10164pt too wide) in paragraph at lines 197--198
+[][]\TU/TimesNewRoman(0)/m/n/12 Les tickets normalisés sont stockés dans Redis 
+avec une clé du type \TU/lmtt/m/n/12 project:HPCMOROCCO:issues[]
  []
 
 )
@@ -3026,19 +3024,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[47]
+[49]
+\openout2 = `chapters/chap4.aux'.
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.87933pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.87933pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
-
-[48]
-\openout2 = chapters/chap4.aux
- (./chapters/chap4.tex
+ (chapters/chap4.tex
 Chapitre 4.
-[49
+[50
 
 
 
@@ -3051,25 +3042,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[50]
-<assets/metrics_ai.png, id=1256, 2826.56pt x 1541.76pt>
-File: assets/metrics_ai.png Graphic file (type png)
-<use assets/metrics_ai.png>
-Package luatex.def Info: assets/metrics_ai.png  used on input line 19.
-(luatex.def)             Requested size: 414.58246pt x 226.12549pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.87933pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.87933pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
-
-[51<./assets/metrics_ai.png>]
-Overfull \hbox (24.54926pt too wide) in paragraph at lines 54--56
-\TU/TimesNewRoman(0)/m/n/12 néré. Étant donné que le sys-tème s’ap-puie 
-sur la boucle de tâche de fond \TU/lmtt/m/n/12 _background_analysis_loop
- []
+[51]
+File: assets/Ai_metrics.png Graphic file (type bmp)
+<assets/Ai_metrics.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3079,6 +3054,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [52]
+Overfull \hbox (78.73456pt too wide) in paragraph at lines 54--56
+[]\TU/TimesNewRoman(0)/m/n/12 rapport généré. Étant donné que le système s’appu
+ie sur la boucle de tâche de fond \TU/lmtt/m/n/12 _background_analysis_loop[]
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -3087,13 +3067,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [53]
-Overfull \hbox (6.48593pt too wide) in paragraph at lines 89--90
-\TU/TimesNewRoman(0)/m/n/12 rer $\OML/cmm/m/it/12 N \OT1/cmr/m/n/12 = 10 000$ \
-TU/TimesNewRoman(0)/m/n/12 scé-na-rios aléa-toires (ti-rage dans l’his-to-ri
-que de dé-bit via \TU/lmtt/m/n/12 np.random.choice\TU/TimesNewRoman(0)/m/n/12 
-)
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -3102,6 +3075,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [54]
+Overfull \hbox (23.14316pt too wide) in paragraph at lines 89--90
+[]\TU/TimesNewRoman(0)/m/n/12 nérer $\OML/cmm/m/it/12 N \OT1/cmr/m/n/12 = 10 00
+0$ \TU/TimesNewRoman(0)/m/n/12 scénarios aléatoires (tirage dans l’historique d
+e débit via \TU/lmtt/m/n/12 np.random.choice\TU/TimesNewRoman(0)/m/n/12 )[]
+ []
+
+
+Overfull \hbox (1.041pt too wide) in paragraph at lines 99--100
+[][]\TU/TimesNewRoman(0)/m/n/12 Pour chaque ticket, le champ \TU/lmtt/m/n/12 re
+solutiondate \TU/TimesNewRoman(0)/m/n/12 est extrait et normalisé via \TU/lmtt/
+m/n/12 dateutil.parser\TU/TimesNewRoman(0)/m/n/12 .[]
+ []
+
+
+Overfull \hbox (5.44211pt too wide) in paragraph at lines 103--105
+[]\TU/TimesNewRoman(0)/m/n/12 quons un protocole de backtesting fondé sur la lo
+gique de notre code (\TU/lmtt/m/n/12 run_project_simulation\TU/TimesNewRoman(0)
+/m/n/12 ).[]
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -3110,27 +3103,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [55]
-Overfull \hbox (32.52655pt too wide) in paragraph at lines 145--146
-\TU/TimesNewRoman(0)/m/n/12 quêtes par mi-nute et le res-pect strict du \TU/Ti
-mesNewRoman(0)/m/it/12 rate li-mi-ting\TU/TimesNewRoman(0)/m/n/12 . L’im-pl
-é-men-ta-tion (dans \TU/lmtt/m/n/12 services/Fetch.py\TU/TimesNewRoman(0)/m/n/
-12 )
- []
-
-
-Overfull \hbox (19.72461pt too wide) in paragraph at lines 158--159
-[]\TU/TimesNewRoman(0)/b/n/12 La-tence du cache (Re-dis Hit) \TU/TimesNewRoman(
-0)/m/n/12 : L’ac-cès aux don-nées en cache (ex. via \TU/lmtt/m/n/12 await re
-dis_db.get()\TU/TimesNewRoman(0)/m/n/12 )
- []
-
-
-Overfull \hbox (41.67163pt too wide) in paragraph at lines 160--161
-\TU/TimesNewRoman(0)/m/n/12 li-sa-tion des re-quêtes pa-gi-nées via \TU/lmtt/
-m/n/12 asyncio.gather() \TU/TimesNewRoman(0)/m/n/12 ou \TU/lmtt/m/n/12 ThreadPoo
-lExecutor(max_workers=6)
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -3139,12 +3111,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [56]
-Overfull \hbox (132.90895pt too wide) in paragraph at lines 184--185
-[]\TU/TimesNewRoman(0)/b/n/12 Pré-ci-sion de la clas-si-fi-ca-tion de charge \
-TU/TimesNewRoman(0)/m/n/12 : com-pa-rai-son entre le sta-tut at-tri-bué (\TU/l
-mtt/m/n/12 OVERLOADED\TU/TimesNewRoman(0)/m/n/12 /\TU/lmtt/m/n/12 BALANCED\TU/T
-imesNewRoman(0)/m/n/12 /\TU/lmtt/m/n/12 UNDERUTILIZED\TU/TimesNewRoman(0)/m/n/1
-2 )
+Overfull \hbox (39.40657pt too wide) in paragraph at lines 145--146
+[]\TU/TimesNewRoman(0)/m/n/12 quêtes par minute et le respect strict du \TU/Tim
+esNewRoman(0)/m/it/12 rate limiting\TU/TimesNewRoman(0)/m/n/12 . L’implémentati
+on (dans \TU/lmtt/m/n/12 services/Fetch.py\TU/TimesNewRoman(0)/m/n/12 )[]
+ []
+
+
+Overfull \hbox (25.92418pt too wide) in paragraph at lines 158--159
+[][]\TU/TimesNewRoman(0)/b/n/12 Latence du cache (Redis Hit) \TU/TimesNewRoman(
+0)/m/n/12 : L’accès aux données en cache (ex. via \TU/lmtt/m/n/12 await redis_d
+b.get()\TU/TimesNewRoman(0)/m/n/12 )[]
+ []
+
+
+Overfull \hbox (53.53107pt too wide) in paragraph at lines 160--161
+[]\TU/TimesNewRoman(0)/m/n/12 lélisation des requêtes paginées via \TU/lmtt/m/n
+/12 asyncio.gather() \TU/TimesNewRoman(0)/m/n/12 ou \TU/lmtt/m/n/12 ThreadPoolE
+xecutor(max_workers=6)[]
  []
 
 
@@ -3155,15 +3139,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [57]
-Overfull \hbox (1.83pt too wide) in paragraph at lines 202--203
-[]\TU/TimesNewRoman(0)/m/n/12 L’or-ches-tra-tion de l’agent IA (Lang-Graph) et des si-mu-la-tions Monte Carlo (\TU/lmtt/m/n/12 montecarlo.py\TU/TimesNewRoman(0)/m/n/12 ). 
- []
-
-
-Overfull \hbox (81.00706pt too wide) in paragraph at lines 214--216
-[]\TU/TimesNewRoman(0)/b/n/12 Vé-ri-fi-ca-tion du cache \TU/TimesNewRoman(0)/m
-/n/12 : avant toute ana-lyse, l’agent consulte Re-dis avec la clé \TU/lmtt/m
-/n/12 ai_analysis:{project_key}
+Overfull \hbox (140.08572pt too wide) in paragraph at lines 184--185
+[][]\TU/TimesNewRoman(0)/b/n/12 Précision de la classification de charge \TU/Ti
+mesNewRoman(0)/m/n/12 : comparaison entre le statut attribué (\TU/lmtt/m/n/12 O
+VERLOADED\TU/TimesNewRoman(0)/m/n/12 /\TU/lmtt/m/n/12 BALANCED\TU/TimesNewRoman
+(0)/m/n/12 /\TU/lmtt/m/n/12 UNDERUTILIZED\TU/TimesNewRoman(0)/m/n/12 )[]
  []
 
 
@@ -3174,47 +3154,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [58]
-Overfull \hbox (21.35028pt too wide) in paragraph at lines 223--224
-[]\TU/TimesNewRoman(0)/m/n/12 Ap-pli-ca-tion du mo-teur de règles (\TU/lmtt/m/
-n/12 evaluate_rules\TU/TimesNewRoman(0)/m/n/12 ) – gé-nère des in-di-ca-teur
-s \TU/TimesNewRoman(0)/m/sc/12 󰋥󰋡\TU/TimesNewRoman(0)/m/n/12 /\TU/TimesNe
-wRoman(0)/m/sc/12 󰋭󰋗󰋨󰋤\TU/TimesNewRoman(0)/m/n/12 /\TU/TimesNewRoma
-n(0)/m/sc/12 󰋨󰋟󰋩󰋡\TU/TimesNewRoman(0)/m/n/12 . 
+Overfull \hbox (9.37189pt too wide) in paragraph at lines 202--203
+[][]\TU/TimesNewRoman(0)/m/n/12 L’orchestration de l’agent IA (LangGraph) et de
+s simulations Monte Carlo (\TU/lmtt/m/n/12 montecarlo.py\TU/TimesNewRoman(0)/m/
+n/12 ). []
  []
 
 
-Overfull \hbox (60.17314pt too wide) in paragraph at lines 225--226
-[]\TU/TimesNewRoman(0)/m/n/12 Sto-ckage du ré-sul-tat dans Re-dis avec TTL de 
-30 mi-nutes, sous la clé \TU/lmtt/m/n/12 ai_analysis:{project_key}
- []
-
-
-Overfull \hbox (43.82373pt too wide) in paragraph at lines 235--236
-[]\TU/TimesNewRoman(0)/b/n/12 Boucle d’ar-rière‑plan \TU/TimesNewRoman(0)/
-m/n/12 : un thread dae-mon exé-cute pé-rio-di-que-ment (\TU/lmtt/m/n/12 _backg
-round_analysis_loop\TU/TimesNewRoman(0)/m/n/12 )
- []
-
-
-Overfull \hbox (3.61115pt too wide) in paragraph at lines 236--237
-[]\TU/TimesNewRoman(0)/b/n/12 End-point à la de-mande \TU/TimesNewRoman(0)/m/n
-/12 : \TU/lmtt/m/n/12 GET /api/ai/insights \TU/TimesNewRoman(0)/m/n/12 uti-lise la cl
-é \TU/lmtt/m/n/12 ai_insights_{project}\TU/TimesNewRoman(0)/m/n/12 .
- []
-
-
-Overfull \hbox (36.17104pt too wide) in paragraph at lines 236--237
-\TU/TimesNewRoman(0)/m/n/12 En cas de miss, il dé-clenche \TU/lmtt/m/n/12 graph
-.invoke \TU/TimesNewRoman(0)/m/n/12 dans un thread of-fload (\TU/lmtt/m/n/12 any
-io.to_thread.run_sync\TU/TimesNewRoman(0)/m/n/12 ). 
- []
-
-
-Overfull \hbox (83.79373pt too wide) in paragraph at lines 237--238
-[]\TU/TimesNewRoman(0)/b/n/12 Cache des ti-ckets Jira \TU/TimesNewRoman(0)/m/n/
-12 : \TU/lmtt/m/n/12 get_jira_data_issues \TU/TimesNewRoman(0)/m/n/12 uti-lise 
-des clés dis-tinctes (\TU/lmtt/m/n/12 ai_issues_cache:{project}\TU/TimesNewRom
-an(0)/m/n/12 ,
+Overfull \hbox (87.82469pt too wide) in paragraph at lines 214--216
+[][]\TU/TimesNewRoman(0)/b/n/12 Vérification du cache \TU/TimesNewRoman(0)/m/n/
+12 : avant toute analyse, l’agent consulte Redis avec la clé \TU/lmtt/m/n/12 ai
+_analysis:{project_key}[]
  []
 
 
@@ -3225,6 +3175,49 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [59]
+Overfull \hbox (28.06186pt too wide) in paragraph at lines 223--224
+[][]\TU/TimesNewRoman(0)/m/n/12 Application du moteur de règles (\TU/lmtt/m/n/1
+2 evaluate_rules\TU/TimesNewRoman(0)/m/n/12 ) – génère des indicateurs \TU/Time
+sNewRoman(0)/m/sc/12 ok\TU/TimesNewRoman(0)/m/n/12 /\TU/TimesNewRoman(0)/m/sc/1
+2 warn\TU/TimesNewRoman(0)/m/n/12 /\TU/TimesNewRoman(0)/m/sc/12 risk\TU/TimesNe
+wRoman(0)/m/n/12 . []
+ []
+
+
+Overfull \hbox (66.69368pt too wide) in paragraph at lines 225--226
+[][]\TU/TimesNewRoman(0)/m/n/12 Stockage du résultat dans Redis avec TTL de 30 
+minutes, sous la clé \TU/lmtt/m/n/12 ai_analysis:{project_key}[]
+ []
+
+
+Overfull \hbox (50.0526pt too wide) in paragraph at lines 235--236
+[][]\TU/TimesNewRoman(0)/b/n/12 Boucle d’arrière‑plan \TU/TimesNewRoman(0)/m/n/
+12 : un thread daemon exécute périodiquement (\TU/lmtt/m/n/12 _background_analy
+sis_loop\TU/TimesNewRoman(0)/m/n/12 )[]
+ []
+
+
+Overfull \hbox (6.9784pt too wide) in paragraph at lines 236--237
+[][]\TU/TimesNewRoman(0)/b/n/12 Endpoint à la demande \TU/TimesNewRoman(0)/m/n/
+12 : \TU/lmtt/m/n/12 GET /api/ai/insights \TU/TimesNewRoman(0)/m/n/12 utilise l
+a clé \TU/lmtt/m/n/12 ai_insights_{project}\TU/TimesNewRoman(0)/m/n/12 .[]
+ []
+
+
+Overfull \hbox (40.75609pt too wide) in paragraph at lines 236--237
+[]\TU/TimesNewRoman(0)/m/n/12 En cas de miss, il déclenche \TU/lmtt/m/n/12 grap
+h.invoke \TU/TimesNewRoman(0)/m/n/12 dans un thread offload (\TU/lmtt/m/n/12 an
+yio.to_thread.run_sync\TU/TimesNewRoman(0)/m/n/12 ). []
+ []
+
+
+Overfull \hbox (88.2398pt too wide) in paragraph at lines 237--238
+[][]\TU/TimesNewRoman(0)/b/n/12 Cache des tickets Jira \TU/TimesNewRoman(0)/m/n
+/12 : \TU/lmtt/m/n/12 get_jira_data_issues \TU/TimesNewRoman(0)/m/n/12 utilise 
+des clés distinctes (\TU/lmtt/m/n/12 ai_issues_cache:{project}\TU/TimesNewRoman
+(0)/m/n/12 ,[]
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -3233,35 +3226,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [60]
-Overfull \hbox (6.54558pt too wide) in paragraph at lines 302--302
-[]|\TU/lmtt/m/n/12 ai_issues_cache:{project}| 
- []
-
-
-Underfull \hbox (badness 1270) in paragraph at lines 304--305
-[]|\TU/TimesNewRoman(0)/m/n/12 Ré-sul-tat LLM – boucle de
- []
-
-
-Overfull \hbox (49.80553pt too wide) in paragraph at lines 307--307
-[]|\TU/lmtt/m/n/12 worker_snapshot:{project}:{days}| 
- []
-
-
-Overfull \hbox (74.5255pt too wide) in paragraph at lines 308--308
-[]|\TU/lmtt/m/n/12 ai_worker_insight:{worker}:{project}| 
- []
-
-
-Overfull \hbox (25.08556pt too wide) in paragraph at lines 309--309
-[]|\TU/lmtt/m/n/12 montecarlo:project:{project}| 
- []
-
-
-Overfull \hbox (37.44554pt too wide) in paragraph at lines 310--310
-[]|\TU/lmtt/m/n/12 montecarlo:master_project_keys| 
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -3270,10 +3234,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [61]
-Overfull \hbox (7.7865pt too wide) in paragraph at lines 327--328
-[]\TU/TimesNewRoman(0)/m/n/12 L’end-point \TU/lmtt/m/n/12 GET /api/ai/insights
- \TU/TimesNewRoman(0)/m/n/12 uti-lise une clé dis-tincte \TU/lmtt/m/n/12 ai_ins
-ights_{project} \TU/TimesNewRoman(0)/m/n/12 (même
+Overfull \hbox (6.54576pt too wide) in paragraph at lines 302--302
+[][]|\TU/lmtt/m/n/12 ai_issues_cache:{project}| []
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 303--304
+[][]|\TU/TimesNewRoman(0)/m/n/12 Tous projets confondus (dé-[]
+ []
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 304--305
+[][]|\TU/TimesNewRoman(0)/m/n/12 Résultat LLM – boucle de[]
+ []
+
+
+Overfull \hbox (49.80576pt too wide) in paragraph at lines 307--307
+[][]|\TU/lmtt/m/n/12 worker_snapshot:{project}:{days}| []
+ []
+
+
+Overfull \hbox (74.52576pt too wide) in paragraph at lines 308--308
+[][]|\TU/lmtt/m/n/12 ai_worker_insight:{worker}:{project}| []
+ []
+
+
+Overfull \hbox (25.08575pt too wide) in paragraph at lines 309--309
+[][]|\TU/lmtt/m/n/12 montecarlo:project:{project}| []
+ []
+
+
+Overfull \hbox (37.44576pt too wide) in paragraph at lines 310--310
+[][]|\TU/lmtt/m/n/12 montecarlo:master_project_keys| []
  []
 
 
@@ -3284,24 +3276,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [62]
-Overfull \hbox (82.37482pt too wide) in paragraph at lines 334--335
-[]\TU/TimesNewRoman(0)/b/n/12 Boucle d’ana-lyse \TU/TimesNewRoman(0)/m/n/12 : elle d
-é-couvre dy-na-mi-que-ment tous les pro-jets ac-tifs en li-sant \TU/lmtt/m/n/1
-2 ai_issues_cache:__all__
+Overfull \hbox (10.6141pt too wide) in paragraph at lines 325--326
+[]\TU/TimesNewRoman(0)/m/n/12 tral), elle remplace cette entrée par le résultat
+ final \TU/lmtt/m/n/12 {"status": "ok", "result": llm_output}\TU/TimesNewRoman(
+0)/m/n/12 .[]
  []
 
 
-Overfull \hbox (25.50725pt too wide) in paragraph at lines 335--336
-[]\TU/TimesNewRoman(0)/b/n/12 Boucle d’alerte \TU/TimesNewRoman(0)/m/n/12 : to
-utes les 60 se-condes, elle par-court les clés \TU/lmtt/m/n/12 ai_analysis:* \
-TU/TimesNewRoman(0)/m/n/12 et \TU/lmtt/m/n/12 ai_insights_*
- []
-
-
-Overfull \hbox (137.98457pt too wide) in paragraph at lines 342--343
-\TU/TimesNewRoman(0)/m/n/12 (TTL 24 heures). Si Re-dis est in-dis-po-nible, un 
-fall-back vers un fi-chier JSON lo-cal (\TU/lmtt/m/n/12 orchestration/montecarlo
-_cache.json\TU/TimesNewRoman(0)/m/n/12 )
+Overfull \hbox (11.58516pt too wide) in paragraph at lines 327--328
+[][]\TU/TimesNewRoman(0)/m/n/12 L’endpoint \TU/lmtt/m/n/12 GET /api/ai/insights
+ \TU/TimesNewRoman(0)/m/n/12 utilise une clé distincte \TU/lmtt/m/n/12 ai_insig
+hts_{project} \TU/TimesNewRoman(0)/m/n/12 (même[]
  []
 
 
@@ -3312,10 +3297,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [63]
-Overfull \hbox (65.54016pt too wide) in paragraph at lines 383--384
-[]\TU/TimesNewRoman(0)/m/n/12 Le pi-pe-line dé-marre dans la fonc-tion \TU/lmt
-t/m/n/12 _build_worker_snapshots() \TU/TimesNewRoman(0)/m/n/12 du mo-dule \TU/l
-mtt/m/n/12 app/routes/workers.py\TU/TimesNewRoman(0)/m/n/12 .
+Overfull \hbox (89.4842pt too wide) in paragraph at lines 334--335
+[][]\TU/TimesNewRoman(0)/b/n/12 Boucle d’analyse \TU/TimesNewRoman(0)/m/n/12 : 
+elle découvre dynamiquement tous les projets actifs en lisant \TU/lmtt/m/n/12 a
+i_issues_cache:__all__[]
+ []
+
+
+Overfull \hbox (31.04965pt too wide) in paragraph at lines 335--336
+[][]\TU/TimesNewRoman(0)/b/n/12 Boucle d’alerte \TU/TimesNewRoman(0)/m/n/12 : t
+outes les 60 secondes, elle parcourt les clés \TU/lmtt/m/n/12 ai_analysis:* \TU
+/TimesNewRoman(0)/m/n/12 et \TU/lmtt/m/n/12 ai_insights_*[]
+ []
+
+
+Overfull \hbox (145.69492pt too wide) in paragraph at lines 342--343
+[]\TU/TimesNewRoman(0)/m/n/12 (TTL 24 heures). Si Redis est indisponible, un fa
+llback vers un fichier JSON local (\TU/lmtt/m/n/12 orchestration/montecarlo_cac
+he.json\TU/TimesNewRoman(0)/m/n/12 )[]
  []
 
 
@@ -3326,8 +3325,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [64]
-Overfull \hbox (27.81586pt too wide) in paragraph at lines 408--421
- [][] 
+Overfull \hbox (69.78554pt too wide) in paragraph at lines 383--384
+[][]\TU/TimesNewRoman(0)/m/n/12 Le pipeline démarre dans la fonction \TU/lmtt/m
+/n/12 _build_worker_snapshots() \TU/TimesNewRoman(0)/m/n/12 du module \TU/lmtt/
+m/n/12 app/routes/workers.py\TU/TimesNewRoman(0)/m/n/12 .[]
  []
 
 
@@ -3338,21 +3339,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [65]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 432.
-
-Overfull \hbox (6.85207pt too wide) in paragraph at lines 440--441
-[]\TU/TimesNewRoman(0)/b/n/12 Com-men-taires par ti-cket (\TU/lmtt/b/n/12 curren
-t_work\TU/TimesNewRoman(0)/b/n/12 ) \TU/TimesNewRoman(0)/m/n/12 : pour chaque ti
--cket ac-tif, un champ \TU/lmtt/m/n/12 ai_comment
+Overfull \hbox (19.69861pt too wide) in paragraph at lines 400--401
+[][]\TU/TimesNewRoman(0)/m/n/12 L’analyse individuelle est orchestrée par le mo
+dule \TU/lmtt/m/n/12 orchestration/agent_worker.py\TU/TimesNewRoman(0)/m/n/12 .
+ Contrai-[]
  []
 
-<assets/interfaces/WorkerAis.png, id=1365, 1443.14156pt x 709.90219pt>
-File: assets/interfaces/WorkerAis.png Graphic file (type png)
-<use assets/interfaces/WorkerAis.png>
-Package luatex.def Info: assets/interfaces/WorkerAis.png  used on input line 45
-0.
-(luatex.def)             Requested size: 414.58246pt x 203.93822pt.
+
+Overfull \hbox (27.81586pt too wide) in paragraph at lines 408--421
+ [][][][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -3361,12 +3358,42 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [66]
-<assets/interfaces/ViewAiinsights.png, id=1380, 478.03593pt x 709.90219pt>
-File: assets/interfaces/ViewAiinsights.png Graphic file (type png)
-<use assets/interfaces/ViewAiinsights.png>
-Package luatex.def Info: assets/interfaces/ViewAiinsights.png  used on input li
-ne 457.
-(luatex.def)             Requested size: 414.58246pt x 615.67094pt.
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 432.
+
+Overfull \hbox (58.8648pt too wide) in paragraph at lines 436--437
+[][]\TU/TimesNewRoman(0)/b/n/12 Évaluation de la performance (\TU/lmtt/b/n/12 p
+erformance_assessment\TU/TimesNewRoman(0)/b/n/12 ) \TU/TimesNewRoman(0)/m/n/12 
+: note globale tripartite (\TU/TimesNewRoman(0)/m/sc/12 above_average[]
+ []
+
+
+Overfull \hbox (27.56148pt too wide) in paragraph at lines 436--437
+[]\TU/TimesNewRoman(0)/m/n/12 / \TU/TimesNewRoman(0)/m/sc/12 average \TU/TimesN
+ewRoman(0)/m/n/12 / \TU/TimesNewRoman(0)/m/sc/12 below_average\TU/TimesNewRoman
+(0)/m/n/12 ), explication en 2-3 phrases, liste des forces identifiées (\TU/lmt
+t/m/n/12 strengths\TU/TimesNewRoman(0)/m/n/12 ),[]
+ []
+
+
+Overfull \hbox (12.75761pt too wide) in paragraph at lines 440--441
+[][]\TU/TimesNewRoman(0)/b/n/12 Commentaires par ticket (\TU/lmtt/b/n/12 curren
+t_work\TU/TimesNewRoman(0)/b/n/12 ) \TU/TimesNewRoman(0)/m/n/12 : pour chaque t
+icket actif, un champ \TU/lmtt/m/n/12 ai_comment[]
+ []
+
+File: assets/interfaces/WorkerAis.png Graphic file (type bmp)
+<assets/interfaces/WorkerAis.png>
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.87933pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.87933pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
+
+[67]
+File: assets/interfaces/ViewAiinsights.png Graphic file (type bmp)
+<assets/interfaces/ViewAiinsights.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3375,9 +3402,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[67<./assets/interfaces/WorkerAis.png>]
-Overfull \hbox (3.42903pt too wide) in paragraph at lines 468--476
- [][] 
+[68]
+Overfull \hbox (3.42929pt too wide) in paragraph at lines 468--476
+ [][][][] 
  []
 
 
@@ -3387,26 +3414,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[68<./assets/interfaces/ViewAiinsights.png>]
-Overfull \hbox (23.88669pt too wide) in paragraph at lines 482--483
-[]\TU/TimesNewRoman(0)/m/n/12 L’ana-lyse est dé-clen-chée \TU/TimesNewRoman
-(0)/b/n/12 à la de-mande \TU/TimesNewRoman(0)/m/n/12 (end-point \TU/lmtt/m/n/1
-2 GET /api/workers/insight/{worker_key}\TU/TimesNewRoman(0)/m/n/12 ) :
+[69]
+Overfull \hbox (28.51161pt too wide) in paragraph at lines 482--483
+[][]\TU/TimesNewRoman(0)/m/n/12 L’analyse est déclenchée \TU/TimesNewRoman(0)/b
+/n/12 à la demande \TU/TimesNewRoman(0)/m/n/12 (endpoint \TU/lmtt/m/n/12 GET /a
+pi/workers/insight/{worker_key}\TU/TimesNewRoman(0)/m/n/12 ) :[]
  []
 
 
-Overfull \hbox (18.65208pt too wide) in paragraph at lines 482--483
-\TU/TimesNewRoman(0)/m/n/12 tourne en boucle dans un thread dae-mon toutes les 
-30 mi-nutes. La vue liste (\TU/lmtt/m/n/12 GET /api/workers/list\TU/TimesNewRom
-an(0)/m/n/12 )
+Overfull \hbox (25.23009pt too wide) in paragraph at lines 482--483
+[]\TU/TimesNewRoman(0)/m/n/12 tourne en boucle dans un thread daemon toutes les
+ 30 minutes. La vue liste (\TU/lmtt/m/n/12 GET /api/workers/list\TU/TimesNewRom
+an(0)/m/n/12 )[]
  []
 
-<assets/entreprise/clients.png, id=1393, 501.875pt x 247.42438pt>
-File: assets/entreprise/clients.png Graphic file (type png)
-<use assets/entreprise/clients.png>
-Package luatex.def Info: assets/entreprise/clients.png  used on input line 486.
-
-(luatex.def)             Requested size: 414.58246pt x 204.39944pt.
+File: assets/entreprise/clients.png Graphic file (type bmp)
+<assets/entreprise/clients.png>
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 493.
 
@@ -3416,43 +3439,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[69<./assets/entreprise/clients.png>]
-Overfull \hbox (56.73108pt too wide) in paragraph at lines 499--500
-[]\TU/TimesNewRoman(0)/b/n/12 Re-quêtes HTTP \TU/TimesNewRoman(0)/m/n/12 : comp
--teur par end-point, mé-thode HTTP et code de sta-tut (ex. \TU/lmtt/m/n/12 http
-_requests_total\TU/TimesNewRoman(0)/m/n/12 ). 
- []
-
-
-Overfull \hbox (33.04245pt too wide) in paragraph at lines 500--501
-[]\TU/TimesNewRoman(0)/b/n/12 Temps de ré-ponse \TU/TimesNewRoman(0)/m/n/12 : 
-his-to-gramme des la-tences par end-point (\TU/lmtt/m/n/12 http_request_duration
-_seconds\TU/TimesNewRoman(0)/m/n/12 ). 
- []
-
-
-Overfull \hbox (15.13457pt too wide) in paragraph at lines 502--503
-[]\TU/TimesNewRoman(0)/b/n/12 Cache Re-dis \TU/TimesNewRoman(0)/m/n/12 : taux de
- hits/miss (\TU/lmtt/m/n/12 redis_cache_hits_total\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 redis_cache_misses_total\TU/TimesNewRoman(0)/m/n/12 ). 
- []
-
-
-Overfull \hbox (39.9291pt too wide) in paragraph at lines 528--528
-[]          \TU/lmtt/m/n/12 summary : "WIP ratio critique pour le projet {{ $lab
-els.project_key }}"[] 
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.87933pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.87933pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
-
 [70]
+Overfull \hbox (64.25093pt too wide) in paragraph at lines 499--500
+[][]\TU/TimesNewRoman(0)/b/n/12 Requêtes HTTP \TU/TimesNewRoman(0)/m/n/12 : com
+pteur par endpoint, méthode HTTP et code de statut (ex. \TU/lmtt/m/n/12 http_re
+quests_total\TU/TimesNewRoman(0)/m/n/12 ). []
+ []
 
-LaTeX Warning: Reference `subsec:alerting' on page 71 undefined on input line 5
-52.
+
+Overfull \hbox (38.57669pt too wide) in paragraph at lines 500--501
+[][]\TU/TimesNewRoman(0)/b/n/12 Temps de réponse \TU/TimesNewRoman(0)/m/n/12 : 
+histogramme des latences par endpoint (\TU/lmtt/m/n/12 http_request_duration_se
+conds\TU/TimesNewRoman(0)/m/n/12 ). []
+ []
+
+
+Overfull \hbox (18.188pt too wide) in paragraph at lines 502--503
+[][]\TU/TimesNewRoman(0)/b/n/12 Cache Redis \TU/TimesNewRoman(0)/m/n/12 : taux 
+de hits/miss (\TU/lmtt/m/n/12 redis_cache_hits_total\TU/TimesNewRoman(0)/m/n/12
+ , \TU/lmtt/m/n/12 redis_cache_misses_total\TU/TimesNewRoman(0)/m/n/12 ). []
+ []
+
+
+Overfull \hbox (33.74956pt too wide) in paragraph at lines 528--528
+[][]          \TU/lmtt/m/n/12 summary: "WIP ratio critique pour le projet {{ $l
+abels.project_key }}"[] []
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3462,6 +3474,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [71]
+
+LaTeX Warning: Reference `subsec:alerting' on page 72 undefined on input line 5
+52.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -3494,16 +3510,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [75]
-Overfull \hbox (124.86981pt too wide) in paragraph at lines 694--695
-[]\TU/TimesNewRoman(0)/m/n/12 Git-Lab : [][]$\TU/lmtt/m/n/12 https://umane.emeal
-.nttdata.com/git/FELTRIINTPROJ/nttdata-[]ai-[]agent-[]project-[]tracking$[][] 
- []
-
-
-Overfull \hbox (6.57547pt too wide) in paragraph at lines 705--706
-[]\TU/TimesNewRoman(0)/m/n/12 En cas d’échec de conte-neur, une po-li-tique 
-de re-dé-mar-rage au-to-ma-tique (\TU/lmtt/m/n/12 restart : always\TU/TimesNew
-Roman(0)/m/n/12 )
+Overfull \hbox (29.69691pt too wide) in paragraph at lines 668--669
+[]\TU/TimesNewRoman(0)/m/n/12 Cette configuration permet de lancer la plateform
+e complète en une seule commande : \TU/lmtt/m/n/12 docker-compose[]
  []
 
 
@@ -3514,6 +3523,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [76]
+Overfull \hbox (125.6163pt too wide) in paragraph at lines 694--695
+[][]\TU/TimesNewRoman(0)/m/n/12 GitLab : [][][]$[][][][][] [] [] [] [][][][][] 
+[] [][][][][] [] [][][][][][][] [] [][][] [] [][][] [] [][][][][][][][][][][][]
+[] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+]$[][][] []
+ []
+
+
+Overfull \hbox (6.92833pt too wide) in paragraph at lines 705--706
+[][]\TU/TimesNewRoman(0)/m/n/12 En cas d’échec de conteneur, une politique de r
+edémarrage automatique (\TU/lmtt/m/n/12 restart: always\TU/TimesNewRoman(0)/m/n
+/12 )[]
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -3530,6 +3553,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [78]
+Overfull \hbox (2.98718pt too wide) in paragraph at lines 762--764
+[][]\TU/TimesNewRoman(0)/m/n/12 Le module Worker Insights a analysé les données
+ de 12 développeurs sur le projet \TU/lmtt/m/n/12 HPCMOROCCO\TU/TimesNewRoman(0
+)/m/n/12 .[]
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -3562,22 +3591,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [82]
-<assets/interfaces/extraction_jira.png, id=1472, 1443.14156pt x 709.14937pt>
-File: assets/interfaces/extraction_jira.png Graphic file (type png)
-<use assets/interfaces/extraction_jira.png>
-Package luatex.def Info: assets/interfaces/extraction_jira.png  used on input l
-ine 893.
-(luatex.def)             Requested size: 460.65031pt x 226.35893pt.
-<assets/interfaces/normalisation_process.png, id=1473, 1155.31625pt x 1371.1225
-pt>
-File: assets/interfaces/normalisation_process.png Graphic file (type png)
-<use assets/interfaces/normalisation_process.png>
-Package luatex.def Info: assets/interfaces/normalisation_process.png  used on i
-nput line 901.
-(luatex.def)             Requested size: 460.65031pt x 546.68187pt.
 
-Overfull \hbox (3.50581pt too wide) in paragraph at lines 898--904
-\TU/TimesNewRoman(0)/m/n/12 tité, tem-po-ra-lité, sé-man-tique, ac-teurs) et map-page ca-no-nique des sta-tuts (\TU/lmtt/m/n/12 todo\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 in_progress\TU/TimesNewRoman(0)/m/n/12 ,
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.87933pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.87933pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
+
+[83]
+File: assets/interfaces/extraction_jira.png Graphic file (type bmp)
+<assets/interfaces/extraction_jira.png>
+File: assets/interfaces/normalisation_process.png Graphic file (type bmp)
+<assets/interfaces/normalisation_process.png>
+
+Overfull \hbox (34.35695pt too wide) in paragraph at lines 898--904
+[]\TU/TimesNewRoman(0)/m/n/12 (identité, temporalité, sémantique, acteurs) et m
+appage canonique des statuts (\TU/lmtt/m/n/12 todo\TU/TimesNewRoman(0)/m/n/12 ,
+ \TU/lmtt/m/n/12 in_progress\TU/TimesNewRoman(0)/m/n/12 ,[]
  []
 
 
@@ -3587,13 +3617,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[83<./assets/interfaces/extraction_jira.png>]
-<assets/interfaces/metrics_sante.png, id=1479, 1444.64719pt x 709.14937pt>
-File: assets/interfaces/metrics_sante.png Graphic file (type png)
-<use assets/interfaces/metrics_sante.png>
-Package luatex.def Info: assets/interfaces/metrics_sante.png  used on input lin
-e 909.
-(luatex.def)             Requested size: 460.65031pt x 226.12088pt.
+[84]
+File: assets/interfaces/metrics_sante.png Graphic file (type bmp)
+<assets/interfaces/metrics_sante.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3602,19 +3628,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[84<./assets/interfaces/normalisation_process.png>]
-<assets/interfaces/montecarlo.png, id=1484, 1442.38875pt x 707.64375pt>
-File: assets/interfaces/montecarlo.png Graphic file (type png)
-<use assets/interfaces/montecarlo.png>
-Package luatex.def Info: assets/interfaces/montecarlo.png  used on input line 9
-17.
-(luatex.def)             Requested size: 460.65031pt x 225.99712pt.
-<assets/interfaces/agent_langraph.png, id=1485, 1444.64719pt x 697.8572pt>
-File: assets/interfaces/agent_langraph.png Graphic file (type png)
-<use assets/interfaces/agent_langraph.png>
-Package luatex.def Info: assets/interfaces/agent_langraph.png  used on input li
-ne 925.
-(luatex.def)             Requested size: 460.65031pt x 222.52023pt.
+[85]
+File: assets/interfaces/montecarlo.png Graphic file (type bmp)
+<assets/interfaces/montecarlo.png>
+File: assets/interfaces/agent_langraph.png Graphic file (type bmp)
+<assets/interfaces/agent_langraph.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3623,38 +3641,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[85<./assets/interfaces/metrics_sante.png><./assets/interfaces/montecarlo.png>]
-File: assets/interfaces/montecarlo.png Graphic file (type png)
-<use assets/interfaces/montecarlo.png>
-Package luatex.def Info: assets/interfaces/montecarlo.png  used on input line 9
-38.
-(luatex.def)             Requested size: 460.65031pt x 225.99712pt.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.87933pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.87933pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
-
-[86<./assets/interfaces/agent_langraph.png>]
-<assets/interfaces/dashboard_1.png, id=1498, 1443.14156pt x 706.13812pt>
-File: assets/interfaces/dashboard_1.png Graphic file (type png)
-<use assets/interfaces/dashboard_1.png>
-Package luatex.def Info: assets/interfaces/dashboard_1.png  used on input line 
-947.
-(luatex.def)             Requested size: 460.65031pt x 225.39775pt.
-<assets/interfaces/dashboard_2.png, id=1499, 1444.64719pt x 709.14937pt>
-File: assets/interfaces/dashboard_2.png Graphic file (type png)
-<use assets/interfaces/dashboard_2.png>
-Package luatex.def Info: assets/interfaces/dashboard_2.png  used on input line 
-948.
-(luatex.def)             Requested size: 460.65031pt x 226.12088pt.
-<assets/interfaces/dashboard_3.png, id=1500, 1444.64719pt x 707.64375pt>
-File: assets/interfaces/dashboard_3.png Graphic file (type png)
-<use assets/interfaces/dashboard_3.png>
-Package luatex.def Info: assets/interfaces/dashboard_3.png  used on input line 
-949.
-(luatex.def)             Requested size: 460.65031pt x 225.6408pt.
+[86]
+File: assets/interfaces/montecarlo.png Graphic file (type bmp)
+<assets/interfaces/montecarlo.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3664,11 +3653,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [87]
-Overfull \vbox (25.34587pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (25.34587pt too high) has occurred while \output is active []
-
+File: assets/interfaces/dashboard_1.png Graphic file (type bmp)
+<assets/interfaces/dashboard_1.png>
+File: assets/interfaces/dashboard_2.png Graphic file (type bmp)
+<assets/interfaces/dashboard_2.png>
+File: assets/interfaces/dashboard_3.png Graphic file (type bmp)
+<assets/interfaces/dashboard_3.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3677,26 +3667,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[88<./assets/interfaces/dashboard_1.png><./assets/interfaces/dashboard_2.png><./
-assets/interfaces/dashboard_3.png>]
-<assets/interfaces/fastApi.png, id=1512, 1441.63594pt x 710.655pt>
-File: assets/interfaces/fastApi.png Graphic file (type png)
-<use assets/interfaces/fastApi.png>
-Package luatex.def Info: assets/interfaces/fastApi.png  used on input line 957.
+[88]
+Overfull \vbox (25.3432pt too high) has occurred while \output is active []
 
-(luatex.def)             Requested size: 460.65031pt x 227.07808pt.
-<assets/interfaces/fastApi_1.png, id=1513, 1441.63594pt x 700.86844pt>
-File: assets/interfaces/fastApi_1.png Graphic file (type png)
-<use assets/interfaces/fastApi_1.png>
-Package luatex.def Info: assets/interfaces/fastApi_1.png  used on input line 95
-8.
-(luatex.def)             Requested size: 460.65031pt x 223.95096pt.
-<assets/interfaces/fastApi_2.png, id=1514, 1437.87187pt x 703.87968pt>
-File: assets/interfaces/fastApi_2.png Graphic file (type png)
-<use assets/interfaces/fastApi_2.png>
-Package luatex.def Info: assets/interfaces/fastApi_2.png  used on input line 95
-9.
-(luatex.def)             Requested size: 460.65031pt x 225.50386pt.
+
+Overfull \vbox (25.3432pt too high) has occurred while \output is active []
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3706,10 +3682,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [89]
-Overfull \vbox (24.71935pt too high) has occurred while \output is active []
+File: assets/interfaces/fastApi.png Graphic file (type bmp)
+<assets/interfaces/fastApi.png>
+File: assets/interfaces/fastApi_1.png Graphic file (type bmp)
+<assets/interfaces/fastApi_1.png>
+File: assets/interfaces/fastApi_2.png Graphic file (type bmp)
+<assets/interfaces/fastApi_2.png>
 
 
-Overfull \vbox (24.71935pt too high) has occurred while \output is active []
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.87933pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.87933pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
+
+[90]
+Overfull \vbox (24.70622pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (24.70622pt too high) has occurred while \output is active []
 
 
 
@@ -3719,25 +3710,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[90<./assets/interfaces/fastApi.png><./assets/interfaces/fastApi_1.png><./assets
-/interfaces/fastApi_2.png>]
-<assets/interfaces/RBAC.png, id=1526, 1443.14156pt x 712.16063pt>
-File: assets/interfaces/RBAC.png Graphic file (type png)
-<use assets/interfaces/RBAC.png>
-Package luatex.def Info: assets/interfaces/RBAC.png  used on input line 967.
-(luatex.def)             Requested size: 460.65031pt x 227.32011pt.
-<assets/interfaces/alerts.png, id=1527, 1437.11906pt x 710.655pt>
-File: assets/interfaces/alerts.png Graphic file (type png)
-<use assets/interfaces/alerts.png>
-Package luatex.def Info: assets/interfaces/alerts.png  used on input line 975.
-(luatex.def)             Requested size: 460.65031pt x 227.79378pt.
-<assets/interfaces/notification_teams.png, id=1528, 1124.70187pt x 707.64375pt>
-
-File: assets/interfaces/notification_teams.png Graphic file (type png)
-<use assets/interfaces/notification_teams.png>
-Package luatex.def Info: assets/interfaces/notification_teams.png  used on inpu
-t line 976.
-(luatex.def)             Requested size: 460.65031pt x 289.83348pt.
+[91]
+File: assets/interfaces/RBAC.png Graphic file (type bmp)
+<assets/interfaces/RBAC.png>
+File: assets/interfaces/alerts.png Graphic file (type bmp)
+<assets/interfaces/alerts.png>
+File: assets/interfaces/notification_teams.png Graphic file (type bmp)
+<assets/interfaces/notification_teams.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3746,13 +3725,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[91<./assets/interfaces/RBAC.png>]
-<assets/interfaces/pipeline_jenkins.png, id=1534, 1441.63594pt x 712.91344pt>
-File: assets/interfaces/pipeline_jenkins.png Graphic file (type png)
-<use assets/interfaces/pipeline_jenkins.png>
-Package luatex.def Info: assets/interfaces/pipeline_jenkins.png  used on input 
-line 984.
-(luatex.def)             Requested size: 460.65031pt x 227.79973pt.
+[92]
+File: assets/interfaces/pipeline_jenkins.png Graphic file (type bmp)
+<assets/interfaces/pipeline_jenkins.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3761,21 +3736,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[92<./assets/interfaces/alerts.png><./assets/interfaces/notification_teams.png>]
-File: assets/interfaces/ViewAiinsights.png Graphic file (type png)
-<use assets/interfaces/ViewAiinsights.png>
-Package luatex.def Info: assets/interfaces/ViewAiinsights.png  used on input li
-ne 993.
-(luatex.def)             Requested size: 391.55557pt x 581.47363pt.
+[93]
+File: assets/interfaces/ViewAiinsights.png Graphic file (type bmp)
+<assets/interfaces/ViewAiinsights.png>
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.87933pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.87933pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
-
-[93<./assets/interfaces/pipeline_jenkins.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -3784,18 +3748,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
 [94]
-Overfull \hbox (81.8107pt too wide) in paragraph at lines 1004--1005
-[]\TU/TimesNewRoman(0)/m/n/12 Une \TU/TimesNewRoman(0)/b/n/12 éva-lua-tion de 
-charge \TU/TimesNewRoman(0)/m/n/12 (\TU/lmtt/m/n/12 workload_assessment\TU/Time
-sNewRoman(0)/m/n/12 ) et de \TU/TimesNewRoman(0)/b/n/12 per-for-mance \TU/Times
-NewRoman(0)/m/n/12 (\TU/lmtt/m/n/12 performance_assessment\TU/TimesNewRoman(0)/
-m/n/12 )
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.87933pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.87933pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
+
+[95]
+Overfull \hbox (86.24948pt too wide) in paragraph at lines 1004--1005
+[][]\TU/TimesNewRoman(0)/m/n/12 Une \TU/TimesNewRoman(0)/b/n/12 évaluation de c
+harge \TU/TimesNewRoman(0)/m/n/12 (\TU/lmtt/m/n/12 workload_assessment\TU/Times
+NewRoman(0)/m/n/12 ) et de \TU/TimesNewRoman(0)/b/n/12 performance \TU/TimesNew
+Roman(0)/m/n/12 (\TU/lmtt/m/n/12 performance_assessment\TU/TimesNewRoman(0)/m/n
+/12 )[]
  []
 
 
-Overfull \hbox (17.20824pt too wide) in paragraph at lines 1004--1005
-\TU/TimesNewRoman(0)/m/n/12 avec clas-si-fi-ca-tion (OVER-LOA-DED / BA-LAN-CED 
-/ UN-DE-RU-TI-LI-ZED; ABOVE_AVE-
+Overfull \hbox (56.94888pt too wide) in paragraph at lines 1004--1005
+[]\TU/TimesNewRoman(0)/m/n/12 avec classification (OVERLOADED / BALANCED / UNDE
+RUTILIZED; ABOVE_AVERAGE[]
  []
 
 
@@ -3805,7 +3777,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[95])
+[96])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.87933pt, for example:
@@ -3813,13 +3785,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[96]
-\openout2 = chapters/revue.aux
+[97]
+\openout2 = `chapters/revue.aux'.
+
 
 No file chapters/revue.tex.
+\openout2 = `Intro_pages/Conclusion.aux'.
 
-\openout2 = Intro_pages/Conclusion.aux
-(./Intro_pages/Conclusion.tex [97
+(Intro_pages/Conclusion.tex
+Overfull \hbox (3.52452pt too wide) in paragraph at lines 14--15
+[][]\TU/TimesNewRoman(0)/m/n/12 Malgré l’avancement significatif du projet, plu
+sieurs axes d’amélioration restent envisageables[]
+ []
+
+[98
 
 
 
@@ -3835,13 +3814,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.87933pt}.
 
-[98]
-runsystem(latexminted cleantemp  --timestamp 20260614172201 FAD58DE7366495DB4650
-CFEFAC2FCD61)...(Command execution disabled via shell_escape='p').
- (./main.aux (./Intro_pages/pagedegarde.aux)
-(./Intro_pages/introduction.aux) (./chapters/chap1.aux) (./chapters/chap2.aux)
-(./chapters/chap3.aux) (./chapters/chap4.aux) (./chapters/revue.aux)
-(./Intro_pages/Conclusion.aux))
+[99]
+runsystem(latexminted cleantemp  --timestamp 20260616124025 FAD58DE7366495DB465
+0CFEFAC2FCD61)...disabled (restricted).
+
+ (main.aux (Intro_pages/pagedegarde.aux) (Intro_pages/introduction.aux)
+(chapters/chap1.aux) (chapters/chap2.aux) (chapters/chap3.aux)
+(chapters/chap4.aux) (chapters/revue.aux) (Intro_pages/Conclusion.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -3850,37 +3829,19 @@ L3 programming layer <2025-12-24>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 43BE3CD93C21B4A018C61E829077FD18;26512.
-)
+(rerunfilecheck)             Checksum: 6EEB20B288E4092697203709D8BE1953;27445.
+ ) 
+Here is how much of TeX's memory you used:
+ 49698 strings out of 402987
+ 1078644 string characters out of 5447696
+ 1724687 words of memory out of 5000000
+ 77555 multiletter control sequences out of 15000+600000
+ 636061 words of font info for 102 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 98i,13n,118p,2525b,913s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Here is how much of LuaTeX's memory you used:
- 49649 strings out of 476081
- 100000,1977958 words of node,token memory allocated
- 23757 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 1 local_par, 1559 glue, 6 kern, 533 penalty, 10 gly
-ph, 3080 attribute, 695 glue_spec, 626 attribute_list, 4 write, 11 pdf_action no
-des
-   avail lists: 1:3,2:1054,3:339,4:313,5:166,6:117,7:6193,8:83,9:708,10:26,11:69
-4
- 70220 multiletter control sequences out of 65536+600000
- 75 fonts using 27131887 bytes
- 98i,13n,113p,2577b,915s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/users/elitebook/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmon
-olt10-bold.otf><c:/users/elitebook/appdata/local/programs/miktex/fonts/opentype/
-public/lm/lmmono12-regular.otf><C:/WINDOWS/Fonts/timesbi.ttf><c:/users/elitebook
-/appdata/local/programs/miktex/fonts/opentype/public/lm/lmsans17-regular.otf><C:
-/WINDOWS/Fonts/times.ttf><C:/WINDOWS/Fonts/timesi.ttf><C:/WINDOWS/Fonts/timesbd.
-ttf><C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmex10.pfb><C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmmi12.pfb><C:/Users/ELITEBOOK/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ELITEBOOK/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ELITEBOOK/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ELITEBOOK/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (113 pages, 23676175 bytes).
-
-PDF statistics: 1651 PDF objects out of 1728 (max. 8388607)
- 464 named destinations out of 1000 (max. 1048576)
- 936 words of extra memory for PDF output out of 10000 (max. 100000000)
-
+Output written on main.pdf (113 pages).

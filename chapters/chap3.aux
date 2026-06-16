@@ -1,4 +1,5 @@
 \relax 
+\providecommand\zref@newlabel[2]{}
 \providecommand\hyper@newdestlabel[2]{}
 \def\@LN@column{1}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Description des données}{40}{chapter.3}\protected@file@percent }
@@ -7,12 +8,12 @@
 \newlabel{ch:description_donnees}{{3}{40}{Description des données}{chapter.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Introduction}{40}{section.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Source des données}{40}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Authentification et endpoints utilisés}{40}{subsection.3.2.1}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Authentification et endpoints utilisés}{41}{subsection.3.2.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Schéma du mécanisme d’authentification à l’API Jira}}{41}{figure.caption.67}\protected@file@percent }
 \newlabel{fig:authentification}{{3.1}{41}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Schéma du mécanisme d’authentification à l’API Jira}{figure.caption.67}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Requêtes JQL (Jira Query Language)}{41}{subsection.3.2.2}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Requêtes JQL (Jira Query Language)}{42}{subsection.3.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Bénéfices de l’utilisation de JQL dans notre plateforme}{42}{section*.68}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Architecture de l’intégration des requêtes JQL dans l’application}{42}{section*.69}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Intégration des requêtes JQL dans le backend FastAPI (architecture)}}{42}{figure.caption.70}\protected@file@percent }
@@ -22,29 +23,38 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Gestion des limites de taux et optimisation}{43}{subsection.3.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Description des données}{43}{section.3.3}\protected@file@percent }
 \def\@LN@column{1}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Extrait d’un ticket Jira au format JSON (structure imbriquée \texttt  {fields}, \texttt  {subtasks}, \texttt  {statusCategory}, etc.)}}{44}{figure.caption.72}\protected@file@percent }
+\newlabel{fig:jira_json_structure}{{3.3}{44}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Extrait d’un ticket Jira au format JSON (structure imbriquée \texttt {fields}, \texttt {subtasks}, \texttt {statusCategory}, etc.)}{figure.caption.72}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Champs des tickets (issues)}{44}{subsection.3.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Commentaires et historique}{44}{subsection.3.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Métadonnées de projet}{44}{subsection.3.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Volumétrie et pagination}{44}{subsection.3.3.4}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Analyse et Visualisation des Données}{45}{section.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Analyse des tickets}{45}{subsection.3.4.1}\protected@file@percent }
-\newlabel{subsec:analyse_tickets}{{3.4.1}{45}{Analyse des tickets}{subsection.3.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Analyse des métriques de santé projet}{45}{subsection.3.4.2}\protected@file@percent }
-\newlabel{subsec:analyse_metriques}{{3.4.2}{45}{Analyse des métriques de santé projet}{subsection.3.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Commentaires et historique}{45}{subsection.3.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Métadonnées de projet}{45}{subsection.3.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Volumétrie et pagination}{45}{subsection.3.3.4}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Analyse prédictive par Monte Carlo}{46}{subsection.3.4.3}\protected@file@percent }
-\newlabel{subsec:analyse_montecarlo}{{3.4.3}{46}{Analyse prédictive par Monte Carlo}{subsection.3.4.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Préparation des données}{46}{section.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Normalisation structurelle}{46}{subsection.3.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Analyse et Visualisation des Données}{46}{section.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Analyse prédictive par Monte Carlo}{46}{subsection.3.4.1}\protected@file@percent }
+\newlabel{subsec:montecarlo_visu}{{3.4.1}{46}{Analyse prédictive par Monte Carlo}{subsection.3.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Visualisation des métriques de santé projet}{46}{subsection.3.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Visualisation du module Worker Insights}{46}{subsection.3.4.3}\protected@file@percent }
 \def\@LN@column{1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Standardisation sémantique}{47}{subsection.3.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Ingénierie des caractéristiques pour Monte Carlo}{47}{subsection.3.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}Stockage et mise en cache}{47}{subsection.3.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Conclusion}{47}{section.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.4}Explorateur Jira et supervision Grafana}{47}{subsection.3.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Préparation des données}{47}{section.3.5}\protected@file@percent }
+\newlabel{subsec:preparation}{{3.5}{47}{Préparation des données}{section.3.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Processus de traitement des données Jira et flux de métriques}}{47}{figure.caption.73}\protected@file@percent }
+\newlabel{fig:processus_donnees}{{3.4}{47}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Processus de traitement des données Jira et flux de métriques}{figure.caption.73}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Normalisation structurelle et aplatissement du changelog}{47}{subsection.3.5.1}\protected@file@percent }
+\newlabel{subsec:normalisation}{{3.5.1}{47}{Normalisation structurelle et aplatissement du changelog}{subsection.3.5.1}{}}
 \def\@LN@column{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Standardisation sémantique}{48}{subsection.3.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Agrégation pour le module Worker Insights}{48}{subsection.3.5.3}\protected@file@percent }
+\newlabel{subsec:worker_aggregation}{{3.5.3}{48}{Agrégation pour le module Worker Insights}{subsection.3.5.3}{}}
+\def\@LN@column{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}Ingénierie des caractéristiques et préparation du contexte LLM}{49}{subsection.3.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.5}Stockage et mise en cache}{49}{subsection.3.5.5}\protected@file@percent }
+\newlabel{subsec:stockage_cache}{{3.5.5}{49}{Stockage et mise en cache}{subsection.3.5.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Conclusion}{49}{section.3.6}\protected@file@percent }
 \@setckpt{chapters/chap3}{
-\setcounter{page}{49}
+\setcounter{page}{50}
 \setcounter{equation}{0}
 \setcounter{enumi}{5}
 \setcounter{enumii}{0}
@@ -59,7 +69,7 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{2}
+\setcounter{figure}{4}
 \setcounter{table}{0}
 \setcounter{float@type}{64}
 \setcounter{algorithm}{0}
@@ -100,9 +110,11 @@
 \setcounter{LT@tables}{0}
 \setcounter{LT@chunks}{0}
 \setcounter{section@level}{1}
-\setcounter{Item}{42}
+\setcounter{Item}{38}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{63}
+\setcounter{Hy@AnnotLevel}{0}
+\setcounter{bookmark@seq@number}{65}
+\setcounter{footdir@label}{0}
 \setcounter{tmpA}{0}
 \setcounter{tmpB}{0}
 \setcounter{tmpC}{0}
