@@ -86,16 +86,21 @@ La mise en cache des résultats est détaillée dans la section dédiée au stoc
 Les données brutes retournées par Jira sont au format JSON, riches mais hétérogènes. Le schéma standard de l’API Jira v2 structure l’information de la manière suivante : l’objet racine contient les métadonnées du ticket (clé, URL, etc.), et l’ensemble des champs métier est regroupé dans un objet \texttt{fields}. L’historique des transitions (\texttt{changelog}) est récupéré via un endpoint dédié et contient une liste d’entrées \texttt{histories}, chacune composée d’un timestamp et d’une liste d’items (\texttt{items}) décrivant les changements de champ.
 
 
+
+
+
+
+\subsection{Champs des tickets (issues)}
+
+La figure \ref{fig:jira_json_structure} présente un extrait d’un ticket Jira tel qu’il est retourné par l’API, mettant en évidence la structure imbriquée des champs.
+
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{assets/interfaces/json_screen.jpeg}
 \caption{Extrait d’un ticket Jira au format JSON (structure imbriquée \texttt{fields}, \texttt{subtasks}, \texttt{statusCategory}, etc.)}
 \label{fig:jira_json_structure}
 \end{figure}
-
-
-
-\subsection{Champs des tickets (issues)}
 Chaque ticket est représenté par un objet contenant les champs suivants, sélectionnés pour leur pertinence dans les calculs métier et l’inférence IA :
 \begin{itemize}
     \renewcommand{\labelitemi}{—}
@@ -104,8 +109,8 @@ Chaque ticket est représenté par un objet contenant les champs suivants, séle
     \item \textbf{Liens et dépendances} : champ \texttt{issuelinks} (bloque, est bloqué par, dépend de, etc.), essentiel pour la détection des risques en cascade et des tickets bloqués.
     \item \textbf{Dates} : création (\texttt{created}), dernière mise à jour (\texttt{updated}), échéance (\texttt{duedate}), résolution (\texttt{resolutiondate}).
     \item \textbf{Assignation} : assigné (\texttt{assignee}) avec son \texttt{accountId}, \texttt{displayName} et \texttt{avatarUrl} (exploités par le module Worker Insights pour identifier et visualiser les développeurs), rapporteur (\texttt{reporter}).
-    \item \textbf{Estimations et charges} : estimation initiale (\texttt{timeoriginalestimate}), temps restant (\texttt{timeestimate}), temps passé (\texttt{timespent}), et Story Points (champ personnalisé \texttt{customfield\_10016}) pour les calculs de vélocité et les simulations Monte Carlo.
-    \item \textbf{Sprints} : champ personnalisé (ex. \texttt{customfield\_10020}) contenant les informations de sprint (nom, dates de début et de fin), permettant de regrouper les tickets pour l’analyse de vélocité historique.
+    \item \textbf{Estimations et charges} : estimation initiale (\texttt{timeoriginalestimate}), temps restant (\texttt{timeestimate}), temps passé (\texttt{timespent}), et Story Points (champ personnalisé \texttt{customfield\_10016}). Ce champ stocke la complexité estimée des tickets et est utilisé pour les calculs de vélocité et les simulations Monte Carlo.
+    \item \textbf{Sprints} : champ personnalisé (ex. \texttt{customfield\_10020}) contenant les informations de sprint (nom, dates de début et de fin). Ce champ permet de regrouper les tickets par itération pour l’analyse de vélocité historique et le suivi de l’avancement agile.
     \item \textbf{Composants et versions} : liste des composants logiciels, versions d’affectation et de correction.
 \end{itemize}
 
@@ -122,7 +127,7 @@ Ces données sont conservées sous forme de listes associées au ticket. Le \tex
 Les informations générales sur les projets (clé, nom, catégorie, lead, type) sont stockées séparément pour enrichir les analyses contextuelles. Elles sont conservées dans le cache Redis et rafraîchies périodiquement.
 
 \subsection{Volumétrie et pagination}
-Un projet actif de taille moyenne chez NTT DATA peut contenir plusieurs milliers de tickets. Pour éviter les limites de pagination (50 ou 100 résultats par appel), nous utilisons la pagination basée sur le champ \texttt{startAt} et une taille de page de 100. Les appels sont parallélisés par lots de 2 pages (soit 200 tickets par lot) pour accélérer l’extraction de l’historique complet (ex. 365 jours) en moins de 30 secondes.
+Un projet actif de taille moyenne chez NTT DATA peut contenir plusieurs milliers de tickets. Pour éviter les limites de pagination de l’API Jira (50 ou 100 résultats par appel), nous utilisons la pagination basée sur le champ \texttt{startAt} avec une taille de page fixée à 100 tickets. Les appels sont parallélisés par lots de 2 pages consécutives (soit 200 tickets par lot) afin d’accélérer l’extraction de l’historique complet (par exemple, sur une fenêtre de 365 jours) en moins de 30 secondes.
 
 \section{Analyse et Visualisation des Données}
 Notre plateforme ne se limite pas à un affichage brut ; elle transforme les données Jira en indicateurs d’aide à la décision (KPI), en alertes de risque et en prévisions. Les visualisations sont intégrées au tableau de bord React à l’aide de bibliothèques comme Recharts ou Plotly.
@@ -158,6 +163,8 @@ Avant toute analyse, les données brutes issues de Jira subissent un pipeline de
 \caption{Processus de traitement des données Jira et flux de métriques}
 \label{fig:processus_donnees}
 \end{figure}
+
+Le processus global de traitement des données est illustré par la figure \ref{fig:processus_donnees}.
 
 \subsection{Normalisation structurelle et aplatissement du changelog}
 \label{subsec:normalisation}

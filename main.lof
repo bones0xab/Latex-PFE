@@ -1,59 +1,54 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo officiel de NTT DATA}}{5}{figure.caption.10}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Domaines d’expertise et secteurs d’intervention de NTT DATA Casablanca}}{6}{figure.caption.13}%
-\contentsline {figure}{\numberline {1.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Présence géographique de NTT DATA dans le monde}}{7}{figure.caption.15}%
-\contentsline {figure}{\numberline {1.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Organigramme fonctionnel des principaux pôles de NTT DATA Maroc}}{8}{figure.caption.16}%
-\contentsline {figure}{\numberline {1.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Méthodologie agile Scrum adoptée pour le projet}}{14}{figure.caption.18}%
-\contentsline {figure}{\numberline {1.6}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de Gantt illustrant la planification globale du projet}}{16}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de cas d’utilisation de la plateforme d’intelligence artificielle}}{17}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme des limitations de l’existant (problématiques identifiées)}}{20}{figure.caption.35}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture technique globale de la plateforme IA de pilotage de projets}}{22}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture détaillée du module d’intelligence artificielle (zoom)}}{25}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de classes UML – structure statique des entités principales}}{28}{figure.caption.38}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces \xpg@aux {}{french}\ignorespaces Séquence d’extraction asynchrone des données Jira (pagination, rate limiting)}}{29}{figure.caption.40}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence – orchestration LangGraph du pipeline IA (règles, LLM, cache)}}{30}{figure.caption.42}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces \xpg@aux {}{french}\ignorespaces Séquence d’authentification JWT et contrôle d’accès RBAC}}{31}{figure.caption.44}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du langage Python}}{32}{figure.caption.45}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du framework FastAPI}}{32}{figure.caption.46}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de l’ORM SQLAlchemy}}{32}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du framework LangGraph}}{32}{figure.caption.48}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de la plateforme Prometheus}}{32}{figure.caption.49}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de Grafana}}{33}{figure.caption.50}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du LLM Mistral}}{33}{figure.caption.51}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logos des bibliothèques NumPy et Pandas}}{33}{figure.caption.52}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de la bibliothèque React.js}}{34}{figure.caption.53}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du SGBD PostgreSQL}}{34}{figure.caption.54}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du cache Redis}}{34}{figure.caption.55}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de la plateforme Docker}}{34}{figure.caption.56}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de l’outil d’intégration continue Jenkins}}{35}{figure.caption.57}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de l’IDE Visual Studio Code}}{35}{figure.caption.58}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de Microsoft Teams}}{35}{figure.caption.59}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de la forge GitLab}}{36}{figure.caption.60}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de l’outil de gestion de projet Jira}}{36}{figure.caption.61}%
+\contentsline {figure}{\numberline {2.26}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de Docker Compose}}{36}{figure.caption.62}%
+\contentsline {figure}{\numberline {2.27}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du framework LangChain}}{36}{figure.caption.63}%
+\contentsline {figure}{\numberline {2.28}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de LlamaIndex}}{37}{figure.caption.64}%
+\contentsline {figure}{\numberline {2.29}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du framework Rasa}}{37}{figure.caption.65}%
+\contentsline {figure}{\numberline {2.30}{\ignorespaces \xpg@aux {}{french}\ignorespaces Comparaison des modèles de langage Mistral et LLaMA 3}}{37}{figure.caption.66}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de cas d’utilisation de la plateforme d’intelligence artificielle}}{18}{figure.caption.23}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme des limitations de l’existant (problématiques identifiées)}}{21}{figure.caption.35}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture technique globale de la plateforme IA de pilotage de projets}}{23}{figure.caption.36}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture détaillée du module d’intelligence artificielle (zoom)}}{26}{figure.caption.37}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de classes UML – structure statique des entités principales}}{29}{figure.caption.38}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces \xpg@aux {}{french}\ignorespaces Séquence d’extraction asynchrone des données Jira (pagination, rate limiting)}}{30}{figure.caption.40}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces \xpg@aux {}{french}\ignorespaces Diagramme de séquence – orchestration LangGraph du pipeline IA (règles, LLM, cache)}}{31}{figure.caption.42}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces \xpg@aux {}{french}\ignorespaces Séquence d’authentification JWT et contrôle d’accès RBAC}}{32}{figure.caption.44}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du langage Python}}{33}{figure.caption.45}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du framework FastAPI}}{33}{figure.caption.46}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de l’ORM SQLAlchemy}}{33}{figure.caption.47}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du framework LangGraph}}{33}{figure.caption.48}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de la plateforme Prometheus}}{33}{figure.caption.49}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de Grafana}}{34}{figure.caption.50}%
-\contentsline {figure}{\numberline {2.15}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du LLM Mistral}}{34}{figure.caption.51}%
-\contentsline {figure}{\numberline {2.16}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logos des bibliothèques NumPy et Pandas}}{34}{figure.caption.52}%
-\contentsline {figure}{\numberline {2.17}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de la bibliothèque React.js}}{35}{figure.caption.53}%
-\contentsline {figure}{\numberline {2.18}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du SGBD PostgreSQL}}{35}{figure.caption.54}%
-\contentsline {figure}{\numberline {2.19}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du cache Redis}}{35}{figure.caption.55}%
-\contentsline {figure}{\numberline {2.20}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de la plateforme Docker}}{35}{figure.caption.56}%
-\contentsline {figure}{\numberline {2.21}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de l’outil d’intégration continue Jenkins}}{36}{figure.caption.57}%
-\contentsline {figure}{\numberline {2.22}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de l’IDE Visual Studio Code}}{36}{figure.caption.58}%
-\contentsline {figure}{\numberline {2.23}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de la forge GitLab}}{36}{figure.caption.59}%
-\contentsline {figure}{\numberline {2.24}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de l’outil de gestion de projet Jira}}{37}{figure.caption.60}%
-\contentsline {figure}{\numberline {2.25}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de Docker Compose}}{37}{figure.caption.61}%
-\contentsline {figure}{\numberline {2.26}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du framework LangChain}}{37}{figure.caption.62}%
-\contentsline {figure}{\numberline {2.27}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo de LlamaIndex}}{37}{figure.caption.63}%
-\contentsline {figure}{\numberline {2.28}{\ignorespaces \xpg@aux {}{french}\ignorespaces Logo du framework Rasa}}{38}{figure.caption.64}%
-\contentsline {figure}{\numberline {2.29}{\ignorespaces \xpg@aux {}{french}\ignorespaces Comparaison des modèles de langage Mistral et LLaMA 3}}{38}{figure.caption.65}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Schéma du mécanisme d’authentification à l’API Jira}}{40}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Intégration des requêtes JQL dans le backend FastAPI (architecture)}}{41}{figure.caption.71}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Extrait d’un ticket Jira au format JSON (structure imbriquée \texttt {fields}, \texttt {subtasks}, \texttt {statusCategory}, etc.)}}{43}{figure.caption.73}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Processus de traitement des données Jira et flux de métriques}}{46}{figure.caption.74}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Schéma du mécanisme d’authentification à l’API Jira}}{41}{figure.caption.67}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Intégration des requêtes JQL dans le backend FastAPI (architecture)}}{42}{figure.caption.70}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Extrait d’un ticket Jira au format JSON (structure imbriquée \texttt {fields}, \texttt {subtasks}, \texttt {statusCategory}, etc.)}}{44}{figure.caption.72}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Processus de traitement des données Jira et flux de métriques}}{47}{figure.caption.73}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Métriques de validation de l’agent IA (précision, rappel, F1, délai)}}{52}{figure.caption.74}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture du module Worker Insights – double niveau de cache Redis avant appel LLM}}{68}{figure.caption.106}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Vue liste du module Worker Insights – cartes développeur avec résumé IA et badges}}{69}{figure.caption.108}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Panneau détaillé d’un développeur – analyse IA complète (charge, performance, recommandations)}}{70}{figure.caption.111}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Extraction asynchrone des données Jira – mécanismes de pagination et de respect des quotas}}{84}{figure.caption.116}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces \xpg@aux {}{french}\ignorespaces Normalisation des données Jira via les modèles Pydantic}}{85}{figure.caption.117}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces \xpg@aux {}{french}\ignorespaces Tableau de bord principal – métriques de santé projet (WIP, stale, overdue, Gini)}}{86}{figure.caption.118}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces \xpg@aux {}{french}\ignorespaces Résultat de la simulation Monte Carlo – distribution des dates de fin et percentiles}}{86}{figure.caption.119}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture détaillée de l’agent IA (LangGraph) avec appel au LLM Mistral}}{87}{figure.caption.120}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces \xpg@aux {}{french}\ignorespaces Tableau de bord d’équipe – grille des employés avec métriques IA et scores}}{88}{figure.caption.121}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces \xpg@aux {}{french}\ignorespaces Interface du tableau de bord React (métriques, centre d’alertes, explorateur Jira)}}{89}{figure.caption.122}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture du backend FastAPI – endpoints REST exposés}}{91}{figure.caption.123}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces \xpg@aux {}{french}\ignorespaces Schéma du contrôle d’accès RBAC (JWT, gestion des rôles, SQLAlchemy)}}{92}{figure.caption.124}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces \xpg@aux {}{french}\ignorespaces Notification d’alerte critique envoyée vers Microsoft Teams}}{93}{figure.caption.125}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces \xpg@aux {}{french}\ignorespaces Pipeline d’intégration et de déploiement continu (CI/CD) avec Jenkins}}{94}{figure.caption.126}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces \xpg@aux {}{french}\ignorespaces Analyse IA individuelle (Worker Insights) – résumé, tickets actifs, évaluation de charge et recommandations}}{95}{figure.caption.127}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \xpg@aux {}{french}\ignorespaces Métriques de validation de l’agent IA (précision, rappel, F1, délai)}}{51}{figure.caption.75}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture du module Worker Insights – double niveau de cache Redis avant appel LLM}}{67}{figure.caption.107}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \xpg@aux {}{french}\ignorespaces Vue liste du module Worker Insights – cartes développeur avec résumé IA et badges}}{68}{figure.caption.109}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \xpg@aux {}{french}\ignorespaces Panneau détaillé d’un développeur – analyse IA complète (charge, performance, recommandations)}}{69}{figure.caption.112}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces \xpg@aux {}{french}\ignorespaces Extraction asynchrone des données Jira – mécanismes de pagination et de respect des quotas}}{83}{figure.caption.117}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \xpg@aux {}{french}\ignorespaces Normalisation des données Jira via les modèles Pydantic}}{84}{figure.caption.118}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces \xpg@aux {}{french}\ignorespaces Tableau de bord principal – métriques de santé projet (WIP, stale, overdue, Gini)}}{85}{figure.caption.119}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \xpg@aux {}{french}\ignorespaces Résultat de la simulation Monte Carlo – distribution des dates de fin et percentiles}}{85}{figure.caption.120}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture détaillée de l’agent IA (LangGraph) avec appel au LLM Mistral}}{86}{figure.caption.121}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \xpg@aux {}{french}\ignorespaces Tableau de bord d’équipe – grille des employés avec métriques IA et scores}}{87}{figure.caption.122}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces \xpg@aux {}{french}\ignorespaces Interface du tableau de bord React (métriques, centre d’alertes, explorateur Jira)}}{88}{figure.caption.123}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces \xpg@aux {}{french}\ignorespaces Architecture du backend FastAPI – endpoints REST exposés}}{90}{figure.caption.124}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces \xpg@aux {}{french}\ignorespaces Schéma du contrôle d’accès RBAC (JWT, gestion des rôles, SQLAlchemy)}}{91}{figure.caption.125}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces \xpg@aux {}{french}\ignorespaces Notification d’alerte critique envoyée vers Microsoft Teams}}{92}{figure.caption.126}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces \xpg@aux {}{french}\ignorespaces Pipeline d’intégration et de déploiement continu (CI/CD) avec Jenkins}}{93}{figure.caption.127}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces \xpg@aux {}{french}\ignorespaces Analyse IA individuelle (Worker Insights) – résumé, tickets actifs, évaluation de charge et recommandations}}{94}{figure.caption.128}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces \xpg@aux {}{french}\ignorespaces Macroplanning global du projet (6 mois, 8 sprints)}}{101}{figure.caption.134}%

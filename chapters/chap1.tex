@@ -103,7 +103,7 @@ NTT DATA dispose d’une présence stratégique sur plusieurs continents, avec d
 \begin{itemize}
 	\renewcommand{\labelitemi}{—}
 	\item \textbf{Tokyo (siège mondial)} : Plus de 150 000 collaborateurs dans le monde
-	\item \textbf{Casablanca, Tétouan} : Sièges social pour l’Afrique, moteur de la transformation digitale au Maroc
+	\item \textbf{Casablanca, Tétouan} : Siège social pour l’Afrique, moteur de la transformation digitale au Maroc
 	\item \textbf{Paris} : Centre européen majeur
 	\item \textbf{Washington} : Hub stratégique pour l’Amérique du Nord
 	\item \textbf{Dubaï} : Base pour les opérations au Moyen‑Orient
@@ -111,7 +111,7 @@ NTT DATA dispose d’une présence stratégique sur plusieurs continents, avec d
 
 \subsection{Structure organisationnelle de l’entreprise}
 
-La Figure \ref{fig:secteurs-nttdata} illustre la structure organisationnelle de la filiale marocaine de NTT DATA. Bien que l'entreprise fasse partie d'un groupe mondial, elle dispose d'une organisation locale agile pour répondre aux enjeux du marché marocain et à ses objectifs de création de plusieurs emplois d'ici 2026.
+La Figure \ref{fig:secteurs-nttdata} illustre la structure organisationnelle de la filiale marocaine de NTT DATA. Bien que l'entreprise fasse partie d'un groupe mondial, elle dispose d'une organisation locale agile pour répondre aux enjeux du marché marocain et à ses objectifs de création de 1000 emplois (annoncé en 2022).
 
 \begin{figure}[H]
     \centering
@@ -142,28 +142,6 @@ L'organigramme de NTT DATA Maroc s'articule autour des entités et pôles suivan
 \end{enumerate}
 
 
-\subsection{Contexte interne : utilisation de Jira Data Center}
-La gestion de projets logiciels chez NTT DATA génère des volumes croissants de données opérationnelles, principalement via l’outil Jira. Chaque projet peut comporter des centaines, voire des milliers de tickets (tâches, bugs, évolutions), dont l’analyse manuelle pour la détection des risques, des goulots d’étranglement et des retards est devenue trop lente, peu fiable et inadaptée aux exigences de réactivité des équipes. Les chefs de projet et les équipes techniques consacrent un temps considérable à la supervision détaillée de chaque ticket, sans pouvoir bénéficier d’une vision synthétique et prédictive en temps réel.
-
-Face à ce constat, une initiative de modernisation du pilotage de projet a été lancée. L’objectif est de concevoir une plateforme complète, articulée autour d’un \textbf{agent IA conversationnel} comme cœur intelligent, capable d’interagir avec les données Jira de manière autonome et continue. Cette plateforme intègre plusieurs composantes clés :
-
-\begin{itemize}
-	\renewcommand{\labelitemi}{—}
-    \item Un moteur d’analyse IA qui extrait, normalise et interprète les données Jira pour détecter automatiquement les risques (retards, dépendances critiques, sous-charge ou surcharge d’affectation) et proposer des actions correctives.
-    \item Un tableau de bord de monitoring qui offre une vue d’ensemble synthétique, permettant aux responsables de suivre l’état de santé des projets sans avoir à examiner chaque ticket manuellement.
-    \item Des simulations Monte Carlo pour prédire la date de fin probable des projets, en prenant en compte l’incertitude des durées et des aléas de développement.
-    \item Un explorateur Jira qui structure et visualise les données issues de Jira sous une forme claire et ergonomique.
-    \item Un système de contrôle d’accès (RBAC) garantissant que chaque utilisateur (chef de projet, développeur, manager) ne voit que les informations correspondant à son périmètre.
-	\item Un système d’alertes automatiques couplé à Microsoft Teams, permettant de notifier instantanément le top management en cas de détection de risque critique.
-	\item Une industrialisation complète via un pipeline Jenkins, assurant l’intégration continue, les tests et le déploiement automatisé de la plateforme sur les serveurs de NTT DATA.
-	\item Une architecture multi-agents spécialisée, incluant des agents dédiés à l’analyse fine des performances individuelles et collectives (Team Scoreboard et Worker Insights), afin d’optimiser la répartition de la charge de travail.
-	\item Une stack d’observabilité technique (Prometheus et Grafana) garantissant la supervision en temps réel de la santé de l’application, des performances du système et des métriques liées à l’intelligence artificielle.
-	\item Des métriques avancées et indicateurs de performance (KPIs) permettant d’évaluer en profondeur la dynamique de l’équipe et l’efficacité globale des développements.
-\end{itemize}
-
-Cette plateforme répond à un besoin urgent d’accélération de l’analyse : là où une équipe humaine mettrait plusieurs heures ou jours à détecter un risque émergent, l’agent IA opère 24h/24 et 7j/7, fournissant des alertes quasi immédiates. Elle permet également de surmonter les goulots d’étranglement liés à la supervision manuelle détaillée, en libérant du temps pour les tâches à forte valeur ajoutée. Enfin, la capacité prédictive (Monte Carlo) offre une aide à la décision proactive, transformant la gestion de projet réactive en une gestion anticipative et stratégique.
-
-Ainsi, le projet consiste à développer et intégrer l’ensemble de ces briques pour fournir à NTT DATA un outil innovant, permanent et fiable de pilotage de projet par l’IA.
 
 \section{Présentation du projet}
 Nous allons à présent détailler le projet sur lequel nous avons travaillé, en commençant par
@@ -212,6 +190,7 @@ La démarche s’articule autour de plusieurs axes stratégiques :
     \item Déployer une stack de supervision (Prometheus, Grafana, Alertmanager) pour collecter les métriques système et applicatives, visualiser la santé des projets en temps réel et déclencher des alertes.
     \item Mettre en place un système de notification automatique vers Microsoft Teams afin d’alerter instantanément le top management en cas de risque critique.
     \item Développer un tableau de bord des performances individuelles (Team Scoreboard) permettant d’analyser la charge, la vélocité et la productivité de chaque membre de l’équipe.
+    \item Développer un module d’analyse individuelle (Worker Insights) permettant d’évaluer la charge, la performance et les risques de chaque développeur via l’IA.
 \end{itemize}
 
 \subsection{Objectifs spécifiques de la plateforme IA}
@@ -223,7 +202,7 @@ La solution devra :
 \begin{itemize}
     \renewcommand{\labelitemi}{—}
     \item Extraire et normaliser les tickets Jira via l’API REST, en gérant l’hétérogénéité des champs entre les projets.
-    \item Calculer des signaux de santé projet (WIP ratio, stale ratio, overdue rate, coefficient de Gini) à partir des données historiques et en temps réel.
+    \item Calculer des signaux de santé projet (WIP ratio, stale ratio, overdue rate, coefficient de Gini) à partir des données historiques et en temps réel, Ces métriques sont détaillées dans le chapitre 4..
     \item Implémenter un moteur de règles combiné à un LLM (Mistral hébergé à Tétouan, accessible via API) pour générer des risques, des actions correctives et des recommandations contextuelles.
     \item Fournir une interface React avec visualisations de métriques, un explorateur Jira structuré et un tableau de bord des performances individuelles.
     \item Assurer la sécurité des échanges (JWT) et la gestion fine des rôles utilisateurs.
@@ -257,7 +236,7 @@ Les trois rôles principaux dans notre projet sont les suivants :
 \begin{itemize}
 	\renewcommand{\labelitemi}{—}
 	\item \textbf{Product Owner} : Le top management de NTT DATA Maroc (direction générale), responsable de la vision stratégique, du backlog prioritaire et de la validation des livrables.
-	\item \textbf{Scrum Master} :  Mohammed Amine Elmeknassi, supervise le processus Scrum, organise les réunions quotidiennes, répartisse les tâches et identifient les blocages.
+	\item \textbf{Scrum Master} :  Mohammed Amine Elmeknassi, supervise le processus Scrum, organise les réunions quotidiennes, répartit les tâches et identifie les blocages.
 	\item \textbf{Équipe Intelligence Artificielle} : composée de moi-même, Nour Derraz et Image Chaoui, responsable de la conception de l’agent IA, du développement de la plateforme full‑stack, de l’analyse des données Jira et de la documentation technique.
 \end{itemize}
 

@@ -52,17 +52,31 @@
 \usepackage{tikz}
 % CORRECTION: setspace était déjà appelé plus haut, suppression de la duplication
 \usepackage{lettrine}
-%\usepackage{mathpazo} 
-\bibliographystyle{plain}
 \usepackage{cite}
 \usepackage{listings, minted}
 \usepackage[acronym]{glossaries}
-\usepackage[Sonny]{fncychap}   % or remove entirely
+% \usepackage[Sonny]{fncychap}   % or remove entirely
 \usepackage{booktabs}
-%\usepackage{bbm}
 \usepackage{dsfont}  % à la place de bbm
 
-
+\usepackage{listings}
+\lstdefinelanguage{yaml}{
+  keywords={true,false,null,y,n},
+  keywordstyle=\color{blue}\bfseries,
+  basicstyle=\ttfamily\small,
+  comment=[l]{\#},
+  morestring=[b]',
+  morestring=[b]",
+  sensitive=false
+}
+\lstdefinelanguage{groovy}{
+  keywords={pipeline,agent,stages,stage,steps,script,environment,when,parallel,post,success,failure},
+  keywordstyle=\color{blue}\bfseries,
+  basicstyle=\ttfamily\small,
+  comment=[l]{//},
+  morestring=[b]",
+  sensitive=true
+}
 
 \usepackage{amssymb}
 
@@ -189,17 +203,10 @@
 	\include{chapters/chap2}
 	\include{chapters/chap3}
 	\include{chapters/chap4}
-	% \include{chapters/merge}
-	% \include{chapters/chap5}
-	% \include{chapters/chap6}
-	\include{chapters/revue}
 	
 
  	\include{Intro_pages/Conclusion}
- 	% \renewcommand{\bibname}{Références}
- 	% \bibliography{references}
- 	% \include{Intro_pages/annexe}
+ 	\input{Intro_pages/bibliographies}
+ 	\include{Intro_pages/annexe}
 	
-%  \renewcommand\refname{Références} % Pour les articles ou rapports avec le titre "References"
-%  \bibliography{reference}
 \end{document}

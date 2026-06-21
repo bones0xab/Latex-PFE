@@ -1,154 +1,360 @@
 \chapter*{Annexes}
 \addcontentsline{toc}{chapter}{Annexes}
-\vspace{-1.2cm}
+\vspace{-0.8cm}
 
-\section*{Macroplanning du projet}
-Le projet s’étale sur une période de 22 mois et se décline en plusieurs phases successives visant à concevoir et implémenter un système d’optimisation pour la planification des stands avion. À ce jour, le projet est dans sa phase de \textbf{cadrage}, qui vise à affiner les objectifs, analyser les besoins et poser les fondations techniques.
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.3cm}
+
+\section*{A. Macroplanning du projet}
+\addcontentsline{toc}{section}{A. Macroplanning du projet}
+
+Le projet s’est déroulé sur une période de 6 mois, de janvier à juin 2026, et a été organisé en plusieurs phases itératives suivant la méthodologie Scrum. Chaque sprint a permis d’ajouter de nouvelles fonctionnalités tout en consolidant l’existant.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{assets/Annexe/macroplanning.png}
-	\caption{Macroplanning global du projet}
+	\includegraphics[width=\linewidth]{assets/Annexe/macroplanning_ai_project.png}
+	\caption{Macroplanning global du projet (6 mois, 8 sprints)}
 	\label{fig:macrolplannning}
 \end{figure}
 
+\vspace{0.3cm}
+\noindent\rule{\linewidth}{0.2pt}
+\vspace{0.3cm}
 
+\section*{B. Exemples de requêtes JQL utilisées}
+\addcontentsline{toc}{section}{B. Exemples de requêtes JQL}
 
-\section*{Plan de l’aéroport CMN}
-Le plan ci-dessous illustre la disposition des zones de stationnement à l’aéroport Mohammed V (CMN). Il a été utilisé comme base pour la modélisation des contraintes spatiales dans l’algorithme d’affectation.
+Les requêtes suivantes sont exécutées périodiquement par le backend FastAPI pour extraire les données nécessaires à l’analyse des risques et aux simulations Monte Carlo.
 
-\begin{figure}[H]
-	\centering
-	\rotatebox{90}{% rotation de 90° vers la gauche
-		\includegraphics[width=0.9\textheight]{assets/Annexe/plan.png}
-	}
-	\caption{Plan des zones de stationnement à l’aéroport Mohammed V (CMN)}
-	\label{fig:plan}
-\end{figure}
+\begin{lstlisting}[language=SQL, caption={Requêtes JQL pour l’extraction des données}, label={lst:jql-queries}]
+-- Analyse temps reel (projets actifs, 30 jours)
+project = "HPCMOROCCO" AND created >= -30d ORDER BY updated DESC
 
-
-
-
-\section*{Contraintes d’incompatibilité entre stands}
-Certains stands ne peuvent pas être utilisés simultanément, notamment ceux du type \texttt{J (Julia)}, qui imposent des restrictions sur les stands adjacents afin de garantir la sécurité et d’éviter les conflits opérationnels.
-
-\begin{table}[H]
-	\centering
-	\renewcommand{\arraystretch}{1}
-	\caption{Exemples de relations d'incompatibilité entre les stands}
-	\begin{tabular}{|p{4cm}|p{6cm}|}
-		\hline
-		\textbf{Stand principal} & \textbf{Stands incompatibles} \\
-		\hline
-		J01 & C01, C02 \\
-		J02 & C03, C04 \\
-		J03 & C05, C06 \\
-		J04 & C07, C08 \\
-		J05 & B01, B02 \\
-		J06 & B03, B04 \\
-		J07 & B05, B06 \\
-		J08 & B07, B08 \\
-		J09 & B09, B10 \\
-		J15 & C24, C25 \\
-		\hline
-	\end{tabular}
-	\label{tab:incompatibilites_stands}
-\end{table}
-
-
-\noindent\textit{Remarque :} Lorsqu’un stand \texttt{J} est occupé, les stands listés comme incompatibles doivent être laissés vacants pour éviter toute interférence.
-
-
-\section*{Exemple d'affectation de vols}
-L’algorithme d’affectation génère un fichier JSON, où chaque vol est associé à un stand selon les contraintes et critères définis. Voici un extrait représentatif :
-
-\begin{lstlisting}[language=json, 
-	caption={Extrait du fichier JSON d’affectation}, 
-	label={lst:json-result}, 
-	basicstyle=\ttfamily\small, 
-	breaklines=true,
-	frame=single
-	]
-	"assignments": [{
-		"VID": "290850832",
-		"FLC": "Transavia France",
-		"REG": "FHTVS",
-		"DES": "RAK",
-		"ORG": "ORY",
-		"Aircraft_Type": "Boeing 737-800 (High Gross Weight)",
-		"DAY_ARR": "2024-11-01",
-		"DAY_DEP": "2024-11-01",
-		"AIRCRAFT_SIZE": "Medium",
-		"STAND": "C07",
-		"Stand_Type": "Contact",
-		"Max_Aircraft_Size": "Medium",
-		"HEURE_VOL_ARR": "08:04",
-		"HEURE_VOL_DEP": "08:49",
-		"PXU_DEP": "189",
-		"PXU_ARR": "189",
-		"TERMINAL": "T1",
-		"Vol_Type": "I"
-	}]
-
+-- Historique pour Monte Carlo (365 jours)
+project = "HPCMOROCCO" AND statusCategory = Done AND resolved >= -365d
 \end{lstlisting}
 
-\noindent Une visualisation de l’occupation des stands sur trois jours est également générée sous forme de diagramme de Gantt.
+\vspace{0.3cm}
+\noindent\rule{\linewidth}{0.2pt}
+\vspace{0.3cm}
 
+\section*{C. Modèle Pydantic de normalisation des tickets}
+\addcontentsline{toc}{section}{C. Modèle Pydantic de normalisation}
 
-\section*{Chronologie d’Affectation des Vols aux Stands – Jour 19}
+Le modèle \texttt{NormalizedIssueModel} structure les données JSON brutes de Jira en un format unifié, réparti en quatre blocs : identité, temporalité, sémantique et acteurs.
 
-Le diagramme ci-dessous présente le diagramme de Gantt correspondant aux résultats de l’affectation des vols aux stands pour le jour 19, obtenus à l’aide de l’approche hybride combinant une heuristique gloutonne avec un algorithme génétique. Cette représentation visuelle illustre la répartition temporelle de l’occupation des stands et met en évidence l’efficacité de la méthode proposée pour gérer l’allocation des ressources sous contraintes opérationnelles.
+\begin{lstlisting}[language=Python, caption={Modèle Pydantic de normalisation des tickets Jira}, label={lst:pydantic-model}]
+from pydantic import BaseModel
+from datetime import datetime
+from typing import Optional, List
 
+class NormalizedIssueModel(BaseModel):
+    # Identity
+    key: str
+    url: str
+    summary: str
+    description: Optional[str]
+    
+    # Temporality
+    created: datetime
+    updated: datetime
+    duedate: Optional[datetime]
+    resolutiondate: Optional[datetime]
+    
+    # Semantics
+    status: str
+    status_category: str  # "To Do", "In Progress", "Done"
+    issue_type: str       # "Bug", "Task", "Story", "Epic"
+    priority: str
+    
+    # Actors
+    assignee_id: Optional[str]
+    assignee_name: Optional[str]
+    assignee_avatar: Optional[str]
+    reporter_id: Optional[str]
+    
+    # Relations & tracking
+    issue_links: List[str]
+    subtasks: List[str]
+    sprint: Optional[str]
+    story_points: Optional[int]
+    
+    # Time tracking
+    time_original_estimate: Optional[int]
+    time_estimate: Optional[int]
+    time_spent: Optional[int]
+\end{lstlisting}
 
-\vspace{-1em}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.1\linewidth]{assets/Annexe/affectation.png}
-	\caption{Diagrammes de gantt des stands}
-	\label{fig:ganttStand}
-\end{figure}
+\vspace{0.3cm}
+\noindent\rule{\linewidth}{0.2pt}
+\vspace{0.3cm}
 
-\section*{Signification des attributs utilisés}
-Le tableau ci-dessous décrit les principaux attributs utilisés dans le jeu de données de vols.
+\section*{D. État du graphe LangGraph (ProjectState)}
+\addcontentsline{toc}{section}{D. État du graphe LangGraph}
+
+Le graphe d’orchestration LangGraph maintient un état persistant à travers les différentes étapes d’analyse du projet.
+
+\begin{lstlisting}[language=Python, caption={TypedDict de l’état du graphe LangGraph}, label={lst:langgraph-state}]
+from typing import TypedDict, List, Optional
+
+class ProjectState(TypedDict):
+    project_key: str
+    issues: List[dict]
+    metrics: dict              # WIP, stale, Gini, etc.
+    rules_hits: List[dict]     # Règles déclenchées
+    analysis_result: Optional[dict]
+    messages: List[dict]       # Historique conversationnel
+    iteration: int
+    max_iterations: int
+\end{lstlisting}
+
+\vspace{0.3cm}
+\noindent\rule{\linewidth}{0.2pt}
+\vspace{0.3cm}
+
+\section*{E. Configuration Prometheus et règles d’alerte}
+\addcontentsline{toc}{section}{E. Configuration Prometheus}
+
+La stack de supervision est configurée via les fichiers suivants. Prometheus collecte les métriques exposées par le backend FastAPI et évalue les règles d’alerte personnalisées.
+
+\begin{lstlisting}[
+    language=yaml,
+    breaklines=true,
+    breakatwhitespace=true,
+    basicstyle=\ttfamily\footnotesize,
+    caption={Fichier de configuration Prometheus (\texttt{prometheus.yml})},
+    label={lst:prometheus-config}
+]
+global:
+  scrape_interval: 15s
+  evaluation_interval: 30s
+
+scrape_configs:
+  - job_name: 'ai-platform'
+    static_configs:
+      - targets: ['backend:8000']
+    metrics_path: '/metrics'
+\end{lstlisting}
+
+\begin{lstlisting}[
+    language=yaml,
+    breaklines=true,
+    breakatwhitespace=true,
+    basicstyle=\ttfamily\footnotesize,
+    caption={Règles d’alerte Prometheus (\texttt{alert\_rules.yml})},
+    label={lst:alert-rules}
+]
+groups:
+  - name: project_health
+    rules:
+      - alert: CriticalWipRatio
+        expr: project_wip_ratio > 0.6
+        for: 5m
+        annotations:
+          summary: "WIP ratio critique pour le projet {{ $labels.project_key }}"
+          severity: "CRITICAL"
+      
+      - alert: HighStaleRatio
+        expr: stale_ratio > 0.2
+        for: 10m
+        annotations:
+          summary: "Trop de tickets inactifs pour {{ $labels.project_key }}"
+          severity: "WARNING"
+      
+      - alert: ProjectAtRisk
+        expr: project_health_score == 2
+        for: 5m
+        annotations:
+          summary: "Projet {{ $labels.project_key }} en état critique"
+          severity: "CRITICAL"
+\end{lstlisting}
+
+\vspace{0.3cm}
+\noindent\rule{\linewidth}{0.2pt}
+\vspace{0.3cm}
+
+\section*{F. Configuration du pipeline CI/CD Jenkins}
+\addcontentsline{toc}{section}{F. Pipeline CI/CD Jenkins}
+
+Le pipeline Jenkins automatise la construction, les tests et le déploiement de la plateforme sur les serveurs de NTT DATA à Tétouan.
+
+\begin{lstlisting}[
+    language=groovy,
+    breaklines=true,
+    breakatwhitespace=true,
+    basicstyle=\ttfamily\scriptsize,
+    caption={Jenkinsfile du pipeline CI/CD},
+    label={lst:jenkinsfile}
+]
+pipeline {
+    agent any
+    
+    environment {
+        DOCKER_REGISTRY = "registry.nttdata.com"
+        BACKEND_IMAGE = "${DOCKER_REGISTRY}/ai-platform-backend"
+        FRONTEND_IMAGE = "${DOCKER_REGISTRY}/ai-platform-frontend"
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://umane.emeal.nttdata.com/git/FELTRIINTPROJ/nttdata-ai-agent-project-tracking'
+            }
+        }
+        
+        stage('Build Backend') {
+            steps {
+                sh 'docker build -t ${BACKEND_IMAGE}:${BUILD_ID} -f docker/backend/Dockerfile .'
+            }
+        }
+        
+        stage('Build Frontend') {
+            steps {
+                sh 'docker build -t ${FRONTEND_IMAGE}:${BUILD_ID} -f docker/frontend/Dockerfile .'
+            }
+        }
+        
+        stage('Run Tests') {
+            steps {
+                sh 'docker run --rm ${BACKEND_IMAGE}:${BUILD_ID} pytest tests/'
+            }
+        }
+        
+        stage('Push Images') {
+            steps {
+                sh 'docker push ${BACKEND_IMAGE}:${BUILD_ID}'
+                sh 'docker push ${FRONTEND_IMAGE}:${BUILD_ID}'
+            }
+        }
+        
+        stage('Deploy to Production') {
+            steps {
+                sh 'ssh deploy@tetouan-server "docker-compose pull && docker-compose up -d"'
+            }
+        }
+    }
+    
+    post {
+        success {
+            slackSend color: 'good', message: "[SUCCESS] Deploiement reussi (build ${BUILD_ID})"
+        }
+        failure {
+            slackSend color: 'danger', message: "[FAILURE] Echec du deploiement (build ${BUILD_ID})"
+        }
+    }
+}
+\end{lstlisting}
+
+\vspace{0.3cm}
+\noindent\rule{\linewidth}{0.2pt}
+\vspace{0.3cm}
+
+\section*{G. Exemple de réponse JSON de l’agent IA}
+\addcontentsline{toc}{section}{G. Exemple de réponse JSON}
+
+Voici un extrait de la réponse structurée générée par l’agent IA (LangGraph + Mistral) après analyse d’un projet.
+
+\begin{lstlisting}[language=json, caption={Extrait de la réponse JSON de l’agent IA}, label={lst:ai-response}]
+{
+  "project_health": "AT_RISK",
+  "health_score": 85,
+  "risk_level": "CRITICAL",
+  "key_risks": [
+    {
+      "title": "WIP ratio élevé (68%)",
+      "severity": "HIGH",
+      "explanation": "L'équipe a trop de tickets ouverts simultanément, ce qui ralentit le flux de travail.",
+      "affected_issues": ["HPCMOROCCO-123", "HPCMOROCCO-456"]
+    },
+    {
+      "title": "Tickets bloqués en revue",
+      "severity": "MEDIUM",
+      "explanation": "Plusieurs tickets sont en attente de validation depuis plus de 7 jours.",
+      "affected_issues": ["HPCMOROCCO-789"]
+    }
+  ],
+  "recommendations": [
+    {
+      "action": "Réduire le WIP en priorisant les tickets critiques",
+      "priority": "HIGH",
+      "owner": "Chef de projet",
+      "deadline": "2026-06-20"
+    },
+    {
+      "action": "Organiser une réunion de déblocage pour les tickets en revue",
+      "priority": "MEDIUM",
+      "owner": "Scrum Master",
+      "deadline": "2026-06-18"
+    }
+  ],
+  "team_insights": "L'équipe montre une bonne vélocité mais souffre d'une surcharge ponctuelle.",
+  "speed_analysis": "La vélocité a baissé de 15% sur les deux dernières semaines."
+}
+\end{lstlisting}
+
+\vspace{0.3cm}
+\noindent\rule{\linewidth}{0.2pt}
+\vspace{0.3cm}
+
+\section*{H. Description des attributs des données Jira}
+\addcontentsline{toc}{section}{H. Attributs Jira}
+
+Le tableau ci-dessous décrit les principaux attributs extraits de l’API Jira et utilisés dans la plateforme.
 
 \begin{table}[H]
 	\scriptsize
 	\renewcommand{\arraystretch}{1.3}
-	\caption{Description des attributs du fichier d’affectation des vols}
+	\caption{Description des attributs Jira utilisés dans la plateforme}
 	\begin{tabularx}{\textwidth}{@{} p{3cm} p{2.5cm} X p{3.3cm} @{}}
 		\toprule
 		\textbf{Catégorie} & \textbf{Attribut} & \textbf{Description} & \textbf{Exemple / Type} \\
 		\midrule
-		\multirow{2}{*}{Identification du vol} 
-		& \texttt{VID} & Identifiant unique du vol & 290850832 \\
-		& \texttt{FLC} & Nom de la compagnie aérienne & Transavia France \\
+		\multirow{3}{*}{Identité} 
+		& \texttt{key} & Clé unique du ticket & HPCMOROCCO-123 \\
+		& \texttt{summary} & Titre du ticket & "Fix login issue" \\
+		& \texttt{description} & Description détaillée & "Le bouton de connexion..." \\
 		
 		\midrule
-		\multirow{4}{*}{Informations temporelles} 
-		& \texttt{DAY\_ARR / DEP} & Dates d’arrivée et de départ & 2024-11-01 \\
-		& \texttt{HEURE\_VOL\_ARR / DEP} & Horaires du vol & 08:04, 08:49 \\
-		& \texttt{VOL\_TYPE} & Type de vol (I/D) & I : International \\
+		\multirow{4}{*}{Statut \& typologie} 
+		& \texttt{status} & Statut courant & "In Progress" \\
+		& \texttt{statusCategory} & Catégorie normalisée & "In Progress" \\
+		& \texttt{issuetype} & Type de ticket & Bug, Task, Story, Epic \\
+		& \texttt{priority} & Niveau de priorité & High, Medium, Low \\
 		
 		\midrule
-		\multirow{3}{*}{Informations avion} 
-		& \texttt{REG} & Immatriculation de l’avion & FHTVS \\
-		& \texttt{AIRCRAFT\_TYPE} & Modèle commercial & Boeing 737-800 \\
-		& \texttt{AIRCRAFT\_SIZE} & Taille de l’aéronef & Medium \\
+		\multirow{4}{*}{Temporalité} 
+		& \texttt{created} & Date de création & 2026-01-15T10:30:00Z \\
+		& \texttt{updated} & Dernière mise à jour & 2026-06-10T14:20:00Z \\
+		& \texttt{duedate} & Date d’échéance & 2026-06-20 \\
+		& \texttt{resolutiondate} & Date de résolution & 2026-06-12T09:00:00Z \\
 		
 		\midrule
-		\multirow{4}{*}{Informations aéroportuaires} 
-		& \texttt{ORG / DES} & Aéroports origine/destination & ORY / RAK \\
-		& \texttt{STAND} & Stand attribué & C07 \\
-		& \texttt{STAND\_TYPE} & Type de stand & Contact \\
-		& \texttt{TERMINAL} & Terminal assigné & T1 \\
+		\multirow{3}{*}{Assignation} 
+		& \texttt{assignee} & Développeur assigné & { "displayName": "Nada Ahasad" } \\
+		& \texttt{accountId} & Identifiant unique Jira & 5f8d9e7c6b5a4d3c2e1f \\
+		& \texttt{avatarUrl} & URL de l’avatar & https://.../avatar.png \\
 		
 		\midrule
-		\multirow{2}{*}{Passagers} 
-		& \texttt{PXU\_ARR / DEP} & Nb de passagers à l’arrivée / départ & 189 \\
-		& \texttt{MAX\_AIRCRAFT\_SIZE} & Taille max. supportée par le stand & Medium \\
+		\multirow{3}{*}{Estimations} 
+		& \texttt{timeoriginalestimate} & Estimation initiale (secondes) & 28800 (8h) \\
+		& \texttt{timeestimate} & Temps restant & 14400 (4h) \\
+		& \texttt{timespent} & Temps passé & 21600 (6h) \\
+		
+		\midrule
+		\multirow{2}{*}{Agilité} 
+		& \texttt{customfield\_10016} & Story Points & 5 \\
+		& \texttt{customfield\_10020} & Sprint & "Sprint 12" \\
+		
+		\midrule
+		\multirow{2}{*}{Relations} 
+		& \texttt{issuelinks} & Liens de dépendance & [ "bloque", "est bloqué par" ] \\
+		& \texttt{subtasks} & Sous‑tâches & [ "HPCMOROCCO-124", "HPCMOROCCO-125" ] \\
 		\bottomrule
 	\end{tabularx}
-	\label{tab:attributs_vols_complet}
+	\label{tab:attributs_jira}
 \end{table}
 
-
+\vspace{0.3cm}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{0.3cm}
